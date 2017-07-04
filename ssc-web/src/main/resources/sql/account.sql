@@ -137,3 +137,19 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for `url`
+-- ----------------------------
+CREATE TABLE `url` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `short_url` varchar(255) DEFAULT NULL COMMENT '短链接',
+  `long_url` varchar(255) DEFAULT NULL COMMENT '长链接',
+  `account_id` int(11) DEFAULT NULL COMMENT '创建用户ID',
+  `create_time` int(10) DEFAULT NULL,
+  `update_time` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- ----------------------------
+-- Records of url
+-- ----------------------------
