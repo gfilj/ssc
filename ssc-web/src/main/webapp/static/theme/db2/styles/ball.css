@@ -1,0 +1,61 @@
+.ball-number{
+  /* background-color: #8a8a8a; */
+  /* background-image: none; */
+  /* background-repeat: no-repeat; */
+  /* border-radius: 18px; */
+  background-image:url(../images/bn.png);
+  background-repeat:no-repeat;
+  background-position: center;
+  display: block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  text-align: center;
+}
+
+.ball-number-long {
+    /* background-position: 0 -40px;
+    width: 80px; */
+  background-image:url(../images/bn1.png);
+  background-repeat:no-repeat;
+  background-position: center;
+  display: block; 
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  text-align: center; 
+}
+
+/* .ball-number:hover,.ball-number-current, 
+.ball-number-current:hover{ color:#fff;  background-image:url(../images/bc.png);background-position: center} */
+
+.ball-number:hover, .ball-number-current, 
+.ball-number-current:hover{ color:#fff;  background-image:url(../images/bc.png);background-position: center}
+.ball-number-long:hover{ color:#fff;  background-image:url(../images/bc1.png);background-position: center}
+
+.ball-control a {
+  background-image:url(../images/cn.png);
+  background-repeat:no-repeat;
+  background-position: center;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 4px;
+}
+
+
+.ball-control a.current {
+  z-index: 2;
+  background-image:url(../images/cc.png);
+  background-repeat:no-repeat;
+  background-position: center;
+  color:#fff;
+}

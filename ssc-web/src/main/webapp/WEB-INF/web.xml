@@ -3,5 +3,86 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<display-name>Archetype Created Web Application</display-name>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+	<!-- log4j2配置文件 -->
+	  <filter>
+	         <filter-name>log4jServletFilter</filter-name>
+	         <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
+     </filter>
+     <filter-mapping>
+     		<filter-name>log4jServletFilter</filter-name>
+	         <url-pattern>/*</url-pattern>
+	         <dispatcher>REQUEST</dispatcher>
+	         <dispatcher>FORWARD</dispatcher>
+	         <dispatcher>INCLUDE</dispatcher>
+	         <dispatcher>ERROR</dispatcher>
+	  </filter-mapping>
+	  
+	  <listener>
+	  		<listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+	  </listener>
+	      
+    <!-- log4j2配置结束 -->
+    <welcome-file-list>
+    	<welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+	<!-- 定义Servlet和URL样式之间的映射 -->
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.css</url-pattern>
+		<url-pattern>*.js</url-pattern>
+		<url-pattern>*.swf</url-pattern>
+		<url-pattern>*.gif</url-pattern>
+		<url-pattern>*.jpg</url-pattern>
+		<url-pattern>*.png</url-pattern>
+		<url-pattern>*.htm</url-pattern>
+		<url-pattern>*.html</url-pattern>
+		<url-pattern>*.ico</url-pattern>
+		<url-pattern>*.woff</url-pattern>
+		<url-pattern>*.ttf</url-pattern>
+	</servlet-mapping>
+
+	<!-- spring, 设置页面传来的字符串的编码处理 -->
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<!-- encoding用来设置编码格式 -->
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 配置SPRING MVC -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<!-- DispatcherServlet 提供Spring Web MVC的集中访问点，而且负责职责的分派，而且与Spring IoC容器无缝集成 -->
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value></param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<!-- 设置MVC配置文件 -->
+		<param-value>classpath*:/springmvc-servlet.xml,classpath*:activemq.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 </web-app>

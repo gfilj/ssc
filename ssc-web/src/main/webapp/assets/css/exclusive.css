@@ -1,0 +1,705 @@
+@charset "UTF-8";
+
+/*
+* 每个平台特有样式（背景色等）
+*/
+
+/*
+* 用户中心-查询模块
+*/
+
+body {
+    /* background: #ededed; */
+}
+
+.nav-bg {
+    color: #000;
+    background-color: #e7e7e7;
+   /* box-shadow: inset 0 -1px 0 #1e3352; */
+}
+
+.main-content-notice .nav-bg ,.notice-list .nav-bg{
+    color: #ffffff;
+    background-color: #134346;
+   /* box-shadow: inset 0 -1px 0 #1e3352; */
+}
+
+.tab-title li.current a {
+    background-color: #fff;
+    color: #1e3352;
+    border-top: 2px #182942 solid;
+}
+
+.main-content {
+    /* border: 1px #dedede solid; */
+    background: #fff;
+}
+
+.main-content .hz-user-center {
+    background: #fff;
+}
+
+.main-content .content {
+     background: #fff;
+}
+
+.uc-safety-panel .uc-safety-ok .uc-safety-config-icon {
+    background-image: url(../images/uc-safety-config-icon_02.png);
+}
+
+.area-search {
+    border: 1px solid #ebebeb;
+    background-color: #fafafa;
+}
+
+.area-search .row {
+    /* color: #c6af63; */
+}
+
+.input {
+    border: 1px solid #acacac;
+    color: #888;
+    background-color: #fff;
+}
+
+.choose-model {
+    border: 1px solid #acacac;
+    background-color: #fff;
+}
+
+.choose-model .choose-list {
+    border: 1px solid #ddd;
+    background-color: #FFF;
+}
+
+.choose-model .choose-list-cont .choose-item-current {
+    background-color: #f3f3f3;
+}
+
+.choose-model .choose-list-cont a {
+    border-bottom: 1px solid #ddd;
+    color: #666;
+}
+
+.choose-model .choose-scroll {
+    background: #000;
+    border: 1px solid #000;
+}
+
+.choose-model .info {
+    color: #666;
+}
+
+.choose-model .choose-input-disabled {
+    color: #6F684F;
+}
+
+.choose-model .choose-input {
+    color: #6F684F;
+    /* border: 1px solid #c6af63; */
+}
+
+.choose-model i {
+    border-left: 1px solid #ddd;
+    background: url("../images/ico-arrow-down.png") center center no-repeat;
+}
+
+.btn, .ui-button, .page a {
+    background: #1e3352;
+    color: #fff;
+}
+
+.btn:hover, .ui-button:hover, .btn.confirm:hover, .btn-important:hover, .btn-submit:hover {
+    background-color: #182a43;
+    color: #fff;
+}
+
+.table th, .table tfoot td, .table-info th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.table tbody tr {
+    border-bottom: #6F684F 1px dashed;
+}
+
+.table tr:hover {
+    background: #f1f1f1;
+}
+
+.table td, .table-info td {
+    color: #666;
+}
+
+.page a {
+    color: #fff;
+}
+
+.page a:hover {
+    color: #fff;
+}
+
+.page-few {
+    color: #6F684F;
+}
+
+.c-important {
+    color: #16253a !important;
+}
+
+.cell-label {
+    background-color: #eee;
+    border: 1px solid #e8e8e8;
+    color: #454545;
+}
+
+.j-ui-datepicker .tb .day-curr,
+.j-ui-datepicker .tb .day-curr:hover,
+.j-ui-datepicker .tb .day-curr:active {
+    background-color: #f9020b;
+    color: #fff;
+}
+
+.item-detail {
+    color: #3b3b3b;
+}
+
+.item-title:first-child {
+    color: #666;
+}
+
+.user-type-choose .item-title, .user-info-config .item-title, .user-bonus-choose .item-title, .agent-user-limit .item-title {
+    color: #848484;
+}
+
+.item-title {
+    color: #666;
+}
+
+i[class|='shortcut-icon'] {
+    /*background-image: url(../images/shortcut-icons.png);*/
+}
+
+[class|='user-type-icon'] {
+    background-image: url(../images/user-type-icon.png);
+}
+
+.user-type-choose .filter-tabs-cont a span {
+    background-color: #777;
+    color: #fff;
+}
+
+.user-type-choose .filter-tabs-cont a:hover span, .user-type-choose .filter-tabs-cont a.current span {
+    background-color: #1e3352;
+}
+
+.link-create-wrap .item-info label {
+    color: #666;
+}
+
+.user-info-config .item-info .input-big {
+    background-color: #f2f2f2;
+    border-color: #dfdfdf;
+    color: #666;
+}
+
+.user-info-config, .user-bonus-choose, .bonus-config-result {
+    /* border-top: 1px solid #f9020b; */
+}
+
+.bonus-config-result strong {
+    color: #6F684F;
+}
+
+.bonus-config-result label {
+    color: #666;
+    border: 1px solid #1e3352;
+    color: #6F684F;
+}
+
+.bonus-config-result label span {
+    color: #16253a;
+    font-weight: bold;
+}
+
+[class|='ui-action'] {
+    background-image: url(../images/ui-action-icons.png);
+}
+
+.data-overview {
+    border: 1px solid #dedede;
+    color: #6F684F;
+}
+
+.data-overview h3 {
+    color: #f9020b;
+}
+
+.user-link-list .table {
+    border: 1px solid #dedede;
+}
+
+input.error {
+    border: #f00 1px solid;
+    border-radius: 3px;
+}
+
+span.error, span.valid {
+    /* background: url(unchecked.png) no-repeat 0 3px; */
+}
+
+.bonusgroup-title {
+    background: #f1f1f1;
+    border: 1px solid #f9020b;
+}
+
+.tip {
+    color: #6F684F;
+}
+
+.item-detail table {
+    border: #ddd 1px solid;
+}
+
+/*
+* recharge
+*/
+
+#main {
+    background: #fff;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dedede;
+}
+
+.radio-wrap span.cur {
+    color: #f00;
+}
+
+.radio-wrap span {
+    background: url(../images/pwd_sprite_b.png) 0px -129px no-repeat;
+    color: #6F684F;
+}
+
+.banks-new li i {
+    background: url(../images/pwd_sprite.png) -48px -106px no-repeat;
+}
+
+.banks-new li.cur span {
+    color: #f00;
+}
+
+.banks-new li span {
+    color: #6F684F;
+}
+
+.bank_steps {
+    border-bottom: #6F684F 1px dashed;
+}
+
+.bank_steps h5 {
+    color: #666;
+}
+
+.bank_steps_tip {
+    color: #ff0000;
+}
+
+.bc_part {
+    border: 1px solid #666;
+}
+
+.bc_part dl {
+    background: #fff;
+}
+
+input.cardNo {
+    background: #fff;
+    border: #fff 1px solid;
+}
+
+.cc_part2 li h3 {
+    color: #666;
+}
+
+#main .input-wrap {
+    /* border: 1px solid #999; */
+}
+
+.cc_part2 .dh-tips, .cc_part2 .xm-tips {
+    color: #ff0000;
+}
+
+.amount-err-tips {
+    color: #EA5200;
+}
+
+.recharge-help, .recharge-sidebar {
+    border: 1px solid #dedede;
+}
+
+.recharge-help h3 {
+    color: #333;
+}
+
+.recharge-help .prompt, .recharge-help .prompt-tex {
+    background-color: #f9f9f9;
+    border-color: #dedede;
+}
+
+.prompt, .prompt-text {
+    border: 1px solid #e7e7e7;
+    color: #999;
+    background-color: #f1f1f1;
+}
+
+.recharge-help h4 {
+    color: #333;
+}
+
+.recharge-help p {
+    color: #999;
+}
+
+.quick-banks li.selected {
+    border: #f00 1px solid;
+}
+
+.quick-banks li {
+    border: #e1e1e1 1px solid;
+}
+
+#main select.error {
+    border-color: #f00;
+}
+
+#main .input-wrap input.error {
+    border: #f00 1px solid;
+}
+
+.row-head {
+    border-bottom: 1px solid #6F684F;
+    color: #666;
+}
+
+.row-head p {
+    color: #666666;
+}
+
+.c-red {
+    color: #f61818!important;
+}
+
+.img-bank:hover, .img-bank.active {
+    border-color: #f9080f;
+}
+
+.check-icon,.checkbox-icon {
+    background:url(../images/checked-icons.png) no-repeat;
+}
+
+.img-bank {
+    border: 1px solid #E4E4E4;
+}
+
+.bc_part_cur {
+    border: #f00 1px solid;
+}
+
+.item-detail .item-right span {
+    color: #f9020b;
+}
+
+.item-left .lottery-info {
+    color: #f9020b;
+    border: 1px solid #c9302c;
+    background: none;
+}
+
+.item-left .lottery-info h2 {
+    color: #f9020b;
+}
+
+.lottery-info-number {
+    border-top: 1px solid #6F684F;
+}
+
+.ball {
+    color: #c9302c;
+    border: 1px solid #c9302c;
+}
+
+.lottery-result {
+    color: #e1582c;
+    border: 1px solid #ea6435;
+    background-color: #FFF0D4;
+}
+
+/*
+* 头尾
+*/
+#header {
+    background: #f1f1f1;
+    color: #c6af63;
+}
+
+.top-nav-user em {
+    color: #999;
+}
+
+#header a {
+    color: #000;
+}
+
+#header a:hover {
+    color: #000;
+}
+
+.top-nav-menu {
+    /*background-color: #fff;*/
+}
+
+.index-notice-ttw li span {
+    color: #ffba00;
+}
+
+.tab-title li a {
+    color: #666;
+}
+
+#main-pop .row_bind label {
+    color: #666;
+}
+
+#main-pop .row_bind input {
+    border: 1px solid #848484;
+}
+
+#main-pop input.error, #main-pop select.error {
+    border-color: #f00;
+}
+
+.filter-tabs-cont a {
+    border: #f9020b 1px solid;
+}
+
+.player-loading-spinner {
+    border-top: .3em solid hsl(43, 43, 43);
+    border-right: .3em solid hsla(0, 0%, 100%, .25);
+    border-bottom: .3em solid hsla(0, 0%, 100%, .25);
+    border-left: .3em solid #1e3352;
+}
+
+.ucenter-content input[type=text], .ucenter-content input[type=password] {
+    background: #fff;
+    color: #000;
+}
+
+.ucenter-content .content {
+    background: #fff;
+}
+
+.jBox-Tooltip .jBox-container {
+    /*background: #1e3352;*/
+}
+
+.jBox-container {
+    background: #fff;
+}
+
+#changeID {
+    background: #fff;
+}
+
+.item-info textarea.input {
+    background: #fff;
+}
+
+.btn-item {
+    background: #f02821;
+    color: #fff;
+}
+
+.msg-list li {
+    background: #fafafa;
+    border: #f2f2f2 1px solid
+}
+
+.msg-list li.bold {
+    background: #fafafa
+}
+
+.msg-list li .tit a {
+    color: #000
+}
+
+.msg-list li label {
+    color: #999
+}
+
+.msg-list li .msg-con {
+    border-top: #e1e1e1 1px dashed
+}
+
+.tabs .horizontal LI:hover {
+    background: #fff;
+    border-bottom: 4px solid #2b2b2b;
+}
+
+.tabs .horizontal LI:hover A {
+    color: white;
+}
+
+.tabs_default .active {
+    background: #1e3352 !important;
+    border-bottom: 4px solid #2b2b2b !important;
+}
+
+.tabs_default .active A {
+    color: white !important;
+}
+
+#testspeed {
+    background-color: #d0647e;
+}
+
+.routeitems a {
+    background-color: #395b9e;
+}
+
+.routeitems li {
+    color: #395b9e;
+}
+
+.routeitems li.fast {
+    color: #395b9e;
+}
+
+#retest {
+    background-color: #395b9e;
+    color: #fff;
+}
+
+.iconormal {
+    color: #395b9e;
+}
+
+.icobad {
+    color: #bbbcbd;
+}
+
+#speedometer .speedometer {
+    border: 20px solid #395b9e;
+    border-right: 20px solid white;
+    border-bottom: 20px solid white;
+}
+.copy_btn {
+    background: #c9302c;
+    color: #fff;
+}
+.response-wrap {
+    background: url(../images/active_bg.png);
+}
+.index-notice-facai {
+    height: 145px;
+    overflow: hidden;
+}
+i.game-hot {
+
+background: #f00;
+
+font-size: 10px;
+
+padding-left: 2px;
+
+padding-right: 2px;
+
+text-align: center;
+}
+.down-mobile .mobile-ver .phone {
+    width: 130px;
+    height: 246px;
+    position: absolute;
+    z-index: 20;
+    background: url(../images/phone.png) no-repeat;
+}
+.mainimg {
+    height: 326px;
+    position: relative;
+    background: url(../images/client.png) no-repeat;
+}
+.mainimg .down-pc {
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 64px;
+    letter-spacing: 15px;
+}
+.mainimg .down-pc.disabled {
+    cursor: not-allowed;
+    color: #858585;
+    background: #ddd;
+}
+.promo-content {
+    background: #fff;
+}
+.promo-left-side .title h3 {
+    color: #000;
+    background: #fff;
+}
+.promo-left-side .list li {
+    color: #babbbd;
+    background: #fff;
+    border-bottom: #f1f1f1 1px solid;
+}
+.promo-left-side .list li:hover {
+    background: #f3f3f3;
+    border-left: #f00 5px solid;
+}
+.promo-left-side .list li.current {
+    background: #f1f1f1;
+    border-left: #f00 5px solid;
+    color: #000;
+}
+.promo-right-side {
+    background: #f1f1f1;
+}
+.promo-right-side li {
+    background: #fff;
+}
+.promo-right-side li.no-data {
+    color: #000;
+}
+.promo dt h1 {
+    background: #e1e1e1;
+}
+.promo dt span.title {
+    color: #FF1044;
+}
+.promo dt span.btn-join {
+    background: #ffe469;
+    color: #1d2537;
+}
+.promo dt span.promo-time {
+    color: #666;
+}
+.promo dd {
+    color: #000;
+}
+#showProfitAmount ul.myrates li{
+  margin:5px 0px;
+  line-height:29px;
+  height:29px;
+  text-align:center;
+}
+#showProfitAmount p{text-align:center;margin-bottom:15px;}
+#showProfitAmount ul.myrates li em{
+  padding: 0px 5px;
+    background-color: #dedede;
+    width: 70px;
+    display: inline-block;
+    text-align: center;
+    margin: 0px 5px;
+}
+#showProfitAmount ul.myrates .gapin{padding-left:40px;}

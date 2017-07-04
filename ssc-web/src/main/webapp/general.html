@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>多宝2</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<meta name="description" content="">
+<meta name="keywords" content="多宝2" />
+<meta http-equiv="Expires" CONTENT="0">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<!-- build:css /assets/styles/exclusive.min.css -->
+<link media="all" type="text/css" rel="stylesheet"
+	href="/assets/css/top-bar.css">
+<link media="all" type="text/css" rel="stylesheet"
+	href="/assets/css/nav.css">
+<link media="all" type="text/css" rel="stylesheet"
+	href="/assets/css/jBox.css">
+<link media="all" type="text/css" rel="stylesheet"
+	href="/assets/css/exclusive.css">
+
+<!-- endbuild -->
+<!-- build:css /static/styles/main.min.css -->
+<link type="text/css" rel="stylesheet" href="/static/styles/common.css">
+<link type="text/css" rel="stylesheet" href="/static/styles/global.css">
+<link type="text/css" rel="stylesheet"
+	href="/static/styles/ucenter-common.css">
+<!-- endbuild -->
+
+<script src="/static/mobile/js/libs/jquery-1.9.1.min.js"></script>
+<script src="/static/scripts/vendor/clipboard.min.js"></script>
+<script src="/assets/js/config.js"></script>
+<script src="/static/mobile/js/libs/jedate.min.js"></script>
+<script src="/static/scripts/vendor/echarts.common.min.js"></script>
+<script src="/static/mobile/js/require.js"></script>
+<script>
+    String.prototype.hashCode = function() {
+      var hash = 0, i, chr, len;
+      if (this.length === 0) return hash;
+      for (i = 0, len = this.length; i < len; i++) {
+        chr   = this.charCodeAt(i);
+        hash  = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return hash;
+    };
+    require.config({
+      baseUrl: '/static/mobile/js/libs',
+	  urlArgs: "v=20170524001",
+      paths: {
+        jquery: 'jquery-1.9.1.min',
+        md5: 'md5',
+        vue: 'vue',
+        classie: 'chart/classie',
+        menu: 'chart/menu',
+        easing:'/assets/js/jquery.easing.1.3',
+        cycletwo:'/static/scripts/vendor/jquery.cycle2.min',
+        marquee:'/static/scripts/vendor/jquery.marquee.min',
+        pagination:'/static/scripts/vendor/mricode.pagination',
+        mousewheel:'/assets/js/jquery.mousewheel.min',
+        tabslet:'/static/scripts/vendor/jquery.tabslet.min',
+        cookie:'/static/scripts/vendor/jquery.cookie',
+        def:'/static/scripts/3a.default',
+        page:'/static/scripts/3a.page',
+        global:'/static/scripts/vendor/global',
+        dsgame_base:'/assets/js/dsgame.base',
+        dsgame_Ernie:'/assets/js/dsgame.Ernie',
+        dsgame_Select:'/assets/js/dsgame.Select',
+        dsgame_DatePicker:'/assets/js/dsgame.DatePicker',
+	      dsgame_Tip:'/assets/js/dsgame.Tip',
+        home:'/static/scripts/3a.home',
+        promo:'/static/scripts/3a.promo',
+        '3a.counter':'/static/scripts/3a.counter',
+	      '3a.config': '/static/scripts/3a.config',
+        '3a.control': '/static/scripts/3a.control',
+        deposit: '/assets/js/deposit',
+        jm: 'chart/jm',
+        'clipboard': '/static/scripts/vendor/clipboard.min',
+        'jquery.validate': '/static/scripts/vendor/jquery.validate.min',
+        'addtional': '/assets/js/additional-methods',
+        'jquery.cookie': '/static/scripts/vendor/jquery.cookie'
+      },
+      waitSeconds:60000,
+      map: {
+        '*': {
+          'css': '/static/mobile/js/libs/css.js'
+        }
+      },
+      shim: {
+        "jBox": ["jquery"],
+        "jquery.cookie": ["jquery"],
+        "jquery.anchorScroll.min": ["jquery"],
+        "jquery.mCustomScrollbar.concat.min": ["jquery"],
+        "jquery.longclick.min": ["jquery"],
+        "3a.api": ["jBox"],
+        "3a.line": ["3a.api"],
+        "3a.util": ["jBox"],
+        'global':["jquery"],
+        "def":["3a.util", "3a.api", "dsgame_Ernie"],
+        "page":["jquery","pagination","3a.api", "3a.util", "dsgame_DatePicker"],
+        "home":["3a.api"],
+        "3a.counter":["3a.util"],
+        "cycletwo": ["jquery"],
+        "cookie": ["jquery"],
+        "marquee": ["jquery"],
+        "tabslet": ["jquery"],
+        "dsgame_base": ["jquery"],
+        dsgame_DatePicker: ["dsgame_base"],
+        "dsgame_Select": ["jquery","dsgame_base", "mousewheel"],
+        "dsgame_Ernie": ["jquery","dsgame_base"],
+        "easing": ["jquery"],
+        "promo": ["jquery", "3a.util"],
+        "clipboard": ["jquery"],
+        "jquery.validate": ["jquery"],
+        "dsgame_Tip": ["dsgame_base"],
+        "3a.control":["jBox", "dsgame_Tip", "3a.config", "dsgame_Select", "tabslet"],
+        "deposit": ["jquery", "clipboard", "jBox", "3a.counter"],
+        "addtional": ["jquery.validate"],
+        'jquery.cookie':["jquery"]
+      }
+    });
+
+    require([
+      //'css!/assets/css/ucenter.css',
+      'css!/static/theme/' + keyWords + '/styles/home.css',
+      'css!/static/theme/' + keyWords + '/styles/colors.css',
+      'jquery','pagination','jBox','3a.api','3a.util',"jquery.validate" ,'easing','addtional','jquery.cookie',
+      'cookie','cycletwo','marquee','global','def','home','page','3a.control'
+    ], function() {
+
+    });
+  </script>
+</head>
+<body>
+	<div class="response-wrap">
+		<div id="header" class="wrap">
+			<div class="wrap-inner">
+				<div class="left top-nav">
+					<!-- 用户中心 -->
+					<div class="top-nav-user">
+						<em>欢迎您,&nbsp;&nbsp;</em> <a href="/hz/mkg/users/user"
+							class="top-nav-toggle" data-overdropdown="handler"> <span
+							data-user-name>zx19926276</span> <i class="caret"></i>
+						</a>
+						<div class="top-nav-menu" data-overdropdown="dropdown">
+							<div class="top-user-links clearfix">
+								<a href="/hz/mkg/users/change-password.html" class="tul-link1">
+									<i></i> <span>登录密码</span>
+								</a> <a href="/hz/mkg/users/change-fund-password.html"
+									class="tul-link2"> <i></i> <span>资金密码</span>
+								</a> <a href="/hz/mkg/users/personal" class="tul-link3"> <i></i>
+									<span>修改资料</span>
+								</a> <a href="/hz/mkg/users/user-bankards" class="tul-link4"> <i></i>
+									<span>银行卡</span>
+								</a>
+							</div>
+						</div>
+						<a class="highlight-color" href="javascript:;">退出</a> <a
+							class="li-line">|</a> <a href="/hz/mkg/message/go">站内信</a> <i
+							class="msg-tip"></i> </a>
+					</div>
+				</div>
+				<div class="right">
+					<ul class="top-account">
+						<li id="top-switch" data-overdropdown="handler"><a
+							href="javascript:;" class="top-switch-link"><em class="m_ico">&#59218;</em></a>
+							<div id="top-switch-menu" data-overdropdown="dropdown">
+								<ul>
+									<li><label><em class="m_ico m_moresize">&#59217;</em>音效</label><em
+										class="m_ico m_sw" type="sound">&#59221;</em></li>
+									<li><label><em class="m_ico">&#59219;</em>中奖推送</label><em
+										class="m_ico m_sw m_switchon" type="push">&#59222;</em></li>
+								</ul>
+							</div></li>
+						<li class="top-account-balance"><span style="display: none;">余额：<span
+								data-user-account-balance>-</span> 元 <i data-refresh-balance></i>
+						</span> <span style="display: none;">余额已隐藏</span> <span
+							class="balance-toggle highlight-color">隐藏</span></li>
+						<li class="top-account-deposit"><a
+							href="/hz/mkg/users/deposit.html"> <i></i> <span>充值</span>
+						</a></li>
+						<li class="top-account-withdraw"><a href="/hz/mkg/qukuan">
+								<i></i> <span>提款</span>
+						</a></li>
+						<li class="top-account-transfer"><a
+							href="/hz/mkg/pay/goTransfer"> <i></i> <span>平台转账</span>
+								<li class="deposit-record"><a
+									href="/hz/mkg/statement.html#recharge_view"> <span
+										class="opacity-60">充值记录</span> <span class="li-line">|</span>
+										<li class="top-account-gm"><a class="opacity-60"
+											data-call-center
+											href="https://kf1.learnsaas.com/chat/chatClient/chatbox.jsp?companyID=819082&configID=64920&jid=6634132239&s=1"
+											target="_blank">多宝2客服</a></li>
+								</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="nav" class="wrap">
+			<div class="wrap-inner clearfix">
+				<div id="relatelnk" data-overdropdown="handler">
+					<a href="/static/download.html" class="mobile-lnk" target="_blank"><em
+						class="m_ico">&#59197;</em><span>APP下载</span></a> <a
+						href="/static/download.html" id="pcclient" target="_blank"><em
+						class="m_ico">&#59199;</em><span>客户端</span></a>
+					<div class="mobile-menu" data-overdropdown="dropdown">
+						<!--<img src="/static/theme/xinbao/images/vcode.png" alt="" align="center" width="164" height="164">-->
+					</div>
+				</div>
+
+				<a href="/hz/home" class="left" id="logo">多宝2游戏</a> <span
+					class="logo-diff">多宝2游戏</span>
+				<ul class="nav-content right">
+					<!--<li>
+				<a class="nav-home" href="/hz/home">
+					<i></i><span>首页</span>
+				</a>
+			</li>-->
+					<li data-gamelist><a class="nav-lobby" id="lottery-menu"
+						href="javascript:;"> <i></i><span>彩票中心</span>
+					</a></li>
+					<li><a class="nav-ag"
+						href="javascript:commonUtil.commonTipAlert('敬请期待');"> <i></i><span>真人娱乐</span>
+					</a></li>
+					<li><a class="nav-number"
+						href="javascript:commonUtil.commonTipAlert('敬请期待');"> <i></i><span>体育赛事</span>
+					</a></li>
+					<li><a class="nav-tiger "
+						href="javascript:commonUtil.commonTipAlert('敬请期待');"> <i></i><span>电子游艺</span>
+					</a></li>
+					<li data-account data-overdropdown="handler"><a
+						class="nav-ucenter nav-account" href="javascript:;"> <i></i><span>账户管理</span>
+							<!--<b class="caret"></b>-->
+					</a> <!--账户管理下拉-->
+						<div class="nav-account-lists" data-overdropdown="dropdown">
+							<div class="mask"></div>
+							<ul class="clearfix">
+								<li>
+									<div class="list-link">
+										<a class="grgl" href="/hz/mkg/users/change-password.html">个人管理</a>
+									</div>
+								</li>
+								<li>
+									<div class="list-link">
+										<a class="tdgl" href="/hz/mkg/user.html">团队管理</a>
+									</div>
+								</li>
+							</ul>
+						</div></li>
+					<li data-form data-overdropdown="handler"><a class="nav-form "
+						href="javascript:;"> <i></i><span>报表管理</span>
+					</a> <!--报表管理下拉-->
+						<div class="nav-form-lists" data-overdropdown="dropdown">
+							<div class="mask"></div>
+							<ul class="clearfix">
+								<li>
+									<div class="list-link">
+										<a class="yxjl" href="/hz/mkg/orders.html">游戏记录</a>
+									</div>
+								</li>
+								<li>
+									<div class="list-link">
+										<a class="tdbb" href="/hz/mkg/dayreport.html">个人报表</a>
+									</div>
+								</li>
+								<li>
+									<div class="list-link">
+										<a class="tdbb" href="/hz/mkg/teamreport.html">团队报表</a>
+									</div>
+								</li>
+							</ul>
+						</div></li>
+					<li class="no-margin"><a class="nav-hongbao"
+						href="/hz/mkg/activity/goIndex.html"> <i></i><span>优惠活动</span>
+					</a></li>
+					<li class="no-margin"><a class="nav-fund"
+						href="/hz/mkg/statement.html#account_view"> <i></i><span>资金明细</span>
+					</a></li>
+					<li class="no-margin"><a class="nav-client"
+						href="/static/download.html"> <i></i><span>客户端下载</span>
+					</a></li>
+				</ul>
+			</div>
+			<div class="nav-container-fluid">
+				<div class="menu-content">
+					<div class="menu-list">
+						<dl class="ssc">
+							<dt>时时彩</dt>
+							<dd>
+								<a href="#">多宝2分分彩</a> <i class="game-24h"></i>
+							</dd>
+							<dd>
+								<a href="#">多宝25分彩</a> <i class="game-24h"></i>
+							</dd>
+							<dd>
+								<a href="#">韩国1.5分彩</a> <i class="game-hot">H</i>
+							</dd>
+							<dd>
+								<a href="#">重庆时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">新疆时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">天津时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">香港时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">日本时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">新重庆时时彩</a>
+							</dd>
+						</dl>
+						<dl class="split"></dl>
+						<dl class="five">
+							<dt>11选5</dt>
+							<dd>
+								<a href="#">多宝211选5</a> <i class="game-24h"></i>
+							</dd>
+							<dd>
+								<a href="#">山东11选5</a>
+							</dd>
+							<dd>
+								<a href="#">江西11选5</a>
+							</dd>
+							<dd>
+								<a href="#">广东11选5</a>
+							</dd>
+							<dd>
+								<a href="#">辽宁11选5</a>
+							</dd>
+							<dd>
+								<a href="#">上海11选5</a>
+							</dd>
+							<dd>
+								<a href="#">黑龙江11选5</a>
+							</dd>
+							<dd>
+								<a href="#">香港11选5</a>
+							</dd>
+						</dl>
+						<dl class="split"></dl>
+						<dl class="happy">
+							<dt>快乐彩</dt>
+							<dd>
+								<a href="#">江苏快三</a>
+							</dd>
+							<dd>
+								<a href="#">吉林快三</a>
+							</dd>
+							<dd>
+								<a href="#">安徽快三</a>
+							</dd>
+							<dd>
+								<a href="#">广西快三</a>
+							</dd>
+							<dd>
+								<a href="#">湖北快三</a>
+							</dd>
+							<dd>
+								<a href="#">内蒙快三</a>
+							</dd>
+						</dl>
+						<dl class="split"></dl>
+						<dl class="others">
+							<dt>其他游戏</dt>
+							<dd>
+								<a href="#">多宝2秒秒彩</a>
+							</dd>
+							<dd>
+								<a href="#">3D</a>
+							</dd>
+							<dd>
+								<a href="#">排列三/排列五</a>
+							</dd>
+							<dd>
+								<a href="#">北京PK10</a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+
+
+
+			<input type="hidden" id="tab_input" value="form">
+
+			<link media="all" type="text/css" rel="stylesheet"
+				href="/static/theme/db2/styles/teamPandect.css" />
+			<div class="g_33 main clearfix">
+
+				<div class="main-content">
+
+					<div class="nav-bg nav-bg-tab">
+						<div class="title-normal">团队总览</div>
+						<ul class="tab-title">
+							<li data-tab-single><a data-skey="single"
+								href="/hz/mkg/dayreport.html"><span>个人报表</span></a></li>
+							<li data-tab-team><a data-skey="team"
+								href="/hz/mkg/teamreport.html"><span>团队报表</span></a></li>
+							<li data-tab-salary><a data-skey="salary"
+								href="/hz/mkg/dayreport.html#salary_view"><span>日工资</span></a></li>
+							<li data-tab-dividend><a data-skey="dividend"
+								href="/hz/mkg/dayreport.html#dividend_view"><span>分红</span></a></li>
+							<li class="current" data-tab-general><a data-skey="general"
+								href="/hz/mkg/general"><span>团队总览</span></a></li>
+							<li data-tab-thirdteam><a data-skey="thirdteam"
+								href="/hz/mkg/dayreport.html#thirdteam_view"><span>第三方团队报表</span></a></li>
+						</ul>
+					</div>
+
+					<div class="response-wrap">
+						<div>
+							<div class="wrap-inner main clearfix">
+								<div class="main-content">
+									<table class="team-info-tit">
+										<tr>
+											<td><div class="img bg1"></div> </span>
+												<p class="p1">团队成员</p></td>
+											<td>
+												<p class="p2">
+													所有：<em id="teamTotalNum">0</em>人
+												</p>
+												<p class="p2">
+													代理：<em id="teamAgencyNum">0</em>人
+												</p>
+												<p class="p2">
+													会员：<em id="teamVipNum">0</em>人
+												</p>
+											</td>
+											<td><div class="img bg2"></div>
+												<p class="p1">充值人数</p></td>
+											<td>
+												<p class="p3">
+													充值人数: <em id='rechargeNum'>0</em>人
+												</p>
+												<p class="p3">
+													消费人数: <em id='betCount'>0</em>人
+												</p>
+											</td>
+											<td><div class="img bg3"></div>
+												<p class="p1">当前在线</p></td>
+											<td><p class="p3">
+													<em id="onlineNum">0</em>人
+												</p></td>
+										</tr>
+									</table>
+									<div class="area-search">
+										<ul class="clearfix">
+
+											<li><div class="div-btn" id="getlastSeven">最近七天</div></li>
+											<li><p>游戏时间：</p></li>
+											<li><input type="text" class="txt" id="startDate" /></li>
+											<li><p>至</p></li>
+											<li><input type="text" class="txt" id="endDate" /></li>
+											<li><input type="button" value="搜索" class="btn"
+												id="searchTeamByDate" /></li>
+
+										</ul>
+
+									</div>
+
+									<div class="team-observe">
+										<div class="tit clearfix">
+											<h3 class="fl">
+												新增用户<em id="registerSum">0</em>人
+											</h3>
+
+											<p class="fr tip">以下数据均为 2016年05月</p>
+										</div>
+										<div class="team-body">
+											<div id="map" style="width: 1125px; height: 300px"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<script type="text/javascript">
+
+
+  Date.prototype.AddDays= function (date,days){
+        var nd = new Date(date);
+        nd = nd.valueOf();
+        nd = nd + days * 24 * 60 * 60 * 1000;
+        nd = new Date(nd);
+        var y = nd.getFullYear();
+        var m = nd.getMonth()+1;
+        var d = nd.getDate();
+        if(m <= 9) m = "0"+m;
+        if(d <= 9) d = "0"+d;
+        var cdate = y+"-"+m+"-"+d;
+        return cdate;
+    }
+
+  //计算天数差的函数，通用
+   Date.prototype.DateDiff = function(sDate1,  sDate2){    //sDate1和sDate2是2006-12-18格式
+      var  aDate,  oDate1,  oDate2,  iDays
+      aDate  =  sDate1.split("-")
+      oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0]) //转换为12-18-2006格式
+      aDate  =  sDate2.split("-")
+      oDate2  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])
+      iDays  =  parseInt(Math.abs(oDate1  -  oDate2)  /  1000  /  60  /  60  /24) //把相差的毫秒数转换为天数
+      return  iDays
+  }
+
+
+  /**
+   * 时间格式化
+   * yyyy-MM-dd hh:mm:ss.S
+   */
+  Date.prototype.Format = function(fmt) {
+      var o = {
+          "M+": this.getMonth() + 1, //月份
+          "d+": this.getDate(), //日
+          "h+": this.getHours(), //小时
+          "m+": this.getMinutes(), //分
+          "s+": this.getSeconds(), //秒
+          "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+          "S": this.getMilliseconds() //毫秒
+      };
+      if (/(y+)/.test(fmt))
+          fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+      for (var k in o)
+          if (new RegExp("(" + k + ")").test(fmt))
+              fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+      return fmt;
+  }
+
+
+  /**
+   * 时间比较
+   * @param beginTime "2009-09-21 00:00:02";
+   * @param endTime "2009-09-21 00:00:01";
+   */
+  Date.prototype.CompareTo = function (minTime,maxEndTime){
+      var beginTimes = minTime.substring(0,10).split('-');
+      var endTimes   =  maxEndTime.substring(0,10).split('-');
+      minTime = beginTimes[1]+'-'+beginTimes[2]+'-'+beginTimes[0]+' '+ minTime.substring(10,19);
+      maxEndTime    = endTimes[1]+'-'+endTimes[2]+'-'+endTimes[0]+' '+ maxEndTime.substring(10,19);
+      var a =(Date.parse(maxEndTime)-Date.parse(minTime))/3600/1000;
+      if(a<0){
+          return 1;
+      }else if (a>0){
+          return 2;  //
+      }else if (a==0){
+          return 0;
+      }
+  }
+
+  $(document).ready(function(){
+jeDate.skin('gray');
+var maxStartDate = new Date().Format("yyyy-MM-dd");
+var start = jeDate({
+	dateCell:"#startDate",
+	format:"YYYY-MM-DD",
+	isinitVal:true,
+	isTime:true,
+    maxDate: maxStartDate,
+	choosefun: function( date){
+		end.minDate = date; //开始日选好后，重置结束日的最小日期
+        var endTimeRef =  new Date().AddDays( date,6) ;  //在得到值的基础上加 n 天
+        var currentTime = new Date().Format("yyyy-MM-dd");
+		var isok = new Date().CompareTo(  endTimeRef , currentTime  );
+		if(isok == 1){ // 1 表示：  endTimeRef > currentTime 时间
+            endTimeRef = currentTime
+		}
+        $("#endDate").val( endTimeRef );
+
+        end.config.minDate = date;
+        end.config.maxDate = endTimeRef;
+	}
+});
+var end = jeDate({
+	dateCell:"#endDate",
+	format:"YYYY-MM-DD",
+	isinitVal:true,
+	isTime:true,
+    maxDate: maxStartDate,
+	choosefun: function(date){
+      //  var endDate = date;
+        var startT = $("#startDate").val(); // 开始时间
+		var isMore = new Date().DateDiff( startT, date );
+		if( isMore>7 ){ // 大于七天
+            date =  new Date().AddDays( startT,-6) ;  //在得到值的基础上加 n 天
+		}
+
+
+        var currentTime = new Date().Format("yyyy-MM-dd");
+        var isok = new Date().CompareTo(  date , currentTime  );
+        if(isok == 1){ // 1 表示：  endTimeRef > currentTime 时间
+            date = currentTime
+        }
+        $("#endDate").val( date );
+    }
+});
+
+function endDates() {
+    end.trigger = false;
+    $("#endDate").click();
+}
+
+$("#startDate").val(getDefaultTimes());
+$("#endDate").val(getDefaultTimes());
+
+//最近七天
+$('#getlastSeven').bind('click', function(){
+	var sevenDayTime = 1000*60*60*24*6;
+	var nowDay = new Date().getTime();
+	var newTime = new Date(nowDay - sevenDayTime);
+	var startDay = getDefaultTimes(newTime);
+	var endDay = getDefaultTimes();
+	//getTeamViewByDate(startDay, endDay);
+	$('#startDate').val(startDay );
+	$('#endDate').val(endDay);
+    getTeamViewByDate(startDay, endDay);
+});
+
+$('#searchTeamByDate').unbind('click').bind('click',function(){
+	var startTime = $('#startDate').val();
+	var endTime = $('#endDate').val();
+	var param_start, param_end;
+	if(startTime){
+		param_start = startTime.trim();
+	}else{
+		startTime = getDefaultTimes();
+	}
+	if(endTime){
+		param_end = endTime.trim();
+	}else{
+		param_end = getDefaultTimes();
+	}
+	if(validateTime(param_start, param_end)){
+		getTeamViewByDate(param_start, param_end);
+	}else{
+		alert("开始时间必须大于结束时间");
+	}
+});
+function validateTime(startDay, endDay){
+	if(Date.parse(startDay) - Date.parse(endDay) > 0){
+		return false;
+	}
+	return true;
+}
+function getTeamViewByDate(startDay, endDay){
+	var url = "/hz/mkg/api/query/teamOverview";
+	$.get(url, {start:startDay,end:endDay}, function(data){
+		if(data&&data.code==0){
+			var agentCount = data.data.agentCount;//代理人数
+			var memberCount = data.data.memberCount;//会员人数
+			var userCount = data.data.userCount;//团队总人数
+			var userOnlineCount = data.data.userOnlineCount;//当前在线人数
+			var registerSum = data.data.registerSum;//新增用户总数
+			var rechargeCount = data.data.rechargeCount;//充值人数
+			var betCount = data.data.betCount;//消费人数 
+			var registerList = data.data.registerList;//新增用户数每天
+			var list = getArrayCount(registerList);
+			myChart.setOption({
+				series:[{
+					data:list
+				}]
+			});
+			$('#teamTotalNum').empty().text(userCount);
+			$('#teamAgencyNum').empty().text(agentCount);
+			$('#teamVipNum').empty().text(memberCount);
+			$('#onlineNum').empty().text(userOnlineCount);
+			$('#rechargeNum').empty().text(rechargeCount);
+			$('#betCount').empty().text(betCount);
+			$('#registerSum').empty().text(registerSum);
+			$('.team-observe p.tip').empty().text("以下数据均为"+startDay+"至"+endDay);
+		}
+	});
+}
+function getArrayCount(data){
+	var arr = [];
+	if(data){
+		for(var i = 0; i < data.length; i++){
+			arr[arr.length]=data[i].count;
+		}
+	}else{
+		arr = [0,0,0,0,0,0,0];
+	}
+	while(arr.length < 7){
+		arr[arr.length]=0;
+	}
+	if(arr.length > 7){
+		arr.length = 7;
+	}
+	return arr;
+}
+function getDefaultTimes(times){
+	var d= new Date(), year, month, day;
+	if(times){
+		year = times.getFullYear();
+		month = times.getMonth() + 1;
+		day = times.getDate();
+	}else{
+		year = d.getFullYear();
+		month = d.getMonth() + 1;
+		day = d.getDate();
+	}
+	return year+"-"+month+"-"+day;
+}
+
+var symbolSize = 15;
+var myChart = echarts.init(document.getElementById('map'));
+var option = {
+		
+        tooltip: {
+        	formatter: '新增{c0}人'
+        },
+        xAxis: {
+            data: [1 ,2 ,3 , 4, 5, 6, 7],
+            splitArea:{
+            	show:true,
+            },
+            axisLine:{
+            	lineStyle:{
+            		color:'#858585'
+            	}
+            }
+        },
+        yAxis: {
+        	minInterval:1,
+        	axisLine:{
+            	lineStyle:{
+            		color:'#858585'
+            	}
+            }
+        },
+        color:['#187b88'],
+        series: [{
+            name: '新增用户',
+            type: 'line',
+            symbolSize: symbolSize,
+            lineStyle:{
+            	normal:{
+            		width:2
+            	}
+            },
+            data: [5, 20, 36, 10, 10, 20, 12],
+            areaStyle:{
+                normal :{
+                  color: '#187b88',
+                  opacity:0.102
+                }
+            }
+        }]
+};
+
+myChart.setOption(option);
+
+getTeamViewByDate(getDefaultTimes(), getDefaultTimes());
+
+});
+
+</script>
+		</div>
+		<div id="template-footer">
+			<div id="copyright" class="wrap"
+				style="height: 58px; padding-top: 0px; position: relative;">
+				<div class="wrap-inner clearfix" style="">
+					<div class="footer-nav" style="margin-top: 10px;">
+						<a href="/static/help.html#30">关于多宝2</a> <a
+							href="/static/help.html#9">存款帮助</a> <a href="/static/help.html#3">常见问题</a>
+						<a href="/static/help.html#29" class="last">条款规定</a>
+					</div>
+					<div class="copyright-p">&copy; 2017 多宝2 All Rights Reserved
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+.login-body {
+  background-image: url(../images/login/login_bg.jpg);  background-repeat: no-repeat;
+    background-color: #124877;
+}
+.login-body .logo{
+  /*background-image:url(../images/logo_white.png);
+  background-size: auto 100%;*/
+  display: none;
+}
+.copyright-p.m{
+	display: none;
+}
+/*NAV*/
+.response-wrap #nav{
+  background-image:url(../images/top_bg.jpg);
+}
+.response-wrap #header{
+  color:#fff;
+}
+.response-wrap #header a{
+  color:#fff;
+}
+.top-account .top-account-balance{
+  border: 1px solid #4d8d8f;
+  color: #fff;
+}
+/*LOTTERY MAIN*/
+.bet .main-content{
+  background: url(../images/lottery_bg.jpg);
+}
+.login-body .response-wrap #header{
+  background43
+  -color: transparent;
+}
+#nav a span{
+  color: #232323;
+}
+
+/*COLORS*/
+.login-bg{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.login-body,.login-box h2,#qrcodelink,.option-li a:hover, .option-li a{
+  color: #fff;
+}
+
+.copyright-p, #copyright .wrap-inner a {
+  color: #9ba2b9;
+}
+
+/* input placeholder */
+.login-box ::-webkit-input-placeholder {
+    color: #434c51 !important;
+}
+.login-box :-moz-placeholder {
+    color: #434c51 !important;
+}
+.login-box ::-moz-placeholder {
+    color: #434c51 !important;
+}
+.input-icon em {
+  color: #434c51;
+}
+#testspeed{
+  color: #ffffff;
+  background-color: #fd9f5f;
+}
+.button-li button {
+  color: #fefefe;
+  background: -webkit-linear-gradient(90deg, rgba(218, 123, 57, 0.9) 5%, rgba(218, 123, 57, 0.9) 15%, rgba(218, 123, 57, 0.9) 95%);
+  border: 1px solid #d09b77;
+}
+.button-li button:hover {
+  background-color: #284d96;
+}
+.button-li label{
+  color: #333;
+}
+.mui-switch:checked {
+    border-color: #36acee;
+    box-shadow: #36acee 0 0 0 16px inset;
+    background-color: #36acee;
+}
+.mui-switch.mui-switch-animbg:checked {
+    box-shadow: #dfdfdf 0 0 0 0 inset;
+    background-color: #36acee;
+}
+
+.jBox-Modal .jBox-title,
+.jBox-Confirm .jBox-title {
+	border-radius: 3px 3px 0 0;
+	padding: 10px 15px;
+	background: #005e62;
+	border-bottom: 1px solid #ddd;
+	color: #fff;
+}
+.jBox-closeButton path {
+	fill: #FFF;
+}
+.jBox-closeButton:hover path {
+	fill: #fff;
+}
+.jBox-closeButton:active path {
+	fill: #fff;
+}
+#speedometer .speedometer {
+  border: 20px solid #1a96dc;
+  border-right: 20px solid white;
+  border-bottom: 20px solid white;
+}
+.routeitems li,.routeitems li.fast,.iconormal,.routeitems a{
+  color: #1a96dc;
+}
+#retest,.routeitems a{
+  background-color: #1a96dc;
+  color:#ffffff;
+}
+.downCenter .down-ul li.on{
+	color: #21a3c4;
+  border-bottom: 2px solid #21a3c4;
+}
+.downCenter .m .downBtn{
+	background: #00a2c6;
+}
+
+/*TREND*/
+.fullbg{
+  /*background: url(/assets/images/main-back.jpg);*/
+  background-color:#000;
+}
+#playc {
+  color: #fff;
+  background-color: #2da9ef;
+}
+.float-trend{
+  background-color: #005a5d;
+}
