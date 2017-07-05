@@ -25,6 +25,9 @@ CREATE TABLE `account` (
   `password` varchar(32) NOT NULL COMMENT '密码',
   `pay_password` varchar(32) DEFAULT NULL COMMENT '金额密码（涉及提现使用）',
   `payee_name` varchar(255) DEFAULT NULL COMMENT '收款人姓名',
+  `type` tinyint(1) unsigned DEFAULT 0 COMMENT '用户类型',
+  `point` decimal(20,2) DEFAULT NULL COMMENT '返点',
+  `parent_id` varchar(20) DEFAULT NULL COMMENT '父用户ID',
   `remain_amount` decimal(20,2) NOT NULL DEFAULT '0.00',
   `create_time` int(10) NOT NULL COMMENT '创建时间',
   `update_time` int(10) NOT NULL COMMENT '更新时间',
@@ -141,15 +144,19 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Table structure for `url`
 -- ----------------------------
+DROP TABLE IF EXISTS `url`;
 CREATE TABLE `url` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `create_date` int(8) DEFAULT NULL COMMENT '短链创建时间',
   `short_url` varchar(255) DEFAULT NULL COMMENT '短链接',
-  `long_url` varchar(255) DEFAULT NULL COMMENT '长链接',
-  `account_id` int(11) DEFAULT NULL COMMENT '创建用户ID',
+  `user_type` tinyint(1) unsigned DEFAULT NULL COMMENT '用户类型（0：普通会员；1：代理）',
+  `point` decimal(20,2) DEFAULT NULL COMMENT '返点',
+  `valid_days` int(2) DEFAULT NULL COMMENT '短链有效日期',
+  `account_id` varchar(20) DEFAULT NULL COMMENT '创建用户ID',
   `create_time` int(10) DEFAULT NULL,
   `update_time` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 -- ----------------------------
 -- Records of url
 -- ----------------------------
