@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xsi:schemaLocation="  
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">  
+  
+	<bean id="spiderScheduleTask" class="com.netease.spiderSchedule.timer.SpiderScheduleTask">
+	</bean>          
+    
+    <!-- 重新抓取微信公众号 -->
+    <bean id="zeroScheduleBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="spiderScheduleTask"/>
+        </property>
+        <property name="targetMethod">
+            <value>zeroSchedule</value>
+        </property>
+    </bean>   
+    
+    <bean id="zeroScheduleCron" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="zeroScheduleBean"/>
+        </property>
+        <property name="cronExpression">
+            <value>0 30 4 * * ?</value>
+        </property>
+    </bean>
+    
+     <bean id="perFiveMinutesScheduleBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="spiderScheduleTask"/>
+        </property>
+        <property name="targetMethod">
+            <value>perFiveMinutesSchedule</value>
+        </property>
+    </bean>
+    
+    <bean id="perFiveMinutesScheduleCron" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="perFiveMinutesScheduleBean"/>
+        </property>
+        <property name="cronExpression">
+            <value>30 */5 0,1,2,3,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 * * ?</value>
+        </property>
+    </bean>
+    
+    
+    <bean id="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="autoStartup" value="true" />
+        <property name="triggers">
+            <list>
+				<ref bean="zeroScheduleCron"/>
+				<ref bean="perFiveMinutesScheduleCron"/>
+            </list>
+        </property>
+    </bean>
+</beans>  
