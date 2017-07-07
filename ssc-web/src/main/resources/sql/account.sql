@@ -47,11 +47,14 @@ DROP TABLE IF EXISTS `bank`;
 CREATE TABLE `bank` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `account_id` int(11) DEFAULT NULL COMMENT '银行卡所属用户',
+  `payee_name` varchar(255) DEFAULT NULL COMMENT '收款人姓名',
   `card_number` int(11) DEFAULT NULL COMMENT '银行卡号',
-  `open_bank` varchar(255) DEFAULT NULL COMMENT '开户行',
+  `bank_allas` varchar(255) DEFAULT NULL COMMENT '开户行',
   `province` varchar(255) DEFAULT NULL COMMENT '开户省份',
   `city` varchar(255) DEFAULT NULL COMMENT '开户城市',
-  `lattice_point` varchar(255) DEFAULT NULL COMMENT '开户网点',
+  `place` varchar(255) DEFAULT NULL COMMENT '开户网点',
+  `create_time` int(11) COMMENT '创建时间',
+  `update_time` int(11) COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -80,13 +83,14 @@ CREATE TABLE `group_report` (
 DROP TABLE IF EXISTS `link`;
 CREATE TABLE `link` (
   `id` int(11) NOT NULL,
+  `create_date` int(8) DEFAULT NULL COMMENT '短链创建时间',
+  -- `channel` varchar(20) DEFAULT NULL COMMENT '渠道',
+  `short_url` varchar(255) DEFAULT NULL COMMENT '短链接地址',
+  `user_type` tinyint(1) unsigned DEFAULT NULL COMMENT '开户类型（1：普通用户；2：渠道）',
+  `point` decimal(20,2) DEFAULT NULL COMMENT '返点',
+  `expire` tinyint(1) unsigned DEFAULT NULL COMMENT '有效天数',
+  -- `status` tinyint(1) unsigned DEFAULT NULL COMMENT '状态（1：正常；2：异常）',
   `account_id` int(11) DEFAULT NULL COMMENT '创建链接的用户ID',
-  `channel` varchar(20) DEFAULT NULL COMMENT '渠道',
-  `url` varchar(255) DEFAULT NULL COMMENT '链接地址',
-  `open_type` tinyint(1) unsigned DEFAULT NULL COMMENT '开户类型（1：普通用户；2：渠道）',
-  `status` tinyint(1) unsigned DEFAULT NULL COMMENT '状态（1：正常；2：异常）',
-  `rebate` decimal(10,2) DEFAULT NULL COMMENT '返点',
-  `valid_day` tinyint(1) unsigned DEFAULT NULL COMMENT '有效天数',
   `create_time` int(10) DEFAULT NULL,
   `update_time` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
