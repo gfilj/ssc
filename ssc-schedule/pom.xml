@@ -7,7 +7,7 @@
     <artifactId>ssc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>sscSchedule</artifactId>
+  <artifactId>ssc-schedule</artifactId>
   <name>ssc-schedule</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
