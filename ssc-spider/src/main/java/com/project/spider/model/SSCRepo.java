@@ -1,5 +1,6 @@
 package com.project.spider.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -7,7 +8,12 @@ import java.util.List;
  * @author luchangqing
  *
  */
-public class SSCRepo {
+public class SSCRepo implements Serializable{
+	
+	/**
+	 * id
+	 */
+	private static final long serialVersionUID = -8528787109775676932L;
 	
 	private String issue;//期号
 	private int digit5;//万位数字
