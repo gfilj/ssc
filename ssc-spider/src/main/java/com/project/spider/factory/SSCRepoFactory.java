@@ -10,5 +10,5 @@ import com.project.spider.model.list.SSCRepoOriginalList;
  *
  */
 public interface SSCRepoFactory {
-	public List<SSCRepo> getSSCRepoList(SSCRepoOriginalList sscRepoOriginalList);
+	List<SSCRepo> getSSCRepoList(SSCRepoOriginalList sscRepoOriginalList);
 }

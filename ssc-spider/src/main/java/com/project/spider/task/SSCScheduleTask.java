@@ -18,17 +18,18 @@ import us.codecraft.webmagic.model.OOSpider;
 @Component
 public class SSCScheduleTask {
 
+
 	@Autowired
 	@Qualifier("TJSSCRepoFactory")
 	private SSCRepoFactory tjSSCRepoFactory;
 	
+
 	@Autowired
 	private SSCPageModelPipeline sscPageModelPipeline;
 	/**
 	 * 抓取重庆时时彩
 	 */
 	public void grabCQSSC() {
-		sscPageModelPipeline.setSscRepoFactory(new TJSSCRepoFactory());
 		OOSpider.create(Site.me(), sscPageModelPipeline, CQSSCRepoOriginalList.class)
 				.addUrl("http://shishicai.cjcp.com.cn/chongqing/kaijiang/").thread(1).run();
 	}
@@ -37,7 +38,6 @@ public class SSCScheduleTask {
 	 * 抓取天津时时彩
 	 */
 	public void grabTJSSC() {
-		sscPageModelPipeline.setSscRepoFactory(new TJSSCRepoFactory());
 		OOSpider.create(Site.me(), sscPageModelPipeline, TJSSCRepoOriginalList.class)
 				.addUrl("http://shishicai.cjcp.com.cn/tianjin/kaijiang/").thread(1).run();
 	}
@@ -46,7 +46,6 @@ public class SSCScheduleTask {
 	 * 抓取广东11选5
 	 */
 	public void grabGD11TO5() {
-		sscPageModelPipeline.setSscRepoFactory(new TJSSCRepoFactory());
 		OOSpider.create(Site.me(), sscPageModelPipeline, GD11TO5RepoOriginalList.class)
 				.addUrl("http://11xuan5.cjcp.com.cn/guangdong/kaijiang/").thread(1).run();
 	}
@@ -56,6 +55,7 @@ public class SSCScheduleTask {
 	 */
 	@Scheduled(fixedRate = 300000)
 	public void per5MinuteTask() {
+		sscPageModelPipeline.setSscRepoFactory(tjSSCRepoFactory);
 		grabCQSSC();
 		grabTJSSC();
 		grabGD11TO5();
