@@ -30,9 +30,13 @@ CREATE TABLE `t_ssc_record` (
   `note` int(11) DEFAULT NULL COMMENT '注数',
   `reprize` int(11) DEFAULT NULL COMMENT '返还价钱',
   `allprize` int(11) DEFAULT NULL COMMENT '共投注价钱',
+  `settlement` int(2) DEFAULT 0 COMMENT '是否结算' ,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of t_ssc_record
 -- ----------------------------
+COMMIT;
+
+SELECT * FROM t_ssc_record;
