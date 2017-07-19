@@ -18,7 +18,8 @@ public interface SSCRepoMapper extends BaseMapper<SSCRepo,Serializable>{
 	 * intoDB
 	 * @param sscRepo
 	 */
+	@Override
 	@Insert("replace into t_ssc_issue(issue,digit5,digit4,digit3,digit2,digit1,type) values(#{issue},#{digit5},#{digit4},#{digit3},#{digit2},#{digit1},#{type})")
 	@Result(javaType = Integer.class)
-	public int insertSelective(SSCRepo sscRepo);
+	int insertSelective(SSCRepo sscRepo);
 }
