@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>多宝2
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta name="description" content="">
+  <meta name="keywords" content="多宝2" />
+  <meta http-equiv="Expires" CONTENT="0">
+  <meta http-equiv="Cache-Control" CONTENT="no-cache">
+  <meta http-equiv="Pragma" CONTENT="no-cache">
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link media="all" type="text/css" rel="stylesheet" href="/assets/css/top-bar.css">
+  <link media="all" type="text/css" rel="stylesheet" href="/assets/css/nav.css">
+  <link media="all" type="text/css" rel="stylesheet" href="/assets/css/jBox.css">
+  <link media="all" type="text/css" rel="stylesheet" href="/assets/css/exclusive.css">
+
+  <!-- endbuild -->
+  <!-- build:css /static/styles/main.min.css -->
+  <link type="text/css" rel="stylesheet" href="/static/styles/common.css">
+  <link type="text/css" rel="stylesheet" href="/static/styles/global.css">
+  <link type="text/css" rel="stylesheet" href="/static/styles/ucenter-common.css">
+  <!-- endbuild -->
+
+  <script src="/static/mobile/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/static/scripts/vendor/clipboard.min.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/static/mobile/js/libs/jedate.min.js"></script>
+  <script src="/static/scripts/vendor/echarts.common.min.js"></script>
+  <script src="/static/mobile/js/require.js" ></script>
+  <script>
+    String.prototype.hashCode = function() {
+      var hash = 0, i, chr, len;
+      if (this.length === 0) return hash;
+      for (i = 0, len = this.length; i < len; i++) {
+        chr   = this.charCodeAt(i);
+        hash  = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return hash;
+    };
+    require.config({
+      baseUrl: '/static/mobile/js/libs',
+	  urlArgs: "v=20170524001",
+      paths: {
+        jquery: 'jquery-1.9.1.min',
+        md5: 'md5',
+        vue: 'vue',
+        classie: 'chart/classie',
+        menu: 'chart/menu',
+        easing:'/assets/js/jquery.easing.1.3',
+        cycletwo:'/static/scripts/vendor/jquery.cycle2.min',
+        marquee:'/static/scripts/vendor/jquery.marquee.min',
+        pagination:'/static/scripts/vendor/mricode.pagination',
+        mousewheel:'/assets/js/jquery.mousewheel.min',
+        tabslet:'/static/scripts/vendor/jquery.tabslet.min',
+        cookie:'/static/scripts/vendor/jquery.cookie',
+        def:'/static/scripts/3a.default',
+        //page:'/static/scripts/3a.page',
+        global:'/static/scripts/vendor/global',
+        dsgame_base:'/assets/js/dsgame.base',
+        dsgame_Ernie:'/assets/js/dsgame.Ernie',
+        dsgame_Select:'/assets/js/dsgame.Select',
+        dsgame_DatePicker:'/assets/js/dsgame.DatePicker',
+	      dsgame_Tip:'/assets/js/dsgame.Tip',
+        home:'/static/scripts/3a.home',
+        promo:'/static/scripts/3a.promo',
+        '3a.counter':'/static/scripts/3a.counter',
+	      '3a.config': '/static/scripts/3a.config',
+        '3a.control': '/static/scripts/3a.control',
+        deposit: '/assets/js/deposit',
+        jm: 'chart/jm',
+        'clipboard': '/static/scripts/vendor/clipboard.min',
+        'jquery.validate': '/static/scripts/vendor/jquery.validate.min',
+        'addtional': '/assets/js/additional-methods',
+        'jquery.cookie': '/static/scripts/vendor/jquery.cookie'
+      },
+      waitSeconds:60000,
+      map: {
+        '*': {
+          'css': '/static/mobile/js/libs/css.js'
+        }
+      },
+      shim: {
+        "jBox": ["jquery"],
+        "jquery.cookie": ["jquery"],
+        "jquery.anchorScroll.min": ["jquery"],
+        "jquery.mCustomScrollbar.concat.min": ["jquery"],
+        "jquery.longclick.min": ["jquery"],
+        "3a.api": ["jBox"],
+        "3a.line": ["3a.api"],
+        "3a.util": ["jBox"],
+        'global':["jquery"],
+        "def":["3a.util", "3a.api", "dsgame_Ernie"],
+        "page":["jquery","pagination","3a.api", "3a.util", "dsgame_DatePicker"],
+        "home":["3a.api"],
+        "3a.counter":["3a.util"],
+        "cycletwo": ["jquery"],
+        "cookie": ["jquery"],
+        "marquee": ["jquery"],
+        "tabslet": ["jquery"],
+        "dsgame_base": ["jquery"],
+        dsgame_DatePicker: ["dsgame_base"],
+        "dsgame_Select": ["jquery","dsgame_base", "mousewheel"],
+        "dsgame_Ernie": ["jquery","dsgame_base"],
+        "easing": ["jquery"],
+        "promo": ["jquery", "3a.util"],
+        "clipboard": ["jquery"],
+        "jquery.validate": ["jquery"],
+        "dsgame_Tip": ["dsgame_base"],
+        "3a.control":["jBox", "dsgame_Tip", "3a.config", "dsgame_Select", "tabslet"],
+        "deposit": ["jquery", "clipboard", "jBox", "3a.counter"],
+        "addtional": ["jquery.validate"],
+        'jquery.cookie':["jquery"]
+      }
+    });
+
+    require([
+      'css!/static/theme/' + keyWords + '/styles/home.css',
+      'css!/static/theme/' + keyWords + '/styles/colors.css',
+      'jquery','pagination','jBox','3a.api','3a.util',"jquery.validate" ,'easing','addtional','jquery.cookie',
+      'cookie','cycletwo','marquee','global','def','home','page','3a.control'
+    ], function() {
+
+    });
+  </script>
+</head>
+<body>
+  <div class="response-wrap">
+<div id="header" class="wrap">
+	<div class="wrap-inner">
+		<div class="left top-nav">
+			<!-- 用户中心 -->
+			<div class="top-nav-user">
+				<em>欢迎您,&nbsp;&nbsp;</em>
+				<a href="/users/user.html" class="top-nav-toggle" data-overdropdown="handler">
+					<span data-user-name>zx19926276</span>
+					<i class="caret"></i>
+				</a>
+				<div class="top-nav-menu" data-overdropdown="dropdown">
+					<div class="top-user-links clearfix">
+						<a href="/users/change-password.html" class="tul-link1">
+							<i></i>
+							<span>登录密码</span>
+						</a>
+						<a href="/users/change-fund-password.html" class="tul-link2">
+							<i></i>
+							<span>资金密码</span>
+						</a>
+						<a href="/users/personal.html" class="tul-link3">
+							<i></i>
+							<span>修改资料</span>
+						</a>
+						<a href="/users/user-bankards.html" class="tul-link4">
+							<i></i>
+							<span>银行卡</span>
+						</a>
+					</div>
+				</div>
+				<a class="highlight-color" href="javascript:;">退出</a>
+			</div>
+		</div>
+		<div class="right">
+			<ul class="top-account">
+				<li id="top-switch" data-overdropdown="handler">
+          <a href="javascript:;" class="top-switch-link" ><em class="m_ico">&#59218;</em></a>
+          <div id="top-switch-menu" data-overdropdown="dropdown">
+            <ul>
+              <li><label><em class="m_ico m_moresize">&#59217;</em>音效</label><em class="m_ico m_sw" type="sound">&#59221;</em></li>
+              <li><label><em class="m_ico">&#59219;</em>中奖推送</label><em class="m_ico m_sw m_switchon" type="push">&#59222;</em></li>
+            </ul>
+          </div>
+        </li>
+        <li class="top-account-balance">
+					<span style="display: none;">余额：<span data-user-account-balance>-</span> 元
+					<i data-refresh-balance></i>
+					</span>
+					<span style="display: none;">余额已隐藏</span>
+					<span class="balance-toggle highlight-color">隐藏</span>
+				</li>
+				<li class="top-account-deposit">
+					<a href="/users/deposit.html">
+						<i></i>
+						<span>充值</span>
+					</a>
+				</li>
+				<li class="top-account-withdraw">
+					<a href="/qukuan.html">
+						<i></i>
+						<span>提款</span>
+					</a>
+				</li>
+				<li class="top-account-transfer">
+					<a href="/pay/goTransfer.html">
+						<i></i>
+						<span>平台转账</span>
+						<li class="deposit-record">
+							<a href="/statement.html#recharge_view">
+								<span class="opacity-60">充值记录</span>
+							</a>
+						</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="nav" class="wrap">
+	<div class="wrap-inner clearfix">
+		<div id="relatelnk" data-overdropdown="handler">
+			<a href="/static/download.html" class="mobile-lnk" target="_blank"><em class="m_ico">&#59197;</em><span>APP下载</span></a>
+			<a href="/static/download.html" id="pcclient" target="_blank"><em class="m_ico">&#59199;</em><span>客户端</span></a>
+			<div class="mobile-menu" data-overdropdown="dropdown"></div>
+		</div>
+
+		<a href="/home.html" class="left" id="logo">多宝2游戏</a>
+		<span class="logo-diff">多宝2游戏</span>
+		<ul class="nav-content right">
+			<li data-gamelist>
+				<a class="nav-lobby" id="lottery-menu" href="javascript:;">
+					<i></i><span>彩票中心</span>
+				</a>
+			</li>
+			<li>
+				<a class="nav-ag" href="javascript:commonUtil.commonTipAlert('敬请期待');">
+					<i></i><span>真人娱乐</span>
+				</a>
+			</li>
+			<li>
+				<a class="nav-number" href="javascript:commonUtil.commonTipAlert('敬请期待');">
+					<i></i><span>体育赛事</span>
+				</a>
+			</li>
+			<li>
+				<a class="nav-tiger " href="javascript:commonUtil.commonTipAlert('敬请期待');">
+					<i></i><span>电子游艺</span>
+				</a>
+			</li>
+			<li data-account data-overdropdown="handler">
+				<a class="nav-ucenter nav-account" href="javascript:;">
+					<i></i><span>账户管理</span><!--<b class="caret"></b>-->
+				</a>
+				<!--账户管理下拉-->
+				<div class="nav-account-lists" data-overdropdown="dropdown">
+					<div class="mask"></div>
+					<ul class="clearfix">
+						<li>
+							<div class="list-link">
+								<a class="grgl" href="/users/change-password.html">个人管理</a>
+							</div>
+						</li>
+						<li>
+							<div class="list-link">
+								<a class="tdgl" href="/user.html">团队管理</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li data-form data-overdropdown="handler">
+				<a class="nav-form " href="javascript:;">
+					<i></i><span>报表管理</span>
+				</a>
+				<!--报表管理下拉-->
+				<div class="nav-form-lists" data-overdropdown="dropdown">
+					<div class="mask"></div>
+					<ul class="clearfix">
+						<li>
+							<div class="list-link">
+								<a class="yxjl" href="/orders.html">游戏记录</a>
+							</div>
+						</li>
+						<li>
+							<div class="list-link">
+								<a class="tdbb" href="/dayreport.html">个人报表</a>
+							</div>
+						</li>
+						<li>
+							<div class="list-link">
+								<a class="tdbb" href="/teamreport.html">团队报表</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="no-margin">
+				<a class="nav-hongbao" href="/activity/goIndex.html">
+					<i></i><span>优惠活动</span>
+				</a>
+			</li>
+			<li class="no-margin">
+				<a class="nav-fund" href="/statement.html#account_view">
+					<i></i><span>资金明细</span>
+				</a>
+			</li>
+			<li class="no-margin">
+				<a class="nav-client" href="/static/download.html">
+					<i></i><span>客户端下载</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="nav-container-fluid">
+		<div class="menu-content">
+			<div class="menu-list">
+				<dl class="ssc">
+					<dt>时时彩</dt>
+					<dd><a href="#">多宝2分分彩</a> <i class="game-24h"></i> </dd>
+					<dd><a href="#">多宝25分彩</a> <i class="game-24h"></i> </dd>
+					<dd><a href="#">韩国1.5分彩</a> <i class="game-hot">H</i> </dd>
+					<dd><a href="#">重庆时时彩</a></dd>
+					<dd><a href="#">新疆时时彩</a></dd>
+					<dd><a href="#">天津时时彩</a></dd>
+					<dd><a href="#">香港时时彩</a></dd>
+					<dd><a href="#">日本时时彩</a></dd>
+					<dd><a href="#">新重庆时时彩</a></dd>
+				</dl>
+				<dl class="split"></dl>
+				<dl class="five">
+					<dt>11选5</dt>
+					<dd><a href="#">多宝211选5</a> <i class="game-24h"></i> </dd>
+					<dd><a href="#">山东11选5</a></dd>
+					<dd><a href="#">江西11选5</a></dd>
+					<dd><a href="#">广东11选5</a></dd>
+					<dd><a href="#">辽宁11选5</a></dd>
+					<dd><a href="#">上海11选5</a></dd>
+					<dd><a href="#">黑龙江11选5</a></dd>
+					<dd><a href="#">香港11选5</a></dd>
+				</dl>
+				<dl class="split"></dl>
+				<dl class="happy">
+					<dt>快乐彩</dt>
+					<dd><a href="#">江苏快三</a></dd>
+					<dd><a href="#">吉林快三</a></dd>
+					<dd><a href="#">安徽快三</a></dd>
+					<dd><a href="#">广西快三</a></dd>
+					<dd><a href="#">湖北快三</a></dd>
+					<dd><a href="#">内蒙快三</a></dd>
+				</dl>
+				<dl class="split"></dl>
+				<dl class="others">
+					<dt>其他游戏</dt>
+					<dd><a href="#">多宝2秒秒彩</a></dd>
+					<dd><a href="#">3D</a></dd>
+					<dd><a href="#">排列三/排列五</a></dd>
+					<dd><a href="#">北京PK10</a></dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+
+      <div>
+<input type="hidden" id="tab_input" value="account">
+<div class="g_33 main clearfix">
+
+	<div class="main-content">
+		<div class="nav-bg nav-bg-tab">
+			<div class="title-normal">用户管理</div>
+			<ul class="tab-title clearfix">
+				<li><a href="/user/create.html"><span>精准开户</span></a></li>
+
+				<li><a href="/user/link/create.html"><span>链接开户</span></a></li>
+
+				<li><a href="/user.html"><span>用户列表</span></a></li>
+
+				<li class="current"><a data-skey="links" href="/user/link.html"><span>链接管理</span></a></li>
+
+			</ul>
+		</div>
+		<div id="links" class="content">
+			<div class="item-detail user-link-overview">
+				<div class="item-title">
+					<i class="item-icon-11"></i>链接概括
+				</div>
+				<div class="item-info clearfix">
+					<div class="data-overview">
+						<p>总链接数：<span id="J-total-num"></span></p>
+					</div>
+				</div>
+			</div>
+			<div class="item-detail user-link-list">
+				<table width="100%" class="table table-toggle" id="J-table">
+					<thead>
+						<tr>
+							<th class="text-center">渠道</th>
+							<th>连接</th>
+							<th>开户类型</th>
+							<th>状态</th>
+							<th>返点</th>
+							<th>有效期</th>
+							<th>生成时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="contentTable">
+					</tbody>
+				</table>
+			</div>
+    <div id="pagination-container-links" class="pagination-container"></div>
+		</div>
+	</div>
+</div>
+      </div>
+      <div id="template-footer">
+<div id="copyright" class="wrap" style="height:58px;padding-top:0px;position: relative;">
+	<div class="wrap-inner clearfix" style="">
+        <div class="footer-nav" style="margin-top:10px;"><a href="/static/help.html#30">关于多宝2</a>
+			<a href="/static/help.html#9">存款帮助</a>
+			<a href="/static/help.html#3">常见问题</a>
+			<a href="/static/help.html#29" class="last">条款规定</a></div>
+        <div class="copyright-p">
+            &copy; 2017 多宝2 All Rights Reserved
+        </div>
+    </div>
+</div>
+      </div>
+  </div>
+</body>
+<script type="text/javascript">
+$(function() {
+	 var accountId = localStorage.getItem("id");
+	  $.ajax({// 加载当前用户银行卡信息
+		  url:"/agent/links/" + accountId,
+	      type:'GET',
+	      dataType:'JSON',
+	      success:function(result){
+	    	  var data = result.data;
+	    	  var content = '';
+              for (var i = 0; i < data.length; i++) {
+            	  var item = data[i];
+                  var expireTime = item.expire == -1 ? "永久有效" : item.expire + "天"
+                  var status = item.status == 1 ? "正常" : "失效";
+                  var userType = item.userType == 0 ? "会员" : "代理";
+                  var point = item.point;
+                  content += "<tr class=' table-tr-item '>" +
+                      "<td class='text-center'>推广</td>" +
+                      "<td><input type='text' id='copy_input_" + i + "' onClick='this.select();' class='input w-3' value='" + "http://" + window.location.host + "/agent/" + item.short_url + "' /><span id='copy_btn' class='copy_btn' data-clipboard-target='#copy_input_" + i + "'>复制</span></td>" +
+                      "<td>" + userType + "</td>" +
+                      "<td>" + status + "</td>" +
+                      "<td>" + point + "%</td>" +
+                      "<td>" + expireTime + "</td>" +
+                      "<td>" + item.create_date + "</td>" +
+                      (item.status == 1 ? "<td><a data-linkid=" + item.id + " class='ui-action-delete confirmDelete' href='javascript:void(0);'>删除</a></td>" : '<td>无</td>') +
+                      "</tr>"
+              }
+              $("#J-table").append(content);
+              $("#J-total-num").text(data.length);
+              $('.confirmDelete').click(function() {
+            	  var linkId = $(this).attr('data-linkid');
+                  var dataQuery = {
+                		  id: linkId
+              }
+               $.ajax({// 加载当前用户银行卡信息
+         		  url:"/agent/link_delete/" + accountId,
+         	      type:'POST',
+         	      data:dataQuery,
+         	      dataType:'JSON',
+         	      success:function(result){
+         	    	  if (result.status === 1) {
+         	    		 commonUtil.commonTipAlert_f('删除成功！');
+	         	    	  window.location.reload();
+         	    	  } else {
+         	    		 commonUtil.showTip('网络异常，请稍候再试！');
+         	    	  }
+         	      }, error:function() {
+         	    	 commonUtil.showTip('网络异常，请稍候再试！');
+         	      }
+         	   });
+                  
+            });
+	    	
+	    },error:function(result){
+	    	console.log("网络异常，请重新尝试！");
+	    }
+	});
+});
+
+
+</script>
+</html>

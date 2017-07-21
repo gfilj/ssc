@@ -1,0 +1,4726 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>时时彩</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<meta name="description" content="">
+<meta name="keywords" content="时时彩" />
+<meta http-equiv="Expires" CONTENT="0">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<!-- build:css /assets/styles/bet.min.css -->
+<link media="all" type="text/css" rel="stylesheet"
+	href="/assets/css/top-bar.css">
+<link media="all" type="text/css" rel="stylesheet"
+	href="/assets/css/nav.css">
+<link media="all" type="text/css" rel="stylesheet"
+	href="/static/styles/global.css">
+<!--<link media="all" type="text/css" rel="stylesheet" href="/static/theme/xinbao/styles/bet.css">
+		<link media="all" type="text/css" rel="stylesheet" href="/static/styles/global.css">-->
+<link media="all" type="text/css" rel="stylesheet"
+	href="/assets/css/jBox.css">
+<!-- endbuild -->
+<!-- build:css /static/styles/common.min.css -->
+<link media="all" type="text/css" rel="stylesheet"
+	href="/static/styles/common.css">
+<!-- endbuild -->
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<sitemesh:head />
+<script type="text/javascript">
+	var gameConfigData = {
+		"gameId" : "1",
+		"gameSeriesId" : "1",
+		"gameNameEn" : "CQSSC",
+		"gameNameCn" : "重庆时时彩",
+		"wayGroups" : [
+				{
+					"id" : "2",
+					"pid" : "0",
+					"name_cn" : "五星",
+					"name_en" : "wuxing",
+					"children" : [
+							{
+								"id" : "4",
+								"pid" : "2",
+								"name_cn" : "直选",
+								"name_en" : "zhixuan",
+								"children" : [
+										{
+											"id" : "68",
+											"pid" : "4",
+											"series_way_id" : "68",
+											"name_cn" : "直选复式",
+											"name_en" : "fushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从个、十、百、千、万位各选一个号码组成一注",
+											"bonus_note" : "从万位、千位、百位、十位、个位中各选择一个号码组成一注，所选号码与开奖号码全部相同，且顺序一致，即为中奖。",
+											"basic_methods" : "16",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "7",
+											"pid" : "4",
+											"series_way_id" : "7",
+											"name_cn" : "直选单式",
+											"name_en" : "danshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从个、十、百、千、万位各选一个号码组成一注",
+											"bonus_note" : "从万位、千位、百位、十位、个位中各选择一个号码组成一注，所选号码与开奖号码全部相同，且顺序一致，即为中奖。",
+											"basic_methods" : "16",
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "5",
+								"pid" : "2",
+								"name_cn" : "组选",
+								"name_en" : "zuxuan",
+								"children" : [
+										{
+											"id" : "32",
+											"pid" : "5",
+											"series_way_id" : "32",
+											"name_cn" : "组选120",
+											"name_en" : "zuxuan120",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中选择5个号码组成一注",
+											"bonus_note" : "从0-9中任意选择5个号码组成一注，所选号码与开奖号码的万位、千位、百位、十位、个位相同，顺序不限，即为中奖。",
+											"basic_methods" : "22",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "31",
+											"pid" : "5",
+											"series_way_id" : "31",
+											"name_cn" : "组选60",
+											"name_en" : "zuxuan60",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从“二重号”选择一个号码，“单号”中选择三个号码组成一注",
+											"bonus_note" : "选择1个“二重号”和3个单号号码组成一注，所选的单号号码与开奖号码相同，且所选二重号码在开奖号码中出现了2次，即为中奖。",
+											"basic_methods" : "21",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "30",
+											"pid" : "5",
+											"series_way_id" : "30",
+											"name_cn" : "组选30",
+											"name_en" : "zuxuan30",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从“二重号”选择两个号码，“单号”中选择一个号码组成一注",
+											"bonus_note" : "选择2个二重号和1个单号号码组成一注，所选的单号号码与开奖号码相同，且所选的2个二重号码分别在开奖号码中出现了2次，即为中奖",
+											"basic_methods" : "20",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "29",
+											"pid" : "5",
+											"series_way_id" : "29",
+											"name_cn" : "组选20",
+											"name_en" : "zuxuan20",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从“三重号”选择一个号码，“单号”中选择两个号码组成一注",
+											"bonus_note" : "选择1个三重号码和2个单号号码组成一注，所选的单号号码与开奖号码相同，且所选三重号码在开奖号码中出现了3次，即为中奖。",
+											"basic_methods" : "19",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "28",
+											"pid" : "5",
+											"series_way_id" : "28",
+											"name_cn" : "组选10",
+											"name_en" : "zuxuan10",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从“三重号”选择一个号码，“二重号”中选择一个号码组成一注",
+											"bonus_note" : "选择1个三重号码和1个二重号码，所选三重号码在开奖号码中出现3次，并且所选二重号码在开奖号码中出现了2次，即为中奖。",
+											"basic_methods" : "18",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "27",
+											"pid" : "5",
+											"series_way_id" : "27",
+											"name_cn" : "组选5",
+											"name_en" : "zuxuan5",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从“四重号”选择一个号码，“单号”中选择一个号码组成一注",
+											"bonus_note" : "选择1个四重号码和1个单号号码组成一注，所选的单号号码与开奖号码相同，且所选四重号码在开奖号码中出现了4次，即为中奖。",
+											"basic_methods" : "17",
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "3",
+					"pid" : "0",
+					"name_cn" : "四星",
+					"name_en" : "sixing",
+					"children" : [
+							{
+								"id" : "6",
+								"pid" : "3",
+								"name_cn" : "直选",
+								"name_en" : "zhixuan",
+								"children" : [
+										{
+											"id" : "67",
+											"pid" : "6",
+											"series_way_id" : "67",
+											"name_cn" : "直选复式",
+											"name_en" : "fushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从个、十、百、千位各选一个号码组成一注",
+											"bonus_note" : "从千位、百位、十位、个位中各选择一个号码组成一注，所选号码与开奖号码相同，且顺序一致，即为中奖。",
+											"basic_methods" : "11",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "6",
+											"pid" : "6",
+											"series_way_id" : "6",
+											"name_cn" : "直选单式",
+											"name_en" : "danshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个四位数号码组成一注",
+											"bonus_note" : "手动输入一个4位数号码组成一注，所选号码的千位、百位、十位、个位与开奖号码相同，且顺序一致，即为中奖。",
+											"basic_methods" : "11",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "79",
+											"pid" : "6",
+											"series_way_id" : "79",
+											"name_cn" : "直选组合",
+											"name_en" : "zuhe",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从个、十、百、千位各选一个号码组成四注",
+											"bonus_note" : "从千位、百位、十位、个位中至少各选一个号码组成1-4星的组合，共四注，所选号码的个位与开奖号码相同，则中1个4等奖；所选号码的个位、十位与开奖号码相同，则中1个4等奖以及1个3等奖，依此类推，最高可中4个奖。",
+											"basic_methods" : "11,1,5,6",
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "7",
+								"pid" : "3",
+								"name_cn" : "组选",
+								"name_en" : "zuxuan",
+								"children" : [
+										{
+											"id" : "26",
+											"pid" : "7",
+											"series_way_id" : "26",
+											"name_cn" : "组选24",
+											"name_en" : "zuxuan24",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中选择4个号码组成一注",
+											"bonus_note" : "从0-9中任意选择4个号码组成一注，所选号码与开奖号码的千位、百位、十位、个位相同，且顺序不限，即为中奖",
+											"basic_methods" : "15",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "25",
+											"pid" : "7",
+											"series_way_id" : "25",
+											"name_cn" : "组选12",
+											"name_en" : "zuxuan12",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从“二重号”选择一个号码，“单号”中选择两个号码组成一注",
+											"bonus_note" : "选择1个二重号码和2个单号号码组成一注，所选单号号码与开奖号码相同，且所选二重号码在开奖号码中出现了2次，即为中奖。",
+											"basic_methods" : "14",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "24",
+											"pid" : "7",
+											"series_way_id" : "24",
+											"name_cn" : "组选6",
+											"name_en" : "zuxuan6",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从“二重号”选择两个号码组成一注",
+											"bonus_note" : "选择2个二重号码组成一注，所选的2个二重号码在开奖号码中分别出现了2次，即为中奖。",
+											"basic_methods" : "13",
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "8",
+					"pid" : "0",
+					"name_cn" : "前三",
+					"name_en" : "qiansan",
+					"children" : [
+							{
+								"id" : "10",
+								"pid" : "8",
+								"name_cn" : "直选",
+								"name_en" : "zhixuan",
+								"children" : [
+										{
+											"id" : "65",
+											"pid" : "10",
+											"series_way_id" : "65",
+											"name_cn" : "直选复式",
+											"name_en" : "fushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万、千、百位各选一个号码组成一注",
+											"bonus_note" : "从万位、千位、百位中选择一个3位数号码组成一注，所选号码与开奖号码的前3位相同，且顺序一致，即为中奖。",
+											"basic_methods" : "1",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "1",
+											"pid" : "10",
+											"series_way_id" : "1",
+											"name_cn" : "直选单式",
+											"name_en" : "danshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个三位数号码组成一注",
+											"bonus_note" : "手动输入一个3位数号码组成一注，所选号码的万位、千位、百位与开奖号码相同，且顺序一致，即为中奖。",
+											"basic_methods" : "1",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "71",
+											"pid" : "10",
+											"series_way_id" : "71",
+											"name_cn" : "直选和值",
+											"name_en" : "hezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-27中任意选择1个或1个以上号码。",
+											"bonus_note" : "所选数值等于开奖号码的万位、千位、百位三个数字相加之和，即为中奖。",
+											"basic_methods" : "1",
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "11",
+								"pid" : "8",
+								"name_cn" : "组选",
+								"name_en" : "zuxuan",
+								"children" : [
+										{
+											"id" : "16",
+											"pid" : "11",
+											"series_way_id" : "16",
+											"name_cn" : "组三",
+											"name_en" : "zusan",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择2个或2个以上号码",
+											"bonus_note" : "从0-9中选择2个数字组成两注，所选号码与开奖号码的万位、千位、百位相同，且顺序不限，即为中奖。",
+											"basic_methods" : "2",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "17",
+											"pid" : "11",
+											"series_way_id" : "17",
+											"name_cn" : "组六",
+											"name_en" : "zuliu",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择3个或3个以上号码",
+											"bonus_note" : "从0-9中任意选择3个号码组成一注，所选号码与开奖号码的万位、千位、百位相同，顺序不限，即为中奖。",
+											"basic_methods" : "3",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "4911",
+											"pid" : "11",
+											"series_way_id" : "4911",
+											"name_cn" : "组三胆拖",
+											"name_en" : "zusandt",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "只能选择一个胆码，一个以上的拖码。开奖号码前三位中出现对子且号码相同即中奖",
+											"bonus_note" : "投注方案：如投注的胆码是1，拖码是2，开奖号码是11234，即中奖。",
+											"basic_methods" : "2",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "5011",
+											"pid" : "11",
+											"series_way_id" : "5011",
+											"name_cn" : "组六胆拖",
+											"name_en" : "zuliudt",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "选择胆码拖码总数大于等于3(胆码个数最多为两个)组成的投注号码，投注的号码与开奖号码的前三位号码相符，即为中奖！(选择的胆码必须全中)",
+											"bonus_note" : "选择胆码拖码总数大于等于3(胆码个数最多为两个)组成的投注号码，投注的号码与开奖号码的前三位号码相符，即为中奖！(选择的胆码必须全中)",
+											"basic_methods" : "3",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "13",
+											"pid" : "11",
+											"series_way_id" : "13",
+											"name_cn" : "混合组选",
+											"name_en" : "hunhezuxuan",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个三位数号码",
+											"bonus_note" : "手动输入组三或组六号码，3个数字为一注，所选号码与开奖号码的万位、千位、百位相同，顺序不限，即为中奖",
+											"basic_methods" : "2,3",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "75",
+											"pid" : "11",
+											"series_way_id" : "75",
+											"name_cn" : "组选和值",
+											"name_en" : "hezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从1-26中选择1个号码",
+											"bonus_note" : "所选数值等于开奖号码万位、千位、百位三个数字相加之和(不含豹子号)，即为中奖。",
+											"basic_methods" : "2,3",
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "61",
+					"pid" : "0",
+					"name_cn" : "中三",
+					"name_en" : "zhongsan",
+					"children" : [
+							{
+								"id" : "62",
+								"pid" : "61",
+								"name_cn" : "直选",
+								"name_en" : "zhixuan",
+								"children" : [
+										{
+											"id" : "150",
+											"pid" : "62",
+											"series_way_id" : "150",
+											"name_cn" : "直选复式",
+											"name_en" : "fushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个三位数号码组成一注",
+											"bonus_note" : "手动输入一个3位数号码组成一注，所选号码的千位、百位、十位与开奖号码相同，且顺序一致，即为中奖。",
+											"basic_methods" : "1",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "142",
+											"pid" : "62",
+											"series_way_id" : "142",
+											"name_cn" : "直选单式",
+											"name_en" : "danshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "于千、百、个位分别从0~9选择1个号码、2个号码或多个号码，只要当期开奖结果与所选的号码相同且顺序一致时，即为中奖。",
+											"bonus_note" : "如选择号码千位为4、百位为3，十位为2，若当期开奖结果为x432x即中奖（x=0~9任一数）",
+											"basic_methods" : "1",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "151",
+											"pid" : "62",
+											"series_way_id" : "151",
+											"name_cn" : "直选和值",
+											"name_en" : "hezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-27中任意选择1个或1个以上号码。",
+											"bonus_note" : "所选数值等于开奖号码的千位、百位、十位三个数字相加之和，即为中奖。",
+											"basic_methods" : "1",
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "63",
+								"pid" : "61",
+								"name_cn" : "组选",
+								"name_en" : "zuxuan",
+								"children" : [
+										{
+											"id" : "145",
+											"pid" : "63",
+											"series_way_id" : "145",
+											"name_cn" : "组三",
+											"name_en" : "zusan",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "于千、百、个位自0-9选择2个或者多个号码，如果开奖号码为组三形态即为中奖。组三形态为任意一个数加一个对子。",
+											"bonus_note" : "如选择号码21，若当期开奖结果为x211x、x121x、x212x皆视为中奖（x=0~9任一数）",
+											"basic_methods" : "2",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "146",
+											"pid" : "63",
+											"series_way_id" : "146",
+											"name_cn" : "组六",
+											"name_en" : "zuliu",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "于千、百、个位自0-9选择3个或者多个号码，如果开奖号码为组六形态即为中奖。组六形态为任意三个不相同的号码。",
+											"bonus_note" : "如选择号码321，若当期开奖结果为x321x、x312x、x123x、 x132x、x213x、x231x皆视为中奖（x=0~9任一数）",
+											"basic_methods" : "3",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "4910",
+											"pid" : "63",
+											"series_way_id" : "4910",
+											"name_cn" : "组三胆拖",
+											"name_en" : "zusandt",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "只能选择一个胆码，一个以上的拖码。开奖号码中三位中出现对子且号码相同即中奖",
+											"bonus_note" : "投注方案：如投注的胆码是1，拖码是2，开奖号码是31124，即中奖。",
+											"basic_methods" : "2",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "5010",
+											"pid" : "63",
+											"series_way_id" : "5010",
+											"name_cn" : "组六胆拖",
+											"name_en" : "zuliudt",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "选择胆码拖码总数大于等于3(胆码个数最多为两个)组成的投注号码，投注的号码与开奖号码的中三位号码相符，即为中奖！(选择的胆码必须全中)",
+											"bonus_note" : "选择胆码拖码总数大于等于3(胆码个数最多为两个)组成的投注号码，投注的号码与开奖号码的中三位号码相符，即为中奖！(选择的胆码必须全中)",
+											"basic_methods" : "3",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "152",
+											"pid" : "63",
+											"series_way_id" : "152",
+											"name_cn" : "混合组选",
+											"name_en" : "hunhezuxuan",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个三位数号码",
+											"bonus_note" : "手动输入组三或组六号码，3个数字为一注，所选号码与开奖号码的千位、百位、十位相同，顺序不限，即为中奖",
+											"basic_methods" : "2,3",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "154",
+											"pid" : "63",
+											"series_way_id" : "154",
+											"name_cn" : "组选和值",
+											"name_en" : "hezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从1-26中选择1个号码",
+											"bonus_note" : "所选数值等于开奖号码千位、百位、十位三个数字相加之和(不含豹子号)，即为中奖。",
+											"basic_methods" : "2,3",
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "1",
+					"pid" : "0",
+					"name_cn" : "后三",
+					"name_en" : "housan",
+					"children" : [
+							{
+								"id" : "13",
+								"pid" : "1",
+								"name_cn" : "直选",
+								"name_en" : "zhixuan",
+								"children" : [
+										{
+											"id" : "69",
+											"pid" : "13",
+											"series_way_id" : "69",
+											"name_cn" : "直选复式",
+											"name_en" : "fushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从个、十、百位各选一个号码组成一注",
+											"bonus_note" : "从百位、十位、个位中选择一个3位数号码组成一注，所选号码与开奖号码后3位相同，且顺序一致，即为中奖。",
+											"basic_methods" : "1",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "8",
+											"pid" : "13",
+											"series_way_id" : "8",
+											"name_cn" : "直选单式",
+											"name_en" : "danshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个三位数号码组成一注",
+											"bonus_note" : "手动输入一个3位数号码组成一注，所选号码的百位、十位、个位与开奖号码相同，且顺序一致，即为中奖。",
+											"basic_methods" : "1",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "73",
+											"pid" : "13",
+											"series_way_id" : "73",
+											"name_cn" : "直选和值",
+											"name_en" : "hezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-27中任意选择1个或1个以上号码",
+											"bonus_note" : "所选数值等于开奖号码的百位、十位、个位三个数字相加之和，即为中奖。",
+											"basic_methods" : "1",
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "9",
+								"pid" : "1",
+								"name_cn" : "组选",
+								"name_en" : "zuxuan",
+								"children" : [
+										{
+											"id" : "49",
+											"pid" : "9",
+											"series_way_id" : "49",
+											"name_cn" : "组三",
+											"name_en" : "zusan",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择2个或2个以上号码",
+											"bonus_note" : "从0-9中选择2个数字组成两注，所选号码与开奖号码的百位、十位、个位相同，且顺序不限，即为中奖。",
+											"basic_methods" : "2",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "50",
+											"pid" : "9",
+											"series_way_id" : "50",
+											"name_cn" : "组六",
+											"name_en" : "zuliu",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择3个或3个以上号码。",
+											"bonus_note" : "从0-9中任意选择3个号码组成一注，所选号码与开奖号码的百位、十位、个位相同，顺序不限，即为中奖。",
+											"basic_methods" : "3",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "491",
+											"pid" : "9",
+											"series_way_id" : "491",
+											"name_cn" : "组三胆拖",
+											"name_en" : "zusandt",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "只能选择一个胆码，一个以上的拖码。开奖号码后三位中出现对子且号码相同即中奖",
+											"bonus_note" : "投注方案：如投注的胆码是1，拖码是2，开奖号码是34112，即中奖。",
+											"basic_methods" : "2",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "501",
+											"pid" : "9",
+											"series_way_id" : "501",
+											"name_cn" : "组六胆拖",
+											"name_en" : "zuliudt",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "选择胆码拖码总数大于等于3(胆码个数最多为两个)组成的投注号码，投注的号码与开奖号码的后三位号码相符，即为中奖！(选择的胆码必须全中)",
+											"bonus_note" : "选择胆码拖码总数大于等于3(胆码个数最多为两个)组成的投注号码，投注的号码与开奖号码的后三位号码相符，即为中奖！(选择的胆码必须全中)",
+											"basic_methods" : "3",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "81",
+											"pid" : "9",
+											"series_way_id" : "81",
+											"name_cn" : "混合组选",
+											"name_en" : "hunhezuxuan",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个三位数号码。",
+											"bonus_note" : "手动输入组三或组六号码，3个数字为一注，所选号码与开奖号码的百位、十位、个位相同，顺序不限，即为中奖。",
+											"basic_methods" : "2,3",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "80",
+											"pid" : "9",
+											"series_way_id" : "80",
+											"name_cn" : "组选和值",
+											"name_en" : "hezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从1-26中选择1个号码",
+											"bonus_note" : "所选数值等于开奖号码百位、十位、个位三个数字相加之和(不含豹子号)，即为中奖。",
+											"basic_methods" : "2,3",
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "15",
+					"pid" : "0",
+					"name_cn" : "二星",
+					"name_en" : "erxing",
+					"children" : [
+							{
+								"id" : "16",
+								"pid" : "15",
+								"name_cn" : "直选",
+								"name_en" : "zhixuan",
+								"children" : [
+										{
+											"id" : "70",
+											"pid" : "16",
+											"series_way_id" : "70",
+											"name_cn" : "后二复式",
+											"name_en" : "houerfushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从十、个位中各选一个号码组成一注",
+											"bonus_note" : "从十位、个位中选择一个2位数号码组成一注，所选号码与开奖号码的十位、个位相同，且顺序一致，即为中奖。",
+											"basic_methods" : "5",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "11",
+											"pid" : "16",
+											"series_way_id" : "11",
+											"name_cn" : "后二单式",
+											"name_en" : "houerdanshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个两位数号码",
+											"bonus_note" : "手动输入一个2位数号码组成一注，所选号码的十位、个位与开奖号码相同，且顺序一致，即为中奖。",
+											"basic_methods" : "5",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "74",
+											"pid" : "16",
+											"series_way_id" : "74",
+											"name_cn" : "后二和值",
+											"name_en" : "houerhezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-18中任意选择1个或1个以上号码",
+											"bonus_note" : "所选数值等于开奖号码的十位、个位二个数字相加之和，即为中奖。",
+											"basic_methods" : "5",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "66",
+											"pid" : "16",
+											"series_way_id" : "66",
+											"name_cn" : "前二复式",
+											"name_en" : "qianerfushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位中各选一个号码组成一注",
+											"bonus_note" : "从万位、千位中选择一个2位数号码组成一注，所选号码与开奖号码的万位、千位相同，且顺序一致，即为中奖。",
+											"basic_methods" : "5",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "4",
+											"pid" : "16",
+											"series_way_id" : "4",
+											"name_cn" : "前二单式",
+											"name_en" : "qianerdanshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个两位数号码",
+											"bonus_note" : "手动输入一个2位数号码组成一注，所选号码的万位、千位与开奖号码相同，且顺序一致，即为中奖。",
+											"basic_methods" : "5",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "72",
+											"pid" : "16",
+											"series_way_id" : "72",
+											"name_cn" : "前二和值",
+											"name_en" : "qianerhezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-18中任意选择1个或1个以上号码",
+											"bonus_note" : "所选数值等于开奖号码的万位、千位二个数字相加之和，即为中奖。",
+											"basic_methods" : "5",
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "17",
+								"pid" : "15",
+								"name_cn" : "组选",
+								"name_en" : "zuxuan",
+								"children" : [
+										{
+											"id" : "59",
+											"pid" : "17",
+											"series_way_id" : "59",
+											"name_cn" : "后二复式",
+											"name_en" : "houerfushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择2个或2个以上号码。",
+											"bonus_note" : "从0-9中选2个号码组成一注，所选号码与开奖号码的十位、个位相同，顺序不限（不含对子号），即为中奖。",
+											"basic_methods" : "8",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "12",
+											"pid" : "17",
+											"series_way_id" : "12",
+											"name_cn" : "后二单式",
+											"name_en" : "houerdanshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个两位数号码",
+											"bonus_note" : "手动输入一个2位数号码组成一注，所选号码的十位、个位与开奖号码相同，顺序不限（不含对子号），即为中奖。",
+											"basic_methods" : "8",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "77",
+											"pid" : "17",
+											"series_way_id" : "77",
+											"name_cn" : "后二和值",
+											"name_en" : "houerhezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从1-17中任意选择1个或1个以上号码",
+											"bonus_note" : "所选数值等于开奖号码的十位、个位二个数字相加之和（不含对子号），即为中奖。",
+											"basic_methods" : "8",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "20",
+											"pid" : "17",
+											"series_way_id" : "20",
+											"name_cn" : "前二复式",
+											"name_en" : "qianerfushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择2个或2个以上号码。",
+											"bonus_note" : "从0-9中选2个号码组成一注，所选号码与开奖号码的万位、千位相同，顺序不限（不含对子号），即为中奖。",
+											"basic_methods" : "8",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "5",
+											"pid" : "17",
+											"series_way_id" : "5",
+											"name_cn" : "前二单式",
+											"name_en" : "qianerdanshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "手动输入号码，至少输入1个两位数号码组成一注",
+											"bonus_note" : "手动输入2个号码组成一注，所输入的号码与当期顺序摇出的5个号码中的前2个号码相同，顺序不限，即为中奖。",
+											"basic_methods" : "8",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "76",
+											"pid" : "17",
+											"series_way_id" : "76",
+											"name_cn" : "前二和值",
+											"name_en" : "qianerhezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从1-17中任意选择1个或1个以上号码",
+											"bonus_note" : "所选数值等于开奖号码的万位、千位二个数字相加之和（不含对子号），即为中奖。",
+											"basic_methods" : "8",
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "18",
+					"pid" : "0",
+					"name_cn" : "定位胆",
+					"name_en" : "yixing",
+					"children" : [ {
+						"id" : "19",
+						"pid" : "18",
+						"name_cn" : "定位胆",
+						"name_en" : "dingweidan",
+						"children" : [ {
+							"id" : "78",
+							"pid" : "19",
+							"series_way_id" : "78",
+							"name_cn" : "定位胆",
+							"name_en" : "fushi",
+							"is_mobile" : "1",
+							"price" : "2",
+							"bet_note" : "在万位，千位，百位，十位，个位任意位置上任意选择1个或1个以上号码",
+							"bonus_note" : "从万位、千位、百位、十位、个位任意位置上至少选择1个以上号码，所选号码与相同位置上的开奖号码一致，即为中奖。",
+							"basic_methods" : "6,6,6,6,6",
+							"limit_bonus" : 20000
+						} ]
+					} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "20",
+					"pid" : "0",
+					"name_cn" : "不定位",
+					"name_en" : "budingwei",
+					"children" : [
+							{
+								"id" : "21",
+								"pid" : "20",
+								"name_cn" : "三星不定位",
+								"name_en" : "sanxingbudingwei",
+								"children" : [
+										{
+											"id" : "51",
+											"pid" : "21",
+											"series_way_id" : "51",
+											"name_cn" : "后三一码不定位",
+											"name_en" : "housanyimabudingwei",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择1个以上号码",
+											"bonus_note" : "从0-9中选择1个号码，每注由1个号码组成，只要开奖号码的百位、十位、个位中包含所选号码，即为中奖。",
+											"basic_methods" : "4",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "52",
+											"pid" : "21",
+											"series_way_id" : "52",
+											"name_cn" : "后三二码不定位",
+											"name_en" : "housanermabudingwei",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择2个以上号码",
+											"bonus_note" : "从0-9中选择2个号码，每注由2个不同的号码组成，开奖号码的百位、十位、个位中同时包含所选的2个号码，即为中奖。",
+											"basic_methods" : "9",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "21",
+											"pid" : "21",
+											"series_way_id" : "21",
+											"name_cn" : "前三二码不定位",
+											"name_en" : "qiansanermabudingwei",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择2个以上号码",
+											"bonus_note" : "从0-9中选择2个号码，每注由2个不同的号码组成，开奖号码的万位、千位、百位中同时包含所选的2个号码，即为中奖。",
+											"basic_methods" : "9",
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "23",
+								"pid" : "20",
+								"name_cn" : "五星不定位",
+								"name_en" : "wuxingbudingwei",
+								"children" : [
+										{
+											"id" : "36",
+											"pid" : "23",
+											"series_way_id" : "36",
+											"name_cn" : "五星二码不定位",
+											"name_en" : "wuxingermabudingwei",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择2个以上号码",
+											"bonus_note" : "从0-9中选择2个号码，每注由2个不同的号码组成，开奖号码的万位、千位、百位、十位、个位中同时包含所选的2个号码，即为中奖。",
+											"basic_methods" : "26",
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "37",
+											"pid" : "23",
+											"series_way_id" : "37",
+											"name_cn" : "五星三码不定位",
+											"name_en" : "wuxingsanmabudingwei",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从0-9中任意选择3个以上号码",
+											"bonus_note" : "从0-9中选择3个号码，每注由3个不同的号码组成，开奖号码的万位、千位、百位、十位、个位中同时包含所选的3个号码，即为中奖。",
+											"basic_methods" : "27",
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "24",
+					"pid" : "0",
+					"name_cn" : "大小单双",
+					"name_en" : "daxiaodanshuang",
+					"children" : [ {
+						"id" : "25",
+						"pid" : "24",
+						"name_cn" : "大小单双",
+						"name_en" : "daxiaodanshuang",
+						"children" : [
+								{
+									"id" : "58",
+									"pid" : "25",
+									"series_way_id" : "58",
+									"name_cn" : "后二大小单双",
+									"name_en" : "houerdaxiaodanshuang",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从十位、个位中的“大、小、单、双”中至少各选一个组成一注",
+									"bonus_note" : "对十位和个位的“大（56789）小（01234）、单（13579）双（02468）”形态进行购买，所选号码的位置、形态与开奖号码的位置、形态相同，即为中奖。",
+									"basic_methods" : "7",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "19",
+									"pid" : "25",
+									"series_way_id" : "19",
+									"name_cn" : "前二大小单双",
+									"name_en" : "qianerdaxiaodanshuang",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从万位、千位中的“大、小、单、双”中至少各选一个组成一注",
+									"bonus_note" : "对万位、千位的“大（56789）小（01234）、单（13579）双（02468）”形态进行购买，所选号码的位置、形态与开奖号码的位置、形态相同，即为中奖。",
+									"basic_methods" : "7",
+									"limit_bonus" : 20000
+								} ]
+					} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "26",
+					"pid" : "0",
+					"name_cn" : "趣味",
+					"name_en" : "quwei",
+					"children" : [ {
+						"id" : "29",
+						"pid" : "26",
+						"name_cn" : "特殊",
+						"name_en" : "teshu",
+						"children" : [
+								{
+									"id" : "44",
+									"pid" : "29",
+									"series_way_id" : "44",
+									"name_cn" : "一帆风顺",
+									"name_en" : "yifanfengshun",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从0-9中任意选择1个以上号码",
+									"bonus_note" : "从0-9中任意选择1个号码组成一注，只要开奖号码的万位、千位、百位、十位、个位中包含所选号码，即为中奖。",
+									"basic_methods" : "34",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "45",
+									"pid" : "29",
+									"series_way_id" : "45",
+									"name_cn" : "好事成双",
+									"name_en" : "haoshichengshuang",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从0-9中任意选择1个以上的二重号码",
+									"bonus_note" : "从0-9中任意选择1个号码组成一注，只要所选号码在开奖号码的万位、千位、百位、十位、个位中出现2次，即为中奖。",
+									"basic_methods" : "35",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "46",
+									"pid" : "29",
+									"series_way_id" : "46",
+									"name_cn" : "三星报喜",
+									"name_en" : "sanxingbaoxi",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从0-9中任意选择1个以上的三重号码",
+									"bonus_note" : "从0-9中任意选择1个号码组成一注，只要所选号码在开奖号码的万位、千位、百位、十位、个位中出现3次，即为中奖。",
+									"basic_methods" : "36",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "47",
+									"pid" : "29",
+									"series_way_id" : "47",
+									"name_cn" : "四季发财",
+									"name_en" : "sijifacai",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从0-9中任意选择1个以上的四重号码",
+									"bonus_note" : "从0-9中任意选择1个号码组成一注，只要所选号码在开奖号码的万位、千位、百位、十位、个位中出现4次，即为中奖。",
+									"basic_methods" : "37",
+									"limit_bonus" : 20000
+								} ]
+					} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "2611",
+					"pid" : "0",
+					"name_cn" : "龙虎",
+					"name_en" : "longhu",
+					"children" : [ {
+						"id" : "2711",
+						"pid" : "2611",
+						"name_cn" : "特殊",
+						"name_en" : "teshu",
+						"children" : [
+								{
+									"id" : "409",
+									"pid" : "2711",
+									"series_way_id" : "409",
+									"name_cn" : "万千",
+									"name_en" : "wq",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的万位数字大于千位数字则为龙；万位小于千位则为虎；万位等于千位则为和。",
+									"basic_methods" : "28",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "410",
+									"pid" : "2711",
+									"series_way_id" : "410",
+									"name_cn" : "万百",
+									"name_en" : "wb",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的万位数字大于百位数字则为龙；万位小于百位则为虎；万位等于百位则为和。",
+									"basic_methods" : "29",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "411",
+									"pid" : "2711",
+									"series_way_id" : "411",
+									"name_cn" : "万十",
+									"name_en" : "ws",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的万位数字大于十位数字则为龙；万位小于十位则为虎；万位等于十位则为和。",
+									"basic_methods" : "29",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "412",
+									"pid" : "2711",
+									"series_way_id" : "412",
+									"name_cn" : "万个",
+									"name_en" : "wg",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的万位数字大于个位数字则为龙；万位小于个位则为虎；万位等于个位则为和。",
+									"basic_methods" : "29",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "413",
+									"pid" : "2711",
+									"series_way_id" : "413",
+									"name_cn" : "千百",
+									"name_en" : "qb",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的千位数字大于百位数字则为龙；千位小于百位则为虎；千位等于百位则为和。",
+									"basic_methods" : "29",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "414",
+									"pid" : "2711",
+									"series_way_id" : "414",
+									"name_cn" : "千十",
+									"name_en" : "qs",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的千位数字大于十位数字则为龙；千位小于十位则为虎；千位等于十位则为和。",
+									"basic_methods" : "29",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "415",
+									"pid" : "2711",
+									"series_way_id" : "415",
+									"name_cn" : "千个",
+									"name_en" : "qg",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的千位数字大于个位数字则为龙；千位小于个位则为虎；千位等于个位则为和。",
+									"basic_methods" : "29",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "416",
+									"pid" : "2711",
+									"series_way_id" : "416",
+									"name_cn" : "百十",
+									"name_en" : "bs",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的百位数字大于十位数字则为龙；百位小于十位则为虎；百位等于十位则为和。",
+									"basic_methods" : "29",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "417",
+									"pid" : "2711",
+									"series_way_id" : "417",
+									"name_cn" : "百个",
+									"name_en" : "bg",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的百位数字大于个位数字则为龙；百位小于个位则为虎；百位等于个位则为和。",
+									"basic_methods" : "29",
+									"limit_bonus" : 20000
+								},
+								{
+									"id" : "418",
+									"pid" : "2711",
+									"series_way_id" : "418",
+									"name_cn" : "十个",
+									"name_en" : "sg",
+									"is_mobile" : "1",
+									"price" : "2",
+									"bet_note" : "从龙虎和中任意选择1个以上",
+									"bonus_note" : "开奖号码的十位数字大于个位数字则为龙；十位小于个位则为虎；十位等于个位则为和。",
+									"basic_methods" : "29",
+									"limit_bonus" : 20000
+								} ]
+					} ],
+					"isRenxuan" : false
+				},
+				{
+					"id" : "109",
+					"pid" : "0",
+					"name_cn" : "任选二",
+					"name_en" : "renxuaner",
+					"children" : [
+							{
+								"id" : "112",
+								"pid" : "109",
+								"name_cn" : "任二直选",
+								"name_en" : "zhixuan",
+								"children" : [
+										{
+											"id" : "186",
+											"pid" : "112",
+											"series_way_id" : "186",
+											"relation_series_way_ids" : "207,220,233,280,299,305,318,331,350,363",
+											"name_cn" : "直选复式",
+											"name_en" : "zhixuanfushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意选择两个位，在这两个位上至少各选1个号码组成一注，所选2个位置上的开奖号码与所选号码完全相同，且顺序一致，即为中奖",
+											"bonus_note" : "投注方案：万位1，十位2； 开奖号码：1**2*，即中任二直选。",
+											"basic_methods" : "92",
+											"relation_series_ids" : [ {
+												"series_way_id" : "207",
+												"basic_methods" : "92",
+												"index" : "0,4"
+											}, {
+												"series_way_id" : "220",
+												"basic_methods" : "92",
+												"index" : "0,3"
+											}, {
+												"series_way_id" : "233",
+												"basic_methods" : "92",
+												"index" : "0,1"
+											}, {
+												"series_way_id" : "280",
+												"basic_methods" : "92",
+												"index" : "0,2"
+											}, {
+												"series_way_id" : "299",
+												"basic_methods" : "92",
+												"index" : "3,4"
+											}, {
+												"series_way_id" : "305",
+												"basic_methods" : "92",
+												"index" : "1,4"
+											}, {
+												"series_way_id" : "318",
+												"basic_methods" : "92",
+												"index" : "1,3"
+											}, {
+												"series_way_id" : "331",
+												"basic_methods" : "92",
+												"index" : "1,2"
+											}, {
+												"series_way_id" : "350",
+												"basic_methods" : "92",
+												"index" : "2,4"
+											}, {
+												"series_way_id" : "363",
+												"basic_methods" : "92",
+												"index" : "2,3"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "187",
+											"pid" : "112",
+											"series_way_id" : "187",
+											"relation_series_way_ids" : "208,221,234,281,300,306,319,332,351,364",
+											"name_cn" : "直选单式",
+											"name_en" : "zhixuandanshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选两个位置，手动输入一个两位数号码组成一注，所选2个位置和输入的号码都与开奖号码相同，且顺序一致，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置千位、个位，输入号码12； 开奖号码：*1**2，即中任二直选。",
+											"basic_methods" : "92",
+											"relation_series_ids" : [ {
+												"series_way_id" : "208",
+												"basic_methods" : "92",
+												"index" : "0,4"
+											}, {
+												"series_way_id" : "221",
+												"basic_methods" : "92",
+												"index" : "0,3"
+											}, {
+												"series_way_id" : "234",
+												"basic_methods" : "92",
+												"index" : "0,1"
+											}, {
+												"series_way_id" : "281",
+												"basic_methods" : "92",
+												"index" : "0,2"
+											}, {
+												"series_way_id" : "300",
+												"basic_methods" : "92",
+												"index" : "3,4"
+											}, {
+												"series_way_id" : "306",
+												"basic_methods" : "92",
+												"index" : "1,4"
+											}, {
+												"series_way_id" : "319",
+												"basic_methods" : "92",
+												"index" : "1,3"
+											}, {
+												"series_way_id" : "332",
+												"basic_methods" : "92",
+												"index" : "1,2"
+											}, {
+												"series_way_id" : "351",
+												"basic_methods" : "92",
+												"index" : "2,4"
+											}, {
+												"series_way_id" : "364",
+												"basic_methods" : "92",
+												"index" : "2,3"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "188",
+											"pid" : "112",
+											"series_way_id" : "188",
+											"relation_series_way_ids" : "209,222,235,282,301,307,320,333,352,365",
+											"name_cn" : "直选和值",
+											"name_en" : "zhixuanhezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选两个位置，然后选择一个和值，所选2个位置的开奖号码相加之和与所选和值一致，且顺序一致，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置千位、个位，选择和值15； 开奖号码：*8**7，即中任二直选和值。",
+											"basic_methods" : "92",
+											"relation_series_ids" : [ {
+												"series_way_id" : "209",
+												"basic_methods" : "92",
+												"index" : "0,4"
+											}, {
+												"series_way_id" : "222",
+												"basic_methods" : "92",
+												"index" : "0,3"
+											}, {
+												"series_way_id" : "235",
+												"basic_methods" : "92",
+												"index" : "0,1"
+											}, {
+												"series_way_id" : "282",
+												"basic_methods" : "92",
+												"index" : "0,2"
+											}, {
+												"series_way_id" : "301",
+												"basic_methods" : "92",
+												"index" : "3,4"
+											}, {
+												"series_way_id" : "307",
+												"basic_methods" : "92",
+												"index" : "1,4"
+											}, {
+												"series_way_id" : "320",
+												"basic_methods" : "92",
+												"index" : "1,3"
+											}, {
+												"series_way_id" : "333",
+												"basic_methods" : "92",
+												"index" : "1,2"
+											}, {
+												"series_way_id" : "352",
+												"basic_methods" : "92",
+												"index" : "2,4"
+											}, {
+												"series_way_id" : "365",
+												"basic_methods" : "92",
+												"index" : "2,3"
+											} ],
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "113",
+								"pid" : "109",
+								"name_cn" : "任二组选",
+								"name_en" : "zuxuan",
+								"children" : [
+										{
+											"id" : "204",
+											"pid" : "113",
+											"series_way_id" : "204",
+											"relation_series_way_ids" : "210,223,236,283,302,308,321,334,353,366",
+											"name_cn" : "组选复式",
+											"name_en" : "zuxuanfushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选两个位置，然后从0-9中选择两个号码组成一注，所选2个位置的开奖号码与所选号码一致，顺序不限，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、个位，选择号码79； 开奖号码：9***7 或 7***9，均中任二组选。",
+											"basic_methods" : "8",
+											"relation_series_ids" : [ {
+												"series_way_id" : "210",
+												"basic_methods" : "8",
+												"index" : "0,4"
+											}, {
+												"series_way_id" : "223",
+												"basic_methods" : "8",
+												"index" : "0,3"
+											}, {
+												"series_way_id" : "236",
+												"basic_methods" : "8",
+												"index" : "0,1"
+											}, {
+												"series_way_id" : "283",
+												"basic_methods" : "8",
+												"index" : "0,2"
+											}, {
+												"series_way_id" : "302",
+												"basic_methods" : "8",
+												"index" : "3,4"
+											}, {
+												"series_way_id" : "308",
+												"basic_methods" : "8",
+												"index" : "1,4"
+											}, {
+												"series_way_id" : "321",
+												"basic_methods" : "8",
+												"index" : "1,3"
+											}, {
+												"series_way_id" : "334",
+												"basic_methods" : "8",
+												"index" : "1,2"
+											}, {
+												"series_way_id" : "353",
+												"basic_methods" : "8",
+												"index" : "2,4"
+											}, {
+												"series_way_id" : "366",
+												"basic_methods" : "8",
+												"index" : "2,3"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "205",
+											"pid" : "113",
+											"series_way_id" : "205",
+											"relation_series_way_ids" : "211,224,237,284,303,309,322,335,354,367",
+											"name_cn" : "组选单式",
+											"name_en" : "zuxuandanshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选两个位置，然后输入两个号码组成一注，所选2个位置的开奖号码与输入号码一致，顺序不限，即为中奖",
+											"bonus_note" : "投注方案：勾选位置万位、个位，输入号码79； 开奖号码：9***7 或 7***9，均中任二组选。",
+											"basic_methods" : "8",
+											"relation_series_ids" : [ {
+												"series_way_id" : "211",
+												"basic_methods" : "8",
+												"index" : "0,4"
+											}, {
+												"series_way_id" : "224",
+												"basic_methods" : "8",
+												"index" : "0,3"
+											}, {
+												"series_way_id" : "237",
+												"basic_methods" : "8",
+												"index" : "0,1"
+											}, {
+												"series_way_id" : "284",
+												"basic_methods" : "8",
+												"index" : "0,2"
+											}, {
+												"series_way_id" : "303",
+												"basic_methods" : "8",
+												"index" : "3,4"
+											}, {
+												"series_way_id" : "309",
+												"basic_methods" : "8",
+												"index" : "1,4"
+											}, {
+												"series_way_id" : "322",
+												"basic_methods" : "8",
+												"index" : "1,3"
+											}, {
+												"series_way_id" : "335",
+												"basic_methods" : "8",
+												"index" : "1,2"
+											}, {
+												"series_way_id" : "354",
+												"basic_methods" : "8",
+												"index" : "2,4"
+											}, {
+												"series_way_id" : "367",
+												"basic_methods" : "8",
+												"index" : "2,3"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "206",
+											"pid" : "113",
+											"series_way_id" : "206",
+											"relation_series_way_ids" : "212,225,238,285,304,310,323,336,355,368",
+											"name_cn" : "组选和值",
+											"name_en" : "zuxuanhezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选两个位置，然后选择一个和值，所选2个位置的开奖号码相加之和与所选和值一致，顺序不限，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置千位、个位，选择和值6； 开奖号码：*4**2 或 *2**4，均中任二组选和值。",
+											"basic_methods" : "8",
+											"relation_series_ids" : [ {
+												"series_way_id" : "212",
+												"basic_methods" : "8",
+												"index" : "0,4"
+											}, {
+												"series_way_id" : "225",
+												"basic_methods" : "8",
+												"index" : "0,3"
+											}, {
+												"series_way_id" : "238",
+												"basic_methods" : "8",
+												"index" : "0,1"
+											}, {
+												"series_way_id" : "285",
+												"basic_methods" : "8",
+												"index" : "0,2"
+											}, {
+												"series_way_id" : "304",
+												"basic_methods" : "8",
+												"index" : "3,4"
+											}, {
+												"series_way_id" : "310",
+												"basic_methods" : "8",
+												"index" : "1,4"
+											}, {
+												"series_way_id" : "323",
+												"basic_methods" : "8",
+												"index" : "1,3"
+											}, {
+												"series_way_id" : "336",
+												"basic_methods" : "8",
+												"index" : "1,2"
+											}, {
+												"series_way_id" : "355",
+												"basic_methods" : "8",
+												"index" : "2,4"
+											}, {
+												"series_way_id" : "368",
+												"basic_methods" : "8",
+												"index" : "2,3"
+											} ],
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : true
+				},
+				{
+					"id" : "110",
+					"pid" : "0",
+					"name_cn" : "任选三",
+					"name_en" : "renxuansan",
+					"children" : [
+							{
+								"id" : "114",
+								"pid" : "110",
+								"name_cn" : "任三直选",
+								"name_en" : "zhixuan",
+								"children" : [
+										{
+											"id" : "189",
+											"pid" : "114",
+											"series_way_id" : "189",
+											"relation_series_way_ids" : "213,226,245,258,272,292,311,324,343,356",
+											"name_cn" : "直选复式",
+											"name_en" : "zhixuanfushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意选择三个位，在这三个位上至少各选1个号码组成一注，所选3个位置上的开奖号码与所选号码完全相同，且顺序一致，即为中奖。",
+											"bonus_note" : "投注方案：万位1、千位5、十位2； 开奖号码：15*2*，即中任三直选。",
+											"basic_methods" : "93",
+											"relation_series_ids" : [ {
+												"series_way_id" : "213",
+												"basic_methods" : "93",
+												"index" : "0,3,4"
+											}, {
+												"series_way_id" : "226",
+												"basic_methods" : "93",
+												"index" : "0,1,4"
+											}, {
+												"series_way_id" : "245",
+												"basic_methods" : "93",
+												"index" : "0,1,3"
+											}, {
+												"series_way_id" : "258",
+												"basic_methods" : "93",
+												"index" : "0,1,2"
+											}, {
+												"series_way_id" : "272",
+												"basic_methods" : "93",
+												"index" : "0,2,4"
+											}, {
+												"series_way_id" : "292",
+												"basic_methods" : "93",
+												"index" : "0,2,3"
+											}, {
+												"series_way_id" : "311",
+												"basic_methods" : "93",
+												"index" : "1,3,4"
+											}, {
+												"series_way_id" : "324",
+												"basic_methods" : "93",
+												"index" : "1,2,4"
+											}, {
+												"series_way_id" : "343",
+												"basic_methods" : "93",
+												"index" : "1,2,3"
+											}, {
+												"series_way_id" : "356",
+												"basic_methods" : "93",
+												"index" : "2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "190",
+											"pid" : "114",
+											"series_way_id" : "190",
+											"relation_series_way_ids" : "214,227,246,259,273,293,312,325,344,357",
+											"name_cn" : "直选单式",
+											"name_en" : "zhixuandanshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选三个位置，手动输入一个三位数号码组成一注，所选三个位置上的开奖号码与输入号码完全相同，且顺序一致，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、千位、个位，输入号码152； 开奖号码：15**2，即中任三直选。",
+											"basic_methods" : "93",
+											"relation_series_ids" : [ {
+												"series_way_id" : "214",
+												"basic_methods" : "93",
+												"index" : "0,3,4"
+											}, {
+												"series_way_id" : "227",
+												"basic_methods" : "93",
+												"index" : "0,1,4"
+											}, {
+												"series_way_id" : "246",
+												"basic_methods" : "93",
+												"index" : "0,1,3"
+											}, {
+												"series_way_id" : "259",
+												"basic_methods" : "93",
+												"index" : "0,1,2"
+											}, {
+												"series_way_id" : "273",
+												"basic_methods" : "93",
+												"index" : "0,2,4"
+											}, {
+												"series_way_id" : "293",
+												"basic_methods" : "93",
+												"index" : "0,2,3"
+											}, {
+												"series_way_id" : "312",
+												"basic_methods" : "93",
+												"index" : "1,3,4"
+											}, {
+												"series_way_id" : "325",
+												"basic_methods" : "93",
+												"index" : "1,2,4"
+											}, {
+												"series_way_id" : "344",
+												"basic_methods" : "93",
+												"index" : "1,2,3"
+											}, {
+												"series_way_id" : "357",
+												"basic_methods" : "93",
+												"index" : "2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "191",
+											"pid" : "114",
+											"series_way_id" : "191",
+											"relation_series_way_ids" : "215,228,247,260,274,294,313,326,345,358",
+											"name_cn" : "直选和值",
+											"name_en" : "zhixuanhezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选三个位置，然后选择一个和值，所选3个位置的开奖号码相加之和与所选和值一致，且顺序一致，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、千位、个位，选择和值8； 开奖号码：22**4，即中任三直选和值。",
+											"basic_methods" : "93",
+											"relation_series_ids" : [ {
+												"series_way_id" : "215",
+												"basic_methods" : "93",
+												"index" : "0,3,4"
+											}, {
+												"series_way_id" : "228",
+												"basic_methods" : "93",
+												"index" : "0,1,4"
+											}, {
+												"series_way_id" : "247",
+												"basic_methods" : "93",
+												"index" : "0,1,3"
+											}, {
+												"series_way_id" : "260",
+												"basic_methods" : "93",
+												"index" : "0,1,2"
+											}, {
+												"series_way_id" : "274",
+												"basic_methods" : "93",
+												"index" : "0,2,4"
+											}, {
+												"series_way_id" : "294",
+												"basic_methods" : "93",
+												"index" : "0,2,3"
+											}, {
+												"series_way_id" : "313",
+												"basic_methods" : "93",
+												"index" : "1,3,4"
+											}, {
+												"series_way_id" : "326",
+												"basic_methods" : "93",
+												"index" : "1,2,4"
+											}, {
+												"series_way_id" : "345",
+												"basic_methods" : "93",
+												"index" : "1,2,3"
+											}, {
+												"series_way_id" : "358",
+												"basic_methods" : "93",
+												"index" : "2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "115",
+								"pid" : "110",
+								"name_cn" : "任三组选",
+								"name_en" : "zuxuan",
+								"children" : [
+										{
+											"id" : "198",
+											"pid" : "115",
+											"series_way_id" : "198",
+											"relation_series_way_ids" : "216,229,248,261,275,295,314,327,346,359",
+											"name_cn" : "组三复式",
+											"name_en" : "zusanfushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选三个位置，然后从0-9中选择两个号码组成一注，所选3个位置的开奖号码与所选号码一致，顺序不限，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、千位、个位，选择号码18； 开奖号码：11**8 或 18**1，均中任三组三。",
+											"basic_methods" : "2",
+											"relation_series_ids" : [ {
+												"series_way_id" : "216",
+												"basic_methods" : "2",
+												"index" : "0,3,4"
+											}, {
+												"series_way_id" : "229",
+												"basic_methods" : "2",
+												"index" : "0,1,4"
+											}, {
+												"series_way_id" : "248",
+												"basic_methods" : "2",
+												"index" : "0,1,3"
+											}, {
+												"series_way_id" : "261",
+												"basic_methods" : "2",
+												"index" : "0,1,2"
+											}, {
+												"series_way_id" : "275",
+												"basic_methods" : "2",
+												"index" : "0,2,4"
+											}, {
+												"series_way_id" : "295",
+												"basic_methods" : "2",
+												"index" : "0,2,3"
+											}, {
+												"series_way_id" : "314",
+												"basic_methods" : "2",
+												"index" : "1,3,4"
+											}, {
+												"series_way_id" : "327",
+												"basic_methods" : "2",
+												"index" : "1,2,4"
+											}, {
+												"series_way_id" : "346",
+												"basic_methods" : "2",
+												"index" : "1,2,3"
+											}, {
+												"series_way_id" : "359",
+												"basic_methods" : "2",
+												"index" : "2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "200",
+											"pid" : "115",
+											"series_way_id" : "200",
+											"relation_series_way_ids" : "218,231,250,263,277,297,316,329,348,361",
+											"name_cn" : "组六复式",
+											"name_en" : "zuliufushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选三个位置，然后从0-9中选择三个号码组成一注，所选3个位置的开奖号码与所选号码一致，顺序不限，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、百位、个位，选择号码159； 开奖号码：1*5*9 或 9*1*5，均中任三组六。",
+											"basic_methods" : "3",
+											"relation_series_ids" : [ {
+												"series_way_id" : "218",
+												"basic_methods" : "3",
+												"index" : "0,3,4"
+											}, {
+												"series_way_id" : "231",
+												"basic_methods" : "3",
+												"index" : "0,1,4"
+											}, {
+												"series_way_id" : "250",
+												"basic_methods" : "3",
+												"index" : "0,1,3"
+											}, {
+												"series_way_id" : "263",
+												"basic_methods" : "3",
+												"index" : "0,1,2"
+											}, {
+												"series_way_id" : "277",
+												"basic_methods" : "3",
+												"index" : "0,2,4"
+											}, {
+												"series_way_id" : "297",
+												"basic_methods" : "3",
+												"index" : "0,2,3"
+											}, {
+												"series_way_id" : "316",
+												"basic_methods" : "3",
+												"index" : "1,3,4"
+											}, {
+												"series_way_id" : "329",
+												"basic_methods" : "3",
+												"index" : "1,2,4"
+											}, {
+												"series_way_id" : "348",
+												"basic_methods" : "3",
+												"index" : "1,2,3"
+											}, {
+												"series_way_id" : "361",
+												"basic_methods" : "3",
+												"index" : "2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "202",
+											"pid" : "115",
+											"series_way_id" : "202",
+											"relation_series_way_ids" : "396,397,398,399,400,401,402,403,404,405",
+											"name_cn" : "混合组选",
+											"name_en" : "hunhezuxuan",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选三个位置，然后输入三个号码组成一注，所选3个位置的开奖号码与输入号码一致，顺序不限，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置千位、百位、个位，分別投注(0,0,1),以及(1,2,3)，开奖号码：*00*1，顺序不限，即中任三组三；或者(2)*21*3，顺序不限，即中任三组六。",
+											"basic_methods" : "3,2",
+											"relation_series_ids" : [ {
+												"series_way_id" : "396",
+												"basic_methods" : "2,3",
+												"index" : "0,1,2"
+											}, {
+												"series_way_id" : "397",
+												"basic_methods" : "2,3",
+												"index" : "0,1,3"
+											}, {
+												"series_way_id" : "398",
+												"basic_methods" : "2,3",
+												"index" : "0,1,4"
+											}, {
+												"series_way_id" : "399",
+												"basic_methods" : "2,3",
+												"index" : "0,2,3"
+											}, {
+												"series_way_id" : "400",
+												"basic_methods" : "2,3",
+												"index" : "0,2,4"
+											}, {
+												"series_way_id" : "401",
+												"basic_methods" : "2,3",
+												"index" : "1,2,3"
+											}, {
+												"series_way_id" : "402",
+												"basic_methods" : "2,3",
+												"index" : "1,2,4"
+											}, {
+												"series_way_id" : "403",
+												"basic_methods" : "2,3",
+												"index" : "1,3,4"
+											}, {
+												"series_way_id" : "404",
+												"basic_methods" : "2,3",
+												"index" : "0,3,4"
+											}, {
+												"series_way_id" : "405",
+												"basic_methods" : "2,3",
+												"index" : "2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "203",
+											"pid" : "115",
+											"series_way_id" : "203",
+											"relation_series_way_ids" : "385,386,387,388,389,390,391,392,394,395",
+											"name_cn" : "组选和值",
+											"name_en" : "zuxuanhezhi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选三个位置，然后选择一个和值，所选3个位置的开奖号码相加之和与所选和值一致，顺序不限，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、千位、个位；选择和值8；开奖号码：13**4 顺序不限，即中任三直选。",
+											"basic_methods" : "3,2",
+											"relation_series_ids" : [ {
+												"series_way_id" : "385",
+												"basic_methods" : "2,3",
+												"index" : "0,1,2"
+											}, {
+												"series_way_id" : "386",
+												"basic_methods" : "2,3",
+												"index" : "0,1,3"
+											}, {
+												"series_way_id" : "387",
+												"basic_methods" : "2,3",
+												"index" : "0,1,4"
+											}, {
+												"series_way_id" : "388",
+												"basic_methods" : "2,3",
+												"index" : "0,2,3"
+											}, {
+												"series_way_id" : "389",
+												"basic_methods" : "2,3",
+												"index" : "0,2,4"
+											}, {
+												"series_way_id" : "390",
+												"basic_methods" : "2,3",
+												"index" : "1,2,3"
+											}, {
+												"series_way_id" : "391",
+												"basic_methods" : "2,3",
+												"index" : "1,2,4"
+											}, {
+												"series_way_id" : "392",
+												"basic_methods" : "2,3",
+												"index" : "1,3,4"
+											}, {
+												"series_way_id" : "394",
+												"basic_methods" : "2,3",
+												"index" : "0,3,4"
+											}, {
+												"series_way_id" : "395",
+												"basic_methods" : "2,3",
+												"index" : "2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : true
+				},
+				{
+					"id" : "111",
+					"pid" : "0",
+					"name_cn" : "任选四",
+					"name_en" : "renxuansi",
+					"children" : [
+							{
+								"id" : "116",
+								"pid" : "111",
+								"name_cn" : "任四直选",
+								"name_en" : "zhixuan",
+								"children" : [
+										{
+											"id" : "192",
+											"pid" : "116",
+											"series_way_id" : "192",
+											"relation_series_way_ids" : "239,252,266,286,337",
+											"name_cn" : "直选复式",
+											"name_en" : "zhixuanfushi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意选择四个位置，在这四个位上至少各选1个号码组成一注，所选4个位置上的开奖号码与所选号码完全相同，且顺序一致，即为中奖。",
+											"bonus_note" : "投注方案：万位1、千位5、百位0、十位2； 开奖号码：1502*，即中任四直选。",
+											"basic_methods" : "94",
+											"relation_series_ids" : [ {
+												"series_way_id" : "239",
+												"basic_methods" : "94",
+												"index" : "0,1,3,4"
+											}, {
+												"series_way_id" : "252",
+												"basic_methods" : "94",
+												"index" : "0,1,2,4"
+											}, {
+												"series_way_id" : "266",
+												"basic_methods" : "94",
+												"index" : "0,1,2,3"
+											}, {
+												"series_way_id" : "286",
+												"basic_methods" : "94",
+												"index" : "0,2,3,4"
+											}, {
+												"series_way_id" : "337",
+												"basic_methods" : "94",
+												"index" : "1,2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "193",
+											"pid" : "116",
+											"series_way_id" : "193",
+											"relation_series_way_ids" : "240,253,267,287,338",
+											"name_cn" : "直选单式",
+											"name_en" : "zhixuandanshi",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选四个位置，手动输入一个四位数号码组成一注，所选4个位置上的开奖号码与输入号码完全相同，且顺序一致，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、千位、十位、个位，输入号码1524； 开奖号码：15*24，即中任四直选。",
+											"basic_methods" : "94",
+											"relation_series_ids" : [ {
+												"series_way_id" : "240",
+												"basic_methods" : "94",
+												"index" : "0,1,3,4"
+											}, {
+												"series_way_id" : "253",
+												"basic_methods" : "94",
+												"index" : "0,1,2,4"
+											}, {
+												"series_way_id" : "267",
+												"basic_methods" : "94",
+												"index" : "0,1,2,3"
+											}, {
+												"series_way_id" : "287",
+												"basic_methods" : "94",
+												"index" : "0,2,3,4"
+											}, {
+												"series_way_id" : "338",
+												"basic_methods" : "94",
+												"index" : "1,2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										} ]
+							},
+							{
+								"id" : "117",
+								"pid" : "111",
+								"name_cn" : "任四组选",
+								"name_en" : "zuxuan",
+								"children" : [
+										{
+											"id" : "197",
+											"pid" : "117",
+											"series_way_id" : "197",
+											"relation_series_way_ids" : "242,255,269,289,340",
+											"name_cn" : "组选24",
+											"name_en" : "zuxuan24",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选四个位置，然后从0-9中选择四个号码组成一注，所选4个位置的开奖号码与所选号码一致，顺序不限，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、千位、十位、个位，选择号码1234； 开奖号码：12*34 或 13*24，均中任四组选24。",
+											"basic_methods" : "15",
+											"relation_series_ids" : [ {
+												"series_way_id" : "242",
+												"basic_methods" : "15",
+												"index" : "0,1,3,4"
+											}, {
+												"series_way_id" : "255",
+												"basic_methods" : "15",
+												"index" : "0,1,2,4"
+											}, {
+												"series_way_id" : "269",
+												"basic_methods" : "15",
+												"index" : "0,1,2,3"
+											}, {
+												"series_way_id" : "289",
+												"basic_methods" : "15",
+												"index" : "0,2,3,4"
+											}, {
+												"series_way_id" : "340",
+												"basic_methods" : "15",
+												"index" : "1,2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "196",
+											"pid" : "117",
+											"series_way_id" : "196",
+											"relation_series_way_ids" : "241,254,268,288,339",
+											"name_cn" : "组选12",
+											"name_en" : "zuxuan12",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选四个位置，然后选择1个二重号码和2个单号号码组成一注，所选4个位置的开奖号码中包含与所选号码，且所选二重号码在所选4个位置的开奖号码中出现了2次，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、千位、十位、个位，选择二重号：8，单号：0、6； 开奖号码：88*06 或 08*68，均中任四组选12。",
+											"basic_methods" : "14",
+											"relation_series_ids" : [ {
+												"series_way_id" : "241",
+												"basic_methods" : "14",
+												"index" : "0,1,3,4"
+											}, {
+												"series_way_id" : "254",
+												"basic_methods" : "14",
+												"index" : "0,1,2,4"
+											}, {
+												"series_way_id" : "268",
+												"basic_methods" : "14",
+												"index" : "0,1,2,3"
+											}, {
+												"series_way_id" : "288",
+												"basic_methods" : "14",
+												"index" : "0,2,3,4"
+											}, {
+												"series_way_id" : "339",
+												"basic_methods" : "14",
+												"index" : "1,2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										},
+										{
+											"id" : "195",
+											"pid" : "117",
+											"series_way_id" : "195",
+											"relation_series_way_ids" : "244,257,271,291,342",
+											"name_cn" : "组选6",
+											"name_en" : "zuxuan6",
+											"is_mobile" : "1",
+											"price" : "2",
+											"bet_note" : "从万位、千位、百位、十位、个位中任意勾选四个位置，然后从0-9中选择2个二重号组成一注，所选4个位置的开奖号码与所选号码一致，并且所选的2个二重号码在所选4个位置的开奖号码中分别出现了2次，顺序不限，即为中奖。",
+											"bonus_note" : "投注方案：勾选位置万位、千位、十位、个位，选择二重号：6、8； 开奖号码：66*88 或 68*68，均中任四组选6。",
+											"basic_methods" : "13",
+											"relation_series_ids" : [ {
+												"series_way_id" : "244",
+												"basic_methods" : "13",
+												"index" : "0,1,3,4"
+											}, {
+												"series_way_id" : "257",
+												"basic_methods" : "13",
+												"index" : "0,1,2,4"
+											}, {
+												"series_way_id" : "271",
+												"basic_methods" : "13",
+												"index" : "0,1,2,3"
+											}, {
+												"series_way_id" : "291",
+												"basic_methods" : "13",
+												"index" : "0,2,3,4"
+											}, {
+												"series_way_id" : "342",
+												"basic_methods" : "13",
+												"index" : "1,2,3,4"
+											} ],
+											"limit_bonus" : 20000
+										} ]
+							} ],
+					"isRenxuan" : true
+				} ],
+		"defaultMethodId" : "78",
+		"defaultMethodName" : "定位胆-定位胆-定位胆",
+		"prizeSettings" : {
+			"44" : {
+				"name" : "",
+				"prize" : "4.15",
+				"max_multiple" : 72289,
+				"display_prize" : true,
+				"x" : "4.88388"
+			},
+			"45" : {
+				"name" : "",
+				"prize" : "20.87",
+				"max_multiple" : 14374,
+				"display_prize" : true,
+				"x" : "24.55192"
+			},
+			"46" : {
+				"name" : "",
+				"prize" : "198.6",
+				"max_multiple" : 1510,
+				"display_prize" : true,
+				"x" : "233.64485"
+			},
+			"47" : {
+				"name" : "",
+				"prize" : "3695.65",
+				"max_multiple" : 81,
+				"display_prize" : true,
+				"x" : "4347.82608"
+			},
+			"49" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"190" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"191" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"192" : {
+				"name" : "",
+				"prize" : "17000.0",
+				"max_multiple" : 17,
+				"display_prize" : true,
+				"x" : "20000.00000"
+			},
+			"193" : {
+				"name" : "",
+				"prize" : "17000.0",
+				"max_multiple" : 17,
+				"display_prize" : true,
+				"x" : "20000.00000"
+			},
+			"150" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"151" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"195" : {
+				"name" : "",
+				"prize" : "2833.33",
+				"max_multiple" : 105,
+				"display_prize" : true,
+				"x" : "3333.33333"
+			},
+			"152" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"196" : {
+				"name" : "",
+				"prize" : "1416.67",
+				"max_multiple" : 211,
+				"display_prize" : true,
+				"x" : "1666.66666"
+			},
+			"197" : {
+				"name" : "",
+				"prize" : "708.33",
+				"max_multiple" : 423,
+				"display_prize" : true,
+				"x" : "833.33333"
+			},
+			"154" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"198" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"50" : {
+				"name" : "",
+				"prize" : "283.33",
+				"max_multiple" : 1058,
+				"display_prize" : true,
+				"x" : "333.33333"
+			},
+			"51" : {
+				"name" : "",
+				"prize" : "6.27",
+				"max_multiple" : 47846,
+				"display_prize" : true,
+				"x" : "7.38007"
+			},
+			"52" : {
+				"name" : "",
+				"prize" : "31.48",
+				"max_multiple" : 9529,
+				"display_prize" : true,
+				"x" : "37.03703"
+			},
+			"11" : {
+				"name" : "",
+				"prize" : "170.0",
+				"max_multiple" : 1764,
+				"display_prize" : true,
+				"x" : "200.00000"
+			},
+			"12" : {
+				"name" : "",
+				"prize" : "85.0",
+				"max_multiple" : 3529,
+				"display_prize" : true,
+				"x" : "100.00000"
+			},
+			"13" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"58" : {
+				"name" : "",
+				"prize" : "6.8",
+				"max_multiple" : 44117,
+				"display_prize" : true,
+				"x" : "8.00000"
+			},
+			"59" : {
+				"name" : "",
+				"prize" : "85.0",
+				"max_multiple" : 3529,
+				"display_prize" : true,
+				"x" : "100.00000"
+			},
+			"16" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"17" : {
+				"name" : "",
+				"prize" : "283.33",
+				"max_multiple" : 1058,
+				"display_prize" : true,
+				"x" : "333.33333"
+			},
+			"19" : {
+				"name" : "",
+				"prize" : "6.8",
+				"max_multiple" : 44117,
+				"display_prize" : true,
+				"x" : "8.00000"
+			},
+			"1" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"200" : {
+				"name" : "",
+				"prize" : "283.33",
+				"max_multiple" : 1058,
+				"display_prize" : true,
+				"x" : "333.33333"
+			},
+			"4" : {
+				"name" : "",
+				"prize" : "170.0",
+				"max_multiple" : 1764,
+				"display_prize" : true,
+				"x" : "200.00000"
+			},
+			"202" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"5" : {
+				"name" : "",
+				"prize" : "85.0",
+				"max_multiple" : 3529,
+				"display_prize" : true,
+				"x" : "100.00000"
+			},
+			"203" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"6" : {
+				"name" : "",
+				"prize" : "17000.0",
+				"max_multiple" : 17,
+				"display_prize" : true,
+				"x" : "20000.00000"
+			},
+			"204" : {
+				"name" : "",
+				"prize" : "85.0",
+				"max_multiple" : 3529,
+				"display_prize" : true,
+				"x" : "100.00000"
+			},
+			"7" : {
+				"name" : "",
+				"prize" : "170000.0",
+				"max_multiple" : 1,
+				"display_prize" : true,
+				"x" : "200000.00000"
+			},
+			"205" : {
+				"name" : "",
+				"prize" : "85.0",
+				"max_multiple" : 3529,
+				"display_prize" : true,
+				"x" : "100.00000"
+			},
+			"8" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"206" : {
+				"name" : "",
+				"prize" : "85.0",
+				"max_multiple" : 3529,
+				"display_prize" : true,
+				"x" : "100.00000"
+			},
+			"409" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"20" : {
+				"name" : "",
+				"prize" : "85.0",
+				"max_multiple" : 3529,
+				"display_prize" : true,
+				"x" : "100.00000"
+			},
+			"65" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"21" : {
+				"name" : "",
+				"prize" : "31.48",
+				"max_multiple" : 9529,
+				"display_prize" : true,
+				"x" : "37.03703"
+			},
+			"66" : {
+				"name" : "",
+				"prize" : "170.0",
+				"max_multiple" : 1764,
+				"display_prize" : true,
+				"x" : "200.00000"
+			},
+			"67" : {
+				"name" : "",
+				"prize" : "17000.0",
+				"max_multiple" : 17,
+				"display_prize" : true,
+				"x" : "20000.00000"
+			},
+			"68" : {
+				"name" : "",
+				"prize" : "170000.0",
+				"max_multiple" : 1,
+				"display_prize" : true,
+				"x" : "200000.00000"
+			},
+			"24" : {
+				"name" : "",
+				"prize" : "2833.33",
+				"max_multiple" : 105,
+				"display_prize" : true,
+				"x" : "3333.33333"
+			},
+			"25" : {
+				"name" : "",
+				"prize" : "1416.67",
+				"max_multiple" : 211,
+				"display_prize" : true,
+				"x" : "1666.66666"
+			},
+			"69" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"26" : {
+				"name" : "",
+				"prize" : "708.33",
+				"max_multiple" : 423,
+				"display_prize" : true,
+				"x" : "833.33333"
+			},
+			"27" : {
+				"name" : "",
+				"prize" : "34000.0",
+				"max_multiple" : 8,
+				"display_prize" : true,
+				"x" : "40000.00000"
+			},
+			"28" : {
+				"name" : "",
+				"prize" : "17000.0",
+				"max_multiple" : 17,
+				"display_prize" : true,
+				"x" : "20000.00000"
+			},
+			"29" : {
+				"name" : "",
+				"prize" : "8500.0",
+				"max_multiple" : 35,
+				"display_prize" : true,
+				"x" : "10000.00000"
+			},
+			"491" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"410" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"411" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"412" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"413" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"414" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"415" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"70" : {
+				"name" : "",
+				"prize" : "170.0",
+				"max_multiple" : 1764,
+				"display_prize" : true,
+				"x" : "200.00000"
+			},
+			"416" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"71" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"417" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"72" : {
+				"name" : "",
+				"prize" : "170.0",
+				"max_multiple" : 1764,
+				"display_prize" : true,
+				"x" : "200.00000"
+			},
+			"418" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"73" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"30" : {
+				"name" : "",
+				"prize" : "5666.67",
+				"max_multiple" : 52,
+				"display_prize" : true,
+				"x" : "6666.66666"
+			},
+			"74" : {
+				"name" : "",
+				"prize" : "170.0",
+				"max_multiple" : 1764,
+				"display_prize" : true,
+				"x" : "200.00000"
+			},
+			"31" : {
+				"name" : "",
+				"prize" : "2833.33",
+				"max_multiple" : 105,
+				"display_prize" : true,
+				"x" : "3333.33333"
+			},
+			"75" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"32" : {
+				"name" : "",
+				"prize" : "1416.67",
+				"max_multiple" : 211,
+				"display_prize" : true,
+				"x" : "1666.66666"
+			},
+			"76" : {
+				"name" : "",
+				"prize" : "85.0",
+				"max_multiple" : 3529,
+				"display_prize" : true,
+				"x" : "100.00000"
+			},
+			"77" : {
+				"name" : "",
+				"prize" : "85.0",
+				"max_multiple" : 3529,
+				"display_prize" : true,
+				"x" : "100.00000"
+			},
+			"78" : {
+				"name" : "",
+				"prize" : "17.0",
+				"max_multiple" : 17647,
+				"display_prize" : true,
+				"x" : "20.00000"
+			},
+			"79" : {
+				"name" : "",
+				"prize" : "17000.0",
+				"max_multiple" : 17,
+				"display_prize" : true,
+				"x" : "20000.00000"
+			},
+			"5010" : {
+				"name" : "",
+				"prize" : "283.33",
+				"max_multiple" : 1058,
+				"display_prize" : true,
+				"x" : "333.33333"
+			},
+			"5011" : {
+				"name" : "",
+				"prize" : "283.33",
+				"max_multiple" : 1058,
+				"display_prize" : true,
+				"x" : "333.33333"
+			},
+			"36" : {
+				"name" : "",
+				"prize" : "11.59",
+				"max_multiple" : 25884,
+				"display_prize" : true,
+				"x" : "13.63326"
+			},
+			"37" : {
+				"name" : "",
+				"prize" : "39.08",
+				"max_multiple" : 7676,
+				"display_prize" : true,
+				"x" : "45.97701"
+			},
+			"142" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"186" : {
+				"name" : "",
+				"prize" : "170.0",
+				"max_multiple" : 1764,
+				"display_prize" : true,
+				"x" : "200.00000"
+			},
+			"187" : {
+				"name" : "",
+				"prize" : "170.0",
+				"max_multiple" : 1764,
+				"display_prize" : true,
+				"x" : "200.00000"
+			},
+			"188" : {
+				"name" : "",
+				"prize" : "170.0",
+				"max_multiple" : 1764,
+				"display_prize" : true,
+				"x" : "200.00000"
+			},
+			"145" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"189" : {
+				"name" : "",
+				"prize" : "1700.0",
+				"max_multiple" : 176,
+				"display_prize" : true,
+				"x" : "2000.00000"
+			},
+			"146" : {
+				"name" : "",
+				"prize" : "283.33",
+				"max_multiple" : 1058,
+				"display_prize" : true,
+				"x" : "333.33333"
+			},
+			"501" : {
+				"name" : "",
+				"prize" : "283.33",
+				"max_multiple" : 1058,
+				"display_prize" : true,
+				"x" : "333.33333"
+			},
+			"80" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"81" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"4910" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			},
+			"4911" : {
+				"name" : "",
+				"prize" : "566.67",
+				"max_multiple" : 529,
+				"display_prize" : true,
+				"x" : "666.66666"
+			}
+		},
+		"uploadPath" : "/api/uploadCode",
+		"jsPath" : "/assets/js/game/ssc/",
+		"submitUrl" : "/api/bets/bet",
+		"loaddataUrl" : "/api/load-data/1",
+		"loadIssueUrl" : "/api/load-issue/1",
+		"loadCurrentTimeUrl" : "/api/load-time",
+		"traceMaxTimes" : 120,
+		"optionalPrizes" : [ {
+			"prize_group" : "1956",
+			"rate" : "0.0000"
+		}, {
+			"prize_group" : "1954",
+			"rate" : "0.0010"
+		}, {
+			"prize_group" : "1952",
+			"rate" : "0.0020"
+		}, {
+			"prize_group" : "1950",
+			"rate" : "0.0030"
+		}, {
+			"prize_group" : "1948",
+			"rate" : "0.0040"
+		}, {
+			"prize_group" : "1946",
+			"rate" : "0.0050"
+		}, {
+			"prize_group" : "1944",
+			"rate" : "0.0060"
+		}, {
+			"prize_group" : "1942",
+			"rate" : "0.0070"
+		}, {
+			"prize_group" : "1940",
+			"rate" : "0.0080"
+		}, {
+			"prize_group" : "1938",
+			"rate" : "0.0090"
+		}, {
+			"prize_group" : "1936",
+			"rate" : "0.0100"
+		}, {
+			"prize_group" : "1934",
+			"rate" : "0.0110"
+		}, {
+			"prize_group" : "1932",
+			"rate" : "0.0120"
+		}, {
+			"prize_group" : "1930",
+			"rate" : "0.0130"
+		}, {
+			"prize_group" : "1928",
+			"rate" : "0.0140"
+		}, {
+			"prize_group" : "1926",
+			"rate" : "0.0150"
+		}, {
+			"prize_group" : "1924",
+			"rate" : "0.0160"
+		}, {
+			"prize_group" : "1922",
+			"rate" : "0.0170"
+		}, {
+			"prize_group" : "1920",
+			"rate" : "0.0180"
+		}, {
+			"prize_group" : "1918",
+			"rate" : "0.0190"
+		}, {
+			"prize_group" : "1916",
+			"rate" : "0.0200"
+		}, {
+			"prize_group" : "1914",
+			"rate" : "0.0210"
+		}, {
+			"prize_group" : "1912",
+			"rate" : "0.0220"
+		}, {
+			"prize_group" : "1910",
+			"rate" : "0.0230"
+		}, {
+			"prize_group" : "1908",
+			"rate" : "0.0240"
+		}, {
+			"prize_group" : "1906",
+			"rate" : "0.0250"
+		}, {
+			"prize_group" : "1904",
+			"rate" : "0.0260"
+		}, {
+			"prize_group" : "1902",
+			"rate" : "0.0270"
+		}, {
+			"prize_group" : "1900",
+			"rate" : "0.0280"
+		}, {
+			"prize_group" : "1898",
+			"rate" : "0.0290"
+		}, {
+			"prize_group" : "1896",
+			"rate" : "0.0300"
+		}, {
+			"prize_group" : "1894",
+			"rate" : "0.0310"
+		}, {
+			"prize_group" : "1892",
+			"rate" : "0.0320"
+		}, {
+			"prize_group" : "1890",
+			"rate" : "0.0330"
+		}, {
+			"prize_group" : "1888",
+			"rate" : "0.0340"
+		}, {
+			"prize_group" : "1886",
+			"rate" : "0.0350"
+		}, {
+			"prize_group" : "1884",
+			"rate" : "0.0360"
+		}, {
+			"prize_group" : "1882",
+			"rate" : "0.0370"
+		}, {
+			"prize_group" : "1880",
+			"rate" : "0.0380"
+		}, {
+			"prize_group" : "1878",
+			"rate" : "0.0390"
+		}, {
+			"prize_group" : "1876",
+			"rate" : "0.0400"
+		}, {
+			"prize_group" : "1874",
+			"rate" : "0.0410"
+		}, {
+			"prize_group" : "1872",
+			"rate" : "0.0420"
+		}, {
+			"prize_group" : "1870",
+			"rate" : "0.0430"
+		}, {
+			"prize_group" : "1868",
+			"rate" : "0.0440"
+		}, {
+			"prize_group" : "1866",
+			"rate" : "0.0450"
+		}, {
+			"prize_group" : "1864",
+			"rate" : "0.0460"
+		}, {
+			"prize_group" : "1862",
+			"rate" : "0.0470"
+		}, {
+			"prize_group" : "1860",
+			"rate" : "0.0480"
+		}, {
+			"prize_group" : "1858",
+			"rate" : "0.0490"
+		}, {
+			"prize_group" : "1856",
+			"rate" : "0.0500"
+		}, {
+			"prize_group" : "1854",
+			"rate" : "0.0510"
+		}, {
+			"prize_group" : "1852",
+			"rate" : "0.0520"
+		}, {
+			"prize_group" : "1850",
+			"rate" : "0.0530"
+		}, {
+			"prize_group" : "1848",
+			"rate" : "0.0540"
+		}, {
+			"prize_group" : "1846",
+			"rate" : "0.0550"
+		}, {
+			"prize_group" : "1844",
+			"rate" : "0.0560"
+		}, {
+			"prize_group" : "1842",
+			"rate" : "0.0570"
+		}, {
+			"prize_group" : "1840",
+			"rate" : "0.0580"
+		}, {
+			"prize_group" : "1838",
+			"rate" : "0.0590"
+		}, {
+			"prize_group" : "1836",
+			"rate" : "0.0600"
+		}, {
+			"prize_group" : "1834",
+			"rate" : "0.0610"
+		}, {
+			"prize_group" : "1832",
+			"rate" : "0.0620"
+		}, {
+			"prize_group" : "1830",
+			"rate" : "0.0630"
+		}, {
+			"prize_group" : "1828",
+			"rate" : "0.0640"
+		}, {
+			"prize_group" : "1826",
+			"rate" : "0.0650"
+		}, {
+			"prize_group" : "1824",
+			"rate" : "0.0660"
+		}, {
+			"prize_group" : "1822",
+			"rate" : "0.0670"
+		}, {
+			"prize_group" : "1820",
+			"rate" : "0.0680"
+		}, {
+			"prize_group" : "1818",
+			"rate" : "0.0690"
+		}, {
+			"prize_group" : "1816",
+			"rate" : "0.0700"
+		}, {
+			"prize_group" : "1814",
+			"rate" : "0.0710"
+		}, {
+			"prize_group" : "1812",
+			"rate" : "0.0720"
+		}, {
+			"prize_group" : "1810",
+			"rate" : "0.0730"
+		}, {
+			"prize_group" : "1808",
+			"rate" : "0.0740"
+		}, {
+			"prize_group" : "1806",
+			"rate" : "0.0750"
+		}, {
+			"prize_group" : "1804",
+			"rate" : "0.0760"
+		}, {
+			"prize_group" : "1802",
+			"rate" : "0.0770"
+		}, {
+			"prize_group" : "1800",
+			"rate" : "0.0780"
+		}, {
+			"prize_group" : "1798",
+			"rate" : "0.0790"
+		}, {
+			"prize_group" : "1796",
+			"rate" : "0.0800"
+		}, {
+			"prize_group" : "1794",
+			"rate" : "0.0810"
+		}, {
+			"prize_group" : "1792",
+			"rate" : "0.0820"
+		}, {
+			"prize_group" : "1790",
+			"rate" : "0.0830"
+		}, {
+			"prize_group" : "1788",
+			"rate" : "0.0840"
+		}, {
+			"prize_group" : "1786",
+			"rate" : "0.0850"
+		}, {
+			"prize_group" : "1784",
+			"rate" : "0.0860"
+		}, {
+			"prize_group" : "1782",
+			"rate" : "0.0870"
+		}, {
+			"prize_group" : "1780",
+			"rate" : "0.0880"
+		}, {
+			"prize_group" : "1778",
+			"rate" : "0.0890"
+		}, {
+			"prize_group" : "1776",
+			"rate" : "0.0900"
+		}, {
+			"prize_group" : "1774",
+			"rate" : "0.0910"
+		}, {
+			"prize_group" : "1772",
+			"rate" : "0.0920"
+		}, {
+			"prize_group" : "1770",
+			"rate" : "0.0930"
+		}, {
+			"prize_group" : "1768",
+			"rate" : "0.0940"
+		}, {
+			"prize_group" : "1766",
+			"rate" : "0.0950"
+		}, {
+			"prize_group" : "1764",
+			"rate" : "0.0960"
+		}, {
+			"prize_group" : "1762",
+			"rate" : "0.0970"
+		}, {
+			"prize_group" : "1760",
+			"rate" : "0.0980"
+		}, {
+			"prize_group" : "1758",
+			"rate" : "0.0990"
+		}, {
+			"prize_group" : "1756",
+			"rate" : "0.1000"
+		}, {
+			"prize_group" : "1754",
+			"rate" : "0.1010"
+		}, {
+			"prize_group" : "1752",
+			"rate" : "0.1020"
+		}, {
+			"prize_group" : "1750",
+			"rate" : "0.1030"
+		}, {
+			"prize_group" : "1748",
+			"rate" : "0.1040"
+		}, {
+			"prize_group" : "1746",
+			"rate" : "0.1050"
+		}, {
+			"prize_group" : "1744",
+			"rate" : "0.1060"
+		}, {
+			"prize_group" : "1742",
+			"rate" : "0.1070"
+		}, {
+			"prize_group" : "1740",
+			"rate" : "0.1080"
+		}, {
+			"prize_group" : "1738",
+			"rate" : "0.1090"
+		}, {
+			"prize_group" : "1736",
+			"rate" : "0.1100"
+		}, {
+			"prize_group" : "1734",
+			"rate" : "0.1110"
+		}, {
+			"prize_group" : "1732",
+			"rate" : "0.1120"
+		}, {
+			"prize_group" : "1730",
+			"rate" : "0.1130"
+		}, {
+			"prize_group" : "1728",
+			"rate" : "0.1140"
+		}, {
+			"prize_group" : "1726",
+			"rate" : "0.1150"
+		}, {
+			"prize_group" : "1724",
+			"rate" : "0.1160"
+		}, {
+			"prize_group" : "1722",
+			"rate" : "0.1170"
+		}, {
+			"prize_group" : "1720",
+			"rate" : "0.1180"
+		}, {
+			"prize_group" : "1718",
+			"rate" : "0.1190"
+		}, {
+			"prize_group" : "1716",
+			"rate" : "0.1200"
+		}, {
+			"prize_group" : "1714",
+			"rate" : "0.1210"
+		}, {
+			"prize_group" : "1712",
+			"rate" : "0.1220"
+		}, {
+			"prize_group" : "1710",
+			"rate" : "0.1230"
+		}, {
+			"prize_group" : "1708",
+			"rate" : "0.1240"
+		}, {
+			"prize_group" : "1706",
+			"rate" : "0.1250"
+		}, {
+			"prize_group" : "1704",
+			"rate" : "0.1260"
+		}, {
+			"prize_group" : "1702",
+			"rate" : "0.1270"
+		}, {
+			"prize_group" : "1700",
+			"rate" : "0.1280"
+		} ],
+		"gameNumbers" : [ {
+			"number" : "20170629-104",
+			"time" : "2017-06-29 22:40:00"
+		}, {
+			"number" : "20170629-105",
+			"time" : "2017-06-29 22:45:00"
+		}, {
+			"number" : "20170629-106",
+			"time" : "2017-06-29 22:50:00"
+		}, {
+			"number" : "20170629-107",
+			"time" : "2017-06-29 22:55:00"
+		}, {
+			"number" : "20170629-108",
+			"time" : "2017-06-29 23:00:00"
+		}, {
+			"number" : "20170629-109",
+			"time" : "2017-06-29 23:05:00"
+		}, {
+			"number" : "20170629-110",
+			"time" : "2017-06-29 23:10:00"
+		}, {
+			"number" : "20170629-111",
+			"time" : "2017-06-29 23:15:00"
+		}, {
+			"number" : "20170629-112",
+			"time" : "2017-06-29 23:20:00"
+		}, {
+			"number" : "20170629-113",
+			"time" : "2017-06-29 23:25:00"
+		}, {
+			"number" : "20170629-114",
+			"time" : "2017-06-29 23:30:00"
+		}, {
+			"number" : "20170629-115",
+			"time" : "2017-06-29 23:35:00"
+		}, {
+			"number" : "20170629-116",
+			"time" : "2017-06-29 23:40:00"
+		}, {
+			"number" : "20170629-117",
+			"time" : "2017-06-29 23:45:00"
+		}, {
+			"number" : "20170629-118",
+			"time" : "2017-06-29 23:50:00"
+		}, {
+			"number" : "20170629-119",
+			"time" : "2017-06-29 23:55:00"
+		}, {
+			"number" : "20170629-120",
+			"time" : "2017-06-30 00:00:00"
+		}, {
+			"number" : "20170630-001",
+			"time" : "2017-06-30 00:05:00"
+		}, {
+			"number" : "20170630-002",
+			"time" : "2017-06-30 00:10:00"
+		}, {
+			"number" : "20170630-003",
+			"time" : "2017-06-30 00:15:00"
+		}, {
+			"number" : "20170630-004",
+			"time" : "2017-06-30 00:20:00"
+		}, {
+			"number" : "20170630-005",
+			"time" : "2017-06-30 00:25:00"
+		}, {
+			"number" : "20170630-006",
+			"time" : "2017-06-30 00:30:00"
+		}, {
+			"number" : "20170630-007",
+			"time" : "2017-06-30 00:35:00"
+		}, {
+			"number" : "20170630-008",
+			"time" : "2017-06-30 00:40:00"
+		}, {
+			"number" : "20170630-009",
+			"time" : "2017-06-30 00:45:00"
+		}, {
+			"number" : "20170630-010",
+			"time" : "2017-06-30 00:50:00"
+		}, {
+			"number" : "20170630-011",
+			"time" : "2017-06-30 00:55:00"
+		}, {
+			"number" : "20170630-012",
+			"time" : "2017-06-30 01:00:00"
+		}, {
+			"number" : "20170630-013",
+			"time" : "2017-06-30 01:05:00"
+		}, {
+			"number" : "20170630-014",
+			"time" : "2017-06-30 01:10:00"
+		}, {
+			"number" : "20170630-015",
+			"time" : "2017-06-30 01:15:00"
+		}, {
+			"number" : "20170630-016",
+			"time" : "2017-06-30 01:20:00"
+		}, {
+			"number" : "20170630-017",
+			"time" : "2017-06-30 01:25:00"
+		}, {
+			"number" : "20170630-018",
+			"time" : "2017-06-30 01:30:00"
+		}, {
+			"number" : "20170630-019",
+			"time" : "2017-06-30 01:35:00"
+		}, {
+			"number" : "20170630-020",
+			"time" : "2017-06-30 01:40:00"
+		}, {
+			"number" : "20170630-021",
+			"time" : "2017-06-30 01:45:00"
+		}, {
+			"number" : "20170630-022",
+			"time" : "2017-06-30 01:50:00"
+		}, {
+			"number" : "20170630-023",
+			"time" : "2017-06-30 01:55:00"
+		}, {
+			"number" : "20170630-024",
+			"time" : "2017-06-30 10:00:00"
+		}, {
+			"number" : "20170630-025",
+			"time" : "2017-06-30 10:10:00"
+		}, {
+			"number" : "20170630-026",
+			"time" : "2017-06-30 10:20:00"
+		}, {
+			"number" : "20170630-027",
+			"time" : "2017-06-30 10:30:00"
+		}, {
+			"number" : "20170630-028",
+			"time" : "2017-06-30 10:40:00"
+		}, {
+			"number" : "20170630-029",
+			"time" : "2017-06-30 10:50:00"
+		}, {
+			"number" : "20170630-030",
+			"time" : "2017-06-30 11:00:00"
+		}, {
+			"number" : "20170630-031",
+			"time" : "2017-06-30 11:10:00"
+		}, {
+			"number" : "20170630-032",
+			"time" : "2017-06-30 11:20:00"
+		}, {
+			"number" : "20170630-033",
+			"time" : "2017-06-30 11:30:00"
+		}, {
+			"number" : "20170630-034",
+			"time" : "2017-06-30 11:40:00"
+		}, {
+			"number" : "20170630-035",
+			"time" : "2017-06-30 11:50:00"
+		}, {
+			"number" : "20170630-036",
+			"time" : "2017-06-30 12:00:00"
+		}, {
+			"number" : "20170630-037",
+			"time" : "2017-06-30 12:10:00"
+		}, {
+			"number" : "20170630-038",
+			"time" : "2017-06-30 12:20:00"
+		}, {
+			"number" : "20170630-039",
+			"time" : "2017-06-30 12:30:00"
+		}, {
+			"number" : "20170630-040",
+			"time" : "2017-06-30 12:40:00"
+		}, {
+			"number" : "20170630-041",
+			"time" : "2017-06-30 12:50:00"
+		}, {
+			"number" : "20170630-042",
+			"time" : "2017-06-30 13:00:00"
+		}, {
+			"number" : "20170630-043",
+			"time" : "2017-06-30 13:10:00"
+		}, {
+			"number" : "20170630-044",
+			"time" : "2017-06-30 13:20:00"
+		}, {
+			"number" : "20170630-045",
+			"time" : "2017-06-30 13:30:00"
+		}, {
+			"number" : "20170630-046",
+			"time" : "2017-06-30 13:40:00"
+		}, {
+			"number" : "20170630-047",
+			"time" : "2017-06-30 13:50:00"
+		}, {
+			"number" : "20170630-048",
+			"time" : "2017-06-30 14:00:00"
+		}, {
+			"number" : "20170630-049",
+			"time" : "2017-06-30 14:10:00"
+		}, {
+			"number" : "20170630-050",
+			"time" : "2017-06-30 14:20:00"
+		}, {
+			"number" : "20170630-051",
+			"time" : "2017-06-30 14:30:00"
+		}, {
+			"number" : "20170630-052",
+			"time" : "2017-06-30 14:40:00"
+		}, {
+			"number" : "20170630-053",
+			"time" : "2017-06-30 14:50:00"
+		}, {
+			"number" : "20170630-054",
+			"time" : "2017-06-30 15:00:00"
+		}, {
+			"number" : "20170630-055",
+			"time" : "2017-06-30 15:10:00"
+		}, {
+			"number" : "20170630-056",
+			"time" : "2017-06-30 15:20:00"
+		}, {
+			"number" : "20170630-057",
+			"time" : "2017-06-30 15:30:00"
+		}, {
+			"number" : "20170630-058",
+			"time" : "2017-06-30 15:40:00"
+		}, {
+			"number" : "20170630-059",
+			"time" : "2017-06-30 15:50:00"
+		}, {
+			"number" : "20170630-060",
+			"time" : "2017-06-30 16:00:00"
+		}, {
+			"number" : "20170630-061",
+			"time" : "2017-06-30 16:10:00"
+		}, {
+			"number" : "20170630-062",
+			"time" : "2017-06-30 16:20:00"
+		}, {
+			"number" : "20170630-063",
+			"time" : "2017-06-30 16:30:00"
+		}, {
+			"number" : "20170630-064",
+			"time" : "2017-06-30 16:40:00"
+		}, {
+			"number" : "20170630-065",
+			"time" : "2017-06-30 16:50:00"
+		}, {
+			"number" : "20170630-066",
+			"time" : "2017-06-30 17:00:00"
+		}, {
+			"number" : "20170630-067",
+			"time" : "2017-06-30 17:10:00"
+		}, {
+			"number" : "20170630-068",
+			"time" : "2017-06-30 17:20:00"
+		}, {
+			"number" : "20170630-069",
+			"time" : "2017-06-30 17:30:00"
+		}, {
+			"number" : "20170630-070",
+			"time" : "2017-06-30 17:40:00"
+		}, {
+			"number" : "20170630-071",
+			"time" : "2017-06-30 17:50:00"
+		}, {
+			"number" : "20170630-072",
+			"time" : "2017-06-30 18:00:00"
+		}, {
+			"number" : "20170630-073",
+			"time" : "2017-06-30 18:10:00"
+		}, {
+			"number" : "20170630-074",
+			"time" : "2017-06-30 18:20:00"
+		}, {
+			"number" : "20170630-075",
+			"time" : "2017-06-30 18:30:00"
+		}, {
+			"number" : "20170630-076",
+			"time" : "2017-06-30 18:40:00"
+		}, {
+			"number" : "20170630-077",
+			"time" : "2017-06-30 18:50:00"
+		}, {
+			"number" : "20170630-078",
+			"time" : "2017-06-30 19:00:00"
+		}, {
+			"number" : "20170630-079",
+			"time" : "2017-06-30 19:10:00"
+		}, {
+			"number" : "20170630-080",
+			"time" : "2017-06-30 19:20:00"
+		}, {
+			"number" : "20170630-081",
+			"time" : "2017-06-30 19:30:00"
+		}, {
+			"number" : "20170630-082",
+			"time" : "2017-06-30 19:40:00"
+		}, {
+			"number" : "20170630-083",
+			"time" : "2017-06-30 19:50:00"
+		}, {
+			"number" : "20170630-084",
+			"time" : "2017-06-30 20:00:00"
+		}, {
+			"number" : "20170630-085",
+			"time" : "2017-06-30 20:10:00"
+		}, {
+			"number" : "20170630-086",
+			"time" : "2017-06-30 20:20:00"
+		}, {
+			"number" : "20170630-087",
+			"time" : "2017-06-30 20:30:00"
+		}, {
+			"number" : "20170630-088",
+			"time" : "2017-06-30 20:40:00"
+		}, {
+			"number" : "20170630-089",
+			"time" : "2017-06-30 20:50:00"
+		}, {
+			"number" : "20170630-090",
+			"time" : "2017-06-30 21:00:00"
+		}, {
+			"number" : "20170630-091",
+			"time" : "2017-06-30 21:10:00"
+		}, {
+			"number" : "20170630-092",
+			"time" : "2017-06-30 21:20:00"
+		}, {
+			"number" : "20170630-093",
+			"time" : "2017-06-30 21:30:00"
+		}, {
+			"number" : "20170630-094",
+			"time" : "2017-06-30 21:40:00"
+		}, {
+			"number" : "20170630-095",
+			"time" : "2017-06-30 21:50:00"
+		}, {
+			"number" : "20170630-096",
+			"time" : "2017-06-30 22:00:00"
+		}, {
+			"number" : "20170630-097",
+			"time" : "2017-06-30 22:05:00"
+		}, {
+			"number" : "20170630-098",
+			"time" : "2017-06-30 22:10:00"
+		}, {
+			"number" : "20170630-099",
+			"time" : "2017-06-30 22:15:00"
+		}, {
+			"number" : "20170630-100",
+			"time" : "2017-06-30 22:20:00"
+		}, {
+			"number" : "20170630-101",
+			"time" : "2017-06-30 22:25:00"
+		}, {
+			"number" : "20170630-102",
+			"time" : "2017-06-30 22:30:00"
+		}, {
+			"number" : "20170630-103",
+			"time" : "2017-06-30 22:35:00"
+		} ],
+		"currentNumber" : "20170629-104",
+		"currentNumberTime" : 1498747165,
+		"currentTime" : 1498747157,
+		"availableCoefficients" : {},
+		"defaultMultiple" : 1,
+		"defaultCoefficient" : "0.5000",
+		"prizeLimit" : "400000",
+		"maxPrizeGroup" : "1950",
+		"issueHistory" : {
+			"current_issue" : "20170629-104",
+			"issues" : [ {
+				"issue" : "20170629-103",
+				"offical_time" : 1498746948,
+				"wn_number" : "54754"
+			}, {
+				"issue" : "20170629-102",
+				"offical_time" : 1498746652,
+				"wn_number" : "12877"
+			}, {
+				"issue" : "20170629-101",
+				"offical_time" : 1498746347,
+				"wn_number" : "81651"
+			}, {
+				"issue" : "20170629-100",
+				"offical_time" : 1498746056,
+				"wn_number" : "23425"
+			}, {
+				"issue" : "20170629-099",
+				"offical_time" : 1498745750,
+				"wn_number" : "37396"
+			}, {
+				"issue" : "20170629-098",
+				"offical_time" : 1498745448,
+				"wn_number" : "94962"
+			}, {
+				"issue" : "20170629-097",
+				"offical_time" : 1498745147,
+				"wn_number" : "08474"
+			}, {
+				"issue" : "20170629-096",
+				"offical_time" : 1498744849,
+				"wn_number" : "49910"
+			}, {
+				"issue" : "20170629-095",
+				"offical_time" : 1498744246,
+				"wn_number" : "94058"
+			}, {
+				"issue" : "20170629-094",
+				"offical_time" : 1498743647,
+				"wn_number" : "33389"
+			}, {
+				"issue" : "20170629-093",
+				"offical_time" : 1498743051,
+				"wn_number" : "26337"
+			}, {
+				"issue" : "20170629-092",
+				"offical_time" : 1498742449,
+				"wn_number" : "67146"
+			}, {
+				"issue" : "20170629-091",
+				"offical_time" : 1498741848,
+				"wn_number" : "27061"
+			}, {
+				"issue" : "20170629-090",
+				"offical_time" : 1498741247,
+				"wn_number" : "49366"
+			}, {
+				"issue" : "20170629-089",
+				"offical_time" : 1498740649,
+				"wn_number" : "25811"
+			}, {
+				"issue" : "20170629-088",
+				"offical_time" : 1498740048,
+				"wn_number" : "07427"
+			}, {
+				"issue" : "20170629-087",
+				"offical_time" : 1498739450,
+				"wn_number" : "09611"
+			}, {
+				"issue" : "20170629-086",
+				"offical_time" : 1498738847,
+				"wn_number" : "89940"
+			}, {
+				"issue" : "20170629-085",
+				"offical_time" : 1498738254,
+				"wn_number" : "09103"
+			}, {
+				"issue" : "20170629-084",
+				"offical_time" : 1498737646,
+				"wn_number" : "81878"
+			} ],
+			"last_number" : {
+				"issue" : "20170629-103",
+				"offical_time" : 1498746948,
+				"wn_number" : "54754"
+			}
+		},
+		"moneyUnits" : [ {
+			"value" : "0.5000",
+			"name" : "元"
+		}, {
+			"value" : "0.0500",
+			"name" : "角"
+		}, {
+			"value" : "0.0050",
+			"name" : "分"
+		}, {
+			"value" : "0.0005",
+			"name" : "厘"
+		} ],
+		"nextIssueNumber" : "20170629-105",
+		"nextIssueEndTime" : 1498747465,
+		"open" : true
+	}
+</script>
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/ismobile.js"></script>
+<script src="/static/mobile/js/require.js"></script>
+<script src="/static/mobile/js/libs/jquery-1.9.1.min.js"></script>
+<script>
+	var loadScript = function(src) {
+		var script = document.createElement('script');
+		var head = document.getElementsByTagName('head')[0];
+		var loaded;
+		script.src = src;
+		script.onload = script.onreadystatechange = function() {
+			if (!loaded
+					&& (!script.readyState || /loaded|complete/
+							.test(script.readyState))) {
+				script.onload = script.onreadystatechange = null;
+				loaded = true;
+				//initCustom();
+			}
+		}
+		head.appendChild(script);
+	}
+
+	String.prototype.hashCode = function() {
+		var hash = 0, i, chr, len;
+		if (this.length === 0)
+			return hash;
+		for (i = 0, len = this.length; i < len; i++) {
+			chr = this.charCodeAt(i);
+			hash = ((hash << 5) - hash) + chr;
+			hash |= 0; // Convert to 32bit integer
+		}
+		return hash;
+	};
+	require
+			.config({
+				baseUrl : '/static/mobile/js/libs',
+				urlArgs : "v=20170606001",
+				paths : {
+					jquery : 'jquery-1.9.1.min',
+					md5 : 'md5',
+					vue : 'vue',
+					classie : 'chart/classie',
+					menu : 'chart/menu',
+					easing : '/assets/js/jquery.easing.1.3',
+					cycletwo : '/static/scripts/vendor/jquery.cycle2.min',
+					marquee : '/static/scripts/vendor/jquery.marquee.min',
+					tabslet : '/static/scripts/vendor/jquery.tabslet.min',
+					cookie : '/static/scripts/vendor/jquery.cookie',
+					sio : '/static/scripts/vendor/socket.io',
+					def : '/static/scripts/3a.default',
+					global : '/static/scripts/vendor/global',
+					jscrollpane : '/assets/js/jquery.jscrollpane',
+					mousewheel : '/assets/js/jquery.mousewheel.min',
+					draggable : '/assets/js/jquery-ui-custom.min',
+					home : '/static/scripts/3a.home',
+					sound : '/static/scripts/3a.sound',
+					dsgame_base : '/assets/js/dsgame.base',
+					dsgame_Mask : '/assets/js/dsgame.Mask',
+					dsgame_Tab : '/assets/js/dsgame.Tab',
+					dsgame_Ernie : '/assets/js/dsgame.Ernie',
+					dsgame_Hover : '/assets/js/dsgame.Hover',
+					dsgame_Select : '/assets/js/dsgame.Select',
+					dsgame_Timer : '/assets/js/dsgame.Timer',
+					dsgame_Message : '/assets/js/dsgame.Message',
+					dsgame_GameMessage : '/assets/js/game/dsgame.GameMessage',
+					dsgame_Gamedices : '/assets/js-dist/gamedice/nssc/dsgame.Gamedices.nssc.config.min',
+					dsgame_MiniWindow : '/assets/js/dsgame.MiniWindow',
+					dsgame_SliderBar : '/assets/js/dsgame.SliderBar',
+					dsgame_game : '/assets/js-dist/game/dsgame.game.min',
+					dsgame_Tip : '/assets/js/dsgame.Tip',
+					jm : 'chart/jm',
+					'jquery.longclick.min' : '/assets/js/jquery.longclick.min',
+					'dsgame.GameMessage' : '/assets/js/game/dsgame.GameMessage',
+					'dsgame.Gamedices.k3.config.min' : '/assets/js-dist/gamedice/k3/dsgame.Gamedices.k3.config.min',
+					'dsgame.gamedice.min' : '/assets/js-dist/gamedice/dsgame.gamedice.min'
+				},
+				waitSeconds : 60000,
+				map : {
+					'*' : {
+						'css' : '/static/mobile/js/libs/css.js'
+					}
+				},
+				shim : {
+					"jBox" : [ "jquery" ],
+					"jquery.cookie" : [ "jquery" ],
+					"jquery.anchorScroll.min" : [ "jquery" ],
+					"jquery.mCustomScrollbar.concat.min" : [ "jquery" ],
+					"3a.api" : [ "jBox" ],
+					"3a.line" : [ "3a.api" ],
+					"3a.util" : [ "jBox", "sio" ],
+					'global' : [ "jquery" ],
+					"def" : [ "3a.util", "3a.api" ],
+					"home" : [ "3a.api" ],
+					"jscrollpane" : [ "jquery" ],
+					"cycletwo" : [ "jquery" ],
+					"cookie" : [ "jquery" ],
+					"marquee" : [ "jquery" ],
+					"draggable" : [ "jquery" ],
+					"tabslet" : [ "jquery" ],
+					"easing" : [ "jquery" ],
+					"dsgame_base" : [ "jquery" ],
+					"dsgame_Mask" : [ "jquery", "dsgame_base" ],
+					"dsgame_game" : [ "jquery", "dsgame_base" ],
+					"dsgame_Tab" : [ "jquery", "dsgame_base" ],
+					"dsgame_GameMessage" : [ "jquery", "dsgame_base" ],
+					"dsgame_Gamedices" : [ "dsgame_GameMessage" ],
+					"dsgame_Ernie" : [ "jquery", "dsgame_base" ],
+					"dsgame_Hover" : [ "jquery", "dsgame_base", "dsgame_Tab" ],
+					"dsgame_Select" : [ "jquery", "dsgame_base" ],
+					"dsgame_Timer" : [ "jquery", "dsgame_base" ],
+					"dsgame_Message" : [ "jquery", "dsgame_base" ],
+					"dsgame_MiniWindow" : [ "jquery", "dsgame_base",
+							"dsgame_Message" ],
+					"dsgame_SliderBar" : [ "jquery", "dsgame_base" ],
+					"dsgame_Tip" : [ "jquery", "dsgame_base" ],
+					"dsgame.GameMessage" : [ "jquery", "dsgame_base" ],
+					"dsgame.Gamedices.k3.config.min" : [ "jquery",
+							"dsgame.GameMessage" ],
+					"dsgame.gamedice.min" : [ "jquery", "dsgame_base",
+							"draggable", "dsgame.Gamedices.k3.config.min" ]
+				}
+			});
+	var allreqjs = [
+	//'css!/assets/css/ucenter.css',
+	'css!/static/theme/' + keyWords + '/styles/lottery.css',
+			'css!/static/theme/' + keyWords + '/styles/colors', 'jquery',
+			'jBox', '3a.api', '3a.util', 'easing', 'cookie', 'jscrollpane',
+			'mousewheel', 'marquee', 'global', 'def', 'home', 'sound',
+			'dsgame_base', 'dsgame_Mask', 'dsgame_Tab', 'dsgame_Ernie',
+			'dsgame_Hover', 'dsgame_Select', 'dsgame_Timer', 'dsgame_Message',
+			'dsgame_MiniWindow', 'dsgame_SliderBar', 'dsgame_Tip'
+	//'dsgame_game'
+	];
+	if (String(location.href).indexOf('13.html') > -1) {
+		allreqjs.push('draggable');
+		allreqjs.push('dsgame_GameMessage');
+		allreqjs.push('dsgame_Gamedices');
+	}
+	console.log(allreqjs);//assets/js-dist/gamedice/dsgame.gamedice.min.js
+
+	require(
+			allreqjs,
+			function() {
+				(function() {
+					if ($('#popWindow').length) {
+						var popWindow = new dsgame.Message();
+						var data = {
+							title : '提示',
+							content : $('#popWindow').find(
+									'.pop-bd > .pop-content').html(),
+							closeIsShow : true,
+							closeButtonText : '关闭',
+							closeFun : function() {
+								this.hide();
+							}
+						};
+						popWindow.show(data);
+					}
+
+					$
+							.getScript(
+									"/assets/js-dist/game/dsgame.game.min.js?___md5",
+									function() {
+										if (typeof loadgamejs !== 'undefined') {
+											console.log(loadgamejs,
+													'loadgamejsloadgamejs',
+													location.href);
+											loadScript("/assets/js-dist/game/"
+													+ loadgamejs + "?v=2");
+										}
+										if (String(location.href).indexOf(
+												'13.html') > -1) {
+											loadScript("/assets/js-dist/gamedice/dsgame.gamedice.min.js?v=2");
+											$('#template-footer').empty();
+											$(
+													".ui-simulation-wrap.continus-counter")
+													.empty()
+										}
+									});
+
+				})();
+
+				$('[data-dropbox]').on({
+					mousedown : function(e) {
+						if ($(this).hasClass('open'))
+							return false;
+						$(this).addClass('open');
+						// return false;
+					}
+					// 点击
+					,
+					click : function(e) {
+						e.preventDefault();
+					}
+					// 失去焦点
+					,
+					blur : function(e) {
+						// console.log('失去焦点');
+						$(this).removeClass('open');
+					}
+				});
+			});
+</script>
+</head>
+<body>
+	<div class="response-wrap">
+		<div id="header" class="wrap">
+			<div class="wrap-inner">
+				<div class="left top-nav">
+					<!-- 用户中心 -->
+					<div class="top-nav-user">
+						<em>欢迎您,&nbsp;&nbsp;</em> <a href="/users/user"
+							class="top-nav-toggle" data-overdropdown="handler"> <span
+							id="user-name" data-user-name></span> <i class="caret"></i>
+						</a>
+						<div class="top-nav-menu" data-overdropdown="dropdown">
+							<div class="top-user-links clearfix">
+								<a href="/users/change-password.html" class="tul-link1">
+									<i></i> <span>登录密码</span>
+								</a> <a href="/users/change-fund-password.html"
+									class="tul-link2"> <i></i> <span>资金密码</span>
+								</a> <a href="/users/personal" class="tul-link3"> <i></i>
+									<span>修改资料</span>
+								</a> <a href="/users/user-bankards" class="tul-link4"> <i></i>
+									<span>银行卡</span>
+								</a>
+							</div>
+						</div>
+						<a class="highlight-color" href="javascript:;" onclick="quit()">退出</a>
+					</div>
+				</div>
+				<div class="right">
+					<ul class="top-account">
+						<li id="top-switch" data-overdropdown="handler"><a
+							href="javascript:;" class="top-switch-link"><em class="m_ico">&#59218;</em></a>
+							<div id="top-switch-menu" data-overdropdown="dropdown">
+								<ul>
+									<li><label><em class="m_ico m_moresize">&#59217;</em>音效</label><em
+										class="m_ico m_sw" type="sound">&#59221;</em></li>
+									<li><label><em class="m_ico">&#59219;</em>中奖推送</label><em
+										class="m_ico m_sw m_switchon" type="push">&#59222;</em></li>
+								</ul>
+							</div></li>
+						<li class="top-account-balance"><span style="display: none;">余额：<span
+								data-user-account-balance>-</span> 元 <i data-refresh-balance></i>
+						</span> <span style="display: none;">余额已隐藏</span> <span
+							class="balance-toggle highlight-color">隐藏</span></li>
+						<li class="top-account-deposit"><a
+							href="/users/deposit.html"> <i></i> <span>充值</span>
+						</a></li>
+						<li class="top-account-withdraw"><a href="/qukuan">
+								<i></i> <span>提款</span>
+						</a></li>
+						<li class="top-account-transfer"><a
+							href="/pay/goTransfer"> <i></i> <span>平台转账</span>
+								<li class="deposit-record"><a
+									href="/statement.html#recharge_view"> <span
+										class="opacity-60">充值记录</span>
+
+								</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="nav" class="wrap">
+			<div class="wrap-inner clearfix">
+				<div id="relatelnk" data-overdropdown="handler">
+					<a href="/static/download.html" class="mobile-lnk" target="_blank"><em
+						class="m_ico">&#59197;</em><span>APP下载</span></a> <a
+						href="/static/download.html" id="pcclient" target="_blank"><em
+						class="m_ico">&#59199;</em><span>客户端</span></a>
+					<div class="mobile-menu" data-overdropdown="dropdown">
+						<!--<img src="/static/theme/xinbao/images/vcode.png" alt="" align="center" width="164" height="164">-->
+					</div>
+				</div>
+
+				<a href="/home.html" class="left" id="logo">多宝2游戏</a> <span
+					class="logo-diff">多宝2游戏</span>
+				<ul class="nav-content right">
+					<li data-gamelist><a class="nav-lobby" id="lottery-menu"
+						href="javascript:;"> <i></i><span>彩票中心</span>
+					</a></li>
+					<li><a class="nav-ag"
+						href="javascript:commonUtil.commonTipAlert('敬请期待');"> <i></i><span>真人娱乐</span>
+					</a></li>
+					<li><a class="nav-number"
+						href="javascript:commonUtil.commonTipAlert('敬请期待');"> <i></i><span>体育赛事</span>
+					</a></li>
+					<li><a class="nav-tiger "
+						href="javascript:commonUtil.commonTipAlert('敬请期待');"> <i></i><span>电子游艺</span>
+					</a></li>
+					<li data-account data-overdropdown="handler"><a
+						class="nav-ucenter nav-account" href="javascript:;"> <i></i><span>账户管理</span>
+							<!--<b class="caret"></b>-->
+					</a> <!--账户管理下拉-->
+						<div class="nav-account-lists" data-overdropdown="dropdown">
+							<div class="mask"></div>
+							<ul class="clearfix">
+								<li>
+									<div class="list-link">
+										<a class="grgl" href="users/change-password.html">个人管理</a>
+									</div>
+								</li>
+								<li>
+									<div class="list-link">
+										<a class="tdgl" href="/user.html">团队管理</a>
+									</div>
+								</li>
+							</ul>
+						</div></li>
+					<li data-form data-overdropdown="handler"><a class="nav-form "
+						href="javascript:;"> <i></i><span>报表管理</span>
+					</a> <!--报表管理下拉-->
+						<div class="nav-form-lists" data-overdropdown="dropdown">
+							<div class="mask"></div>
+							<ul class="clearfix">
+								<li>
+									<div class="list-link">
+										<a class="yxjl" href="/orders.html">游戏记录</a>
+									</div>
+								</li>
+								<li>
+									<div class="list-link">
+										<a class="tdbb" href="/dayreport.html">个人报表</a>
+									</div>
+								</li>
+								<!-- 						<li> -->
+								<!-- 							<div class="list-link"> -->
+
+								<!-- 							</div> -->
+								<!-- 						</li> -->
+								<li>
+									<div class="list-link">
+										<a class="tdbb" href="/teamreport.html">团队报表</a>
+									</div>
+								</li>
+							</ul>
+						</div></li>
+					<li class="no-margin"><a class="nav-hongbao"
+						href="/activity/goIndex.html"> <i></i><span>优惠活动</span>
+					</a></li>
+					<li class="no-margin"><a class="nav-fund"
+						href="/statement.html#account_view"> <i></i><span>资金明细</span>
+					</a></li>
+					<li class="no-margin"><a class="nav-client"
+						href="/static/download.html"> <i></i><span>客户端下载</span>
+					</a></li>
+				</ul>
+			</div>
+			<div class="nav-container-fluid">
+				<div class="menu-content">
+					<div class="menu-list">
+						<dl class="ssc">
+							<dt>时时彩</dt>
+							<dd>
+								<a href="#">多宝2分分彩</a> <i class="game-24h"></i>
+							</dd>
+							<dd>
+								<a href="#">多宝25分彩</a> <i class="game-24h"></i>
+							</dd>
+							<dd>
+								<a href="#">韩国1.5分彩</a> <i class="game-hot">H</i>
+							</dd>
+							<dd>
+								<a href="#">重庆时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">新疆时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">天津时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">香港时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">日本时时彩</a>
+							</dd>
+							<dd>
+								<a href="#">新重庆时时彩</a>
+							</dd>
+						</dl>
+						<dl class="split"></dl>
+						<dl class="five">
+							<dt>11选5</dt>
+							<dd>
+								<a href="#">多宝211选5</a> <i class="game-24h"></i>
+							</dd>
+							<dd>
+								<a href="#">山东11选5</a>
+							</dd>
+							<dd>
+								<a href="#">江西11选5</a>
+							</dd>
+							<dd>
+								<a href="#">广东11选5</a>
+							</dd>
+							<dd>
+								<a href="#">辽宁11选5</a>
+							</dd>
+							<dd>
+								<a href="#">上海11选5</a>
+							</dd>
+							<dd>
+								<a href="#">黑龙江11选5</a>
+							</dd>
+							<dd>
+								<a href="#">香港11选5</a>
+							</dd>
+						</dl>
+						<dl class="split"></dl>
+						<dl class="happy">
+							<dt>快乐彩</dt>
+							<dd>
+								<a href="#">江苏快三</a>
+							</dd>
+							<dd>
+								<a href="#">吉林快三</a>
+							</dd>
+							<dd>
+								<a href="#">安徽快三</a>
+							</dd>
+							<dd>
+								<a href="#">广西快三</a>
+							</dd>
+							<dd>
+								<a href="#">湖北快三</a>
+							</dd>
+							<dd>
+								<a href="#">内蒙快三</a>
+							</dd>
+						</dl>
+						<dl class="split"></dl>
+						<dl class="others">
+							<dt>其他游戏</dt>
+							<dd>
+								<a href="#">多宝2秒秒彩</a>
+							</dd>
+							<dd>
+								<a href="#">3D</a>
+							</dd>
+							<dd>
+								<a href="#">排列三/排列五</a>
+							</dd>
+							<dd>
+								<a href="#">北京PK10</a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bet clearfix">
+
+			<link media="all" type="text/css" rel="stylesheet"
+				href="/assets/images/game/game.css">
+			<link media="all" type="text/css" rel="stylesheet"
+				href="/static/theme/db2/styles/ball.css">
+
+			<input type="hidden" id="tab_input" value="lobby">
+			<div class="body hidden-when-printed">
+				<div class="main-content wrap">
+
+					<div class="wrap-inner clearfix">
+						<div class="float-trend">
+							<a href="#" class="chktrend" target="_blank">开奖走势图</a>
+						</div>
+						<div class="game-info">
+							<div class="lottery-info-basic">
+								<div class="lottery-info-logo">
+									<img id='J-lottery-logo'
+										src="/assets/images/game/logo/CQSSC.png" rel="CQSSC"
+										alt="彩种LOGO" />
+								</div>
+								<div class="lottery-info-issue-box">
+									<span>第</span> <span id="J-header-currentNumber"></span> <span>期</span>
+								</div>
+							</div>
+							<div class="lottery-countdown J-lottery-countdown">
+								<ul>
+									<li class="countdown-hour"><i>时</i> <em>00</em></li>
+									<li class="countdown-minute"><i>分</i> <em>00</em></li>
+									<li class="countdown-second"><i>秒</i> <em>00</em></li>
+								</ul>
+							</div>
+							<div class="lottery-board css-flip css-flip-x flip-hover">
+								<!-- <div class="lottery-issue-board flip-front"><div id="J-lottery-numbers"></div></div> -->
+								<div class="lottery-numbers-board flip-back"
+									id="lottery-numbers-board">
+									<h3>
+										第<span id="J-ernie-issue"></span>期<br>开奖结果
+									</h3>
+									<div data-lottery-ernie-numbers style="display: none;"></div>
+									<div class="loading-lottery J-loading-lottery">
+										<i>开</i> <i>奖</i> <i>中</i> <i class="elli">.</i> <i
+											class="elli">.</i> <i class="elli">.</i>
+									</div>
+								</div>
+								<!-- <a href="javascript:;" class="switch-board J-switch-board">切换</a> -->
+							</div>
+
+						</div>
+
+						<div id="content" class="left">
+
+							<div class="game-board">
+								<div class="play-section">
+									<div class="section-inner">
+										<div class="play-select">
+											<ul class="play-select-title clearfix" id="J-panel-gameTypes"></ul>
+											<ul class="gametypes-menu-ul" id="J-gametyes-menu-panel"></ul>
+										</div>
+									</div>
+								</div>
+								<div class="number-section">
+									<div class="section-inner">
+										<div class="game-method-prize" id="J-method-prize">
+											单注默认奖金<span class="c-highlight">0.00</span>元
+										</div>
+										<div id="J-balls-main-panel"
+											class="number-section-balls-main-panel"></div>
+										<div id="J-balls-statistics-panel">
+											<ul class="bet-statistics clearfix">
+												<li class="choose-btn right">
+													<button type="button" id="J-add-order"
+														class="ui-button add-to-cart">
+														<i></i><span>加入购彩篮</span>
+													</button>
+													<button type="button" id="J-fast-submit"
+														class="ui-button fast-submit-button">
+														<i></i><span>立即投注</span>
+													</button>
+												</li>
+												<li class="moneyunit-choose"><select
+													id="J-balls-statistics-moneyUnit" style="display: none;">
+
+														<option value="0.5000">元</option>
+
+														<option value="0.0500">角</option>
+
+														<option value="0.0050">分</option>
+
+														<option value="0.0005">厘</option>
+
+												</select>
+													<div class="filter-tabs-cont"
+														id="J-balls-statistics-moneyUnit-trigger">
+
+														<a href="javacript:;" data-value="0.5000">元</a> <a
+															href="javacript:;" data-value="0.0500">角</a> <a
+															href="javacript:;" data-value="0.0050">分</a> <a
+															href="javacript:;" data-value="0.0005">厘</a>
+
+													</div></li>
+												<li class="multiple-choose"><span>倍数</span> <select
+													id="J-balls-statistics-multiple" style="display: none;">
+														<option value="1">1</option>
+														<option value="5">5</option>
+														<option value="10">10</option>
+														<option value="50">50</option>
+														<option value="100">100</option>
+														<option value="200">200</option>
+												</select> <!-- <span id="J-balls-statistics-multiple-text" class="game-statistics-multiple-text">1</span> -->
+												</li>
+												<!-- 设置奖金组及返点-->
+												<li class="bonus-choose">
+													<div class="slider-range J-prize-group-slider"
+														onselectstart="return false;" data-slider-step="1">
+														<div class="slider-range-scale">
+															<span>返点</span> <span class="small-number"
+																data-slider-min>100</span> <span class="percent-number"
+																data-slider-percent>0%</span> <span class="big-number"
+																data-slider-max>0</span>
+														</div>
+														<div class="right">
+															<span class="slider-current-value" data-slider-value></span>
+															<span>奖金组</span>
+														</div>
+														<div class="slider-action">
+															<div class="slider-range-sub" data-slider-sub>-</div>
+															<div class="slider-range-add" data-slider-add>+</div>
+															<div class="slider-range-wrapper" data-slider-cont>
+																<div class="slider-range-inner" data-slider-inner></div>
+																<div class="slider-range-btn" data-slider-handle></div>
+															</div>
+														</div>
+													</div> <input id="J-bonus-select-value" type="hidden"
+													value="1956">
+												</li>
+												<li class="choose-bet">
+													<div class="choose-bet-1">
+														<span>您选择了</span> <em id="J-balls-statistics-lotteryNum">0</em>
+														<span>注,</span>
+													</div>
+													<div class="choose-bet-2">
+														<em id="J-balls-statistics-multipleNum">0</em> <span>倍，</span>
+													</div>
+													<div class="choose-bet-3">
+														<span>返还</span> <em id="J-balls-statistics-rebate">0.00</em>
+														<span>元，</span>
+													</div>
+													<div class="choose-bet-4">
+														<span>共投注</span> <em id="J-balls-statistics-amount">0.00</em>
+														<span>元</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<div class="panel-section">
+									<div class="section-label">
+										<span>号码篮</span>
+									</div>
+									<div class="section-right">
+										<div class="bet-statistics">
+											<div class="bet-subtotal bet-subtotal-rebate text-right">
+												<label>返点总金额</label> 共 <em id="J-rebate-amount">0.00</em>元
+											</div>
+											<div class="bet-subtotal text-right">
+												<label>投注总金额</label> <em id="J-gameOrder-lotterys-num">0</em>注，共<em
+													id="J-gameOrder-amount">0.00</em>元
+											</div>
+										</div>
+										<div class="submit-panel">
+											<button type="button" id="J-trace-switch"
+												class="ui-button btn-bet-disable">追号投注</button>
+											<button type="button" id="J-submit-order"
+												class="ui-button btn-bet-disable">确认投注</button>
+										</div>
+									</div>
+									<div class="section-inner">
+										<div class="panel-select">
+											<div class="panel-order-list-cont"
+												id="J-panel-order-list-cont">
+												<ul id="J-balls-order-container">
+
+												</ul>
+											</div>
+											<div class="J-cart-empty cart-empty">大爷，选几个幸运号码来一发嘛，伦家还等着您中奖呢～</div>
+										</div>
+
+									</div>
+								</div>
+								<div class="game-record-section">
+									<ul class="tabs clearfix">
+										<li class="current" srcLink="/min-window/orders.html"><a
+											href="javascript:;">游戏记录</a></li>
+										<!-- 		<li srcLink="/tasks/mini-window"><a href="javascript:;" >追号记录</a></li> -->
+										<!-- 		<li srcLink="/transactions/mini-window"><a href="javascript:;" >资金明细</a></li> -->
+									</ul>
+									<div class="record-content" data-value="">
+
+										<table width="100%" class="table bet-table" id="J-table">
+											<thead>
+												<tr>
+													<th>游戏</th>
+													<th>奖期</th>
+													<th>玩法</th>
+													<th>赔率</th>
+													<th>方案</th>
+													<th>注单金额</th>
+													<th>开奖号码</th>
+													<th>中奖金额</th>
+													<th>状态</th>
+													<th>操作</th>
+												</tr>
+											<thead>
+											<tbody id="J-tbody">
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="aside" class="left">
+							<div class="user-info">
+								<h2>zx19926276</h2>
+								<p>
+									<small>账户余额：</small>
+								</p>
+								<p class="user-balance" id="J-user-balance">
+									<span data-user-account-balance>0.00</span> <span>元</span> <i
+										data-refresh-balance>Refresh</i>
+								</p>
+								<p>
+									<a href="/users/deposit.html" class="ui-button">立即充值</a>
+								</p>
+							</div>
+							<div class="bet-trend" id="J-minitrend-cont">
+								<p class="text-right more">
+									<!-- <a target="_blank" href="http://127.0.0.1/tides/trend-view/1">查看完整走势</a> -->
+								</p>
+							</div>
+							<div class="events-list">
+								<!--<h2>最新热门活动</h2>-->
+								<ul>
+									<!--<li><a href="http://127.0.0.1/events/everydaygetmoney" target="_blank">天天拿红包，奖金您做主！更低倍数更给力！【加强版】</a></li> -->
+								</ul>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+				<div class="j-ui-miniwindow pop pop-panel-trace trace-panel"
+					id="J-trace-panel">
+					<div class="trace-radio pop-hd">
+						<i class="pop-close closeBtn"></i> <a href="javascript:void(0);"
+							data-value="tongbei">同倍追号</a> <a href="javascript:void(0);"
+							data-value="lirunlv">利润率追号</a> <a href="javascript:void(0);"
+							data-value="fanbei">翻倍追号</a>
+					</div>
+					<div class="trace-content">
+						<div class="chase-tab">
+							<div class="chase-tab-content">
+								<div class="trace-title-param">
+									<div class="filter-tabs">
+										<span class="filter-tabs-title">连续追:</span>
+										<div class="filter-tabs-cont J-trace-tongbei-times-filter">
+											<a href="javascript:void(0);" data-value="5">5期</a> <a
+												href="javascript:void(0);" data-value="10">10期</a> <a
+												href="javascript:void(0);" data-value="15">15期</a> <a
+												href="javascript:void(0);" data-value="20">20期</a>
+										</div>
+									</div>
+									<label class="param"> 已选:&nbsp;<input
+										id="J-trace-tongbei-times" class="input w-1" type="text"
+										value="10" />&nbsp;期
+									</label> <label class="param"> 倍数: <select
+										id="J-trace-tongbei-multiple-select" style="display: none;">
+											<option value="1">1</option>
+											<option value="5">5</option>
+											<option value="10">10</option>
+											<option value="15">15</option>
+											<option value="20">20</option>
+									</select> 倍 <input id="J-trace-tongbei-multiple" class="input"
+										type="hidden" value="1" />
+									</label> <input type="button"
+										class="btn trace-button-detail btn-important" value="生成追号计划" />
+								</div>
+
+								<div class="chase-table-container">
+									<table class="table chase-table" id="J-trace-table">
+										<tbody id="J-trace-table-tongbei-body" data-type="tongbei">
+											<tr>
+												<th class="text-center">序号</th>
+												<th><input type="checkbox" checked="checked"
+													class="checkbox" data-action="checkedAll">追号期次</th>
+												<th>倍数</th>
+												<th>金额</th>
+												<th>预计开奖时间</th>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- 利润率追号 -->
+							<div class="chase-tab-content">
+								<div class="trace-title-param">
+									<label class="param right c-red" style="line-height: 28px;">注意：利润率计算使用当前用户最大奖金组计算</label>
+									<label class="param"> 最低收益率: <input
+										id="J-trace-lirunlv-num" class="input w-1" type="text"
+										value="50" /> %
+									</label> <label class="param"> 追号期数: <input
+										id="J-trace-lirunlv-times" class="input w-1" type="text"
+										value="10" />
+									</label> <input type="button"
+										class="btn trace-button-detail btn-important" value="生成追号计划" />
+								</div>
+
+								<div class="chase-table-container">
+									<table id="J-trace-table-lirunlv" class="table chase-table">
+										<tbody data-type="lirunlv" id="J-trace-table-lirunlv-body">
+											<tr>
+												<th class="text-center">序号</th>
+												<th><input checked="checked" data-action="checkedAll"
+													type="checkbox"> 追号期次</th>
+												<th>倍数</th>
+												<th>金额</th>
+												<th>奖金</th>
+												<th>预期盈利金额</th>
+												<th>预期盈利率</th>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<!-- 翻倍追号 -->
+							<div class="chase-tab-content">
+								<div class="trace-title-param">
+									<label class="param"> 起始倍数: <input
+										id="J-trace-fanbei-multiple" class="input w-1" type="text"
+										value="1" />
+									</label> <label class="param"> 隔 <input
+										id="J-trace-fanbei-jump" class="input w-1" type="text"
+										value="2" />
+									</label> <label class="param"> 期 倍x <input
+										id="J-trace-fanbei-num" class="input w-1" type="text"
+										value="2" />
+									</label> <label class="param"> 追号期数: <input
+										id="J-trace-fanbei-times" class="input w-1" type="text"
+										value="10" />
+									</label> <input type="button"
+										class="btn trace-button-detail btn-important" value="生成追号计划" />
+								</div>
+
+								<div class="chase-table-container">
+									<table class="table chase-table" id="J-trace-table">
+										<tbody id="J-trace-table-fanbei-body" data-type="fanbei">
+											<tr>
+												<th class="text-center">序号</th>
+												<th><input type="checkbox" checked="checked"
+													class="checkbox" data-action="checkedAll">追号期次</th>
+												<th>倍数</th>
+												<th>金额</th>
+												<th>预计开奖时间</th>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="chase-tab-content">
+								<div class="chase-select-high">
+									<div class="title">基本参数</div>
+									<ul class="base-parameter">
+										<li>起始期号： <select id="J-traceStartNumber"
+											style="display: none;"></select>
+										</li>
+										<li>追号期数： <input id="J-trace-advanced-times" type="text"
+											class="input" value="10">&nbsp;&nbsp;期（最多可以追<span
+											id="J-trace-number-max">14</span>期）
+										</li>
+										<li>起始倍数： <input id="J-trace-advance-multiple"
+											type="text" class="input" value="1">&nbsp;&nbsp;倍
+										</li>
+									</ul>
+
+									<div class="title">高级参数</div>
+									<div id="J-trace-advanced-type-panel" class="high-parameter">
+										<ul class="tab-title">
+											<li class="current">翻倍追号</li>
+											<li>盈利金额追号</li>
+											<li>盈利率追号</li>
+										</ul>
+										<ul class="tab-content">
+											<li class="panel-current">
+												<p data-type="a">
+													<input class="trace-advanced-type-switch" type="radio"
+														name="trace-advanced-type1" checked="checked">
+													每隔&nbsp; <input id="J-trace-advanced-fanbei-a-jiange"
+														type="text" class="input" value="2">&nbsp;期 倍数x <input
+														id="J-trace-advanced-fanbei-a-multiple" type="text"
+														class="input trace-input-multiple" value="2">
+												</p>
+												<p data-type="b">
+													<input class="trace-advanced-type-switch" type="radio"
+														name="trace-advanced-type1"> 前&nbsp; <input
+														id="J-trace-advanced-fanbei-b-num" type="text"
+														class="input" value="5" disabled="disabled">&nbsp;期
+													倍数=起始倍数，之后倍数= <input
+														id="J-trace-advanced-fanbei-b-multiple" type="text"
+														class="input trace-input-multiple" value="2"
+														disabled="disabled">
+												</p>
+											</li>
+											<li>
+												<p data-type="a">
+													<input class="trace-advanced-type-switch" type="radio"
+														name="trace-advanced-type2" checked="checked">
+													预期盈利金额≥&nbsp; <input id="J-trace-advanced-yingli-a-money"
+														type="text" class="input" value="100">&nbsp;元
+												</p>
+												<p data-type="b">
+													<input class="trace-advanced-type-switch" type="radio"
+														name="trace-advanced-type2"> 前&nbsp; <input
+														id="J-trace-advanced-yingli-b-num" type="text"
+														class="input" value="2" disabled="disabled">&nbsp;期
+													预期盈利金额≥&nbsp; <input id="J-trace-advanced-yingli-b-money1"
+														type="text" class="input" value="100" disabled="disabled">&nbsp;元，之后≥&nbsp;<input
+														id="J-trace-advanced-yingli-b-money2" type="text"
+														class="input" value="50" disabled="disabled">&nbsp;元
+												</p>
+											</li>
+											<li>
+												<p data-type="a">
+													<input class="trace-advanced-type-switch" type="radio"
+														name="trace-advanced-type3" checked="checked">
+													预期盈利率≥&nbsp; <input id="J-trace-advanced-yinglilv-a"
+														type="text" class="input" value="10">&nbsp;%
+												</p>
+												<p data-type="b">
+													<input class="trace-advanced-type-switch" type="radio"
+														name="trace-advanced-type3"> 前&nbsp; <input
+														id="J-trace-advanced-yinglilv-b-num" type="text"
+														class="input" value="5" disabled="disabled">&nbsp;期
+													预期盈利率≥&nbsp; <input
+														id="J-trace-advanced-yingli-b-yinglilv1" type="text"
+														class="input" value="30" disabled="disabled">&nbsp;%，之后≥&nbsp;<input
+														id="J-trace-advanced-yingli-b-yinglilv2"
+														disabled="disabled" type="text" class="input" value="10">&nbsp;%
+												</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="chase-table-container">
+									<table id="J-trace-table-advanced" class="table chase-table">
+										<tbody id="J-trace-table-advanced-body">
+											<tr>
+												<th style="width: 125px;" class="text-center">序号</th>
+												<th><label class="label"><input type="checkbox"
+														class="checkbox">追号期次</label></th>
+												<th>倍数</th>
+												<th>金额</th>
+												<th>预计开奖时间</th>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<div class="bet-statistics">
+							<table class="table">
+								<th><span id="J-trace-statistics-times">0</span><br>期数</th>
+								<th><span id="J-trace-statistics-lotterys-num">0</span><br>注数</th>
+								<th><span id="J-trace-statistics-amount">0.00</span><br>追号方案总金额(元)</th>
+								<th><span id="J-trace-statistics-balance">0.00</span><br>账户可用余额(元)</th>
+								<th><span id="J-trace-statistics-countdown">00:01:35</span><br>本期投注截止</th>
+							</table>
+						</div>
+
+						<div class="pop-btn">
+							<a href="javascript:void(0);" class="btn btn-submit disable"
+								id="J-button-trace-confirm">确认追号投注</a>
+							<div class="trace-switch-label">
+								<div class="chase-stop" id="J-trace-iswintimesstop-panel">
+									<label class="label"> <input type="checkbox"
+										class="checkbox" id="J-trace-iswintimesstop" checked="checked">
+										<span>中奖后停止追号</span>
+									</label> <input type="text" value="1" class="input"
+										id="J-trace-iswintimesstop-times" style="display: none;">&nbsp;
+									<i id="J-trace-iswintimesstop-hover" class="icon-question"
+										style="display: none;"> 玩法提示
+										<div class="chase-stop-tip" id="chase-stop-tip-1">
+											当追号计划中，一个方案内的任意注单中奖时，即停止继续追号。<br> 如果您希望考虑追号的实际盈利，<a
+												id="J-chase-stop-switch-1" href="#">点这里</a>。
+										</div>
+									</i>
+								</div>
+								<div style="display: none;" class="chase-stop"
+									id="J-trace-iswinstop-panel">
+									<label for="J-trace-iswinstop" class="label"><input
+										type="checkbox" class="checkbox" id="J-trace-iswinstop">累计盈利</label>
+									&gt; &nbsp; <input type="text" value="1000" class="input"
+										disabled="disabled" id="J-trace-iswinstop-money"
+										style="width: 30px; text-align: center; padding: 0 4px;">&nbsp;元时停止追号
+									<i id="J-trace-iswinstop-hover" class="icon-question"
+										style="display: none;"> 玩法提示
+										<div class="chase-stop-tip" id="chase-stop-tip-2">
+											当追号计划中，累计盈利金额（已获奖金扣除已投本金）大于设定值时，即停止继续追号。<br>
+											如果您不考虑追号的盈利情况，<a id="J-chase-stop-switch-2" href="#">点这里</a>。
+										</div>
+									</i>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<div style="display: none; width: 48mm" id="print-project-panel"></div>
+			<div id="sound_element" style="display: none;"></div>
+			<script rel="/assets/js-dist/game/dsgame.game-ssc.min.js?v=20160816"
+				type="text/javascript">
+				var loadgamejs = 'dsgame.game-ssc.min.js';
+			</script>
+			<!--<script src="/assets/js-dist/game/dsgame.game-ssc.min.js?v=20160816"></script>-->
+
+		</div>
+		<div id="template-footer">
+
+			<div id="copyright" class="wrap"
+				style="height: 58px; padding-top: 0px; position: relative;">
+				<div class="wrap-inner clearfix" style="">
+					<div class="footer-nav" style="margin-top: 10px;">
+						<a href="/static/help.html#30">关于多宝2</a> <a
+							href="/static/help.html#9">存款帮助</a> <a href="/static/help.html#3">常见问题</a>
+						<a href="/static/help.html#29" class="last">条款规定</a>
+					</div>
+					<div class="copyright-p">&copy; 2017 多宝2 All Rights Reserved
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+(function($){
+    $("#user-name").html(localStorage.getItem("name"));
+  
+})(jQuery);
+
+function quit() {
+	localStorage.clear();
+	window.location.href="login.html";
+}
+
+</script>
+
+
+</html>

@@ -1,0 +1,126 @@
+/*
+* 彩票页和其他页的公用样式
+*/
+@charset "UTF-8";
+
+/*
+* 系统消息
+*/
+
+i {
+    font-style: normal;
+}
+
+
+.msg-tip {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: red;
+    border-radius: 50%;
+    top: 10px;
+    right: 0;
+    display: none;
+}
+
+.msg-list li {
+    line-height: 38px;
+    margin-bottom: 18px;
+    display: block;
+    cursor: pointer;
+}
+
+.msg-list li span.msgType {
+    margin-left: 20px;
+}
+
+.msg-list li .msg-con {
+    width: 95%;
+    margin: 0px auto;
+    padding: 20px;
+    display: none;
+    overflow: auto;
+}
+
+.msg-list li .msg-con p {
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.msg-list li.bold a {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.msg-list li a {
+    font-size: 14px;
+}
+
+.msg-list li label {
+    float: right;
+    margin-right: 10px;
+}
+
+.loading-lottery i.elli {
+    /*display: none;*/
+    opacity: 0;
+}
+/*
+* LOADING样式
+*/
+
+.player-loading-spinner {
+    display: block;
+    width: 1.8em;
+    height: 1.8em;
+    margin: 0 auto;
+    position: relative;
+    animation: loading-spin .5s infinite linear;
+    border-radius: 50%;
+}
+
+@keyframes loading-spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.message-push {
+    width: 230px;
+    /*height: 180px;*/
+}
+
+.message-push i {
+    margin-right: 5px;
+    color: #ff0000;
+}
+
+.message-push li {
+    line-height: 25px;
+    font-size: 12px;
+    text-align: left;
+}
+.bottom-links {
+    text-align: center;
+}
+.qrcode-bottom {
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.wrap-new-menu .logo a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    top: 0;
+}
