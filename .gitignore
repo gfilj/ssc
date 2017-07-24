@@ -4,3 +4,5 @@ logs/
 .project
 .settings/
 .vertx
+.DS_Store
+bin/

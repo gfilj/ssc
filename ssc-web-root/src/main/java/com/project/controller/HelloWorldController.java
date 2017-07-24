@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 
 @Controller
-@RequestMapping("/hello-world")
+@RequestMapping("/")
 public class HelloWorldController {
 
     private static final String template = "Hello, %s!";
@@ -24,6 +24,13 @@ public class HelloWorldController {
     public @ResponseBody
     Greeting sayHello(@RequestParam(value = "name", required = false, defaultValue = "Stranger") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    }
+    
+    @RequestMapping(method = RequestMethod.GET,value = "/socket.io/")
+    public @ResponseBody String polling(@RequestParam(value = "EIO", required = false) String EIO,
+    		@RequestParam(value = "transport", required = false) String transport,
+    		@RequestParam(value = "t", required = false) String t) {
+        return "ok";
     }
 
 }

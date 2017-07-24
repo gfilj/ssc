@@ -1,0 +1,298 @@
+gameId:1
+isTrace:0
+traceWinStop:1
+traceStopValue:1
+continus:1
+orders[20170722-027]:1
+amount:1
+ballstr:[{"jsId":1,"wayId":68,"ball":"0|0|0|0|0","viewBalls":"","num":1,"type":"wuxing.zhixuan.fushi","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"}]
+orderstr:{"20170722-027":1}
+
+
+
+{
+  "Msg" : "投注成功",
+  "data" : {
+    "tplData" : {
+      "msg" : "投注成功",
+      "money" : "4.1083",
+      "link" : "/hz/mkg/orders.html"
+    }
+  },
+  "type" : "success",
+  "isSuccess" : 1
+}
+
+http://www.da883.com/hz/mkg/api/order/cancel
+post
+orderId:201707230101pTWlt20001
+{
+  "msg" : "撤单成功",
+  "code" : "0"
+}
+{
+  "page" : {
+    "currPage" : 1,
+    "pageSize" : 10,
+    "totalItem" : 68,
+    "totalPage" : 7,
+    "list" : [ {
+      "orderItemId" : "20170723010gD6Wnox0001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-23 22:22:37",
+      "lottery" : "重庆时时彩",
+      "method" : "定位胆",
+      "issue" : "20170723-101",
+      "code" : "0||||",
+      "count" : 1,
+      "amount" : 1.0,
+      "awardMoney" : 0.0,
+      "winningNumber" : "",
+      "istrace" : 0,
+      "perAmount" : 1.0000,
+      "state" : "未开奖",
+      "status" : 0,
+      "odds" : "19.5600",
+      "oddsMode" : 1956,
+      "cancelStatus" : 0,
+      "lotteryId" : 1,
+      "nums" : 1,
+      "point" : 0.0,
+      "canCancel" : true
+    }, {
+      "orderItemId" : "201707230101pTWlt20001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-23 19:53:42",
+      "lottery" : "重庆时时彩",
+      "method" : "五星直选复式",
+      "issue" : "20170723-084",
+      "code" : "0|0|0|0|0",
+      "count" : 1,
+      "amount" : 1.0,
+      "awardMoney" : 0.0,
+      "winningNumber" : "",
+      "istrace" : 0,
+      "perAmount" : 1.0000,
+      "state" : "个人撤单",
+      "status" : 4,
+      "odds" : "195600.0000",
+      "oddsMode" : 1956,
+      "cancelStatus" : 1,
+      "lotteryId" : 1,
+      "nums" : 1,
+      "point" : 0.0,
+      "canCancel" : false
+    }, {
+      "orderItemId" : "20170723010ggmWeoh0001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-23 11:25:28",
+      "lottery" : "重庆时时彩",
+      "method" : "定位胆",
+      "issue" : "20170723-033",
+      "code" : "1|1|1||",
+      "count" : 1,
+      "amount" : 3.0,
+      "awardMoney" : 0.0,
+      "winningNumber" : "4,4,7,1,1",
+      "istrace" : 0,
+      "perAmount" : 1.0000,
+      "state" : "未中奖",
+      "status" : 1,
+      "odds" : "19.5600",
+      "oddsMode" : 1956,
+      "cancelStatus" : 0,
+      "lotteryId" : 1,
+      "nums" : 3,
+      "point" : 0.0,
+      "canCancel" : false
+    }, {
+      "orderItemId" : "20170703015vntOGOs0001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-03 14:55:33",
+      "lottery" : "重庆时时彩",
+      "method" : "任选三直选单式万千个",
+      "issue" : "20170703-054",
+      "code" : "9,8,7|9,8,5|9,8,4|9,8,3|9,8,0|9,7,8|9,7,6|9,7,4|9,",
+      "count" : 9,
+      "amount" : 15.75,
+      "awardMoney" : 0.0,
+      "winningNumber" : "9,9,1,6,2",
+      "istrace" : 0,
+      "perAmount" : 0.0100,
+      "state" : "未中奖",
+      "status" : 1,
+      "odds" : "1956.0000",
+      "oddsMode" : 1956,
+      "cancelStatus" : 0,
+      "lotteryId" : 1,
+      "nums" : 175,
+      "point" : 0.0,
+      "canCancel" : false
+    }, {
+      "orderItemId" : "20170703015vYwOGCq0001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-03 14:47:14",
+      "lottery" : "重庆时时彩",
+      "method" : "任选三直选单式万千个",
+      "issue" : "20170703-053",
+      "code" : "9,8,6|9,6,8|9,6,5|9,6,2|9,6,0|9,5,6|9,2,6|9,1,4|9,",
+      "count" : 2,
+      "amount" : 33.2,
+      "awardMoney" : 0.0,
+      "winningNumber" : "6,4,7,4,0",
+      "istrace" : 0,
+      "perAmount" : 0.1000,
+      "state" : "未中奖",
+      "status" : 1,
+      "odds" : "1956.0000",
+      "oddsMode" : 1956,
+      "cancelStatus" : 0,
+      "lotteryId" : 1,
+      "nums" : 166,
+      "point" : 0.0,
+      "canCancel" : false
+    }, {
+      "orderItemId" : "20170703010IokOFY00001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-03 14:23:54",
+      "lottery" : "重庆时时彩",
+      "method" : "后三码直选单式",
+      "issue" : "20170703-051",
+      "code" : "9,5,3|9,3,5|5,9,3|5,3,9|3,9,5|3,5,9",
+      "count" : 34,
+      "amount" : 20.4,
+      "awardMoney" : 0.0,
+      "winningNumber" : "0,3,0,5,5",
+      "istrace" : 0,
+      "perAmount" : 0.1000,
+      "state" : "未中奖",
+      "status" : 1,
+      "odds" : "1956.0000",
+      "oddsMode" : 1956,
+      "cancelStatus" : 0,
+      "lotteryId" : 1,
+      "nums" : 6,
+      "point" : 0.0,
+      "canCancel" : false
+    }, {
+      "orderItemId" : "20170703010IIsOFOf0001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-03 14:17:23",
+      "lottery" : "重庆时时彩",
+      "method" : "后三码直选单式",
+      "issue" : "20170703-050",
+      "code" : "9,5,3|9,3,5|5,9,3|5,3,9|3,9,5|3,5,9",
+      "count" : 34,
+      "amount" : 20.4,
+      "awardMoney" : 0.0,
+      "winningNumber" : "6,1,9,2,5",
+      "istrace" : 0,
+      "perAmount" : 0.1000,
+      "state" : "未中奖",
+      "status" : 1,
+      "odds" : "1956.0000",
+      "oddsMode" : 1956,
+      "cancelStatus" : 0,
+      "lotteryId" : 1,
+      "nums" : 6,
+      "point" : 0.0,
+      "canCancel" : false
+    }, {
+      "orderItemId" : "20170703010IiZOF7a0001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-03 14:05:25",
+      "lottery" : "重庆时时彩",
+      "method" : "后三码直选单式",
+      "issue" : "20170703-049",
+      "code" : "6,6,2|6,6,1|6,6,0|5,5,2|5,5,1|5,5,0|2,6,2|2,5,2|1,",
+      "count" : 15,
+      "amount" : 18.0,
+      "awardMoney" : 0.0,
+      "winningNumber" : "6,7,9,9,0",
+      "istrace" : 0,
+      "perAmount" : 0.1000,
+      "state" : "未中奖",
+      "status" : 1,
+      "odds" : "1956.0000",
+      "oddsMode" : 1956,
+      "cancelStatus" : 0,
+      "lotteryId" : 1,
+      "nums" : 12,
+      "point" : 0.0,
+      "canCancel" : false
+    }, {
+      "orderItemId" : "20170703010IrtOEqr0001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-03 13:54:51",
+      "lottery" : "重庆时时彩",
+      "method" : "后三码直选单式",
+      "issue" : "20170703-048",
+      "code" : "9,8,2|9,8,1|9,8,0|9,7,2|9,7,0|9,6,2|9,6,1|9,6,0|9,",
+      "count" : 2,
+      "amount" : 20.4,
+      "awardMoney" : 0.0,
+      "winningNumber" : "4,9,9,3,2",
+      "istrace" : 0,
+      "perAmount" : 0.1000,
+      "state" : "未中奖",
+      "status" : 1,
+      "odds" : "1956.0000",
+      "oddsMode" : 1956,
+      "cancelStatus" : 0,
+      "lotteryId" : 1,
+      "nums" : 102,
+      "point" : 0.0,
+      "canCancel" : false
+    }, {
+      "orderItemId" : "20170703010IA9OEca0001",
+      "userName" : "zx19926276",
+      "userId" : 10961,
+      "orderTime" : "2017-07-03 13:45:22",
+      "lottery" : "重庆时时彩",
+      "method" : "后三码直选单式",
+      "issue" : "20170703-047",
+      "code" : "9,8,4|9,8,3|9,8,2|9,8,1|9,8,0|9,7,2|9,6,4|9,6,3|9,",
+      "count" : 2,
+      "amount" : 26.2,
+      "awardMoney" : 0.0,
+      "winningNumber" : "7,2,7,4,4",
+      "istrace" : 0,
+      "perAmount" : 0.1000,
+      "state" : "未中奖",
+      "status" : 1,
+      "odds" : "1956.0000",
+      "oddsMode" : 1956,
+      "cancelStatus" : 0,
+      "lotteryId" : 1,
+      "nums" : 131,
+      "point" : 0.0,
+      "canCancel" : false
+    } ]
+  },
+  "code" : 0,
+  "msg" : "success"
+}
+
+{gameId=1, isTrace=0, traceWinStop=1, traceStopValue=1, orders[20170722-027]=1, amount=5, ballstr=[{"jsId":1,"wayId":78,"ball":"0|0|0|0|0","viewBalls":"","num":5,"type":"yixing.dingweidan.fushi","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"}], orderstr={"20170722-027":1}}
+{gameId=1, isTrace=0, traceWinStop=1, traceStopValue=1, orders[20170722-027]=1, amount=5, ballstr=[{"jsId":1,"wayId":78,"ball":"7|7|7|7|7","viewBalls":"","num":5,"type":"yixing.dingweidan.fushi","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"}], orderstr={"20170722-027":1}}
+{gameId=1, isTrace=0, traceWinStop=1, traceStopValue=1, orders[20170722-027]=1, amount=1, ballstr=[{"jsId":1,"wayId":68,"ball":"0|0|0|0|0","viewBalls":"","num":1,"type":"wuxing.zhixuan.fushi","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"}], orderstr={"20170722-027":1}}
+{gameId=1, isTrace=0, traceWinStop=1, traceStopValue=1, orders[20170722-027]=1, amount=1, ballstr=[{"jsId":1,"wayId":68,"ball":"2|2|2|2|2","viewBalls":"","num":1,"type":"wuxing.zhixuan.fushi","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"}], orderstr={"20170722-027":1}}
+{gameId=1, isTrace=0, traceWinStop=1, traceStopValue=1, continus=1, orders[20170722-027]=1, amount=3125, ballstr=[{"jsId":1,"wayId":68,"ball":"56789|56789|56789|56789|56789","viewBalls":"","num":3125,"type":"wuxing.zhixuan.fushi","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"}], orderstr={"20170722-027":1}}
+
+{gameId=1, isTrace=0, traceWinStop=1, traceStopValue=1, continus=1, orders[20170722-027]=1, amount=3129, 
+ballstr=[
+{"jsId":1,"wayId":31,"ball":"234|2345","viewBalls":"","num":3,"type":"wuxing.zuxuan.zuxuan60","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"},
+{"jsId":2,"wayId":32,"ball":"45678","viewBalls":"","num":1,"type":"wuxing.zuxuan.zuxuan120","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"},
+{"jsId":3,"wayId":68,"ball":"56789|56789|56789|56789|56789","viewBalls":"","num":3125,"type":"wuxing.zhixuan.fushi","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"}
+],
+ orderstr={"20170722-027":1}}
+
