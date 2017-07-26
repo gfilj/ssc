@@ -1,9 +1,9 @@
-DELETE FROM `ssc`.`t_ssc_way`;
+DROP TABLE IF EXISTS `ssc`.`t_ssc_way`;
 
 CREATE TABLE `t_ssc_way` (
   `wayId` int(11) NOT NULL COMMENT '玩法ID',
-  `nameCn` varchar(45) DEFAULT NULL COMMENT '中文名称',
-  `nameEn` varchar(45) DEFAULT NULL COMMENT '英文名称',
+  `nameCn` varchar(200) DEFAULT NULL COMMENT '中文名称',
+  `nameEn` varchar(200) DEFAULT NULL COMMENT '英文名称',
   PRIMARY KEY (`wayId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -46,3 +46,34 @@ INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (4911,'前三组选�
 INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (5010,'中三组选组六胆拖','zhongsan.zuxuan.zusandt');
 INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (5011,'前三组选组三胆拖','qiansan.zuxuan.zuliudt');
 INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (69,'后三直选直选复式','housan.zhixuan.fushi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (8,'后三直选直选单式','housan.zhixuan.danshi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (73,'后三直选直选和值','housan.zhixuan.hezhi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (49,'后三组选组三','housan.zuxuan.zusan');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (491,'后三组选组三胆拖','housan.zuxuan.zusandt');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (50,'后三组选组六','housan.zuxuan.zuliu');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (501,'后三组选组六','housan.zuxuan.zuliudt');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (81,'后三组选混合组选','housan.zuxuan.hunhezuxuan');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (80,'后三组选组选和值','housan.zuxuan.hezhi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (70,'二星直选后二复式','erxing.zhixuan.houerfushi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (59,'二星组选后二复式','erxing.zuxuan.houerfushi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (66,'二星直选前二复式','erxing.zhixuan.qianerfushi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (20,'二星组选前二复式','erxing.zuxuan.qianerfushi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (11,'二星直选后二单式','erxing.zhixuan.houerdanshi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (12,'二星组选后二单式','erxing.zuxuan.houerdanshi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (4,'二星直选前二单式','erxing.zhixuan.qianerdanshi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (5,'二星组选前二单式','erxing.zuxuan.qianerdanshi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (74,'二星直选后二和值','erxing.zhixuan.houerhezhi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (72,'二星直选前二和值','erxing.zhixuan.qianerhezhi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (76,'二星组选前二和值','erxing.zuxuan.qianerhezhi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (78,'定位胆','yixing.dingweidan.fushi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (51,'不定位三星不定位后三一码不定位','budingwei.sanxingbudingwei.housanyimabudingwei');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (52,'不定位三星不定位后三二码不定位','budingwei.sanxingbudingwei.housanermabudingwei');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (21,'不定位三星不定位前三二码不定位','budingwei.sanxingbudingwei.qiansanermabudingwei');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (18,'不定位三星不定位前三一码不定位','budingwei.sanxingbudingwei.qiansanyimabudingwei');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (58,'后二大小单双','houerdaxiaodanshuang');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (19,'前二大小单双','qianerdaxiaodanshuang');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (44,'趣味特殊一帆风顺','quwei.teshu.yifanfenshun');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (45,'趣味特殊好事成双','quwei.teshu.haoshichengshuang');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (46,'趣味特殊三星报喜','quwei.teshu.sanxingbaoxi');
+INSERT INTO `t_ssc_way` (`wayId`,`nameCn`,`nameEn`) VALUES (47,'趣味特殊四季发财','quwei.teshu.sijifacai');
+
