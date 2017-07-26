@@ -12,6 +12,7 @@
 		<module>ssc-spider</module>
 		<module>ssc-schedule</module>
 		<module>ssc-web</module>
+		<module>ssc-web-root</module>
 	</modules>
 
 	<parent>
