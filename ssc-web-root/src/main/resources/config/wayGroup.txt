@@ -482,3 +482,4 @@
 												"series_way_id" : "271",
 												"series_way_id" : "291",
 												"series_way_id" : "342",
+KioskdeMacBook-Pro:public goforit$ 
