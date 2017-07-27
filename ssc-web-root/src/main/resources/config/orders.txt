@@ -253,7 +253,7 @@ orderId:201707230101pTWlt20001
       "point" : 0.0,
       "canCancel" : false
     }, {
-      "orderItemId" : "20170703010IA9OEca0001",
+      "orderItemId" : "20170703010IA9OEca0001", 
       "userName" : "zx19926276",
       "userId" : 10961,
       "orderTime" : "2017-07-03 13:45:22",
@@ -263,14 +263,14 @@ orderId:201707230101pTWlt20001
       "code" : "9,8,4|9,8,3|9,8,2|9,8,1|9,8,0|9,7,2|9,6,4|9,6,3|9,",
       "count" : 2,
       "amount" : 26.2,
-      "awardMoney" : 0.0,
-      "winningNumber" : "7,2,7,4,4",
+      "awardMoney" : 0.0, 
+      "winningNumber" : "7,2,7,4,4", 
       "istrace" : 0,
       "perAmount" : 0.1000,
       "state" : "未中奖",
-      "status" : 1,
-      "odds" : "1956.0000",
-      "oddsMode" : 1956,
+      "status" : 1, 1是为中奖
+      "odds" : "1956.0000",ok
+      "oddsMode" : 1956,  ok
       "cancelStatus" : 0,
       "lotteryId" : 1,
       "nums" : 131,
@@ -295,4 +295,6 @@ ballstr=[
 {"jsId":3,"wayId":68,"ball":"56789|56789|56789|56789|56789","viewBalls":"","num":3125,"type":"wuxing.zhixuan.fushi","onePrice":"2","moneyunit":"0.5000","multiple":1,"prizeGroup":"1956"}
 ],
  orderstr={"20170722-027":1}}
+
+
 
