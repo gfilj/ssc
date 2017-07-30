@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
+import com.project.spider.model.Row;
+
 public interface BaseMapper<T,ID extends Serializable> {
 	public int insertSelective(T obj) throws DataAccessException;
 	public int deleteByPrimaryKey(ID id) throws DataAccessException;

@@ -26,28 +26,31 @@ public class SSCScheduleTask {
 
 	@Autowired
 	private SSCPageModelPipeline sscPageModelPipeline;
+	
+	private Site site = Site.me().setTimeOut(60000);
 	/**
 	 * 抓取重庆时时彩
 	 */
 	public void grabCQSSC() {
-		OOSpider.create(Site.me(), sscPageModelPipeline, CQSSCRepoOriginalList.class)
-				.addUrl("http://shishicai.cjcp.com.cn/chongqing/kaijiang/").thread(1).run();
+		OOSpider.create(site, sscPageModelPipeline, CQSSCRepoOriginalList.class)
+				.addUrl("http://shishicai.cjcp.com.cn/chongqing/kaijiang/").thread(1).setExitWhenComplete(true).run();
 	}
 
 	/**
 	 * 抓取天津时时彩
 	 */
 	public void grabTJSSC() {
-		OOSpider.create(Site.me(), sscPageModelPipeline, TJSSCRepoOriginalList.class)
-				.addUrl("http://shishicai.cjcp.com.cn/tianjin/kaijiang/").thread(1).run();
+		OOSpider.create(site, sscPageModelPipeline, TJSSCRepoOriginalList.class)
+				.addUrl("http://shishicai.cjcp.com.cn/tianjin/kaijiang/").thread(1).setExitWhenComplete(true).run();
 	}
 
 	/**
 	 * 抓取广东11选5
 	 */
 	public void grabGD11TO5() {
-		OOSpider.create(Site.me(), sscPageModelPipeline, GD11TO5RepoOriginalList.class)
-				.addUrl("http://11xuan5.cjcp.com.cn/guangdong/kaijiang/").thread(1).run();
+		
+		OOSpider.create(site, sscPageModelPipeline, GD11TO5RepoOriginalList.class)
+				.addUrl("http://11xuan5.cjcp.com.cn/guangdong/kaijiang/").thread(1).setExitWhenComplete(true).run();
 	}
 
 	/**

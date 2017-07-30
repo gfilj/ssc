@@ -1,4 +1,4 @@
-package com.project.model;
+package com.project.spider.model;
 
 import java.net.URLDecoder;
 import java.util.ArrayList;
