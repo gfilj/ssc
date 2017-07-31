@@ -2,9 +2,9 @@ package com.project.spider.model.type;
 
 public enum SSCTypeEnum {
 	
-	TJSSC(0),
+	TJSSC(101),
 	CQSSC(1),
-	GD11TO5(2);
+	GD11TO5(102);
 	
 	private int type;
 

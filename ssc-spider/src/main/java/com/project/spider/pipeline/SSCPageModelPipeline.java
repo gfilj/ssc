@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.project.spider.factory.SSCRepoFactory;
 import com.project.spider.model.SSCRepo;
 import com.project.spider.model.list.SSCRepoOriginalList;
-import com.project.spider.service.sscservice.SSCService;
+import com.project.spider.service.sscservice.SSCRepoService;
 
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.pipeline.PageModelPipeline;
@@ -21,7 +21,7 @@ public class SSCPageModelPipeline implements PageModelPipeline<SSCRepoOriginalLi
 	private SSCRepoFactory sscRepoFactory;
 
 	@Autowired
-	private SSCService sSCService;
+	private SSCRepoService sSCService;
 
 	public void setSscRepoFactory(SSCRepoFactory sscRepoFactory) {
 		this.sscRepoFactory = sscRepoFactory;

@@ -18,11 +18,11 @@ import us.codecraft.webmagic.model.annotation.TargetUrl;
  * @author luchangqing
  *
  */
-@TargetUrl("http://shishicai.cjcp.com.cn/chongqing/kaijiang/")
+@TargetUrl("http://kj.cjcp.com.cn/gaopin/ssc/cq/")
 public class CQSSCRepoOriginalList implements SSCRepoOriginalList{
-	@ExtractBy("//table[@class='kjjg_table']/tbody/tr/td/regex('\\d{11}')")
+	@ExtractBy("//table[@class='qgkj_table']/tbody/tr/td/regex('\\d{11}')")
 	private List<String> issueList;
-	@ExtractBy("//table[@class='kjjg_table']/tbody/tr/td/div/div/regex('\\d{1}')")
+	@ExtractBy("//table[@class='qgkj_table']/tbody/tr/td/input/regex('\\d{1}')")
 	private List<String> numList;
 	
 	private SSCTypeEnum type = SSCTypeEnum.CQSSC;
@@ -55,7 +55,7 @@ public class CQSSCRepoOriginalList implements SSCRepoOriginalList{
 		SSCPageModelPipeline sscPageModelPipeline = new SSCPageModelPipeline();
 		sscPageModelPipeline.setSscRepoFactory(new TJSSCRepoFactory());
 		 OOSpider.create(Site.me(), sscPageModelPipeline, CQSSCRepoOriginalList.class)
-	        .addUrl("http://shishicai.cjcp.com.cn/chongqing/kaijiang/")
+	        .addUrl("http://kj.cjcp.com.cn/gaopin/ssc/cq/")
 	        .thread(1)
 	        .run();
     }

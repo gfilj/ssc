@@ -12,7 +12,23 @@ public class DateUtils {
 	 */
 	public static final String DATEMONTH_FM = "yyyy-MM", DATE_FM = "yyyy-MM-dd", DATETIME_FM = "yyyy-MM-dd HH:mm:ss",
 			TIME_FM = "HH:mm:ss", DATE_MIGU = "yyyyMMddHH", DATETIME_DETAIL = "yyyyMMddHHmmss";
-
+	
+	/**
+	 * 
+	 * @param dateTime 10:00
+	 * @return
+	 */
+	public static Date getSpecify(String dateTime) {
+		String[] arr = dateTime.split(":");
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY,Integer.parseInt(arr[0]));
+		cal.set(Calendar.MINUTE,Integer.parseInt(arr[1]));
+		return cal.getTime();
+	}
+	
+	public static long getDateInterval(Date small, Date big) {
+		return (big.getTime()-small.getTime())/1000;
+	}
 	/**
 	 * 取得当前时间戳（精确到秒）unix
 	 *

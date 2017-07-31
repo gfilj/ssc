@@ -27,13 +27,13 @@ public class SSCScheduleTask {
 	@Autowired
 	private SSCPageModelPipeline sscPageModelPipeline;
 	
-	private Site site = Site.me().setTimeOut(60000);
+	private Site site = Site.me().setTimeOut(3000);
 	/**
 	 * 抓取重庆时时彩
 	 */
 	public void grabCQSSC() {
 		OOSpider.create(site, sscPageModelPipeline, CQSSCRepoOriginalList.class)
-				.addUrl("http://shishicai.cjcp.com.cn/chongqing/kaijiang/").thread(1).setExitWhenComplete(true).run();
+				.addUrl("http://kj.cjcp.com.cn/gaopin/ssc/cq/").thread(1).setExitWhenComplete(true).run();
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class SSCScheduleTask {
 	 */
 	public void grabTJSSC() {
 		OOSpider.create(site, sscPageModelPipeline, TJSSCRepoOriginalList.class)
-				.addUrl("http://shishicai.cjcp.com.cn/tianjin/kaijiang/").thread(1).setExitWhenComplete(true).run();
+				.addUrl("http://kj.cjcp.com.cn/gaopin/ssc/tj/").thread(1).setExitWhenComplete(true).run();
 	}
 
 	/**

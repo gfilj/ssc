@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.project.model.api.ResponseVO;
-import com.project.service.LoadTimeService;
-import com.project.service.UserMonetaryInfoService;
+import com.project.service.SSCIssueService;
 
 /**
  * 
@@ -21,16 +20,17 @@ import com.project.service.UserMonetaryInfoService;
 public class SSCIssueController {
 	
 	@Autowired
-	private LoadTimeService loadTimeService;
+	private SSCIssueService sscIssueService;
 	
 	@RequestMapping(method = RequestMethod.GET,value="/mkg/api/load-time")
     public @ResponseBody ResponseVO loadTime(@RequestParam(value = "id", required = false) double id, @RequestParam(value = "gameId", required = false) int gameId) {
-        return loadTimeService.loadtime();
+        return sscIssueService.loadtime(gameId);
     }
 	
 	@RequestMapping(method = RequestMethod.GET,value="/mkg/api/load-issue/1")
-    public @ResponseBody ResponseVO loadIssue(@RequestParam(value = "id", required = false) double id, @RequestParam(value = "gameId", required = false) int gameId) {
-        return loadTimeService.loadtime();
+    public @ResponseBody ResponseVO loadIssue(@RequestParam(value = "_", required = false) String _) {
+//        return sscIssueService.loadtime();
+		return null;
     }
 	
 }
