@@ -94,4 +94,23 @@ public class SSCIssueService {
 				nextIssue).build();
 	}
 	
+	/**
+	 * 当前是哪一期
+	 * @return
+	 */
+	public static int getIssueSub(){
+		return (DateUtils.getHour()-6)*6 + DateUtils.getMin()/10 + 1;
+	}
+	
+	/**
+	 * 当前这一期的结束时间
+	 */
+	public static long getIssueEndUnixTimeStamp(Date beginTime){
+		int issumeSub = getIssueSub();
+		if(issumeSub<72){
+			return DateUtils.getSkipUnixTimeStamp(beginTime, Calendar.MINUTE, issumeSub*10);
+		}
+	}
+	
+	
 }
