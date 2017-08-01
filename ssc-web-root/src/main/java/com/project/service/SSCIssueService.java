@@ -1,6 +1,7 @@
 package com.project.service;
 
 import java.text.DecimalFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class SSCIssueService {
 		int issueSub = Integer.parseInt(issue.substring(issue.length()-3));
 		//选择gameId的配置
 		Row lottery = sscLotteryService.selectById(gameId);
-		String begin_time = lottery.getString("begin_time");;
+		String begin_time = lottery.getString("begin_time");
 		String end_time = lottery.getString("end_time");
 		String change_time = lottery.getString("change_time");
 		int big_interval = lottery.getInt("big_interval");
@@ -48,16 +49,16 @@ public class SSCIssueService {
 		if(issueTime.before(beginTime)) {
 			if(issueTime.after(endTime)) {
 				dateInterval = big_interval*60;
-				currentIssueEndTime = DateUtils.getDateInterval(new Date(), beginTime);
+				currentIssueEndTime = DateUtils.getDateUnixTimeStamp(beginTime);
 			}else {
 				dateInterval = small_interval*60;
 				long useDateInterval = DateUtils.getDateInterval(issueTime, new Date());
 				if(useDateInterval < dateInterval) {
-					currentIssueEndTime = dateInterval - useDateInterval;
+					currentIssueEndTime = DateUtils.getSkipUnixTimeStamp(issueTime,Calendar.SECOND, dateInterval);
 				}else{
 					//重新下发进行抓取
 					sscScheduleTask.per5MinuteTask();
-					currentIssueEndTime = 5;
+					currentIssueEndTime = DateUtils.getSkipUnixTimeStamp(issueTime,Calendar.SECOND, dateInterval+2);
 				}
 			}
 		}else {
@@ -68,11 +69,11 @@ public class SSCIssueService {
 			}
 			long useDateInterval = DateUtils.getDateInterval(issueTime, new Date());
 			if(useDateInterval < dateInterval) {
-				currentIssueEndTime = dateInterval - useDateInterval;
+				currentIssueEndTime = DateUtils.getSkipUnixTimeStamp(issueTime,Calendar.SECOND, dateInterval);
 			}else{
 				//重新下发进行抓取
 				sscScheduleTask.per5MinuteTask();
-				currentIssueEndTime = 5;
+				currentIssueEndTime = DateUtils.getSkipUnixTimeStamp(issueTime,Calendar.SECOND, dateInterval+2);
 			}
 		}
 		

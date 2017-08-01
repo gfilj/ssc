@@ -29,6 +29,9 @@ public class DateUtils {
 	public static long getDateInterval(Date small, Date big) {
 		return (big.getTime()-small.getTime())/1000;
 	}
+	public static long getDateUnixTimeStamp(Date date) {
+		return date.getTime()/1000;
+	}
 	/**
 	 * 取得当前时间戳（精确到秒）unix
 	 *
@@ -42,8 +45,8 @@ public class DateUtils {
 	/**
 	 * 获取当前时间增加后的unix时间戳
 	 */
-	public static long getUnixNowTimeStamp(int calendarType, int skipLen) {
-		long time = skip(calendarType, skipLen).getTime();
+	public static long getSkipUnixTimeStamp(Date date ,int calendarType, int skipLen) {
+		long time = skip(date, calendarType, skipLen).getTime();
 		return time / 1000;
 	}
 	/**
@@ -157,7 +160,13 @@ public class DateUtils {
 	 * @return
 	 */
 	public static Date skip(int calendarType, int skipLen) {
+		return skip(null, calendarType, skipLen);
+	}
+	public static Date skip(Date date, int calendarType, int skipLen) {
 		Calendar calendar = Calendar.getInstance();
+		if(date != null) {
+			calendar.setTime(date);
+		}
 		calendar.add(calendarType, skipLen);
 		return calendar.getTime();
 	}
