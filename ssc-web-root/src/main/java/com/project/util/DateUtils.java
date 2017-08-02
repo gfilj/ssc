@@ -12,7 +12,13 @@ public class DateUtils {
 	 */
 	public static final String DATEMONTH_FM = "yyyy-MM", DATE_FM = "yyyy-MM-dd", DATETIME_FM = "yyyy-MM-dd HH:mm:ss",
 			TIME_FM = "HH:mm:ss", DATE_MIGU = "yyyyMMddHH", DATETIME_DETAIL = "yyyyMMddHHmmss";
-	
+
+	/**
+	 * get now date
+	 */
+	public static Date getCurrDate() {
+		return new Date();
+	}
 	/**
 	 * 
 	 * @param dateTime 10:00

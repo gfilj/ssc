@@ -95,22 +95,34 @@ public class SSCIssueService {
 	}
 	
 	/**
-	 * 当前是哪一期
+	 * 当前是哪一期,需要根据分界点进行判断
 	 * @return
 	 */
-	public static int getIssueSub(){
-		return (DateUtils.getHour()-6)*6 + DateUtils.getMin()/10 + 1;
+	public static int getIssueSub(Row row) {
+		Date begin_time = DateUtils.getSpecify(row.getString("begin_time"));
+		Date change_time = DateUtils.getSpecify(row.getString("change_time"));
+		Date end_time = DateUtils.getSpecify(row.getString("end_time"));
+
+		if (DateUtils.getCurrDate().before(end_time)){
+			return DateUtils.getHour() * 12 + DateUtils.getMin() / 5 + 1;
+		} else if(DateUtils.getCurrDate().before(begin_time)) {
+			return 0;
+		} else if (DateUtils.getCurrDate().before(change_time)) {
+			return (DateUtils.getHour() - 6) * 6 + DateUtils.getMin() / 10 + 1;
+		} else {
+			return DateUtils.getHour() * 12 + DateUtils.getMin() / 5 + 1;
+		}
 	}
 	
 	/**
 	 * 当前这一期的结束时间
 	 */
-	public static long getIssueEndUnixTimeStamp(Date beginTime){
-		int issumeSub = getIssueSub();
-		if(issumeSub<72){
-			return DateUtils.getSkipUnixTimeStamp(beginTime, Calendar.MINUTE, issumeSub*10);
-		}
-	}
+//	public static long getIssueEndUnixTimeStamp(Date beginTime){
+//		int issumeSub = getIssueSub();
+//		if(issumeSub<72){
+//			return DateUtils.getSkipUnixTimeStamp(beginTime, Calendar.MINUTE, issumeSub*10);
+//		}
+//	}
 	
 	
 }
