@@ -296,6 +296,98 @@ ballstr=[
 ],
  orderstr={"20170722-027":1}}
 
-state
+
+
+loadIssue
+{
+  "current_issue" : "20170813-081",
+  "issues" : [ {
+    "issue" : "20170813-080",
+    "offical_time" : 0,
+    "wn_number" : ""
+  }, {
+    "issue" : "20170813-079",
+    "offical_time" : 1502622648,
+    "wn_number" : "99958"
+  }, {
+    "issue" : "20170813-078",
+    "offical_time" : 1502622049,
+    "wn_number" : "12451"
+  }, {
+    "issue" : "20170813-077",
+    "offical_time" : 1502621446,
+    "wn_number" : "27828"
+  }, {
+    "issue" : "20170813-076",
+    "offical_time" : 1502620853,
+    "wn_number" : "15305"
+  }, {
+    "issue" : "20170813-075",
+    "offical_time" : 1502620247,
+    "wn_number" : "13575"
+  }, {
+    "issue" : "20170813-074",
+    "offical_time" : 1502619653,
+    "wn_number" : "01164"
+  }, {
+    "issue" : "20170813-073",
+    "offical_time" : 1502619048,
+    "wn_number" : "16466"
+  }, {
+    "issue" : "20170813-072",
+    "offical_time" : 1502618449,
+    "wn_number" : "24108"
+  }, {
+    "issue" : "20170813-071",
+    "offical_time" : 1502617854,
+    "wn_number" : "06377"
+  }, {
+    "issue" : "20170813-070",
+    "offical_time" : 1502617249,
+    "wn_number" : "41379"
+  }, {
+    "issue" : "20170813-069",
+    "offical_time" : 1502616649,
+    "wn_number" : "35800"
+  }, {
+    "issue" : "20170813-068",
+    "offical_time" : 1502616048,
+    "wn_number" : "91446"
+  }, {
+    "issue" : "20170813-067",
+    "offical_time" : 1502615446,
+    "wn_number" : "88700"
+  }, {
+    "issue" : "20170813-066",
+    "offical_time" : 1502614848,
+    "wn_number" : "95448"
+  }, {
+    "issue" : "20170813-065",
+    "offical_time" : 1502614247,
+    "wn_number" : "18160"
+  }, {
+    "issue" : "20170813-064",
+    "offical_time" : 1502613646,
+    "wn_number" : "41975"
+  }, {
+    "issue" : "20170813-063",
+    "offical_time" : 1502613048,
+    "wn_number" : "48332"
+  }, {
+    "issue" : "20170813-062",
+    "offical_time" : 1502612454,
+    "wn_number" : "30785"
+  }, {
+    "issue" : "20170813-061",
+    "offical_time" : 1502611848,
+    "wn_number" : "76590"
+  } ],
+  "last_number" : {
+    "issue" : "20170813-079",
+    "offical_time" : 1502622648,
+    "wn_number" : "99958"
+  }
+}
+
 
 

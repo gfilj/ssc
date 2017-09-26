@@ -1,11 +1,9 @@
 package com.project.controller;
 
+import com.project.spider.model.Row;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.project.model.api.ResponseVO;
 import com.project.service.SSCIssueService;
@@ -27,10 +25,9 @@ public class SSCIssueController {
         return sscIssueService.loadtime(gameId);
     }
 	
-	@RequestMapping(method = RequestMethod.GET,value="/mkg/api/load-issue/1")
-    public @ResponseBody ResponseVO loadIssue(@RequestParam(value = "_", required = false) String _) {
-//        return sscIssueService.loadtime();
-		return null;
+	@RequestMapping(method = RequestMethod.GET,value="/mkg/api/load-issue/{lotteryId}")
+    public @ResponseBody Row loadIssue(@PathVariable("lotteryId") String gameId, @RequestParam(value = "_", required = false) String currenttime) {
+        return sscIssueService.loadIssue(Integer.parseInt(gameId));
     }
 	
 }

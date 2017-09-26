@@ -26,6 +26,13 @@
 			<artifactId>ssc-spider</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.project</groupId>
+            <artifactId>ssc-schedule</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+
     </dependencies>
 </project>
 

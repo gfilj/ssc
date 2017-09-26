@@ -4,3 +4,4 @@ logs/
 .project
 .settings/
 .vertx
+.ssc-spider.iml

@@ -1,0 +1,50 @@
+webLogin:
+  originalList:
+    - name: "IcoInfoGrab"
+      startUrl: "https://ico.info/"
+      authXpath: "//*[@id=\"bs-example-navbar-collapse-1\"]/ul[2]/li[3]/a"
+      userName: "lcq1198758236@126.com"
+      password: "123456*"
+      userXpath: "//*[@id=\"user_email\"]"
+      passXpath: "//*[@id=\"user_password\"]"
+      loginXpath: "//*[@id=\"new_user\"]/input[3]"
+      authSuccessXpath: "/html/body/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/p[2]"
+      successUrl: "https://ico.info/account"
+    - name: "BiBoHuiGrab"
+      startUrl: "https://www.bibohui99.com/index.html"
+      authXpath: "//*[@id=\"top_div\"]/div/div[2]/a"
+      userName: "15516006808"
+      password: "bibohui321"
+      userXpath: "//*[@id=\"login-account\"]"
+      passXpath: "//*[@id=\"login-password\"]"
+      loginXpath: "//*[@id='login-submit']"
+      authSuccessXpath: "/html/body/div[2]/div[1]/div/div[2]/div[2]/div/div[1]/span/span[1]"
+      successUrl: "https://www.bibohui99.com/index.html"
+
+BiBoHuiGrab:
+  phantomjsPath: "/Users/apple/Work/phantomjs-2.1.1-macosx/bin/phantomjs"
+  coinTypeUrl: "https://www.bibohui99.com/trade/coin.html?coinType=6&tradeType=0"
+  coinTypeXpath: "/html/body/div[3]/div[2]/div[1]/ul/span"
+  coinTUXpath: "/html/body/div[3]/div[2]/div[1]/ul/li/a"
+  priceXpath: "//*[@id=\"lastprice\"]"
+  buyAccountXpath: "//*[@id=\"tradebuyamount\"]"
+  buyBtn: "//*[@id=\"buybtn\"]"
+  errorTipsXpath: "//*[@id=\"buy-errortips\"]"
+  errorTipsValue: "您的余额不足，请先充值"
+  tradePwdXpath: "//*[@id=\"tradePwd\"]"
+  tradeBtn: "//*[@id=\"modalbtn\"]"
+  tradePwdWindowXpath: "//*[@id=\"tradepass\"]"
+  cnymoneyXpath: "//*[@id=\"toptradecnymoney\"]"
+
+IcoInfoGrab:
+  userName: "lcq1198758236@126.com"
+  password: "123456*"
+
+BiBoHuiMitiBean:
+  userName: "15516006808"
+  password: "bibohui321"
+  tradPwd: "qwer321"
+  buyAccount: 1
+  bid: 32
+  selectedCoinType: "福源币交易"
+

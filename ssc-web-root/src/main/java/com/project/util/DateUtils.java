@@ -1,5 +1,7 @@
 package com.project.util;
 
+import org.joda.time.DateTime;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,10 +16,44 @@ public class DateUtils {
 			TIME_FM = "HH:mm:ss", DATE_MIGU = "yyyyMMddHH", DATETIME_DETAIL = "yyyyMMddHHmmss";
 
 	/**
+	 * minute of an hour
+	 */
+	public static final int HOUR_MINUTE = 60;
+	/**
+	 * hour of a day
+	 */
+	public static final int DAY_HOUR = 24;
+	/**
 	 * get now date
 	 */
 	public static Date getCurrDate() {
 		return new Date();
+	}
+
+	public static DateTime getJodaTime(Date date){
+		return new DateTime(date);
+	}
+
+	public static Date getMorning() {
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		return cal.getTime();
+	}
+
+	/**
+	 * 清空秒数
+	 * @param date
+	 * @return
+	 */
+	public static Date clearSeconds(Date date){
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		return cal.getTime();
 	}
 	/**
 	 * 
@@ -29,6 +65,7 @@ public class DateUtils {
 		Calendar cal = Calendar.getInstance();
 		cal.set(Calendar.HOUR_OF_DAY,Integer.parseInt(arr[0]));
 		cal.set(Calendar.MINUTE,Integer.parseInt(arr[1]));
+		cal.set(Calendar.SECOND,0);
 		return cal.getTime();
 	}
 	
@@ -43,9 +80,8 @@ public class DateUtils {
 	 *
 	 * @return nowTimeStamp
 	 */
-	public static long getUnixNowTimeStamp() {
-		long time = System.currentTimeMillis();
-		return time / 1000;
+	public static long getDateUnixTimeStamp() {
+		return getDateUnixTimeStamp(new Date());
 	}
 	
 	/**
@@ -214,10 +250,12 @@ public class DateUtils {
 	 * 
 	 * @param skipLen
 	 *            可为负数
-	 * @param d
-	 *            为空或者不传递则为当前时间
+	 * @param
 	 * @return
 	 */
+	public static Date skipDay(int skipLen) {
+		return skipDay(skipLen,new Date());
+	}
 	public static Date skipDay(int skipLen, Date... d) {
 		return skip(Calendar.DATE, skipLen, d);
 	}
@@ -234,6 +272,15 @@ public class DateUtils {
 	public static Date skipHour(int skipLen, Date... d) {
 		return skip(Calendar.HOUR, skipLen, d);
 	}
+
+	public static Date skipMin(int skipLen, Date... d) {
+		return skip(Calendar.MINUTE, skipLen, d);
+	}
+
+	public static Date skipMin(int skipLen) {
+		return skip(Calendar.MINUTE, skipLen);
+	}
+
 
 	/**
 	 * 跳动秒
@@ -310,6 +357,15 @@ public class DateUtils {
 	}
 
 	/**
+	 * 获得2个时间之间的间隔
+	 * @param beginDate
+	 * @param endDate
+	 * @return
+	 */
+	public static int getHourInterval(Date endDate, Date beginDate){
+		return getHour(endDate)-getHour(beginDate);
+	}
+	/**
 	 * 获取今日
 	 */
 	public static int getDay() {
@@ -318,6 +374,10 @@ public class DateUtils {
 
 	public static int getHour() {
 		return get(Calendar.HOUR_OF_DAY);
+	}
+
+	public static int getHour(Date date) {
+		return get(Calendar.HOUR_OF_DAY, date);
 	}
 
 	public static int getMin() {
@@ -333,14 +393,10 @@ public class DateUtils {
 		return c.get(calendarType);
 	}
 
-	public static int getYYYYMMDD(Date date) {
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
-		int year = cal.get(Calendar.YEAR);
-		int mon = cal.get(Calendar.MONTH) + 1;
-		int day = cal.get(Calendar.DAY_OF_MONTH);
-		int created = year * 10000 + mon * 100 + day;
-		return created;
+	public static int get(int calendarType,Date date) {
+		Calendar c = Calendar.getInstance();
+		c.setTime(date);
+		return c.get(calendarType);
 	}
 
 	public static int getYYYYMM(Date date) {
@@ -357,9 +413,12 @@ public class DateUtils {
 	 * 
 	 * @return
 	 */
-	public static int getYYYYMMDD() {
+	public static int getYYYYMMDD(){
+		return getYYYYMMDD(new Date());
+	}
+	public static int getYYYYMMDD(Date date) {
 		Calendar cal = Calendar.getInstance();
-		cal.setTime(new Date());
+		cal.setTime(date);
 		int year = cal.get(Calendar.YEAR);
 		int mon = cal.get(Calendar.MONTH) + 1;
 		int day = cal.get(Calendar.DAY_OF_MONTH);

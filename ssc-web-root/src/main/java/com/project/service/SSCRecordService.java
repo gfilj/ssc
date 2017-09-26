@@ -1,5 +1,6 @@
 package com.project.service;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,20 @@ public class SSCRecordService {
 	public BaseVO orderCancle() {
 		return LotteryVOBuilder.getInstance().setCode(0).setMsg("撤单成功").build();
 	}
-	
-	
+
+	/**
+	 * 根据期号选择订单
+	 */
+	public List<Row> selectOrdersByIssue(String issue, int lotteryId){
+		try{
+		    Row row = Row.getInstance();
+		    row.put("issue",issue);
+		    row.put("lotteryId",lotteryId);
+
+		    return sSCRecordMapper.selectOrdersByIssue(row);
+        }catch (Exception e){
+		    e.printStackTrace();
+        }
+        return null;
+	}
 }

@@ -1,0 +1,163 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>dayChart</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="tether.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.json.js"></script>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>币博汇抢币平台</h1>
+        <br>
+    </div>
+
+    <form>
+        <h4>参数设置：</h4>
+        <div class="form-group form-inline">
+            <label for="userName">用户名：</label>
+            <input class="form-control" placeholder="xxxxxx"
+                   id="userName"></input>
+        </div>
+        <div class="form-group form-inline">
+            <label for="password">密码：</label>
+            <input class="form-control" placeholder="******"
+                   id="password" rows="1"></input>
+        </div>
+        <div class="form-group form-inline">
+            <label for="selectedCoinType">货币类型：</label>
+            <input class="form-control" placeholder="福源币交易"
+                   id="selectedCoinType" rows="1"></input>
+        </div>
+        <div class="form-group form-inline">
+            <label for="bid">竞价：</label>
+            <input class="form-control" placeholder="4.0"
+                   id="bid" rows="1"></input>
+        </div>
+        <div class="form-group form-inline">
+            <label for="tradPwd">交易密码：</label>
+            <input class="form-control" placeholder="******"
+                   id="tradPwd" rows="1"></input>
+        </div>
+        <div class="form-group form-inline">
+            <label for="buyAccount">交易量：</label>
+            <input class="form-control" placeholder="100"
+                   id="buyAccount" rows="1"></input>
+        </div>
+        <div class="form-group form-inline">
+            <label for="totalAccount">交易总量：</label>
+            <input class="form-control" placeholder="1000"
+                   id="totalAccount" rows="1"></input>
+        </div>
+
+
+    </form>
+    <div>
+        <button onclick="start()" class="btn btn-default">开始</button>
+        <button onclick="stop()" class="btn btn-default">关闭</button>
+    </div>
+    <div style="width:100%;margin:auto ">
+        <br>
+        <h4>状态：</h4>
+        <div id="status">
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function isNull(value) {
+            if (value == undefined || value == "" || value == null) {
+                alert("输入为空");
+                return true;
+            }
+            return false;
+        }
+        function loadData(command) {
+            if (isNull($("#userName").val())){
+                return null;
+            } else if (isNull($("#password").val())) {
+                return null;
+            } else if (isNull($("#selectedCoinType").val())) {
+                return null;
+            } else if (isNull($("#bid").val())) {
+                return null;
+            } else if (isNull($("#tradPwd").val())) {
+                return null;
+            } else if (isNull($("#buyAccount").val())) {
+                return null;
+            } else if (isNull($("#totalAccount").val())) {
+                return null;
+            } else {
+                var request = {
+                    userName: $("#userName").val(),
+                    password: $("#password").val(),
+                    selectedCoinType: $("#selectedCoinType").val(),
+                    bid: $("#bid").val(),
+                    tradPwd: $("#tradPwd").val(),
+                    buyAccount: $("#buyAccount").val(),
+                    totalAccount: $("#totalAccount").val(),
+                    shutdown: command
+                };
+                return request;
+            }
+
+
+        }
+
+        function stop() {
+            var loadDataOBJ = loadData(true);
+            if(loadDataOBJ == null){
+                return
+            }
+            var jsonStr = $.toJSON(loadDataOBJ);
+            $.ajax({
+                url: "/bibohui/stop",
+                type: 'POST',
+                data: jsonStr,
+                dataType: 'json',
+                contentType : 'application/json',
+                success: function (data, status, xhr) {
+                    var dataObj = eval(data);
+                    $("#status").html(dataObj.info);
+                },
+                error: function (xhr, error, exception) {
+                    console.log(error);
+                }
+            });
+        }
+
+
+        function start() {
+            var loadDataOBJ = loadData(false);
+            if(loadDataOBJ == null){
+                return
+            }
+            var jsonStr = $.toJSON(loadDataOBJ);
+            $.ajax({
+                url: "/bibohui/start",
+                type: 'POST',
+                data: jsonStr,
+                dataType: 'json',
+                contentType : 'application/json',
+                success: function (data, status, xhr) {
+                    var dataObj = eval(data);
+                    $("#status").html(dataObj.info);
+                },
+                error: function (xhr, error, exception) {
+                    console.log(error);
+                }
+            });
+        }
+
+
+    </script>
+
+</body>
+</html>

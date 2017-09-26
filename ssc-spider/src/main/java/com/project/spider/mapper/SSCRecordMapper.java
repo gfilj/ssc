@@ -3,11 +3,7 @@ package com.project.spider.mapper;
 import java.io.Serializable;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.dao.DataAccessException;
 
 import com.project.spider.model.Row;
@@ -46,9 +42,11 @@ public interface SSCRecordMapper extends BaseMapper<Row,Serializable>{
 			"`cancelStatus`," + 
 			"`canCancel`," + 
 			"`nums`," + 
-			"`point`)" + 
+			"`point`," +
+			"`wayid`," +
+			"`type`)" +
 			"VALUES" + 
-			"(#{param.orderItemId}," + 
+			"(#{param.orderItemId}," +
 			"#{param.userName}," + 
 			"#{param.userId}," + 
 			"#{param.orderTime}," + 
@@ -60,7 +58,7 @@ public interface SSCRecordMapper extends BaseMapper<Row,Serializable>{
 			"#{param.count}," + 
 			"#{param.amount}," + 
 			"#{param.awardMoney}," + 
-			"#{param.winningNumber}," + 
+			"\"\"," +
 			"0," + 
 			"#{param.perAmount}," + 
 			"#{param.state}," + 
@@ -69,8 +67,10 @@ public interface SSCRecordMapper extends BaseMapper<Row,Serializable>{
 			"#{param.odds}," + 
 			"#{param.cancelStatus}," + 
 			"true," + 
-			"#{param.nums}," + 
-			"0.0)")
+			"#{param.nums}," +
+			"0.0," +
+			"#{param.wayid}," +
+			"#{param.type})")
 	@Result(javaType = Integer.class)
 	
 	int insertSelective(@Param(value = "param")Row param) throws DataAccessException;
@@ -80,7 +80,33 @@ public interface SSCRecordMapper extends BaseMapper<Row,Serializable>{
 	@Select("SELECT * FROM t_ssc_record")
 	@Result(javaType=Row.class)
 	List<Row> selectAll() throws DataAccessException;
-	
+
+
 	@Select("SELECT * from t_ssc_record where userName=#{param.userId}")
+    @Result(javaType=Row.class)
 	List<Row> selectByUserId(@Param(value = "param")Row param) throws DataAccessException;
+
+	/**
+	 * 更新中奖号码
+	 * @param param
+	 * 期数和类型
+	 * @throws DataAccessException
+	 */
+	@Update("update t_ssc_record set winningNumber = #{param.winningNumber} where issue = #{param.issue} and lotteryId = #{param.lotteryId} ")
+	void updateWinningNumber(@Param(value="param")Row param) throws DataAccessException;
+
+	/**
+	 * 更新状态
+	 * @param row
+	 * 订单号
+	 */
+	@Update("update t_ssc_record set canCancel = false where orderItemId = #{param.orderItemId}")
+	void updateCanCancle(@Param(value="param")Row row) throws DataAccessException;
+
+	/**
+	 * 选择某一类型下对应的期号的所有订单
+	 */
+    @Select("SELECT * FROM t_ssc_record where issue = #{param.issue} and lotteryId =#{param.lotteryId};")
+    @Result(javaType=Row.class)
+	List<Row> selectOrdersByIssue(@Param(value="param") Row row) throws DataAccessException;
 }

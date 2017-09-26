@@ -1,12 +1,9 @@
 package com.project.spider.mapper;
 
 import java.io.Serializable;
+import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.dao.DataAccessException;
 
 import com.project.spider.model.Row;
@@ -27,8 +24,23 @@ public interface SSCRepoMapper extends BaseMapper<SSCRepo,Serializable>{
 	@Result(javaType = Integer.class)
 	int insertSelective(SSCRepo sscRepo) throws DataAccessException;
 	
-	@Select("SELECT * FROM t_ssc_issue where type = #{param.gameId} order by time desc limit 1")
+	@Select("SELECT * FROM t_ssc_issue where type = #{param.type} order by issue desc limit 1")
 	@Result(javaType = Row.class)
 	Row selectRecentGameId(@Param(value = "param")Row param);
-	
+
+
+	@Select("SELECT * FROM t_ssc_issue where type = #{param.type} order by issue desc limit #{param.size}")
+	@Result(javaType = Row.class)
+	List<Row> selectRecentList(@Param(value = "param")Row param);
+
+
+	@Select("SELECT * FROM t_ssc_issue where issue = #{param.issue} and type = #{param.type}")
+	@Result(javaType = Row.class)
+	Row selectByID(@Param(value = "param")Row param);
+
+	/**
+	 * 更新rollout字段
+	 */
+	@Update("update t_ssc_issue set rollout=1 where issue=#{param.issue} and type = #{param.type}")
+	int updateRollUp(@Param(value = "param")Row row) throws DataAccessException;
 }

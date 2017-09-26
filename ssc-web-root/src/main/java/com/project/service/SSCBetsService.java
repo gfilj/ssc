@@ -3,7 +3,9 @@ package com.project.service;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
+import org.apache.log4j.spi.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -29,6 +31,7 @@ public class SSCBetsService {
 	@Autowired
 	private SSCWayService sscWayService;
 
+	private static Logger logger = Logger.getLogger("bet");
 	public ResponseVO betsResult() {
 		return BetsVOBuilder.getInstance().setIsSuccess(1).setMsg("投注成功").setType("success")
 				.setData("投注成功", "4.1083", "/hz/mkg/orders.html").build();
@@ -37,14 +40,16 @@ public class SSCBetsService {
 	public int insertSelective(Map<String, Object> param) {
 		int insertNum = 0;
 		List<Row> ballList = JSON.parseArray((String) param.get("ballstr"), Row.class);
+		logger.info("orderStr:" + param);
 		for (Row ball : ballList) {
 			try {
 				Row recordItem = Row.getInstance();
-				int wayId = (int) ball.get("wayId");
-				recordItem.put("wayId", wayId);
+				int wayId = Integer.parseInt(ball.getString("wayId"));
+				recordItem.put("wayid", wayId);
+				recordItem.put("type", ball.getString("type"));
 				Row wayIdRow = sscWayService.selectById(wayId);
 				System.out.println(wayIdRow);
-				recordItem.put("method", (String)wayIdRow.getString("nameCn"));
+				recordItem.put("method",  wayIdRow.getString("nameCn"));
 				int gameId = Integer.parseInt((String)param.get("gameId"));
 				recordItem.put("lotteryId", gameId);
 				recordItem.put("lottery", sscLotteryService.selectById(gameId).getString("cn"));
@@ -63,6 +68,7 @@ public class SSCBetsService {
 				recordItem.put("oddsMode", ball.getInt("prizeGroup"));
 				JSONObject issumeObject = JSON.parseObject((String) param.get("orderstr"));
 				recordItem.put("issue", issumeObject.keySet().iterator().next());
+
 
 				System.out.println(recordItem);
 

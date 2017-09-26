@@ -1,15 +1,11 @@
 package com.project.spider.model;
 
 import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.joda.time.DateTime;
 
 /**
  * @author wzxie <字段,值> 重新修改了一下，可以完全取代HashMap
@@ -45,7 +41,20 @@ public class Row extends HashMap<Object, Object> {
 			ordering.add(obj);
 		}
 	}
-	
+
+	/**
+	 *
+	 */
+	public boolean getBoolean(Object name){
+		try {
+			Object object = get(name);
+			if (object != null)
+				return (Boolean) object;
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return false;
+	}
 	/**
 	 * 根据名字获取map
 	 * @param name
@@ -60,6 +69,21 @@ public class Row extends HashMap<Object, Object> {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public Date getDate(Object name){
+		try {
+			Object object = get(name);
+			if (object != null)
+				return (Date)object;
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public DateTime getDateTime(Object name){
+		return new DateTime(getDate(name));
 	}
 	/**
 	 * 根据字段名返回字符串值
@@ -111,7 +135,6 @@ public class Row extends HashMap<Object, Object> {
 		}
 		return defaultValue;
 	}
-
 	/**
 	 * @param name
 	 * @return
@@ -194,6 +217,10 @@ public class Row extends HashMap<Object, Object> {
 		return defaultValue;
 	}
 
+	public long getLong(Object name){
+		return getLong(name,0L);
+	}
+
 	/**
 	 * @param which
 	 * @return
@@ -246,11 +273,16 @@ public class Row extends HashMap<Object, Object> {
 		return sb.toString();
 	}
 
+	@Override
+	public Object get(Object key) {
+		return super.get(key);
+	}
+
 	/*
-	 * (non-Javadoc) 覆盖了父类的put方法
-	 * 
-	 * @see java.util.Map#put(java.lang.Object, java.lang.Object)
-	 */
+         * (non-Javadoc) 覆盖了父类的put方法
+         *
+         * @see java.util.Map#put(java.lang.Object, java.lang.Object)
+         */
 	public Object put(Object name, Object value) {
 		if (!containsKey(name)) {
 			ordering.add(name); // 将键保存起来

@@ -32,7 +32,8 @@ public class LoadTimeVOBuilder {
 		return this;
 	}
 
-	public LoadTimeVOBuilder setData(long currentTime, 
+	public LoadTimeVOBuilder setData(
+			long currentTime,
 			long currentIssueEndTime, 
 			String currentIssueNumber,
 			long nextIssueEndTime, 

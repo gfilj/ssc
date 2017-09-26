@@ -1,0 +1,548 @@
+@charset "utf-8";
+/* Date Picker 日期拾取器 */
+table.jCalendar{border-collapse:collapse;font-family: 'Microsoft YaHei';width:90%;margin-left: 5%; height: 240px;}
+table.jCalendar th{  border-bottom: 1px solid #B4B5B5;background:#fff;color:#366493;font-size: 17px; font-weight:normal;height:30px;line-height:30px;vertical-align:middle; text-align: center;}
+table.jCalendar td{ border-radius: 50%; font-family: 'arial'; color:#6C6C6C;font-size:11px;height:30px;line-height:30px;text-align:center;}
+table.jCalendar td.other-month{color:#C9C9CA;}
+table.jCalendar td.today{background:url(../images/choose.png) no-repeat; color:#fff;  background-position: 50% 46%;}
+table.jCalendar td.selected,table.jCalendar td.selected.dp-hover{background:url(../images/choose.png) no-repeat; color:#fff;  background-position: 50% 46%;}
+table.jCalendar td.content {background:url(../images/selected.png) no-repeat; color:#ffffff;  background-position: 50% 46%;}
+table.jCalendar td.dp-hover,table.jCalendar tr.activeWeekHover td{background:url(../images/select.png) no-repeat; color:#888889;  background-position: 50% 46%;}
+table.jCalendar tr.selectedWeek td{background:#f66;color:#fff;}
+table.jCalendar td.disabled, table.jCalendar td.disabled.dp-hover{background:#ECF1F4;color:#888;}
+table.jCalendar td.unselectable,table.jCalendar td.unselectable:hover,table.jCalendar td.unselectable.dp-hover{background:#8ca4c8;color:#fff;}
+/* For the popup *//* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
+div.dp-popup{position:relative;font-size:12px;font-family: 'Microsoft YaHei', sans-serif;padding:0 2px 2px 2px;width:98%;line-height:1.2em;background:#fff;}
+div#dp-popup{position:absolute;z-index:199;}
+div.dp-popup .time{background-color: #2E80C4;font-size:1.5em;font-weight: normal; text-align:center;margin:0;padding:0;height:40px;line-height:43px;color:#FFF;}
+a#dp-close{font-size:11px;padding:4px 0;text-align:center;display:block;}
+a#dp-close:hover{text-decoration:underline;}
+div.dp-popup a{color:#000;text-decoration:none;width:19px;height:19px;line-height:999em;overflow:hidden;margin:10px 2px 0 2px;display:inline;}
+div.dp-popup a#dp-nav-prev-year.disabled{background-position:0 -19px;}
+div.dp-popup a#dp-nav-prev-month.disabled{background-position:-19px -19px;}
+div.dp-popup a#dp-nav-prev-year{background:url(../images/nav-prev.png) no-repeat;width: 6px;height: 10px;}
+div.dp-popup a#dp-nav-prev-month{background:url(../images/nav-prev.png) no-repeat;width: 6px;height: 10px;}
+div.dp-popup a#dp-nav-next-year{background:url(../images/nav-next.png) no-repeat;width: 6px;height: 10px;}
+div.dp-popup a#dp-nav-next-month{background:url(../images/nav-next.png) no-repeat;width: 6px;height: 10px;}
+div.dp-popup div.dp-nav-prev{position:absolute;top:2%;left:35%;width:3%;}
+div.dp-popup div.dp-nav-prev a{float:left;}
+/* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
+div.dp-popup div.dp-nav-prev a, div.dp-popup div.dp-nav-next a{cursor:pointer;}
+div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled{cursor:default;}
+div.dp-popup div.dp-nav-next{position:absolute;top:2%;right:35%;width:3%;}
+div.dp-popup div.dp-nav-next a{float:right;}
+div.dp-popup a.disabled{cursor:default;color:#aaa;}
+div.dp-popup td{cursor:pointer;font-size:17px; font-family: 'arial';}
+div.dp-popup td.disabled{cursor:default;}
+.time .nowtime {
+    position: absolute;
+    top: 0px;
+    color: #fff;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    left: 3%;
+}
+
+.datepicker .setting {
+    position: absolute;
+    top: 0px;
+    background:url(../images/setting.png) no-repeat;
+    right: 10%;
+}
+
+#remind {
+    margin-left: 5%;
+    width: 88%;
+    height: 88px;
+    border-top: 1px dashed #B4B5B5;
+    margin-top: 4px;
+}
+
+.remindNews{
+    width: 80%;
+    height: 88px;
+    float: left;
+}
+
+.remindNews .reminds {
+    margin-top: 2px;
+    width: 100%;
+    height: 40px;
+}
+.remindNews .reminds .tubiao {
+    display: block;
+    width: 1%;
+    float: left;
+    height: 23px;
+    margin-top: 9px;
+    background-color: #3A85C6;
+}
+
+.remindNews .reminds a {
+    display: block;
+    width: 90%;
+    float: left;
+    margin-left: 3%;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    border-bottom: 1px dashed #888889;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #888889;
+    text-decoration: none;
+}
+
+.remindNews .reminds a span {
+    color: #AEAEAE;
+}
+
+.remindNews .reminds label {
+    margin-left: 20px;
+    cursor: pointer;
+    color: #767677;
+}
+
+.addRemind {
+    display: block;
+    width: 20%;
+    margin-top: 13px;
+    height: 57px;
+    float: left;
+    /*background: url(../images/addRemind.png) no-repeat;*/
+}
+
+#CNOA_MY_IMAGES {
+    display: block;
+    border: 1px solid #D4D5D7;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    height: 133px;
+    width: 138px;
+    position: relative;
+    margin-left: -63px;
+    left: 50%;
+    padding-top: 3px;
+}
+
+#CNOA_MY_PORTRAIT {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+#CNOA_MY_NAME {
+    font-size: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #595757;
+    margin-top: 30px;
+}
+
+#CNOA_MY_NAME span {
+    background: url(../images/phone.png) no-repeat;
+    display: block;
+    width: 12px;
+    height: 19px;
+    position: absolute;
+    top: 32px;
+    left: 180px;
+}
+
+
+#CNOA_MY_DEPT {
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    color: #888889;
+    margin-top: 30px;
+    background-color:#EEEFEF;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#CNOA_MY_SIGN {
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color: #ffffff;
+    margin-top: 30px;
+    background-color:#F39700;
+}
+
+#CNOA_MY_SIGN span{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 50%;
+    margin-left: 20%;
+    height: 30px;
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+#CNOA_MY_SIGN input {
+    font-family: 'Microsoft YaHei';
+    height: 30px;
+    text-align: center;
+    margin-top: 1px;
+    background-color: #F39700;
+    border: none;
+    color: #fff;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+#CNOA_MY_SIGN .input {
+    height: 24px;
+    text-align: center;
+    margin-top: 3px;
+    background-color: #fff;
+    border: none;
+    color: #F39700;
+    line-height: 25px;
+}
+
+#CNOA_MY_SIGN a {
+    width: 30px;
+    height: 30px;
+    display: block;
+    float: right;
+    background:url(../images/write.jpg);
+    background-position: 0px;
+    margin-right:5px;
+}
+
+.level {
+    width: 100%;
+    height: 110px;
+}
+
+#text2 {
+    width: 98%;
+    height: 117px;
+    position: relative;
+}
+#text2 span {
+    position: absolute;
+    width: 155px;
+    height: 19px;
+    top: 20px;
+    left: 5%;
+    background: url(../images/lhc_text.png) no-repeat;
+}
+#text {
+    background: url(../images/write2.png) no-repeat;
+    background-position: 2% 21px;
+    width: 90%;
+    height: 75px;
+    font-size: 16px;
+    padding: 20px 5% 20px 5%;
+    border-radius: 5px;
+    color: rgb(116, 112, 112);
+}
+
+.marquee div {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 30px;
+}
+
+.apple{ width:90%; height:30px; white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.apple li {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.apple a{ width:100%; height:30px; line-height:30px; text-indent:20px; color:#6075A3; font-size: 14px}
+
+.lhc_images {
+    background: url(../images/lhc_attach.png) no-repeat;
+    display: block;
+    width: 21px;
+    height: 21px;
+    margin-top: 40%;
+}
+
+.lhc_submit {
+    width: 75px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #F39700;
+    color: #fff;
+    cursor:pointer;
+}
+
+
+/*lhc_menu*/
+#lhc_menu {
+    font-family:'Microsoft YaHei';
+    width: 250px;
+    display: none;
+    height: 100%;
+    background-color:#fff;
+    top: 40px;
+    right: -295px;
+    position: absolute;
+    transition: right 0.3s;
+    padding-top: 45px;
+    -moz-transition: right 0.3s;	/* Firefox 4 */
+    -webkit-transition: right 0.3s;	/* Safari 和 Chrome */
+    -o-transition: right 0.3s;	/* Opera */
+    z-index: 999;
+    box-shadow: -2px 0px 5px #616161;
+}
+
+#lhc_menu.in{
+    right: 0px;
+    display: block;
+}
+
+#lhc_menu.out{
+    right: -295px;
+    display: none;
+}
+
+#lhc_menu .headImg {
+    margin-top: 50px;
+}
+
+#lhc_menu .lhc_img {
+    width: 250px;
+    height: 88px;
+    float: left;
+}
+
+#lhc_menu .lhc_img img {
+    display: block;
+    width: 35%;
+    height: 100%;
+    border-radius: 20%;
+    margin: auto;
+}
+
+#lhc_menu .lhc_name_dept {
+    text-align: center;
+    margin-top: 25px;
+    color: #F39700;
+    width: 250px;
+    font-size: 16px;
+    float: left;
+}
+
+#lhc_menu .lhc_email {
+    text-align: center;
+    margin-top: 10px;
+    color: #B4B5B5;
+    font-size: 12px;
+    width: 250px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+}
+
+#lhc_menu .lhc_person {
+    width: 210px;
+    height: 25px;
+    margin: auto;
+    padding-left: 15px;
+    font-size: 14px;
+    color: #3577BA;
+}
+
+
+#lhc_menu .lhc_person_info {
+    width: 195px;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 1px solid #C9C9CA;
+    border-top: 1px solid #C9C9CA;
+    height: 123px;
+    font-size: 12px;
+    padding-top: 15px;
+}
+
+.lhc_common_info {
+    height: 34px;
+    line-height: 35px;
+    border-bottom: 1px solid #E5E4E4;
+    padding-left: 40px;
+}
+
+.lhc_common_info a {
+    color: #3E3A39;
+}
+
+.lhc_person_info .lhc_edit_info {
+    background: url(../images/new_icons/person_info.png) no-repeat;
+    background-position: 10px 9px;
+}
+
+.lhc_person_info .lhc_edit_password {
+    background: url(../images/new_icons/person_pw.png) no-repeat;
+    background-position: 10px 14px;
+}
+
+.lhc_person_info .lhc_edit_group {
+    background: url(../images/new_icons/person_group.png) no-repeat;
+    background-position: 10px 10px;
+}
+
+.lhc_common_about {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    margin-top: 5px;
+    height: 34px;
+    line-height: 35px;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.lhc_common_about a {
+    color: #717071;
+}
+
+.lhc_new_version {
+    background: url(../images/new_icons/new_version.png) no-repeat;
+    display: block;
+    width: 46px;
+    height: 18px;
+    float: right;
+    margin-top: 9px;
+}
+
+.lhc_footer {
+    height: 60px;
+    background-color: #468FCD;
+    position: absolute;
+    bottom: 80px;
+}
+
+.lhc_footer .lhc_skin a {
+    display: block;
+    width: 124px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 20px;
+    border-right: 1px solid #fff;
+}
+
+.lhc_common_footer {
+    width: 250px;
+    line-height: 60px;
+    text-align: center;
+    float: left;
+}
+
+.lhc_common_footer a{
+    width: 250px;
+    line-height: 60px;
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+}
+.lhc_common_footer a:hover{
+    background-color: #266AA0;
+}
+
+.lhc_footer a {
+    color: #fff;
+}
+
+.lhc_back {
+    height: 75px;
+    width: 22px;
+    position: absolute;
+    top: 45px;
+    right: 250px;
+    background: url(../images/sideBar.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.lhc_back a {
+    background: url(../images/new_icons/lhc_back.png) no-repeat;
+    background-position: 10px 15px;
+    display: block;
+    width: 25px;
+    height: 45px;
+}
+
+.lhc_drop_down {
+    width: 225px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 640px;
+}
+
+#lhc_main {
+    width: 225px;
+    padding-right: 15px;
+    height: 555px;
+    margin-top: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    float: left;
+}
+
+.lhc_weather {
+    margin-top: 40px;
+}
+
+.lhc_setting {
+    padding-left: 30px;
+    font-size: 12px;
+    height: 20px;
+    width: 175px;
+    float: left;
+    text-align: right;
+    margin-top: 25px;
+    margin-right: 20px;
+}
+
+.lhc_city {
+    text-align: left;
+    padding-right: 20px;
+    color: #3577BA;
+    padding-left: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lhc_weather_img {
+    width: 100%;
+    height: 60px;
+    margin-top: 28px;
+}
+
+.lhc_weather_img img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-left: 80px;
+}
+
+.lhc_temp {
+    font-size: 28px;
+    color: #3577BA;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.lhc_weat {
+    text-align: center;
+    color: #888889;
+    padding-top: 10px;
+    font-size: 14px;
+}

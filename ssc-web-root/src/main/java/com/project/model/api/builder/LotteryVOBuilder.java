@@ -5,6 +5,7 @@ package com.project.model.api.builder;
  *
  */
 
+import java.util.Collection;
 import java.util.List;
 
 import com.project.model.api.BaseVO;
@@ -33,7 +34,7 @@ public class LotteryVOBuilder {
 		return this;
 	}
 
-	public LotteryVOBuilder setResult(List<Row> lotteryList) {
+	public LotteryVOBuilder setResult(Collection<Row> lotteryList) {
 		codeVO.setResult(lotteryList);
 		return this;
 	}

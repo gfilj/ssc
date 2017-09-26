@@ -1,0 +1,143 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>dayChart</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="tether.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.json.js"></script>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>币博汇抢币平台</h1>
+        <br>
+    </div>
+
+    <form>
+        <h4>参数设置：</h4>
+        <div class="form-group form-inline">
+            <label for="username">用户名：</label>
+            <input class="form-control" placeholder="xxxxxx"
+                   id="username"></input>
+        </div>
+        <div class="form-group form-inline">
+            <label for="password">有效天数：</label>
+            <input class="form-control" placeholder="******"
+                   id="password" rows="1"></input>
+        </div>
+
+
+    </form>
+    <div>
+        <button onclick="add()" class="btn btn-default">添加</button>
+        <button onclick="del()" class="btn btn-default">删除</button>
+    </div>
+    <br>
+    <table class="table">
+        <caption>基本的表格布局</caption>
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>有效期</th>
+            <th>截止日期</th>
+        </tr>
+        <tbody id="users">
+
+        </tbody>
+        </thead>
+    </table>
+
+
+    <script type="text/javascript">
+        function isNull(value) {
+            if (value == undefined || value == "" || value == null) {
+                alert("输入为空");
+                return true;
+            }
+            return false;
+        }
+        function loadData() {
+            if (isNull($("#username").val())) {
+                return null;
+            } else if (isNull($("#password").val())) {
+                return null;
+            } else {
+                var request = {
+                    username: $("#username").val(),
+                    days: $("#password").val(),
+
+                };
+                return request;
+            }
+
+
+        }
+
+        function add() {
+            var loadDataOBJ = loadData();
+            if (loadDataOBJ == null) {
+                return
+            }
+            var jsonStr = $.toJSON(loadDataOBJ);
+            $.ajax({
+                url: "/user/add",
+                type: 'POST',
+                data: jsonStr,
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data, status, xhr) {
+                    var datas = eval(data);
+                    var inserStr = "";
+                    for (var i = 0; i < datas.length; i++) {
+                        inserStr += "<tr><td>" + datas[i].username + "</td> <td>" + datas[i].days + "</td> <td>" + datas[i].dateStr + "</td></tr>";
+                    }
+                    $("#users").html(inserStr);
+                },
+                Error: function (xhr, error, exception) {
+                }
+            });
+
+        }
+
+
+        function del() {
+            var loadDataOBJ = loadData();
+            if (loadDataOBJ == null) {
+                return
+            }
+            var jsonStr = $.toJSON(loadDataOBJ);
+            $.ajax({
+                url: "/user/del",
+                type: 'POST',
+                data: jsonStr,
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data, status, xhr) {
+                    var datas = eval(data);
+                    var inserStr = "";
+                    for (var i = 0; i < datas.length; i++) {
+                        inserStr += "<tr><td>" + datas[i].username + "</td> <td>" + datas[i].days + "</td> <td>" + datas[i].dateStr + "</td></tr>";
+                    }
+                    $("#users").html(inserStr);
+                },
+                Error: function (xhr, error, exception) {
+                }
+            });
+        }
+
+
+        //        window.onload = function () {
+        //            initChart()
+        //            setInterval("loadStatus();", 5000);
+        //            setInterval("loadChart(0);", 300000);
+        //        }
+    </script>
+</div>
+</body>
+</html>

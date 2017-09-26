@@ -2,14 +2,13 @@ package com.project.spider.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.dao.DataAccessException;
 
 import com.project.spider.model.Row;
+
+import javax.xml.crypto.Data;
+
 /**
  * @Mapper
  * @author goforit
@@ -31,5 +30,11 @@ public interface SSCLotteryMapper extends BaseMapper<Row,Row>{
 	@Select("SELECT * FROM t_ssc_lottery ")
 	@Result(javaType = Row.class)
 	List<Row> selectAll() throws DataAccessException;
+
+	/**
+	 * 更新期号为开奖状态
+	 */
+	@Update("update t_ssc_issue set rollout=true where issue=#{param.issue} and type = #{param.type}")
+	int unpdateStatus(@Param(value = "param")Row param) throws DataAccessException;
 	
 }

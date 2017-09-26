@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>协众OA在线试用系统 - Powered by 协众OA - www.cnoa.cn</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="expires" content="0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="../static/extjs/3.4.0/resources/css/ext-all.css">
+    <link rel="stylesheet" type="text/css" href="../static/resources/css/cnoa.all.css?v=v 4.1.7"/>
+    <link rel="stylesheet" type="text/css" href="extjs/3.4.0/ux/css/cnoa.all.css?v=v 4.1.7"/>
+    <link rel="stylesheet" type="text/css" href="scripts/ueditor/themes/default/css/ueditor.css?v=v 4.1.7"/><link rel="stylesheet" type="text/css" href="theme/cnoa/style.css"><script type="text/javascript" src="scripts/extjs.3.4.0.js?v=v 4.1.7"></script>
+    <script type="text/javascript" src="file/language/cn.js?v=v 4.1.7"></script>
+    <script type="text/javascript" src="scripts/cnoa.common.js?v=v 4.1.7"></script>
+    <script type="text/javascript" src="scripts/jquery/1.4.2.min.js?v=v 4.1.7"></script>
+    <script type="text/javascript" src="scripts/jquery/powerFloat/1.6.1.min.js"></script>
+    <script src="scripts/eCharts/echarts.js" type="text/javascript"></script>
+    <script type="text/javascript" src="scripts/fusioncharts/FusionCharts.js"></script>
+    <script type="text/javascript" src="scripts/cnoa/exmail.js"></script>
+    <script type="text/javascript">
+        require.config({
+            paths: {
+                echarts: "scripts/eCharts/dist"
+            }
+        });
+    </script><script language="JavaScript">var CNOA_ALLOW_SWITCH_USER = 1;</script><script type="text/javascript" src="scripts/cnoa/switchuser.js?v=v 4.1.7"></script>
+
+    <script language="JavaScript">
+        /*noRemove*/var stopOAError;/*noRemove*/
+        if(document.all){
+            $("a[href*='javascript:void']").live("click",function (e){
+                e.preventDefault();
+                return false;
+            });
+        }var allowWindowUnloadAlert = true;
+        window.onbeforeunload=function(){
+            if(allowWindowUnloadAlert){return "确实需要离开本页面吗？";}
+        }
+        var CNOA_USER_UID = 1;
+        var CNOA_USER_SID = 1;
+        var CNOA_USER_JID = 1;
+        var CNOA_USER_DID = 1;
+        var CNOA_USER_MENUCED = 1;
+        var CNOA_USER_JOBTYPE = "superAdmin";
+        var CNOA_USER_USERNAME = "admin";
+        var CNOA_USER_TRUENAME = "超级管理员";
+        var CNOA_USER_DEPTMENT = "协众OA协同管理系统-试用";
+        var CNOA_USER_THEME = "cnoa";
+        var CNOA_USER_WFINNEWWINDOW = 0;
+        var CNOA_SYSTEM_ONLINE_LIST = new Array();
+        var CNOA_COMMUNICATION_IM_CHATTING_LIST = "";
+        var CNOA_EXTJS_PATH = "extjs/3.4.0";
+        var CNOA_VERSION_INFO = {"versiontype":"C5","vType":"5","versionname":"\u7ec8\u6781\u7248[200\u7528\u6237]","company":"\u534f\u4f17OA\u5728\u7ebf\u8bd5\u7528\u7efc\u5408\u7248\u672c","lng":"1","expire":false,"version2":80};
+        var CNOA_SMS_ENABLE = 1;
+        var CNOA_LOCK_INDEX_LAYOUT = 1;
+        var LAYOUT_TYPE = 2;
+        var CNOA_TAG_NUM = 7;
+        var CNOA_VERSION = "v 4.1.7";
+        var CNOA_INDEX_LAYOUT = "1";
+
+        var CNOA_HOST = 'oa.cnoa.cn';
+
+
+
+
+        var CNOA_ACTIVEX_CONFIG = {
+            Version	: "100005",
+            Clsid	: "367C478A-F4AC-424F-823F-F7E155526BCA",
+            Progid	: "CNOA.WebCtrl",
+            url : "file/webactivex.zip"
+        }
+    </script>
+    <script language="JavaScript">
+        //全局设置
+        Ext.ns('CNOA.config');
+        Ext.ns('CNOA.permitController');
+        CNOA.config.name = '协众OA在线试用系统';
+        CNOA.config.onlineRefreshTime = 25000;
+        CNOA.config.myIp = '114.246.79.89';
+        CNOA.permitController = {};
+        CNOA.enableLoginAuth = 1;
+        CNOA.viewOfficeAllowPrint = 1;
+        CNOA.viewOfficeAllowCopy = 1;
+        CNOA.systemTitleShowType = 0;
+        Ext.BLANK_IMAGE_URL = 'extjs/3.4.0/resources/images/default/s.gif';
+        CNOA.unReadNoticeCount = 46;
+        CNOA.config.themeList = [{"name":"\u9ed8\u8ba4\u4e3b\u9898","folder":"cnoa"},{"name":"\u7ea2\u8272\u4e3b\u9898","folder":"cnoa_red"}]
+        CNOA.config.scblg = {shbt:1,shma:1,shmh:1,smeb:1,smeu:'file/download.php?target=windows',sclo:1,stlo:1,stdn:3};
+
+        CNOA.config.file = 'file';
+    </script>
+    <script language="JavaScript">
+        var CNOA_APP_NOTICE_FROMTYPE = {"1":{"from":"plan","name":"\u5de5\u4f5c\u8ba1\u5212","sname":"\u8ba1\u5212","id":"CNOA_MENU_USER_PLAN_VIEW","icon":"icon-calendar","tname":"\u67e5\u770b\u8ba1\u5212"},"2":{"from":"task","name":"\u5de5\u4f5c\u4efb\u52a1","sname":"\u4efb\u52a1","id":"CNOA_MENU_USER_TASK_VIEW","icon":"icon-system-s-task","tname":"\u67e5\u770b\u4efb\u52a1"},"3":{"from":"customers","name":"\u5ba2\u6237\u7ba1\u7406","sname":"\u5ba2\u6237","id":"CNOA_SYSTEM_NOTICE_FOR_CUSTOMERS","icon":"icon-cnoa-communication","tname":"\u5ba2\u6237\u7ba1\u7406"},"4":{"from":"diary","name":"\u5de5\u4f5c\u65e5\u8bb0","sname":"\u65e5\u8bb0","id":"CNOA_MENU_USER_DIARY_MY","icon":"icon-more-diary","tname":"\u5de5\u4f5c\u65e5\u8bb0"},"6":{"from":"sms","name":"\u624b\u673a\u77ed\u4fe1","sname":"\u77ed\u4fe1","id":"CNOA_MENU_MAIN_SMS_VIEW","icon":"icon-sms-sound","tname":"\u624b\u673a\u77ed\u4fe1","unshow":1},"7":{"from":"newsnotice","name":"\u516c\u544a\/\u901a\u77e5","sname":"\u516c\u544a","id":"CNOA_MENU_NEWS_NOTICE_VIEW","icon":"icon-system-notice","tname":"\u516c\u544a\/\u901a\u77e5","unshow":1},"8":{"from":"hrContract","name":"\u4eba\u4e8b\u7ba1\u7406","sname":"\u4eba\u4e8b","id":"CNOA_MENU_HR_CONTRACT_VIEW","icon":"icon-more-personmgr","tname":"\u4eba\u4e8b\u7ba1\u7406"},"9":{"from":"businessContract","name":"\u5408\u540c\u7ba1\u7406","sname":"\u5408\u540c","id":"CNOA_MENU_CONTRACT_BUSINESS_VIEW","icon":"icon-more-compact","tname":"\u5408\u540c\u7ba1\u7406"},"10":{"from":"admRegister","name":"\u7528\u54c1\u7ba1\u7406","sname":"\u7528\u54c1","id":"CNOA_MENU_ADM_PERSON_REGISTER","icon":"icon-more-swatch","tname":"\u7528\u54c1\u7ba1\u7406"},"11":{"from":"admCar","name":"\u8f66\u8f86\u7ba1\u7406","sname":"\u8f66\u8f86\u7ba1\u7406","id":"CNOA_MENU_ADM_CAR_NOTICE_CHECK_LIST","icon":"icon-car","tname":"\u8f66\u8f86\u7ba1\u7406"},"12":{"from":"admCar","name":"\u8f66\u8f86\u7ba1\u7406","sname":"\u8f66\u8f86\u7ba1\u7406","id":"CNOA_MENU_ADM_CAR_NOTICE_CHECK_LIST","icon":"icon-car","tname":"\u8f66\u8f86\u7ba1\u7406","unshow":1},"13":{"from":"admMeeting2","name":"\u4f1a\u8bae\u7ba1\u7406","sname":"\u4f1a\u8bae\u7ba1\u7406","id":"CNOA_MENU_ADM_MEETING2_VIEW","icon":"icon-briefcase","tname":"\u4f1a\u8bae\u7ba1\u7406","unshow":1},"14":{"from":"projectProj","name":"\u9879\u76ee\u7ba1\u7406","sname":"\u9879\u76ee","id":"C_M_PROJECT","icon":"icon-more-project","tname":"\u9879\u76ee\u7ba1\u7406"},"15":{"from":"hrAttendance_check","name":"\u8003\u52e4\u7ba1\u7406","sname":"\u8003\u52e4","id":"CNOA_MENU_PERSONMGR_ATTENDANCE_CHECK","icon":"icon-more-att","tname":"\u8003\u52e4\u5ba1\u6279"},"16":{"from":"userAttendance","name":"\u4e2a\u4eba\u8003\u52e4","sname":"\u8003\u52e4","id":"CNOA_MENU_PERSONWORK_ATTENDANCE_EGRESSIONs","icon":"icon-more-attendance","tname":"\u4e2a\u4eba\u8003\u52e4"},"17":{"from":"odocSendCheck","name":"\u516c\u6587\u7ba1\u7406","sname":"\u516c\u6587","id":"C_M_ODOC_SEND_CHECK","icon":"icon-more-meeting","tname":"\u516c\u6587\u7ba1\u7406","unshow":1},"18":{"from":"odocReceiveCheck","name":"\u6536\u6587\u7ba1\u7406","sname":"\u6536\u6587","id":"C_M_ODOC_RECEIVE_CHECK","icon":"icon-application--pencil","tname":"\u6536\u6587\u7ba1\u7406","unshow":1},"19":{"from":"odocReadSend","name":"\u53d1\u6587\u9605\u8bfb","sname":"\u53d1\u6587","id":"C_M_ODOC_READ_SEND","icon":"icon-folder-open-document-text","tname":"\u53d1\u6587\u9605\u8bfb","unshow":1},"20":{"from":"odocFileBorrow","name":"\u501f\u9605\u5ba1\u6279","sname":"\u501f\u9605","id":"C_M_ODOC_FILE_BORROW","icon":"icon-folder-zipper","tname":"\u501f\u9605\u5ba1\u6279","unshow":1},"21":{"from":"odocReadFiles","name":"\u6863\u6848\u9605\u8bfb","sname":"\u6863\u6848","id":"C_M_ODOC_READ_FILES","icon":"icon-folder-open-document-text","tname":"\u6863\u6848\u9605\u8bfb","unshow":1},"22":{"from":"odocReceiveApply","name":"\u6536\u6587\u767b\u8bb0","sname":"\u6536\u6587","id":"C_M_ODOC_RECEIVE_APPLY","icon":"icon-application--plus","tname":"\u6536\u6587\u767b\u8bb0","unshow":1},"23":{"from":"odocReadReceive","name":"\u6536\u6587\u9605\u8bfb","sname":"\u6536\u6587","id":"C_M_ODOC_READ_RECEIVE","icon":"icon-folder-open-document-text","tname":"\u6536\u6587\u9605\u8bfb","unshow":1},"24":{"from":"odocSendApply","name":"\u53d1\u6587\u62df\u7a3f","sname":"\u53d1\u6587","id":"C_M_ODOC_SEND_APPLY","icon":"icon-application-document","tname":"\u53d1\u6587\u62df\u7a3f","unshow":1},"25":{"from":"meeting","name":"\u4f1a\u8bae\u7ba1\u7406","sname":"\u4f1a\u8bae","id":"CNOA_MENU_ADM_MEETING_VIEW","icon":"icon-briefcase","tname":"\u67e5\u770b\u4f1a\u8bae"},"26":{"from":"todo","name":"\u5f85\u529e\u4e8b\u52a1","sname":"\u5f85\u529e","id":"CNOA_MENU_SYSTEM_NEED_TODO","icon":"icon-system-notice","tname":"\u5f85\u529e\u4e8b\u52a1","unshow":1},"27":{"from":"msg","name":"\u5185\u90e8\u90ae\u4ef6","sname":"\u90ae\u4ef6","id":"CNOA_MENU_COMMUNICATION_MESSAGE_VIEW","icon":"icon-more-message","tname":"\u67e5\u770b\u90ae\u4ef6"},"28":{"from":"calendar","name":"\u6211\u7684\u65e5\u7a0b","sname":"\u65e5\u7a0b","id":"CNOA_MENU_SYSTEM_NEED_CALENDAR","icon":"icon-calendar-select-month","tname":"\u6211\u7684\u65e5\u7a0b","unshow":1},"29":{"from":"news","name":"\u4fe1\u606f\u7ba1\u7406","id":"CNOA_MENU_NEWS","icon":"icon-rss-1","tname":"\u4fe1\u606f\u7ba1\u7406","unshow":1},"30":{"from":"flow","name":"\u67e5\u770b\u5de5\u4f5c\u6d41\u7a0b","sname":"\u5de5\u4f5c\u6d41\u7a0b","id":"CNOA_MENU_FLOW_USER_SHOWFLOW","icon":"icon-more-wf","tname":"\u67e5\u770b\u5de5\u4f5c\u6d41\u7a0b","unshow":1},"31":{"from":"workflow","name":"\u5de5\u4f5c\u6d41\u7a0b","sname":"\u5de5\u4f5c\u6d41\u7a0b","id":"CNOA_MENU_WF_USE_OPENFLOW","icon":"icon-more-wf","tname":"\u5de5\u4f5c\u6d41\u7a0b"},"32":{"from":"customer","name":"\u67e5\u770b\u5ba2\u6237","sname":"\u5ba2\u6237","id":"CNOA_MENU_USER_CUSTOMERS_ZG_VIEW","icon":"icon-more-kehu","tname":"\u67e5\u770b\u5ba2\u6237"},"33":{"from":"news","name":"\u67e5\u770b\u4fe1\u606f","sname":"\u67e5\u770b\u4fe1\u606f","id":"CNOA_MENU_NEWS_VIEW","icon":"icon-more-news","tname":"\u67e5\u770b\u4fe1\u606f"},"34":{"from":"news","name":"\u6295\u7968","sname":"\u6295\u7968","id":"CNOA_MENU_NEWS_VOTE_VOTING","icon":"icon-more-vote","tname":"\u6295\u7968"},"35":{"from":"monitor","name":"\u8bc4\u9605\u65e5\u8bb0","sname":"\u8bc4\u9605\u65e5\u8bb0","id":"CNOA_MONITOR_MGR_DIARY","icon":"icon-more-diary","tname":"\u8bc4\u9605\u65e5\u8bb0"},"36":{"from":"att","name":"\u5728\u5c97\u72b6\u6001","sname":"\u5728\u5c97\u72b6\u6001","id":"CNOA_ATT_ARRANGE_STATUS","icon":"icon-more-status","tname":"\u5728\u5c97\u72b6\u6001"},"37":{"from":"salary","name":"\u85aa\u916c\u5f55\u5165","sname":"\u85aa\u916c\u5f55\u5165","id":"CNOA_SALARY_MANAGE_ENTERING","icon":"icon-more-salary","tname":"\u85aa\u916c\u5f55\u5165"},"38":{"from":"testRemind","name":"\u8003\u8bd5\u63d0\u9192","sname":"\u8003\u8bd5\u63d0\u9192","id":"CNOA_MENU_OLTEST_TEST","icon":"icon-more-notice","tname":"\u8003\u8bd5\u63d0\u9192"},"39":{"from":"qtRemind","name":"\u95ee\u5377\u63d0\u9192","sname":"\u95ee\u5377\u63d0\u9192","id":"CNOA_MENU_OLTEST_QTLIST","icon":"icon-more-notice","tname":"\u95ee\u5377\u63d0\u9192"},"40":{"from":"orderRemind","name":"\u8ba2\u9910\u63d0\u9192","sname":"\u8ba2\u9910\u63d0\u9192","id":"CNOA_MENU_FOOD_ORDERING","icon":"icon-more-notice","tname":"\u70b9\u9910\u63d0\u9192"},"41":{"from":"customer","name":"\u67e5\u770b\u5ba2\u6237","sname":"\u5ba2\u6237","id":"CNOA_MENU_USER_CUSTOMERS_VIEW","icon":"icon-more-kehu","tname":"\u67e5\u770b\u5ba2\u6237"}};
+        //$(document).bind(  'touchmove',  function(e) {    e.preventDefault();  });
+    </script>
+    <!--
+      协众OA办公系统
+      Powered by CNOA.CN[广州协众软件科技有限公司]
+
+      @author	CNOA Dev Team & Linxiaoqing
+      @email	admin@cnoa.cn / linxiaoqing@live.com
+      @site		http://www.cnoa.cn/
+      @copyright	Copyright (c) 2012, CNOA, Inc.
+      @license	http://www.cnoa.cn/license.html
+      @version	Version 1.0.2
+      -->
+</head> ?>
+<body scroll="no" id="docs">
+
+<div id="loading-mask" style="width:100%;height:100%;background:#f1f1f1;position:absolute;z-index:20000;left:0;top:0;">&#160;</div>
+<div id="loading">
+    <div class="loading-indicator" style="background:white url(file/common/login/logo-loading.gif) 20px 10px no-repeat;">
+        <img src="resources/images/loading.gif" style="width:16px;height:16px;vertical-align:middle" />&#160;<span id="load-status">系统模块载入中, 请稍候...</span>
+        <div style="font-size:10px; font-weight:normal;margin-top:15px;">Copyright &copy; CNOA 2017</div>
+    </div>
+</div>
+<div id="classes"></div>
+<div id="main"></div>
+<div id="CNOA_FOOTER_PANEL"></div><script type="text/javascript" src="app/main/scripts/framework.php?v=v 4.1.7"></script><script type="text/javascript" src="scripts/cnoa.extra.js?v=v 4.1.7"></script>
+<script type="text/javascript" src="scripts/datePicker/datePicker.js?v=v 4.1.7"></script>
+<link type="text/css" href="resources/css/datepicker.css" rel="stylesheet" />
+<script src="scripts/jquery.datePicker-min.js" type="text/javascript"></script>
+<script src="http://www.jq22.com/js/jq.js"></script>
+<script type="text/javascript" src="scripts/cnoa/switchuser.js?v=v 4.1.7"></script><script src='http://api.map.baidu.com/api?v=1.2'></script>
+</body>
+</html>

@@ -42,8 +42,4 @@ public enum CathecticType {
 		return arrSet;
 	}
 	
-	
-	
-	
-	
 }
