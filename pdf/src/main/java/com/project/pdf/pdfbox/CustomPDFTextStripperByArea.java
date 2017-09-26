@@ -139,7 +139,7 @@ public class CustomPDFTextStripperByArea extends PDFTextStripper {
 
             textPositionMap.clear();
             for(int i=0;i<charactersByArticle.size();i++){
-            	for(int j=0;j<charactersByArticle.get(i).size();i++){
+            	for(int j=0;j<charactersByArticle.get(i).size();j++){
             		  TextPosition w = charactersByArticle.get(i).get(j);
             		  TextPositionKey key = new TextPositionKey((int)w.getY(),(int)w.getHeight());
 
