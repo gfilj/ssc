@@ -11,6 +11,7 @@ import java.awt.geom.Rectangle2D;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Created by goforit on 2017/9/22.
@@ -137,56 +138,56 @@ public class CustomPDFTextStripperByArea extends PDFTextStripper {
             charactersByArticle = regionCharacterList.get(region);
 
             textPositionMap.clear();
-            charactersByArticle.forEach((v) -> {
-                v.forEach((w) -> {
-                    TextPositionKey key = new TextPositionKey((int)w.getY(),(int)w.getHeight());
+            for(int i=0;i<charactersByArticle.size();i++){
+            	for(int j=0;j<charactersByArticle.get(i).size();i++){
+            		  TextPosition w = charactersByArticle.get(i).get(j);
+            		  TextPositionKey key = new TextPositionKey((int)w.getY(),(int)w.getHeight());
 
-                    List<TextPosition> textPositionsList = textPositionMap.get(key);
-                    if (textPositionsList == null) {
-                        textPositionsList = new LinkedList();
-                    }
-                    textPositionsList.add(w);
-                    textPositionMap.put(key, textPositionsList);
-                });
-            });
-            textPositionMap.forEach((k, v) -> {
-//                System.out.print("换行：" + k);
-//                v.forEach((w)->{
-//                    System.out.print(w.getUnicode());
-//                });
-//                System.out.println();
-                if (v.get(0).getX() > 200f) {
-                    v.forEach((w) -> {
-                        if (w.getHeight() > 3f) {
-                            charactersByArticle.get(0).remove(w);
-//                            System.out.println( "x:" + w.getX() + ",y:" + w.getY() + ",height:" + w.getHeight() + ", content:" + w.getUnicode());
-                        }
-                    });
-                } else {
-                    float maxWidthForText = v.get(0).getWidth();
-                    float maxSplitTable = maxWidthForText * 3;
-                    boolean isDelete = false;
-                    TextPosition last = null;
-                    for (int i = 0; i < v.size(); i++) {
-                        if (last != null) {
-                            if ((v.get(i).getX() - last.getX()) > maxSplitTable) {
-//                                System.out.println(last.getUnicode() +";;;;;;" + v.get(i).getUnicode());
-                                isDelete = true;
-                                break;
-                            }
-                        }
-                        last = v.get(i);
-                    }
-                    if (isDelete) {
-                        v.forEach((TextPosition w) -> {
-                            if (w.getHeight() > 3f) {
-                                charactersByArticle.get(0).remove(w);
-//                                System.out.println("x:" + w.getX() + ",y:" + w.getY() + ",height:" + w.getHeight() + ", content:" + w.getUnicode());
-                            }
-                        });
-                    }
-                }
-            });
+                      List<TextPosition> textPositionsList = textPositionMap.get(key);
+                      if (textPositionsList == null) {
+                          textPositionsList = new LinkedList();
+                      }
+                      textPositionsList.add(w);
+                      textPositionMap.put(key, textPositionsList);
+            	}
+            }
+            
+            for(Entry<TextPositionKey, List<TextPosition>> entry:textPositionMap.entrySet()){
+            	TextPositionKey k = entry.getKey();
+            	List<TextPosition> v = entry.getValue();
+            	 if (v.get(0).getX() > 200f) {
+            		 for(TextPosition w: v){
+                         if (w.getHeight() > 3f) {
+                             charactersByArticle.get(0).remove(w);
+//                             System.out.println( "x:" + w.getX() + ",y:" + w.getY() + ",height:" + w.getHeight() + ", content:" + w.getUnicode());
+                         }
+                     }
+                 } else {
+                     float maxWidthForText = v.get(0).getWidth();
+                     float maxSplitTable = maxWidthForText * 3;
+                     boolean isDelete = false;
+                     TextPosition last = null;
+                     for (int i = 0; i < v.size(); i++) {
+                         if (last != null) {
+                             if ((v.get(i).getX() - last.getX()) > maxSplitTable) {
+//                                 System.out.println(last.getUnicode() +";;;;;;" + v.get(i).getUnicode());
+                                 isDelete = true;
+                                 break;
+                             }
+                         }
+                         last = v.get(i);
+                     }
+                     if (isDelete) {
+                    	 for(TextPosition w: v){
+                             if (w.getHeight() > 3f) {
+                                 charactersByArticle.get(0).remove(w);
+//                                 System.out.println("x:" + w.getX() + ",y:" + w.getY() + ",height:" + w.getHeight() + ", content:" + w.getUnicode());
+                             }
+                         }
+                     }
+                 }
+            }
+         
             output = regionText.get(region);
             super.writePage();
         }
