@@ -1,0 +1,9 @@
+WechatAccessProperty:
+  appid: wxd15360f7ddacbaec
+  secret: 78a5ecfb17044008c068ad41b82f975c
+  tokenUrl: https://api.weixin.qq.com/cgi-bin/token
+  qrCodeUrl: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=%s
+  expire_seconds: 86400
+  action_name: QR_LIMIT_STR_SCENE
+  charset: UTF-8
+  grant_type: client_credential

@@ -1,6 +1,5 @@
 package com.project.pdf.pdfbox;
 
-import org.apache.commons.collections.map.HashedMap;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.PDFTextStripperByArea;
@@ -23,7 +22,7 @@ public class CustomPDFTextStripperByArea extends PDFTextStripper {
             = new HashMap<String, ArrayList<List<TextPosition>>>();
     private final Map<String, StringWriter> regionText = new HashMap<String, StringWriter>();
 
-    private Map<TextPositionKey, List<TextPosition>> textPositionMap = new HashedMap();
+    private Map<TextPositionKey, List<TextPosition>> textPositionMap = new HashMap();
 
     /**
      * Constructor.
