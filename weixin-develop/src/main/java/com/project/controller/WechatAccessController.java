@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
 
 /**
  * Created by goforit on 2017/10/22.
@@ -47,12 +46,13 @@ public class WechatAccessController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "access")
-    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+    @ResponseBody
+    public String doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
-            Map<String, String> map = messageService.parseXml(request);
-            System.out.println("=============================" + map.get("Content"));
+            return messageService.handleMessage(request);
         } catch (BusinessException e) {
             logger.info(e.getResult().getMsg(),e);
+            return "";
         }
     }
 

@@ -1,5 +1,6 @@
 package com.project.service.message.util;
 
+import com.project.model.message.response.*;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
@@ -63,6 +64,12 @@ public class MessageUtil {
     public static final String REQ_MESSAGE_TYPE_VOICE = "voice";
 
     /**
+     * 请求消息类型：视频
+     */
+    public static final String REQ_MESSAGE_TYPE_VIDEO = "video";
+
+
+    /**
      * 请求消息类型：推送
      */
     public static final String REQ_MESSAGE_TYPE_EVENT = "event";
@@ -77,6 +84,22 @@ public class MessageUtil {
      */
     public static final String EVENT_TYPE_UNSUBSCRIBE = "unsubscribe";
 
+
+    /**
+     * 事件类型：VIEW(自定义菜单 URl 视图)
+     */
+    public static final String EVENT_TYPE_VIEW = "VIEW";
+
+    /**
+     * 事件类型：LOCATION(上报地理位置事件)
+     */
+    public static final String EVENT_TYPE_LOCATION = "LOCATION";
+
+    /**
+     * 事件类型：SCAN(扫描二维码事件)
+     */
+    public static final String EVENT_TYPE_SCAN = "SCAN";
+
     /**
      * 事件类型：CLICK(自定义菜单点击事件)
      */
@@ -87,7 +110,6 @@ public class MessageUtil {
      * @param @return
      * @param @throws Exception
      * @Description: 解析微信发来的请求（XML）
-     * @date 2016 年 3 月 7 日 上午 10:04:02
      */
     @SuppressWarnings("unchecked")
     public static Map<String, String> parseXml(HttpServletRequest request) throws Exception {
@@ -115,7 +137,73 @@ public class MessageUtil {
         return map;
     }
 
-    @SuppressWarnings("unused")
+    /**
+     * @Description: 文本消息对象转换成 xml
+     * @param @param textMessage
+     * @param @return
+     * @author dapengniao
+     */
+    public static String textMessageToXml(TextMessage textMessage) {
+        xstream.alias("xml", textMessage.getClass());
+        return xstream.toXML(textMessage);
+    }
+
+    /**
+     * @Description: 图文消息对象转换成 xml
+     * @param @param newsMessage
+     * @param @return
+     * @author dapengniao
+     */
+    public static String newsMessageToXml(NewsMessage newsMessage) {
+        xstream.alias("xml", newsMessage.getClass());
+        xstream.alias("item", new Article().getClass());
+        return xstream.toXML(newsMessage);
+    }
+
+    /**
+     * @Description: 图片消息对象转换成 xml
+     * @param @param imageMessage
+     * @param @return
+     * @author dapengniao
+     */
+    public static String imageMessageToXml(ImageMessage imageMessage) {
+        xstream.alias("xml", imageMessage.getClass());
+        return xstream.toXML(imageMessage);
+    }
+
+    /**
+     * @Description: 语音消息对象转换成 xml
+     * @param @param voiceMessage
+     * @param @return
+     * @author dapengniao
+     */
+    public static String voiceMessageToXml(VoiceMessage voiceMessage) {
+        xstream.alias("xml", voiceMessage.getClass());
+        return xstream.toXML(voiceMessage);
+    }
+
+    /**
+     * @Description: 视频消息对象转换成 xml
+     * @param @param videoMessage
+     * @param @return
+     * @author dapengniao
+     */
+    public static String videoMessageToXml(VideoMessage videoMessage) {
+        xstream.alias("xml", videoMessage.getClass());
+        return xstream.toXML(videoMessage);
+    }
+
+    /**
+     * @Description: 音乐消息对象转换成 xml
+     * @param @param musicMessage
+     * @param @return
+     * @author dapengniao
+     */
+    public static String musicMessageToXml(MusicMessage musicMessage) {
+        xstream.alias("xml", musicMessage.getClass());
+        return xstream.toXML(musicMessage);
+    }
+
     private static XStream xstream = new XStream(new XppDriver() {
         public HierarchicalStreamWriter createWriter(Writer out) {
             return new PrettyPrintWriter(out) {
