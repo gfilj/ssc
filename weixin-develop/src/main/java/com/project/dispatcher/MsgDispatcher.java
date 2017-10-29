@@ -15,12 +15,12 @@ public class MsgDispatcher {
     public static String processMessage(Map<String, String> map) {
         String openid = map.get("FromUserName"); //用户 openid
         String mpid = map.get("ToUserName");   //公众号原始 ID
-        return "<xml>\n" +
-                "<ToUserName><![CDATA[toUser]]></ToUserName>\n" +
-                "<FromUserName><![CDATA[fromUser]]></FromUserName>\n" +
-                "<CreateTime>12345678</CreateTime>\n" +
-                "<MsgType><![CDATA[text]]></MsgType>\n" +
-                "<Content><![CDATA[你好]]></Content>\n" +
+        return "<xml>" +
+                "<ToUserName><![CDATA[toUser]]></ToUserName>" +
+                "<FromUserName><![CDATA[fromUser]]></FromUserName>" +
+                "<CreateTime>12345678</CreateTime>" +
+                "<MsgType><![CDATA[text]]></MsgType>" +
+                "<Content><![CDATA[你好]]></Content>" +
                 "</xml>";
 //        if (map.get("MsgType").equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) { // 文本消息
 //            logger.info("文本消息");

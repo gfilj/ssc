@@ -46,15 +46,14 @@ public class WechatAccessController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "access")
-    @ResponseBody
-    public String doPost(HttpServletRequest request, HttpServletResponse response) {
+    public  @ResponseBody String doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
             String returnMessage = messageService.handleMessage(request);
             logger.info("处理后的消息为：" + returnMessage);
             return returnMessage;
         } catch (BusinessException e) {
             logger.error(e.getResult().getMsg(),e);
-            return "";
+            return "success";
         }
     }
 
