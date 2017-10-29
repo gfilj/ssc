@@ -84,7 +84,6 @@ public class MessageUtil {
      */
     public static final String EVENT_TYPE_UNSUBSCRIBE = "unsubscribe";
 
-
     /**
      * 事件类型：VIEW(自定义菜单 URl 视图)
      */
