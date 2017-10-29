@@ -17,7 +17,6 @@
         <module>file-upload</module>
         <module>pdf</module>
         <module>common-api</module>
-        <module>pdfTest</module>
         <module>formBuilder</module>
         <module>weixin-develop</module>
     </modules>

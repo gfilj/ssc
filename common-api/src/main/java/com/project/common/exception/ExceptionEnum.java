@@ -10,6 +10,7 @@ public enum ExceptionEnum {
     IOEXCEPTION_CAUSE(1002, "IO Exception错误"),
     FILE_NOT_FOUND_CAUSE(1003, "无法找到文件"),
     DATA_CAUSE(1004, "数据存储异常"),
+    XML_PARSE_CAUSE(1005, "XML解析错误"),
 
     MD5_ALGORITHM_CAUSE(2001, "算法检查：无此算法"),
     MD5_CHECK_ERROR_CAUSE(2002, "md5 校验失败"),
