@@ -49,9 +49,11 @@ public class WechatAccessController {
     @ResponseBody
     public String doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
-            return messageService.handleMessage(request);
+            String returnMessage = messageService.handleMessage(request);
+            logger.info("处理后的消息为：" + returnMessage);
+            return returnMessage;
         } catch (BusinessException e) {
-            logger.info(e.getResult().getMsg(),e);
+            logger.error(e.getResult().getMsg(),e);
             return "";
         }
     }
