@@ -16,8 +16,8 @@ public class MsgDispatcher {
         String openid = map.get("FromUserName"); //用户 openid
         String mpid = map.get("ToUserName");   //公众号原始 ID
         return "<xml>" +
-                "<ToUserName><![CDATA[toUser]]></ToUserName>" +
-                "<FromUserName><![CDATA[fromUser]]></FromUserName>" +
+                "<ToUserName><![CDATA["+openid+"]]></ToUserName>" +
+                "<FromUserName><![CDATA["+mpid+"]]></FromUserName>" +
                 "<CreateTime>12345678</CreateTime>" +
                 "<MsgType><![CDATA[text]]></MsgType>" +
                 "<Content><![CDATA[你好]]></Content>" +
