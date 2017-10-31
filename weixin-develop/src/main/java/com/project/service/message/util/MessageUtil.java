@@ -1,5 +1,6 @@
 package com.project.service.message.util;
 
+import com.project.common.util.LogUtil;
 import com.project.model.message.response.*;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
@@ -9,6 +10,7 @@ import com.thoughtworks.xstream.io.xml.XppDriver;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import org.slf4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;
@@ -22,6 +24,8 @@ import java.util.Map;
  * Created by goforit on 2017/10/29.
  */
 public class MessageUtil {
+
+    private static Logger logger = LogUtil.getLogger(MessageUtil.class);
 
     /**
      * 返回消息类型：文本
@@ -137,9 +141,9 @@ public class MessageUtil {
     }
 
     /**
-     * @Description: 文本消息对象转换成 xml
-     * @param @param textMessage
+     * @param @param  textMessage
      * @param @return
+     * @Description: 文本消息对象转换成 xml
      * @author dapengniao
      */
     public static String textMessageToXml(TextMessage textMessage) {
@@ -148,9 +152,9 @@ public class MessageUtil {
     }
 
     /**
-     * @Description: 图文消息对象转换成 xml
-     * @param @param newsMessage
+     * @param @param  newsMessage
      * @param @return
+     * @Description: 图文消息对象转换成 xml
      * @author dapengniao
      */
     public static String newsMessageToXml(NewsMessage newsMessage) {
@@ -160,9 +164,9 @@ public class MessageUtil {
     }
 
     /**
-     * @Description: 图片消息对象转换成 xml
-     * @param @param imageMessage
+     * @param @param  imageMessage
      * @param @return
+     * @Description: 图片消息对象转换成 xml
      * @author dapengniao
      */
     public static String imageMessageToXml(ImageMessage imageMessage) {
@@ -171,9 +175,9 @@ public class MessageUtil {
     }
 
     /**
-     * @Description: 语音消息对象转换成 xml
-     * @param @param voiceMessage
+     * @param @param  voiceMessage
      * @param @return
+     * @Description: 语音消息对象转换成 xml
      * @author dapengniao
      */
     public static String voiceMessageToXml(VoiceMessage voiceMessage) {
@@ -182,9 +186,9 @@ public class MessageUtil {
     }
 
     /**
-     * @Description: 视频消息对象转换成 xml
-     * @param @param videoMessage
+     * @param @param  videoMessage
      * @param @return
+     * @Description: 视频消息对象转换成 xml
      * @author dapengniao
      */
     public static String videoMessageToXml(VideoMessage videoMessage) {
@@ -193,9 +197,9 @@ public class MessageUtil {
     }
 
     /**
-     * @Description: 音乐消息对象转换成 xml
-     * @param @param musicMessage
+     * @param @param  musicMessage
      * @param @return
+     * @Description: 音乐消息对象转换成 xml
      * @author dapengniao
      */
     public static String musicMessageToXml(MusicMessage musicMessage) {
@@ -212,6 +216,7 @@ public class MessageUtil {
                 @SuppressWarnings("rawtypes")
                 public void startNode(String name, Class clazz) {
                     super.startNode(name, clazz);
+                    cdata = !"CreateTime".equals(name);
                 }
 
                 protected void writeText(QuickWriter writer, String text) {
@@ -226,4 +231,15 @@ public class MessageUtil {
             };
         }
     });
+    //TODO 移动junit 的测试当中
+//    public static void main(String[] args){
+//        TextMessage txtmsg = new TextMessage();
+//        txtmsg.setToUserName("100");
+//        txtmsg.setFromUserName("1");
+//        txtmsg.setCreateTime(new Date().getTime()/1000);
+//        txtmsg.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
+//
+//        txtmsg.setContent("你好，这里是goforit测试账号！");
+//        System.out.print( MessageUtil.textMessageToXml(txtmsg));
+//    }
 }
