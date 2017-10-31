@@ -1,7 +1,5 @@
 package com.project.common.network;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.project.common.util.LogUtil;
 import org.apache.http.*;
 import org.apache.http.client.ClientProtocolException;
