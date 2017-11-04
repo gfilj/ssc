@@ -30,6 +30,7 @@ public class MsgDispatcher {
 
     public String processMessage(Map<String, String> map) throws BusinessException {
         String openid = map.get("FromUserName"); //用户 openid
+        logger.info("测试获取个人信息接口：" + wechatAccessService.getUserInfo(openid));
         String mpid = map.get("ToUserName");   //公众号原始 ID
         if (map.get("MsgType").equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) { // 文本消息
             String content = map.get("Content").trim();
@@ -47,7 +48,7 @@ public class MsgDispatcher {
                 Article article = new Article();
                 article.setDescription("绑定绑定您个人消息的二维码"); //图文消息的描述
                 article.setPicUrl(showQrUrl); //图文消息图片地址
-                article.setTitle("图文消息 1");  //图文消息标题
+                article.setTitle("测试消息");  //图文消息标题
                 article.setUrl("http://www.cuiyongzhi.com");  //图文 url 链接
                 List<Article> list = new ArrayList<Article>();
                 list.add(article);     //这里发送的是单图文，如果需要发送多图文则在这里 list 中加入多个 Article 即可！

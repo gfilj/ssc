@@ -400,7 +400,7 @@ public class Row extends HashMap<Object, Object> {
         return this.functionMap;
     }
 
-    public Map<String, String> getStringMap() {
+    public Map<String, String> toStringMap() {
         Map<String, String> map = new HashedMap();
         for (Entry<Object, Object> entry : this.entrySet()) {
             map.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()));

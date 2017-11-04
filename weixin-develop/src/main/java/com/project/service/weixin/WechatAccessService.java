@@ -39,7 +39,7 @@ public class WechatAccessService implements InitializingBean {
                 .put("appid", wechatAccessProperty.getAppid())
                 .put("secret", wechatAccessProperty.getSecret())
                 .put("grant_type", wechatAccessProperty.getGrant_type())
-                .getStringMap();
+                .toStringMap();
         try {
             String httpContent = NetUtil.getHttpContent(
                     wechatAccessProperty.getTokenUrl(),
@@ -88,9 +88,29 @@ public class WechatAccessService implements InitializingBean {
      */
     public String generateShowRRUrl(String qrMessage) throws BusinessException {
         try {
-            return String.format(wechatAccessProperty.getTicket_url(),URLEncoder.encode(createTicket(qrMessage),"UTF-8"));
+            return String.format(wechatAccessProperty.getTicketUrl(),URLEncoder.encode(createTicket(qrMessage),"UTF-8"));
         } catch (UnsupportedEncodingException e) {
            throw new BusinessException(ExceptionEnum.ENCODE_UNSURRPOT_CAUSE,e.getMessage(),e);
+        }
+    }
+
+    /**
+     * 获取用户信息
+     * @throws Exception
+     */
+    public String getUserInfo(String openId) throws BusinessException{
+        String access_token = getToken();
+        Map<String, String> stringStringMap = Row.getInstance().put("access_token", access_token).put("openid", openId).put("lang", "zh_CN").toStringMap();
+        try {
+            return NetUtil.getHttpContent(
+                    wechatAccessProperty.getUserInfoUrl(),
+                    stringStringMap,
+                    false,
+                    wechatAccessProperty.getCharset(),
+                    wechatAccessProperty.getCharset()
+            );
+        } catch (Exception e) {
+            throw new BusinessException(ExceptionEnum.WECHAT_REQUEST_ERROR, e.getMessage(), e);
         }
     }
     @Override
