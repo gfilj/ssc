@@ -3,17 +3,19 @@ package com.project.dispatcher;
 import com.project.common.util.LogUtil;
 import com.project.service.message.util.MessageUtil;
 import org.slf4j.Logger;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
 /**
  * @Description: 事件消息业务分发器
  */
+@Service
 public class EventDispatcher {
     
-    private static Logger logger = LogUtil.getLogger(EventDispatcher.class);
+    private Logger logger = LogUtil.getLogger(EventDispatcher.class);
     
-    public static String processEvent(Map<String, String> map) {
+    public String processEvent(Map<String, String> map) {
         if (map.get("Event").equals(MessageUtil.EVENT_TYPE_SUBSCRIBE)) { //关注事件
             logger.info("==============这是关注事件！");
         }
@@ -38,6 +40,6 @@ public class EventDispatcher {
             logger.info("==============这是自定义菜单 View 事件！");
         }
 
-        return "";
+        return "success";
     }
 }

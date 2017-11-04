@@ -1,10 +1,14 @@
 package com.project.dispatcher;
 
+import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
 import com.project.model.message.response.Article;
 import com.project.model.message.response.NewsMessage;
 import com.project.service.message.util.MessageUtil;
+import com.project.service.weixin.WechatAccessService;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,15 +18,27 @@ import java.util.Map;
 /**
  * Created by goforit on 2017/10/29.
  */
+@Service
 public class MsgDispatcher {
 
-    private static Logger logger = LogUtil.getLogger(MsgDispatcher.class);
+    private Logger logger = LogUtil.getLogger(MsgDispatcher.class);
 
-    public static String processMessage(Map<String, String> map) {
+    public static final String qrCodeMessage = "二维码";
+
+    @Autowired
+    private WechatAccessService wechatAccessService;
+
+    public String processMessage(Map<String, String> map) throws BusinessException {
         String openid = map.get("FromUserName"); //用户 openid
         String mpid = map.get("ToUserName");   //公众号原始 ID
         if (map.get("MsgType").equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) { // 文本消息
-            logger.info("接受到文本消息：" + MessageUtil.getMessage(map.get("Content")));
+            String content = map.get("Content").trim();
+            logger.info("接受到文本消息：" + content);
+            if(qrCodeMessage.equals(content)){
+                //返回二维码图片
+                String qr = wechatAccessService.createQR(openid);
+                logger.info("返回的消息："+qr);
+            }
 //            //普通文本消息
 //            TextMessage txtmsg = new TextMessage();
 //            txtmsg.setToUserName(openid);
@@ -70,6 +86,6 @@ public class MsgDispatcher {
             logger.info("这是语音消息！");
         }
 
-        return "";
+        return "success";
     }
 }
