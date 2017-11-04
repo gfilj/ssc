@@ -7,3 +7,4 @@ WechatAccessProperty:
   action_name: QR_LIMIT_STR_SCENE
   charset: UTF-8
   grant_type: client_credential
+  ticket_url: https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=%s

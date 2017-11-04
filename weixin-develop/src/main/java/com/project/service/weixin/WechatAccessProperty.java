@@ -18,6 +18,7 @@ public class WechatAccessProperty {
     private String action_name;
     private String charset;
     private String grant_type;
+    private String ticket_url;
 
     @Override
     public String toString() {
@@ -30,7 +31,16 @@ public class WechatAccessProperty {
                 ", action_name='" + action_name + '\'' +
                 ", charset='" + charset + '\'' +
                 ", grant_type='" + grant_type + '\'' +
+                ", ticket_url='" + ticket_url + '\'' +
                 '}';
+    }
+
+    public String getTicket_url() {
+        return ticket_url;
+    }
+
+    public void setTicket_url(String ticket_url) {
+        this.ticket_url = ticket_url;
     }
 
     public String getGrant_type() {

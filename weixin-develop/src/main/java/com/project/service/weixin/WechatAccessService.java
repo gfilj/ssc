@@ -13,6 +13,8 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Map;
 
 /**
@@ -53,11 +55,11 @@ public class WechatAccessService implements InitializingBean {
     }
 
     /**
-     * 生成长效二维码
+     * 生成长效二维码Ticket
      *
      * @return
      */
-    public String createQR(String qrMessage) throws BusinessException {
+    public String createTicket(String qrMessage) throws BusinessException {
         String access_token = getToken();
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("action_name", wechatAccessProperty.getAction_name());
@@ -80,6 +82,17 @@ public class WechatAccessService implements InitializingBean {
 
     }
 
+    /**
+     * 获取展示二维码的请求连接
+     * @throws Exception
+     */
+    public String generateShowRRUrl(String qrMessage) throws BusinessException {
+        try {
+            return String.format(wechatAccessProperty.getTicket_url(),URLEncoder.encode(createTicket(qrMessage),"UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+           throw new BusinessException(ExceptionEnum.ENCODE_UNSURRPOT_CAUSE,e.getMessage(),e);
+        }
+    }
     @Override
     public void afterPropertiesSet() throws Exception {
         logger.info(String.valueOf(wechatAccessProperty));
