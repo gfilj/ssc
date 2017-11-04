@@ -89,7 +89,9 @@ public class WechatAccessService implements InitializingBean {
      */
     public String generateShowRRUrl(String qrMessage) throws BusinessException {
         try {
-            String ticket = createTicket(qrMessage);
+            String ticketJson = createTicket(qrMessage);
+            String ticket = JSON.parseObject(ticketJson).getString("ticket");
+
             logger.info("获取ticket:" + ticket);
             return String.format(wechatAccessProperty.getTicketUrl(), URLEncoder.encode(ticket, "UTF-8"));
         } catch (UnsupportedEncodingException e) {

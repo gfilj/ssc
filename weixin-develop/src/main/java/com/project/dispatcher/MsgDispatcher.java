@@ -49,7 +49,7 @@ public class MsgDispatcher {
                 article.setDescription("绑定绑定您个人消息的二维码"); //图文消息的描述
                 article.setPicUrl(showQrUrl); //图文消息图片地址
                 article.setTitle("测试消息");  //图文消息标题
-                article.setUrl("http://www.cuiyongzhi.com");  //图文 url 链接
+                article.setUrl(showQrUrl);  //图文 url 链接
                 List<Article> list = new ArrayList<Article>();
                 list.add(article);     //这里发送的是单图文，如果需要发送多图文则在这里 list 中加入多个 Article 即可！
                 newmsg.setArticleCount(list.size());
