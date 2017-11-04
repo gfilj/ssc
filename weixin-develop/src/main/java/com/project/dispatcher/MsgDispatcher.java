@@ -71,6 +71,6 @@ public class MsgDispatcher {
             logger.info("这是语音消息！");
         }
 
-        return null;
+        return "";
     }
 }

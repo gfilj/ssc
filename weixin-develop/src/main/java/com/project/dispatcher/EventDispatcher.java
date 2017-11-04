@@ -38,6 +38,6 @@ public class EventDispatcher {
             logger.info("==============这是自定义菜单 View 事件！");
         }
 
-        return null;
+        return "";
     }
 }
