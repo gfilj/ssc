@@ -3,7 +3,6 @@ package com.project.dispatcher;
 import com.project.common.util.LogUtil;
 import com.project.model.message.response.Article;
 import com.project.model.message.response.NewsMessage;
-import com.project.model.message.response.TextMessage;
 import com.project.service.message.util.MessageUtil;
 import org.slf4j.Logger;
 
@@ -23,16 +22,16 @@ public class MsgDispatcher {
         String openid = map.get("FromUserName"); //用户 openid
         String mpid = map.get("ToUserName");   //公众号原始 ID
         if (map.get("MsgType").equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) { // 文本消息
-            logger.info("文本消息");
-            //普通文本消息
-            TextMessage txtmsg = new TextMessage();
-            txtmsg.setToUserName(openid);
-            txtmsg.setFromUserName(mpid);
-            txtmsg.setCreateTime(new Date().getTime()/1000);
-            txtmsg.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
-
-            txtmsg.setContent("你好，这里是goforit测试账号！");
-            return MessageUtil.textMessageToXml(txtmsg);
+            logger.info("接受到文本消息：" + map.get("Content"));
+//            //普通文本消息
+//            TextMessage txtmsg = new TextMessage();
+//            txtmsg.setToUserName(openid);
+//            txtmsg.setFromUserName(mpid);
+//            txtmsg.setCreateTime(new Date().getTime()/1000);
+//            txtmsg.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
+//
+//            txtmsg.setContent("你好，这里是goforit测试账号！");
+//            return MessageUtil.textMessageToXml(txtmsg);
         }
 
         if (map.get("MsgType").equals(MessageUtil.REQ_MESSAGE_TYPE_IMAGE)) { // 图片消息

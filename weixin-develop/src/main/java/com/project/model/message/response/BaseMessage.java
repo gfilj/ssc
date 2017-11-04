@@ -46,4 +46,7 @@ public class BaseMessage {
         MsgType = msgType;
     }
 
+    public BaseMessage() {
+        setCreateTime(new );
+    }
 }
