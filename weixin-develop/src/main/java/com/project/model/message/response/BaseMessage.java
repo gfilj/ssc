@@ -1,5 +1,7 @@
 package com.project.model.message.response;
 
+import java.util.Date;
+
 /**
  * 返回消息体-基本消息
  * Created by goforit on 2017/10/29.
@@ -47,6 +49,6 @@ public class BaseMessage {
     }
 
     public BaseMessage() {
-        setCreateTime(new );
+        setCreateTime(new Date().getTime()/1000);
     }
 }
