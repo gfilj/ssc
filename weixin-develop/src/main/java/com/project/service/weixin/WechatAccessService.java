@@ -84,21 +84,25 @@ public class WechatAccessService implements InitializingBean {
 
     /**
      * 获取展示二维码的请求连接
+     *
      * @throws Exception
      */
     public String generateShowRRUrl(String qrMessage) throws BusinessException {
         try {
-            return String.format(wechatAccessProperty.getTicketUrl(),URLEncoder.encode(createTicket(qrMessage),"UTF-8"));
+            String ticket = createTicket(qrMessage);
+            logger.info("获取ticket:" + ticket);
+            return String.format(wechatAccessProperty.getTicketUrl(), URLEncoder.encode(ticket, "UTF-8"));
         } catch (UnsupportedEncodingException e) {
-           throw new BusinessException(ExceptionEnum.ENCODE_UNSURRPOT_CAUSE,e.getMessage(),e);
+            throw new BusinessException(ExceptionEnum.ENCODE_UNSURRPOT_CAUSE, e.getMessage(), e);
         }
     }
 
     /**
      * 获取用户信息
+     *
      * @throws Exception
      */
-    public String getUserInfo(String openId) throws BusinessException{
+    public String getUserInfo(String openId) throws BusinessException {
         String access_token = getToken();
         Map<String, String> stringStringMap = Row.getInstance().put("access_token", access_token).put("openid", openId).put("lang", "zh_CN").toStringMap();
         try {
@@ -113,6 +117,7 @@ public class WechatAccessService implements InitializingBean {
             throw new BusinessException(ExceptionEnum.WECHAT_REQUEST_ERROR, e.getMessage(), e);
         }
     }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         logger.info(String.valueOf(wechatAccessProperty));
