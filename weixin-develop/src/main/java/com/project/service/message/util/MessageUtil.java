@@ -18,6 +18,8 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 微信处理消息工具类
@@ -107,6 +109,20 @@ public class MessageUtil {
      * 事件类型：CLICK(自定义菜单点击事件)
      */
     public static final String EVENT_TYPE_CLICK = "CLICK";
+
+    /**
+     * 文本信息获取
+     */
+    public static final String CDATA_PATTERN = "<![CDATA[.*]]>";
+
+    public static String getMessage(String message){
+        Pattern pattern = Pattern.compile(CDATA_PATTERN);
+        Matcher matcher = pattern.matcher(message);
+        if(matcher.find()){
+            return matcher.group(1).trim();
+        }
+        return "";
+    }
 
     /**
      * @param @param  request

@@ -22,7 +22,7 @@ public class MsgDispatcher {
         String openid = map.get("FromUserName"); //用户 openid
         String mpid = map.get("ToUserName");   //公众号原始 ID
         if (map.get("MsgType").equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) { // 文本消息
-            logger.info("接受到文本消息：" + map.get("Content"));
+            logger.info("接受到文本消息：" + MessageUtil.getMessage(map.get("Content")));
 //            //普通文本消息
 //            TextMessage txtmsg = new TextMessage();
 //            txtmsg.setToUserName(openid);
