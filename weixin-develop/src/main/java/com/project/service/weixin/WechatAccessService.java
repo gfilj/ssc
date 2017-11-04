@@ -57,12 +57,13 @@ public class WechatAccessService implements InitializingBean {
      *
      * @return
      */
-    public String createQR(String access_token) throws BusinessException {
+    public String createQR(String qrMessage) throws BusinessException {
+        String access_token = getToken();
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("action_name", wechatAccessProperty.getAction_name());
         JSONObject action_info = new JSONObject();
         JSONObject scene = new JSONObject();
-        scene.put("scene_str", "openId");
+        scene.put("scene_str", qrMessage);
         action_info.put("scene", scene);
         jsonObject.put("action_info", action_info);
 
