@@ -36,6 +36,7 @@ public class MessageService {
                 return msgDispatcher.processMessage(map); //进入消息处理
             }
         } catch (Exception e) {
+            logger.error("消息处理类出现异常！",e);
             throw new BusinessException(ExceptionEnum.XML_PARSE_CAUSE,e);
         }
 
