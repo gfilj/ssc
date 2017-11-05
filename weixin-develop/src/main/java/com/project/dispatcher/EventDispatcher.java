@@ -33,7 +33,7 @@ public class EventDispatcher {
             Pattern oldOriginalMessagePattern = Pattern.compile(oldOpenIdPattern);
             Matcher oldOriginalMessageMatcher = oldOriginalMessagePattern.matcher(oldOriginalMessage);
             if(oldOriginalMessageMatcher.find()){
-                String oldOpendId = oldOriginalMessageMatcher.group(0);
+                String oldOpendId = oldOriginalMessageMatcher.group(1);
                 logger.info("老粉丝openid：" + oldOpendId + ",新粉丝openid:" + newOpenId);
                 //获取用户信息
                 logger.info("老粉丝信息：" + wechatAccessService.getUserInfo(oldOpendId));
