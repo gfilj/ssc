@@ -30,10 +30,10 @@ public class EventDispatcher {
             logger.info("==============这是关注事件！");
             String oldOriginalMessage = map.get("EventKey");
             String newOpenId = map.get("FromUserName");
-            Pattern oldOriginalMessagePattern = Pattern.compile(oldOriginalMessage);
+            Pattern oldOriginalMessagePattern = Pattern.compile(oldOpenIdPattern);
             Matcher oldOriginalMessageMatcher = oldOriginalMessagePattern.matcher(oldOriginalMessage);
             if(oldOriginalMessageMatcher.find()){
-                String oldOpendId = oldOriginalMessageMatcher.group(1);
+                String oldOpendId = oldOriginalMessageMatcher.group(0);
                 logger.info("老粉丝openid：" + oldOpendId + ",新粉丝openid:" + newOpenId);
                 //获取用户信息
                 logger.info("老粉丝信息：" + wechatAccessService.getUserInfo(oldOpendId));
