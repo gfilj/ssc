@@ -1,8 +1,11 @@
 package com.project.dispatcher;
 
+import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
 import com.project.service.message.util.MessageUtil;
+import com.project.service.weixin.WechatAccessService;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -19,7 +22,10 @@ public class EventDispatcher {
 
     public static final String oldOpenIdPattern = "^qrscene_(.*)$";
 
-    public String processEvent(Map<String, String> map) {
+    @Autowired
+    private WechatAccessService wechatAccessService;
+
+    public String processEvent(Map<String, String> map) throws BusinessException {
         if (map.get("Event").equals(MessageUtil.EVENT_TYPE_SUBSCRIBE)) { //关注事件
             logger.info("==============这是关注事件！");
             String oldOriginalMessage = map.get("EventKey");
@@ -30,7 +36,8 @@ public class EventDispatcher {
                 String oldOpendId = oldOriginalMessageMatcher.group(1);
                 logger.info("老粉丝openid：" + oldOpendId + ",新粉丝openid:" + newOpenId);
                 //获取用户信息
-
+                logger.info("老粉丝信息：" + wechatAccessService.getUserInfo(oldOpendId));
+                logger.info("新粉丝信息：" + wechatAccessService.getUserInfo(newOpenId));
             }
 
         }
