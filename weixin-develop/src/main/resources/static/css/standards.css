@@ -1,0 +1,98 @@
+*{margin:0;padding:0;border:0;}
+*, *:after, *:before {-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+
+.clearfix:before, .clearfix:after {content:" "; display:table;}
+.clearfix:after {clear:both;}
+.clearfix {*zoom:1;}/*For IE 6/7 only*/
+
+html{background:#b58e7b; font-family:Verdana, sans-serif;}
+body{width:1024px; font-size:0.875rem; margin:0 auto 1rem auto; background:#ffffff;}
+main{padding: 0 1rem 0 1rem; display:block;}
+
+
+h1{font-size:1.250rem; margin-top:3rem;}
+h2{font-size:1.125rem; margin-top:2rem;}
+h3{font-size:1.000rem; margin-top:2rem;}
+h4{font-size:0.900rem; margin-top:2rem;}
+
+h1,h2,h3,h4,h5,h6{letter-spacing:1px; color:#93671b; font-family:Raleway, sans-serif; display:block; line-height:1.6rem; text-align:left;}
+h1:before,h2:before {font-family:fontello; content:"\e815   "; color:#488616;}
+h3:before{font-family:fontello; content:"\e806   "; color:#488616;}
+
+p{line-height:1.4rem; margin: 1rem 0;}
+p.ill{text-align:left;}
+
+article a.ewl{color:#488616; border-bottom: 1px dotted #488616; text-decoration:none;}
+article a.ewl:hover{color:#67725e; border-bottom: 1px dotted #67725e;}
+article img{display:block; max-width:100%; padding:1rem 0;}
+
+article{width:68%; float:left; text-align:justify;}
+aside{float:left; width:29%; margin: 4% 3% 0 0; position:relative;}
+aside ul{display:block; border-left:1px solid #488616; border-right:1px solid #488616;}
+aside ul li{border-bottom:1px solid #488616; list-style-type:none;}
+aside ul li a{text-decoration:none; font-size:0.813rem; display:block; position:relative; padding:5.5px; color:#292929; background:#ffffff; line-height:1rem;}
+aside ul li a:before{font-family:fontello; content:"\e813  ";}
+aside ul li a:hover{background:#488616; color:#ffffff; padding-left:1rem;}
+.navihead{display:inline-block;width:100%;background:#488616;padding:6px 8px;color:#fff;font-family:raleway, sans-serif;font-size:1.063rem;font-weight:500;letter-spacing:2px;}
+
+img {vertical-align: middle;}
+
+header{background:#93671b; padding-bottom: 0.5rem;}
+header img{width:100%;}
+
+/*-------Navigation bottom--------*/
+ul.untenm{list-style-type:square; margin-left:1rem; color:#808080; text-align:left;}
+ul.untenm li a{text-decoration:none; color:#488616;}
+ul.untenm li{float:left; width:50%; margin-bottom:1rem;}
+ul.untenm li a:hover{color:#93671b;}
+
+/*---like Box----*/
+.fb-page{margin-bottom:1rem;}
+
+.letztes{margin:3rem 0 1rem 0;}
+
+/*--------F-T-G+ bottom--------*/
+.ftgr{border:1px solid #488616;  display:block; float:left; width:100%; margin-top:2rem; padding:1rem; font-size:0.95rem;}
+.ftg{float:left; width: 25%; display:block;}
+a.whatsapp{visibility:hidden; overflow:hidden; position:absolute;}
+
+/*footer*/
+footer{background:#93671b; text-align:center; margin-top:2rem; padding:0.9rem; font-size:0.75rem; color:#ffffff;}
+.farbe{color:#ffffff; text-decoration:none;}
+
+/*----Scrollama---*/
+.scrollama{visibility:hidden; overflow:hidden; position:absolute;}
+
+
+/*------------------------------------------- extra -------------------------------------------*/
+
+
+/*------ A.i. T.------*/
+ul.list{list-style-type:square; margin:0 0 1rem 1rem; line-height:1.3rem;}
+
+
+img.picture-text{width:45%;}
+img.picture-mizellen{width:60%; margin: 0 auto 0 auto; padding:0;}
+
+/*------Study------*/
+a.study{color:#67725e; border-bottom: 1px dotted #488616; text-decoration:none; word-wrap:break-word;}
+a.study:hover{color:#488616; border-bottom: 1px dotted #67725e;}
+a.study:before{font-family:fontello; content:"\e810     ";}
+
+/*----Rezept----*/
+img.rezept-picture{margin:1rem 0 0 0; width:40%;}
+
+ul.rezept-drink{list-style-type:none; font-family:Verdana;}
+ul.rezept-drink li:before{font-family:fontello; content:"\f0f4   ";color:#696969;}
+
+ul.rezept-food{list-style-type:none; font-family:Verdana;}
+ul.rezept-food li:before{font-family:fontello; content:"\e816    ";}
+
+/*---Kastenmenu---*/
+a.menukasten{float:left; width:49%; margin:2% 1% 1% 0; display:block;}
+img.menukastenb{padding:0;}
+img.menukastenb:hover{opacity:0.6;}
+
+/*-----Video-----*/
+.responsive-video {display:block; position:relative; padding-bottom:50%; padding-top:30px; height:0; overflow:hidden; margin:1rem 0;}
+.responsive-video iframe, .responsive-video object, .responsive-video embed {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
