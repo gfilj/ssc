@@ -23,10 +23,10 @@ import java.util.Map;
 @Service
 public class WechatAccessService implements InitializingBean {
 
-    private Logger logger = LogUtil.getLogger(getClass());
+    protected Logger logger = LogUtil.getLogger(getClass());
 
     @Autowired
-    private WechatAccessProperty wechatAccessProperty;
+    protected WechatAccessProperty wechatAccessProperty;
 
     /**
      * 获取accessToken

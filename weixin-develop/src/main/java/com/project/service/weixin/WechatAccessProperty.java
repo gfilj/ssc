@@ -20,21 +20,14 @@ public class WechatAccessProperty {
     private String grant_type;
     private String ticketUrl;
     private String userInfoUrl;
+    private String menuUrl;
 
-    @Override
-    public String toString() {
-        return "WechatAccessProperty{" +
-                "appid='" + appid + '\'' +
-                ", secret='" + secret + '\'' +
-                ", tokenUrl='" + tokenUrl + '\'' +
-                ", qrCodeUrl='" + qrCodeUrl + '\'' +
-                ", expire_seconds='" + expire_seconds + '\'' +
-                ", action_name='" + action_name + '\'' +
-                ", charset='" + charset + '\'' +
-                ", grant_type='" + grant_type + '\'' +
-                ", ticketUrl='" + ticketUrl + '\'' +
-                ", userInfoUrl='" + userInfoUrl + '\'' +
-                '}';
+    public String getMenuUrl() {
+        return menuUrl;
+    }
+
+    public void setMenuUrl(String menuUrl) {
+        this.menuUrl = menuUrl;
     }
 
     public String getUserInfoUrl() {
@@ -117,4 +110,20 @@ public class WechatAccessProperty {
         this.action_name = action_name;
     }
 
+    @Override
+    public String toString() {
+        return "WechatAccessProperty{" +
+                "appid='" + appid + '\'' +
+                ", secret='" + secret + '\'' +
+                ", tokenUrl='" + tokenUrl + '\'' +
+                ", qrCodeUrl='" + qrCodeUrl + '\'' +
+                ", expire_seconds='" + expire_seconds + '\'' +
+                ", action_name='" + action_name + '\'' +
+                ", charset='" + charset + '\'' +
+                ", grant_type='" + grant_type + '\'' +
+                ", ticketUrl='" + ticketUrl + '\'' +
+                ", userInfoUrl='" + userInfoUrl + '\'' +
+                ", menuUrl='" + menuUrl + '\'' +
+                '}';
+    }
 }

@@ -9,3 +9,4 @@ WechatAccessProperty:
   grant_type: client_credential
   ticketUrl: https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=%s
   userInfoUrl: https://api.weixin.qq.com/cgi-bin/user/info
+  menuUrl: https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s
