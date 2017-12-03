@@ -12,7 +12,7 @@
 <body>
 <div class="container">
     <!--<p th:text="'Hello, ' + ${name} + '!'" />-->
-    <h1>文章列表：</h1>
+    <h3>文章列表：</h3>
     <ul>
         <li th:each="map:${map}">
             <a th:href="${map.value}" th:text="${map.key}"></a>
