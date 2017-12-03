@@ -26,9 +26,10 @@ public class WechatMaterialController {
      * @return
      */
     @RequestMapping("/list")
-    public String batchGetMaterialUrl(Model model) {
+    public String batchGetMaterialUrl(String qrUrl, Model model) {
         try {
-            model.addAttribute("map", wechatMaterialService.batchgetMaterialUrl(getMaterialRequest()));
+            model.addAttribute("map", wechatMaterialService.batchgetMaterialUrl(qrUrl,
+                    getMaterialRequest()));
         } catch (BusinessException e) {
             e.printStackTrace();
         }

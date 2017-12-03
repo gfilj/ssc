@@ -42,14 +42,12 @@ public class WechatMaterialService extends WechatAccessService {
         }
     }
 
-    public Map<String, String> batchgetMaterialUrl(Request request) throws BusinessException {
+    public Map<String, String> batchgetMaterialUrl(String qrUrl, Request request) throws BusinessException {
         Response response = batchget_material(request);
         final Map<String, String> map = new HashedMap();
         response.getItem().forEach((item) -> {
             item.getContent().getNews_item().forEach((news) -> {
-                map.put(news.getTitle(), shareService.createShareLink(news.getUrl(),
-                        "https://mp.weixin.qq" +
-                                ".com/cgi-bin/showqrcode?ticket=gQGe8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyMW9ZZHRjb3M4N1UxMDAwMDAwN0wAAgSp3f5ZAwQAAAAA"));
+                map.put(news.getTitle(), shareService.createShareLink(news.getUrl(), qrUrl));
 
             });
         });

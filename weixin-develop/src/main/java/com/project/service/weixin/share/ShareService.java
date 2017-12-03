@@ -18,11 +18,20 @@ public class ShareService {
     public String createShareLink(String url, String imgUrl){
         try {
             String encodeUrl = URLEncoder.encode(url,"utf-8");
-            String encodeImgUrl = URLEncoder.encode(imgUrl, "utf-8");
-            return String.format(shareServiceProperty.getShareLink(),encodeUrl,encodeImgUrl);
+            return String.format(shareServiceProperty.getShareLink(),encodeUrl,imgUrl);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
         return shareServiceProperty.getShareLink();
+    }
+
+    public String createListLink(String qrCode){
+        try {
+            String encodeUrl = URLEncoder.encode(qrCode,"utf-8");
+            return String.format(shareServiceProperty.getListLink(),encodeUrl);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return shareServiceProperty.getListLink();
     }
 }

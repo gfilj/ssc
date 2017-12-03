@@ -6,6 +6,9 @@ import com.project.model.message.response.NewsMessage;
 import com.project.processor.event.EventProcessor;
 import com.project.processor.event.impl.AbstractEventProcessor;
 import com.project.service.message.util.MessageUtil;
+import com.project.service.weixin.share.ShareService;
+import com.project.service.weixin.share.ShareServiceProperty;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,7 +21,11 @@ import java.util.Map;
  */
 @Service("KEY_INVITEProcessor")
 public class KeyInviteProcessor extends AbstractEventProcessor implements EventProcessor {
+    @Autowired
+    private ShareService shareService;
 
+    @Autowired
+    private ShareServiceProperty shareServiceProperty;
     @Override
     public String doProcess(Map<String, String> map) throws BusinessException {
         String openid = map.get("FromUserName"); //用户 openid
@@ -36,9 +43,9 @@ public class KeyInviteProcessor extends AbstractEventProcessor implements EventP
 
         Article article = new Article();
         article.setDescription("绑定绑定您个人消息的二维码"); //图文消息的描述
-        article.setPicUrl(showQrUrl); //图文消息图片地址
+        article.setPicUrl(shareServiceProperty.getCutImg()); //图文消息图片地址
         article.setTitle("二维码");  //图文消息标题
-        article.setUrl(showQrUrl);  //图文 url 链接
+        article.setUrl(shareService.createListLink(showQrUrl));  //图文 url 链接
         List<Article> list = new ArrayList<Article>();
         list.add(article);     //这里发送的是单图文，如果需要发送多图文则在这里 list 中加入多个 Article 即可！
         newmsg.setArticleCount(list.size());

@@ -11,6 +11,24 @@ import org.springframework.stereotype.Component;
 public class ShareServiceProperty {
 
     private String shareLink;
+    private String listLink;
+    private String cutImg;
+
+    public String getCutImg() {
+        return cutImg;
+    }
+
+    public void setCutImg(String cutImg) {
+        this.cutImg = cutImg;
+    }
+
+    public String getListLink() {
+        return listLink;
+    }
+
+    public void setListLink(String listLink) {
+        this.listLink = listLink;
+    }
 
     public String getShareLink() {
         return shareLink;
