@@ -32,7 +32,6 @@ public class WechatMenuService extends WechatAccessService implements Initializi
             JSONObject button = new JSONObject();
             JSONArray sub_button = new JSONArray();
             v.forEach((sub)->{
-                logger.info(sub.toString());
                 sub_button.add(sub);
             });
             button.put("name",k);
