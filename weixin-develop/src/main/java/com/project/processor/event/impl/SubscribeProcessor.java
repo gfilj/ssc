@@ -25,7 +25,7 @@ public class SubscribeProcessor extends AbstractEventProcessor implements EventP
     private UserRelationService userRelationService;
 
     @Override
-    public void doProcess(Map<String, String> map) throws BusinessException {
+    public String doProcess(Map<String, String> map) throws BusinessException {
         logger.info("==============这是关注事件！");
         String oldOriginalMessage = map.get("EventKey");
         String newOpenId = map.get("FromUserName");
@@ -44,5 +44,6 @@ public class SubscribeProcessor extends AbstractEventProcessor implements EventP
             userService.insert(member);
             userRelationService.insert(introduce,member, Relation.Subscrib.getValue());
         }
+        return "success";
     }
 }

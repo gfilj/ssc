@@ -23,9 +23,8 @@ public abstract class AbstractEventProcessor implements EventProcessor {
 
     @Override
     public String process(Map<String, String> map) throws BusinessException {
-        doProcess(map);
-        return "success";
+        return doProcess(map);
     }
 
-    abstract void doProcess(Map<String, String> map) throws BusinessException ;
+    public abstract String doProcess(Map<String, String> map) throws BusinessException;
 }

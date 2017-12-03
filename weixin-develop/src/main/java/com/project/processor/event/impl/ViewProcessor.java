@@ -12,8 +12,8 @@ import java.util.Map;
 @Service("VIEWProcessor")
 public class ViewProcessor extends AbstractEventProcessor implements EventProcessor {
     @Override
-    void doProcess(Map<String, String> map) throws BusinessException {
+    public String doProcess(Map<String, String> map) throws BusinessException {
         logger.info("==============这是自定义菜单 View 事件!");
-
+        return "success";
     }
 }
