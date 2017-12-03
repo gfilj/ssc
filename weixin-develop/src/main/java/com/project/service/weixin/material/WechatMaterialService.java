@@ -34,7 +34,7 @@ public class WechatMaterialService extends WechatAccessService {
                     wechatAccessProperty.getCharset(),
                     wechatAccessProperty.getCharset());
 
-            logger.info("批量获取素材返回内容：" + httpContent);
+            logger.debug("批量获取素材返回内容：" + httpContent);
             Response response = JSON.parseObject(httpContent, Response.class);
             return response;
         } catch (Exception e) {
