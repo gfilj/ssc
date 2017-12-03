@@ -1,6 +1,6 @@
 WechatAccessProperty:
-  appid: wxd15360f7ddacbaec
-  secret: 78a5ecfb17044008c068ad41b82f975c
+  appid: wx7daae1e2aa5a6e0a
+  secret: c619f61e10653ac9e11f78bde5eafc9f
   tokenUrl: https://api.weixin.qq.com/cgi-bin/token
   qrCodeUrl: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=%s
   expire_seconds: 86400
@@ -14,30 +14,30 @@ WechatAccessProperty:
 Button:
   button:
     赛乐维:
-      - url: "https://spring.io/guides/tutorials/bookmarks/"
+      - url: "http://55951118.m.weimob.com/vshop/Index?PageId=541725&channel=menu"
         name: "赛乐维官网"
         type: "view"
       - url: "https://shop.jd.hk/?shopId=672044"
         name: "京东商城"
         type: "view"
-      - url: "https://spring.io/guides/tutorials/bookmarks/"
+      - url: "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzUzODAwNDA0Ng==&scene=123#wechat_redirect"
         name: "往期精彩"
         type: "view"
     客户中心:
-      - url: "https://spring.io/guides/tutorials/bookmarks/"
+      - url: "http://mp.weixin.qq.com/s/UAG06wtMcqk9VpFhKF0cqg"
         name: "分销规则"
         type: "view"
-      - url: "https://spring.io/guides/tutorials/bookmarks/"
+      - url: "http://55951118.m.weimob.com/weisite/list?pid=55951118&bid=57129306&wechatid=fromUsername&ltid=2232545&wxref=mp.weixin.qq.com&channel=menu"
         name: "常见问题"
         type: "view"
-      - url: "https://spring.io/guides/tutorials/bookmarks/"
+      - url: "http://55951118.im.m.weimob.com/?aid=55951118&channel=menu"
         name: "客服咨询"
         type: "view"
     活动有礼:
-      - url: "https://spring.io/guides/tutorials/bookmarks/"
+      - url: "https://sojump.com/jq/15835781.aspx"
         name: "客户反馈表"
         type: "view"
-      - url: "https://spring.io/guides/tutorials/bookmarks/"
+      - url: "https://sojump.com/jq/15850998.aspx"
         name: "客户调研表"
         type: "view"
       - key: "KEY_INVITE"

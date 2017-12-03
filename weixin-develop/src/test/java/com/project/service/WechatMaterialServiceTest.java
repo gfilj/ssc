@@ -22,7 +22,7 @@ public class WechatMaterialServiceTest extends BaseTest {
     @Test
     public void testBatchgetMaterialUrl() throws BusinessException{
         Request request = getMaterialRequest();
-        wechatMaterialService.batchgetMaterialUrl(request).forEach((title,url)->{
+        wechatMaterialService.batchgetMaterialUrl("url",request).forEach((title,url)->{
             System.out.println(String.format("title:%s,url:%s,", title,url));
         });
     }
