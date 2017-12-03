@@ -42,7 +42,7 @@ public class KeyInviteProcessor extends AbstractEventProcessor implements EventP
         newmsg.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_NEWS);
 
         Article article = new Article();
-        article.setDescription("绑定绑定您个人消息的二维码"); //图文消息的描述
+        article.setDescription("跟踪二维码"); //图文消息的描述
         article.setPicUrl(shareServiceProperty.getCutImg()); //图文消息图片地址
         article.setTitle("二维码");  //图文消息标题
         article.setUrl(shareService.createListLink(showQrUrl));  //图文 url 链接
