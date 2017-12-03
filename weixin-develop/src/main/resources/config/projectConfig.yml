@@ -1,6 +1,6 @@
 WechatAccessProperty:
-  appid: wx7daae1e2aa5a6e0a
-  secret: c619f61e10653ac9e11f78bde5eafc9f
+  appid: wxd15360f7ddacbaec
+  secret: 78a5ecfb17044008c068ad41b82f975c
   tokenUrl: https://api.weixin.qq.com/cgi-bin/token
   qrCodeUrl: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=%s
   expire_seconds: 86400
@@ -40,9 +40,9 @@ Button:
       - url: "https://spring.io/guides/tutorials/bookmarks/"
         name: "客户调研表"
         type: "view"
-      - url: "https://spring.io/guides/tutorials/bookmarks/"
+      - key: "KEY_INVITE"
         name: "生成邀请码"
-        type: "view"
+        type: "click"
 
 WechatCustomerProperty:
   add: https://api.weixin.qq.com/customservice/kfaccount/add?access_token=%s

@@ -1,5 +1,6 @@
 package com.project.model.menu;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -13,13 +14,13 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "Button")
 public class Button {
 
-    private Map<String,List<ViewButon>> button;
+    private Map<String, List<JSONObject>> button;
 
-    public Map<String, List<ViewButon>> getButton() {
+    public Map<String, List<JSONObject>> getButton() {
         return button;
     }
 
-    public void setButton(Map<String, List<ViewButon>> button) {
+    public void setButton(Map<String, List<JSONObject>> button) {
         this.button = button;
     }
 
