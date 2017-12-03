@@ -1,4 +1,4 @@
-package com.project.service.weixin;
+package com.project.service.weixin.access;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -9,7 +9,6 @@ import com.project.common.network.NetUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.AccessTokenEntity;
 import org.slf4j.Logger;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,7 @@ import java.util.Map;
  * Created by goforit on 2017/10/23.
  */
 @Service
-public class WechatAccessService implements InitializingBean {
+public class WechatAccessService {
 
     protected Logger logger = LogUtil.getLogger(getClass());
 
@@ -47,6 +46,7 @@ public class WechatAccessService implements InitializingBean {
                     false,
                     wechatAccessProperty.getCharset(),
                     wechatAccessProperty.getCharset());
+            logger.info("获取access_token返回的内容：" + httpContent);
             AccessTokenEntity accessTokenEntity = JSON.parseObject(httpContent, AccessTokenEntity.class);
             return accessTokenEntity.getAccess_token();
         } catch (Exception e) {
@@ -120,8 +120,5 @@ public class WechatAccessService implements InitializingBean {
         }
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        logger.info(String.valueOf(wechatAccessProperty));
-    }
+
 }

@@ -1,4 +1,4 @@
-package com.project.service.weixin;
+package com.project.service.weixin.access;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

@@ -19,6 +19,7 @@
         <module>common-api</module>
         <module>formBuilder</module>
         <module>weixin-develop</module>
+        <module>common-dao</module>
     </modules>
 
     <parent>

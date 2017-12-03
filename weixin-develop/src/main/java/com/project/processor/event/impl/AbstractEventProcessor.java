@@ -3,7 +3,7 @@ package com.project.processor.event.impl;
 import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
 import com.project.processor.event.EventProcessor;
-import com.project.service.weixin.WechatAccessService;
+import com.project.service.weixin.access.WechatAccessService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 

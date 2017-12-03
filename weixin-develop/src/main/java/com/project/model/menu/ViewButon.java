@@ -1,4 +1,4 @@
-package com.project.model.message.menu;
+package com.project.model.menu;
 
 /**
  * Created by goforit on 2017/11/25.
@@ -30,5 +30,14 @@ public class ViewButon {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "ViewButon{" +
+                "type='" + type + '\'' +
+                ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }

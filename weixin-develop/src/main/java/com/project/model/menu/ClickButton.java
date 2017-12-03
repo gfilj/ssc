@@ -1,4 +1,4 @@
-package com.project.model.message.menu;
+package com.project.model.menu;
 
 /**
  * Created by goforit on 2017/11/25.
@@ -32,4 +32,12 @@ public class ClickButton {
         this.key = key;
     }
 
+    @Override
+    public String toString() {
+        return "ClickButton{" +
+                "type='" + type + '\'' +
+                ", name='" + name + '\'' +
+                ", key='" + key + '\'' +
+                '}';
+    }
 }

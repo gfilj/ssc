@@ -4,7 +4,7 @@ import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
 import com.project.model.WechatAccessEntity;
 import com.project.service.message.MessageService;
-import com.project.service.weixin.WechatAccessService;
+import com.project.service.weixin.access.WechatAccessService;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="/bootstrap.min.css"/>
+    <script src="/jquery.min.js"/>
+    <script src="/tether.min.js"/>
+    <script src="/bootstrap.min.js"/>
+    <script src="/jquery.json.js"/>
+</head>
+<body>
+<div class="container">
+    <iframe id="iframe"
+            th:src="${url}"
+            name="iframe" frameborder="0" style="border: 0px ;width:100%; height: 100%;"></iframe>
+
+    <div align="center">
+    <img th:src="${imgUrl}" style="width: 35% !important; height: 35% !important;
+"/>
+    </div>
+    <p style="text-align:center;"><strong>关注赛乐维公众号，了解更多</strong></p>
+</div>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+    window.onerror = function () {
+        return true;
+    };
+    $(function () {
+        headerH = 0;
+        var h = $(window).height();
+        $("#iframe").height((h - headerH) + "px");
+    });
+</script>
+</body>
+</html>

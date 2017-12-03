@@ -5,7 +5,7 @@ import com.project.common.util.LogUtil;
 import com.project.model.message.response.Article;
 import com.project.model.message.response.NewsMessage;
 import com.project.service.message.util.MessageUtil;
-import com.project.service.weixin.WechatAccessService;
+import com.project.service.weixin.access.WechatAccessService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

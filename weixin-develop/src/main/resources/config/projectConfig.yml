@@ -1,6 +1,6 @@
 WechatAccessProperty:
-  appid: wxd15360f7ddacbaec
-  secret: 78a5ecfb17044008c068ad41b82f975c
+  appid: wx7daae1e2aa5a6e0a
+  secret: c619f61e10653ac9e11f78bde5eafc9f
   tokenUrl: https://api.weixin.qq.com/cgi-bin/token
   qrCodeUrl: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=%s
   expire_seconds: 86400
@@ -10,3 +10,48 @@ WechatAccessProperty:
   ticketUrl: https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=%s
   userInfoUrl: https://api.weixin.qq.com/cgi-bin/user/info
   menuUrl: https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s
+
+Button:
+  button:
+    赛乐维:
+      - url: "https://spring.io/guides/tutorials/bookmarks/"
+        name: "赛乐维官网"
+        type: "view"
+      - url: "https://shop.jd.hk/?shopId=672044"
+        name: "京东商城"
+        type: "view"
+      - url: "https://spring.io/guides/tutorials/bookmarks/"
+        name: "往期精彩"
+        type: "view"
+    客户中心:
+      - url: "https://spring.io/guides/tutorials/bookmarks/"
+        name: "分销规则"
+        type: "view"
+      - url: "https://spring.io/guides/tutorials/bookmarks/"
+        name: "常见问题"
+        type: "view"
+      - url: "https://spring.io/guides/tutorials/bookmarks/"
+        name: "客服咨询"
+        type: "view"
+    活动有礼:
+      - url: "https://spring.io/guides/tutorials/bookmarks/"
+        name: "客户反馈表"
+        type: "view"
+      - url: "https://spring.io/guides/tutorials/bookmarks/"
+        name: "客户调研表"
+        type: "view"
+      - url: "https://spring.io/guides/tutorials/bookmarks/"
+        name: "生成邀请码"
+        type: "view"
+
+WechatCustomerProperty:
+  add: https://api.weixin.qq.com/customservice/kfaccount/add?access_token=%s
+  update: https://api.weixin.qq.com/customservice/kfaccount/update?access_token=%s
+  del: https://api.weixin.qq.com/customservice/kfaccount/del?access_token=%s
+  getkflist: https://api.weixin.qq.com/cgi-bin/customservice/getkflist?access_token=%s
+
+WechatMaterialProperty:
+  batchget_material: https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=%s
+
+ShareServiceProperty:
+  shareLink: /wechat/material/share?url=%s&imgUrl=%s
