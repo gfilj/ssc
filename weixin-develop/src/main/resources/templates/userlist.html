@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <script src="/js/jquery.min.js"/>
+    <script src="/js/tether.min.js"/>
+    <script src="/js/bootstrap.min.js"/>
+    <script src="/js/jquery.json.js"/>
+</head>
+<body>
+<div class="container">
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>昵称</td>
+            <td>openID</td>
+            <td>性别</td>
+            <td>城市</td>
+            <td>省份</td>
+            <td>国家</td>
+            <td>关注时间</td>
+        </tr>
+        <p th:each="user:${list}">
+            <tr>
+                <td th:text="${page.start}"></td>
+                <td th:text="${user.nickname}"></td>
+                <td th:text="${user.openid}"></td>
+                <td th:text="${user.sex_str}">性别</td>
+                <td th:text="${user.city}">城市</td>
+                <td th:text="${user.province}">省份</td>
+                <td th:text="${user.country}">国家</td>
+                <td th:text="${user.subscribe_time_str}">注册时间</td>
+            </tr>
+        </p>
+    </table>
+    <div id="page" url="/wechat/user/list" ></div>
+    <div th:replace="page :: page"></div>
+
+</div>
+</body>
+</html>

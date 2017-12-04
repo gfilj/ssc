@@ -2,10 +2,9 @@ package com.project.service;
 
 import com.project.BaseTest;
 import com.project.common.exception.BusinessException;
-import com.project.model.sql.User;
-import com.project.model.sql.UserRelation;
 import com.project.service.user.impl.UserRelationService;
 import com.project.service.user.impl.UserService;
+import com.project.type.Relation;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,15 +23,6 @@ public class UserRelationServiceTest extends BaseTest {
     private UserService userService;
     @Test
     public void testInsert() throws BusinessException {
-        User user = userService.parse(oldStr, "subscribe_time");
-        User newUser = userService.parse(newStr, "subscribe_time");
-        UserRelation userRelation = new UserRelation();
-        userRelation.setIntroducer(user.getOpenid());
-        userRelation.setIntroducername(user.getNickname());
-        userRelation.setNewmember(newUser.getOpenid());
-        userRelation.setNewmembername(newUser.getNickname());
-        userRelation.setLmodify(newUser.getSubscribe_time());
-        userRelation.setReleation(1);
-        userRelationService.insert(userRelation);
+        userRelationService.insert(null,newStr, Relation.Unsubscrib.getValue());
     }
 }

@@ -10,6 +10,8 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * Created by goforit on 2017/12/3.
  */
@@ -40,14 +42,16 @@ public class UserRelationService extends AbstracUserService<UserRelation> {
     }
 
     public UserRelation generateUserRelation(String introduce, String member, int releation) {
-        User user = userService.parse(introduce, "subscribe_time");
-        User newUser = userService.parse(member, "subscribe_time");
         UserRelation userRelation = new UserRelation();
-        userRelation.setIntroducer(user.getOpenid());
-        userRelation.setIntroducername(user.getNickname());
+        if(introduce !=null){
+            User user = userService.parse(introduce, "subscribe_time");
+            userRelation.setIntroducer(user.getOpenid());
+            userRelation.setIntroducername(user.getNickname());
+        }
+        User newUser = userService.parse(member, "subscribe_time");
         userRelation.setNewmember(newUser.getOpenid());
         userRelation.setNewmembername(newUser.getNickname());
-        userRelation.setLmodify(newUser.getSubscribe_time());
+        userRelation.setLmodify(new Date());
         userRelation.setReleation(releation);
         return userRelation;
     }

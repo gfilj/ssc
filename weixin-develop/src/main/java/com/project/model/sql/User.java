@@ -1,5 +1,7 @@
 package com.project.model.sql;
 
+import com.project.common.util.DateUtils;
+
 import java.util.Date;
 
 /**
@@ -17,8 +19,19 @@ public class User {
     private String country;// varchar(45) DEFAULT NULL COMMENT '国家',
     private String headimgurl;// varchar(1000) DEFAULT NULL COMMENT '头像',
     private Date subscribe_time;// datetime DEFAULT NULL COMMENT '注册',
-    private String subscribe_time_str;//日期格式
     private String remark;// varchar(45) DEFAULT NULL COMMENT '备注',
+
+    private String sex_str;
+    private String subscribe_time_str;//日期格式
+
+    public String getSex_str() {
+        sex_str = sex==0?"未知":(sex==1?"男":"女");
+        return sex_str;
+    }
+
+    public void setSex_str(String sex_str) {
+        this.sex_str = sex_str;
+    }
 
     public String getOpenid() {
         return openid;
@@ -93,6 +106,9 @@ public class User {
     }
 
     public String getSubscribe_time_str() {
+        if(subscribe_time!=null){
+            subscribe_time_str = DateUtils.formatDateTime(subscribe_time);
+        }
         return subscribe_time_str;
     }
 
@@ -119,8 +135,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "openid='" + openid + '\'' +
-                ", subscribe=" + subscribe +
+                "subscribe=" + subscribe +
                 ", openid='" + openid + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", sex=" + sex +
@@ -130,8 +145,9 @@ public class User {
                 ", country='" + country + '\'' +
                 ", headimgurl='" + headimgurl + '\'' +
                 ", subscribe_time=" + subscribe_time +
-                ", subscribe_time_str='" + subscribe_time_str + '\'' +
                 ", remark='" + remark + '\'' +
+                ", sex_str='" + sex_str + '\'' +
+                ", subscribe_time_str='" + subscribe_time_str + '\'' +
                 '}';
     }
 }

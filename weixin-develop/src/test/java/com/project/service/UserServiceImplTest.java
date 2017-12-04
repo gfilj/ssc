@@ -2,6 +2,7 @@ package com.project.service;
 
 import com.project.BaseTest;
 import com.project.common.exception.BusinessException;
+import com.project.model.vo.Page;
 import com.project.service.user.impl.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,19 @@ public class UserServiceImplTest extends BaseTest {
     @Test
     public void testInserUser() throws BusinessException {
         userService.insert(jsonStr());
+    }
+
+    @Test
+    public void testSelectPageList() throws BusinessException {
+        Page page = new Page(1);
+        page.setRowcountAndCompute(1000);
+        System.out.println(page);
+        System.out.println(userService.selectPageList(page));
+    }
+
+    @Test
+    public void testSelectPageListCount() throws BusinessException {
+        System.out.println(userService.selectPageListCount());
     }
 
 }

@@ -30,4 +30,16 @@ public class UserRelationSqlProvider {
         logger.info(sql);
         return sql;
     }
+
+
+
+//    public String selectPageList(UserRelation userRelation){
+//        return new SQL(){{
+//            SELECT("openid, nickname, sex, city, province, country, subscribe_time");
+//            FROM("User");
+//            WHERE("openid",)
+//            ORDER_BY("subscribe_time desc");
+//        }}.toString();
+//    }
+
 }
