@@ -55,5 +55,5 @@ WechatMaterialProperty:
 
 ShareServiceProperty:
   shareLink: /wechat/material/share?url=%s&imgUrl=%s
-  listLink: http://47.95.216.197/wechat/material/list?qrUrl=%s
+  listLink: http://www.kurkuma.cn/wechat/material/list?qrUrl=%s
   cutImg: https://mmbiz.qpic.cn/mmbiz_png/OoxQeTGnyxEcLLD37qEYmdphyUrzCtqyJtnEKuU8utvMu1VC2sic2UMTd8JibeyBD8x6OxHuV0cZIuC7ibYGFOz0A/0?wx_fmt=png
