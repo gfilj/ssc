@@ -2,49 +2,129 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="page">
-    <link th:href="@{/css/pagestyle.css}" rel="external nofollow"/>
-    <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>
-    <script type="text/javascript" th:src="@{/js/jquery.paginate.js}"></script>
-    <script th:inline="javascript">
-        (function ($) {
-            /*<![CDATA[*/
-            var count = [[3]];
-            var start = [[${page.pageon}]];
-            /*]]>*/
-            var url = $("#page").attr('url');
-            var displaycnt = count > 10 ? 10 : count;
-            fenye(count, start, url, displaycnt);
-        })(jQuery);
-        function fenye(count, start, url, displaycnt) {
-            /*<![CDATA[*/
-            if (count < 2)
-                return;
-            /*]]>*/
-            $("#page").paginate({
-                count: count,
-                start: start,
-                display: displaycnt,
-                border: true,
-                border_color: '#fff',
-                text_color: '#fff',
-                background_color: 'pink',
-                border_hover_color: '#ccc',
-                text_hover_color: '#000',
-                background_hover_color: '#fff',
-                images: true,
-                mouse: 'press',
-                onChange: function (page_index) {
-                    var tourl;
-                    /*<![CDATA[*/
-                    if (url.indexOf('?') > 0)
-                        tourl = url + '&pageon=' + page_index;
-                    else
-                        tourl = url + '?pageon=' + page_index;
-                    window.location.href = tourl;
-                    /*]]>*/
-                }
-            });
-        }
-    </script>
+    <!--<link th:href="@{/css/pagestyle.css}" rel="external nofollow"/>-->
+    <!--<script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>-->
+    <!--<script type="text/javascript" th:src="@{/js/jquery.paginate.js}"></script>-->
+    <!--<script th:inline="javascript">-->
+        <!--(function ($) {-->
+            <!--/*<![CDATA[*/-->
+            <!--var count = [[3]];-->
+            <!--var start = [[${page.pageon}]];-->
+            <!--/*]]>*/-->
+            <!--var url = $("#page").attr('url');-->
+            <!--var displaycnt = count > 10 ? 10 : count;-->
+            <!--fenye(count, start, url, displaycnt);-->
+        <!--})(jQuery);-->
+        <!--function fenye(count, start, url, displaycnt) {-->
+            <!--/*<![CDATA[*/-->
+            <!--if (count < 2)-->
+                <!--return;-->
+            <!--/*]]>*/-->
+            <!--$("#page").paginate({-->
+                <!--count: count,-->
+                <!--start: start,-->
+                <!--display: displaycnt,-->
+                <!--border: true,-->
+                <!--border_color: '#fff',-->
+                <!--text_color: '#fff',-->
+                <!--background_color: 'pink',-->
+                <!--border_hover_color: '#ccc',-->
+                <!--text_hover_color: '#000',-->
+                <!--background_hover_color: '#fff',-->
+                <!--images: true,-->
+                <!--mouse: 'press',-->
+                <!--onChange: function (page_index) {-->
+                    <!--var tourl;-->
+                    <!--/*<![CDATA[*/-->
+                    <!--if (url.indexOf('?') > 0)-->
+                        <!--tourl = url + '&pageon=' + page_index;-->
+                    <!--else-->
+                        <!--tourl = url + '?pageon=' + page_index;-->
+                    <!--window.location.href = tourl;-->
+                    <!--/*]]>*/-->
+                <!--}-->
+            <!--});-->
+        <!--}-->
+    <!--</script>-->
 </head>
+
+<body>
+<!-- 处理页数大于7 的情况 -->
+<ul class="pagination" data-th-if="${page.totalPages gt 7}" >
+    <!-- 上一页 -->
+    <li class="page-item" data-th-classappend="*{first} ? 'disabled' : ''">
+        <a href="javascript:void(0);" class="page-link" data-th-attr="pageIndex=${page.number} - 1" aria-label="Previous">
+            <span aria-hidden="true">«</span>
+        </a>
+    </li>
+
+    <!-- 首页 -->
+    <li class="page-item" data-th-classappend="${(page.number + 1) eq 1} ? 'active' : ''" >
+        <a href="javascript:void(0);" class="page-link" data-th-attr="pageIndex=0">1</a>
+    </li>
+
+
+    <!-- 当前页面小于等于4 -->
+    <li class="page-item" data-th-if="${(page.number + 1) le 4}" data-th-each="i : ${#numbers.sequence(2,5)}"
+        data-th-classappend="${(page.number + 1) eq i} ? 'active' : ''" >
+        <a class="page-link" href="javascript:void(0);" data-th-attr="pageIndex=${i} - 1">
+            <span data-th-text="${i}"></span>
+        </a>
+    </li>
+
+    <li class="page-item disabled" data-th-if="${(page.number + 1) le 4}">
+        <a href="javascript:void(0);" class="page-link">
+            <span aria-hidden="true">...</span>
+        </a>
+    </li>
+
+    <!-- 最后一页与当前页面之差，小于等于3 -->
+    <li class="page-item disabled" data-th-if="${(page.totalPages-(page.number + 1)) le 3}">
+        <a href="javascript:void(0);" class="page-link">
+            <span aria-hidden="true">...</span>
+        </a>
+    </li>
+    <li class="page-item" data-th-if="${(page.totalPages-(page.number + 1)) le 3}" data-th-each="i : ${#numbers.sequence(page.totalPages-4, page.totalPages-1)}"
+        data-th-classappend="${(page.number + 1) eq i} ? 'active' : ''" >
+        <a class="page-link" href="javascript:void(0);" data-th-attr="pageIndex=${i} - 1">
+            <span data-th-text="${i}"></span>
+        </a>
+    </li>
+
+    <!-- 最后一页与当前页面之差大于3，且  当前页面大于4-->
+
+    <li class="page-item disabled" data-th-if="${((page.number + 1) gt 4) && ((page.totalPages-(page.number + 1)) gt 3 )}">
+        <a href="javascript:void(0);" class="page-link">
+            <span aria-hidden="true">...</span>
+        </a>
+    </li>
+    <li class="page-item" data-th-if="${((page.number + 1) gt 4) && ((page.totalPages-(page.number + 1)) gt 3 )}" >
+        <a href="javascript:void(0);" class="page-link" data-th-attr="pageIndex=${page.number}">[[${page.number}]]</a>
+    </li>
+    <li class="page-item active" data-th-if="${((page.number + 1) gt 4) && ((page.totalPages-(page.number + 1)) gt 3 )}">
+        <a href="javascript:void(0);" class="page-link" data-th-attr="pageIndex=${page.number} + 1">[[${page.number + 1}]]</a>
+    </li>
+    <li class="page-item" data-th-if="${((page.number + 1) gt 4) && ((page.totalPages-(page.number + 1)) gt 3 )}">
+        <a href="javascript:void(0);" class="page-link" data-th-attr="pageIndex=${page.number} + 2">[[${page.number + 2}]]</a>
+    </li>
+
+    <li class="page-item disabled"  data-th-if="${((page.number + 1) gt 4) && ((page.totalPages-(page.number + 1)) gt 3 )}">
+        <a href="javascript:void(0);" class="page-link">
+            <span aria-hidden="true">...</span>
+        </a>
+    </li>
+
+    <!-- 最后一页 -->
+    <li class="page-item" data-th-classappend="${(page.number + 1) eq page.totalPages} ? 'active' : ''" >
+        <a href="javascript:void(0);" class="page-link" data-th-attr="pageIndex=${page.totalPages} - 1">[[${page.totalPages}]]</a>
+    </li>
+
+    <!-- 下一页 -->
+    <li class="page-item" data-th-classappend="*{last} ? 'disabled' : ''">
+        <a href="javascript:void(0);" class="page-link" data-th-attr="pageIndex=${page.number} + 1" aria-label="Next">
+            <span aria-hidden="true">»</span>
+        </a>
+    </li>
+</ul>
+</body>
 </html>

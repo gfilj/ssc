@@ -39,7 +39,9 @@ public class WechatMaterialController {
     @RequestMapping("/share")
     public String materialUrl(String url, String imgUrl, Model model) {
         model.addAttribute("url", url);
+        String urlContent = wechatMaterialService.showContent(url);
         model.addAttribute("imgUrl", imgUrl);
+        model.addAttribute("urlContent", urlContent);
         return "share";
     }
 }

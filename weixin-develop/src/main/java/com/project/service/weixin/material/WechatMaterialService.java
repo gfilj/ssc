@@ -25,6 +25,12 @@ public class WechatMaterialService extends WechatAccessService {
     @Autowired
     private ShareService shareService;
 
+    /**
+     * 批量获取素材
+     * @param request
+     * @return
+     * @throws BusinessException
+     */
     public Response batchget_material(Request request) throws BusinessException {
         String access_token = getToken();
         try {
@@ -42,6 +48,13 @@ public class WechatMaterialService extends WechatAccessService {
         }
     }
 
+    /**
+     * 批量获取素材的中的文章url
+     * @param qrUrl
+     * @param request
+     * @return
+     * @throws BusinessException
+     */
     public Map<String, String> batchgetMaterialUrl(String qrUrl, Request request) throws BusinessException {
         Response response = batchget_material(request);
         final Map<String, String> map = new HashedMap();
@@ -52,5 +65,10 @@ public class WechatMaterialService extends WechatAccessService {
             });
         });
         return map;
+    }
+
+    public String showContent(String url){
+        return shareService.removeData_src(shareService.removeScript(url));
+
     }
 }

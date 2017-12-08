@@ -11,9 +11,10 @@
 </head>
 <body>
 <div class="container">
-    <iframe id="iframe"
-            th:src="${url}"
-            name="iframe" frameborder="0" style="border: 0px ;width:100%; height: 100%;"></iframe>
+    <!--<iframe id="iframe"-->
+            <!--th:src="${url}"-->
+            <!--name="iframe" frameborder="0" style="border: 0px ;width:100%; height: 100%;"></iframe>-->
+    <div th:utext="${urlContent}"></div>
     <div align="center">
     <img th:src="${imgUrl}" style="width: 35% !important; height: 35% !important;
 "/>
@@ -21,29 +22,32 @@
     <p style="text-align:center;"><strong>关注赛乐维公众号，了解更多</strong></p>
 </div>
 <script th:inline="javascript">
+//    window.onerror = function () {
+//        return true;
+//    };
+//    var share_content=[[${urlContent}]];
+//    $(function () {
+//        headerH = 0;
+//        var h = $(window).height();
+//        $("#iframe").height((h - headerH) + "px");
+//        share_content = 'data:text/html;charset=utf-8,' + share_content;
+//        $("#iframe").attr("src" , share_content);
+//    });
 
-    window.onerror = function () {
-        return true;
-    };
-    $(function () {
-        headerH = 0;
-        var h = $(window).height();
-        $("#iframe").height((h - headerH) + "px");
-    });
 
+//    $.ajaxPrefilter( function (options) {
+//        var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+//        options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+//    });
+//
+//    $.get( share_link, function (response){
+//        var html = response;
+//        html=html.replace(/data-src/g, "src");
+//        html=html.replace(/&lt;script/g, "&lt;div");
+//        var html_src = 'data:text/html;charset=utf-8,' + html;
+//        $("#iframe").attr("src" , html_src);
+//    });
 
-    $.ajaxPrefilter( function (options) {
-        var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-        options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
-    });
-    var share_link=[[${url}]];
-    $.get( share_link, function (response){
-        var html = response;
-        console.log(html);
-        html=html.replace(/data-src/g, "src");
-        var html_src = 'data:text/html;charset=utf-8,' + html;
-        $("#iframe").attr("src" , html_src);
-    });
 </script>
 </body>
 </html>
