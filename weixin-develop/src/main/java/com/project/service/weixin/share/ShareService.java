@@ -23,6 +23,9 @@ public class ShareService {
     private ShareServiceProperty shareServiceProperty;
     private Logger logger = LogUtil.getLogger(ShareService.class);
 
+
+    public static final String regEx_script = "<script[^>]*?>[\\s\\S]*?<\\/script>"; // 定义script的正则表达式
+
     public String createShareLink(String url, String imgUrl){
         try {
             String encodeUrl = URLEncoder.encode(url,"utf-8");
@@ -53,7 +56,6 @@ public class ShareService {
 
         String html = doc.html();
         logger.debug("过滤前的：" + html);
-        final String regEx_script = "<script[^>]*?>[\\s\\S]*?<\\/script>"; // 定义script的正则表达式
         Pattern p_script = Pattern.compile(regEx_script, Pattern.CASE_INSENSITIVE);
         Matcher m_script = p_script.matcher(html);
         html = m_script.replaceAll(""); // 过滤script标签
@@ -63,5 +65,17 @@ public class ShareService {
 
     public String removeData_src(String html){
         return html.replace("data-src","src");
+    }
+
+    public String addProxyUrl(String html){
+        final String regEx_imgsrc = "<img [^>]*src=['\"]([^'\"]+)[^>]*>";
+        Pattern p_imgsrc = Pattern.compile(regEx_imgsrc, Pattern.CASE_INSENSITIVE);
+        Matcher m_script = p_imgsrc.matcher(html);
+        while (m_script.find()){
+            String url = m_script.group(1);
+            String proxyUrl = url.replace("http://",shareServiceProperty.getProxyUrl());
+            html= html.replace(url,proxyUrl);
+        }
+        return html;
     }
 }

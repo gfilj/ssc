@@ -13,6 +13,15 @@ public class ShareServiceProperty {
     private String shareLink;
     private String listLink;
     private String cutImg;
+    private String proxyUrl;
+
+    public String getProxyUrl() {
+        return proxyUrl;
+    }
+
+    public void setProxyUrl(String proxyUrl) {
+        this.proxyUrl = proxyUrl;
+    }
 
     public String getCutImg() {
         return cutImg;

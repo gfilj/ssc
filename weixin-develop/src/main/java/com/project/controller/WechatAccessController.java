@@ -29,7 +29,7 @@ public class WechatAccessController {
     @Resource
     private MessageService messageService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "access")
+    @RequestMapping(method = RequestMethod.GET, value = " ")
     public @ResponseBody
     String doGet(WechatAccessEntity wechatAccessEntity) {
         logger.info(String.valueOf(wechatAccessEntity));

@@ -68,7 +68,7 @@ public class WechatMaterialService extends WechatAccessService {
     }
 
     public String showContent(String url){
-        return shareService.removeData_src(shareService.removeScript(url));
+        return shareService.addProxyUrl(shareService.removeData_src(shareService.removeScript(url)));
 
     }
 }
