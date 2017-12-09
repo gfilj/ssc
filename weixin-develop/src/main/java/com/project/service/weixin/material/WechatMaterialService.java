@@ -12,6 +12,11 @@ import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Map;
 
 /**
@@ -67,8 +72,33 @@ public class WechatMaterialService extends WechatAccessService {
         return map;
     }
 
+    /**
+     * 文章的显示封装
+     * @param url
+     * @return
+     */
     public String showContent(String url){
         return shareService.addProxyUrl(shareService.removeData_src(shareService.removeScript(url)));
+    }
 
+    /**
+     * 获取真正的图片字节流
+     */
+    public byte[] getWechatUrl(String key) throws IOException {
+        String wechatUrl = shareService.getRealWechatUrl(key);
+        URL url = new URL(wechatUrl);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        String headerField = connection.getHeaderField("Content-Type");
+        logger.info("Content-Type" + headerField);
+        DataInputStream in = new DataInputStream(connection.getInputStream());
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int len = -1;
+        while((len = in.read(buffer)) != -1){
+            outputStream.write(buffer, 0, len);
+        }
+        outputStream.close();
+        in.close();
+        return outputStream.toByteArray();
     }
 }

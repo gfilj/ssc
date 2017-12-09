@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 /**
  * Created by goforit on 2017/11/27.
  */
@@ -44,4 +47,12 @@ public class WechatMaterialController {
         model.addAttribute("urlContent", urlContent);
         return "share";
     }
+
+    @RequestMapping("/imgUrl")
+    public void imgUrl(String url, HttpServletResponse httpServletResponse) throws IOException {
+
+        httpServletResponse.setContentType("image/png");
+        httpServletResponse.getOutputStream().write(wechatMaterialService.getWechatUrl(url));
+    }
+
 }

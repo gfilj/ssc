@@ -1,6 +1,7 @@
 package com.project.service.weixin.share;
 
 import com.project.common.util.LogUtil;
+import com.project.common.util.MD5Util;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,6 +26,7 @@ public class ShareService {
     private ShareServiceProperty shareServiceProperty;
     private Logger logger = LogUtil.getLogger(ShareService.class);
 
+    private Map<String,String> map = new HashMap<String,String>();
 
     public static final String regEx_script = "<script[^>]*?>[\\s\\S]*?<\\/script>"; // 定义script的正则表达式
 
@@ -73,9 +77,15 @@ public class ShareService {
         Matcher m_script = p_imgsrc.matcher(html);
         while (m_script.find()){
             String url = m_script.group(1);
-            String proxyUrl = url.replace("http://",shareServiceProperty.getProxyUrl());
+            String urlMd5Key = MD5Util.stringMD5(url);
+            map.put(urlMd5Key,url);
+            String proxyUrl = shareServiceProperty.getProxyUrl()+urlMd5Key;
             html= html.replace(url,proxyUrl);
         }
         return html;
+    }
+
+    public String getRealWechatUrl(String urlMd5Key){
+        return map.get(urlMd5Key);
     }
 }
