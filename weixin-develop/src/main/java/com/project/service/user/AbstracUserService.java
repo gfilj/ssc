@@ -21,7 +21,7 @@ public abstract class AbstracUserService<T> {
      */
     public T parse(String userJson, String parameter) {
         JSONObject jsonObject = JSON.parseObject(userJson);
-        if(StringUtils.isBlank(parameter)){
+        if(!StringUtils.isBlank(parameter)){
             Long subscribe_time = jsonObject.getLong(parameter) * 1000;
             jsonObject.put(parameter, subscribe_time);
         }else{
