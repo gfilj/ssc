@@ -24,13 +24,14 @@ public class SubscribeProcessor extends AbstractEventProcessor implements EventP
     private UserService userService;
     @Autowired
     private WechatUserReleationService wechatUserReleationService;
-
+    @Autowired
     private WechatUserReleationLogService wechatUserReleationLogService;
     @Override
     public String doProcess(Map<String, String> map) throws BusinessException {
         String newOpenId = map.get("FromUserName");
-        String member = wechatAccessService.getUserInfo(newOpenId);
 
+        String member = wechatAccessService.getUserInfo(newOpenId);
+        logger.info("新粉丝信息：" + member);
 
         String oldOriginalMessage = map.get("EventKey");
         Pattern oldOriginalMessagePattern = Pattern.compile(oldOpenIdPattern);
@@ -42,8 +43,6 @@ public class SubscribeProcessor extends AbstractEventProcessor implements EventP
             //获取用户信息
             String introduce = wechatAccessService.getUserInfo(oldOpendId);
             logger.info("老粉丝信息：" + introduce);
-
-            logger.info("新粉丝信息：" + member);
 
             userService.insert(introduce);
             userService.insert(member);
