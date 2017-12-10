@@ -1,5 +1,7 @@
 package com.project.model.sql;
 
+import com.project.common.util.DateUtils;
+
 import java.util.Date;
 
 /**
@@ -13,6 +15,8 @@ public class UserRelation {
     private String introducername;// varchar(45) DEFAULT NULL COMMENT '介绍人名字',
     private String newmembername;// varchar(45) DEFAULT NULL COMMENT '新粉丝名字',
     private int id;
+
+    private String lmodifyStr;//时间转换
 
     public int getId() {
         return id;
@@ -78,6 +82,18 @@ public class UserRelation {
 
     public void setLomodifyStr(String lomodifyStr) {
         this.lomodifyStr = lomodifyStr;
+    }
+
+
+    public String getLmodifyStr() {
+        if(lmodify!=null){
+            lmodifyStr = DateUtils.formatDateTime(lmodify);
+        }
+        return lmodifyStr;
+    }
+
+    public void setLmodifyStr(String lmodifyStr) {
+        this.lmodifyStr = lmodifyStr;
     }
 
     @Override
