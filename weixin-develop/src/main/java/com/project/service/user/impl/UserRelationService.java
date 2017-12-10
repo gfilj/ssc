@@ -4,13 +4,14 @@ import com.project.common.exception.BusinessException;
 import com.project.common.exception.ExceptionEnum;
 import com.project.common.util.LogUtil;
 import com.project.mapper.UserRelationMapper;
-import com.project.model.sql.User;
 import com.project.model.sql.UserRelation;
+import com.project.model.vo.Page;
+import com.project.service.user.AbstracUserService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.util.List;
 
 /**
  * Created by goforit on 2017/12/3.
@@ -22,12 +23,15 @@ public class UserRelationService extends AbstracUserService<UserRelation> {
     @Autowired
     private UserRelationMapper userRelationMapper;
 
-    @Autowired
-    private UserService userService;
 
-    private Logger logger = LogUtil.getLogger(UserService.class);
+    private Logger logger = LogUtil.getLogger(UserRelationService.class);
 
-
+    /**
+     *
+     * @param userRelation
+     * @return
+     * @throws BusinessException
+     */
     public int insert(UserRelation userRelation) throws BusinessException {
         try {
             return userRelationMapper.insert(userRelation);
@@ -37,22 +41,35 @@ public class UserRelationService extends AbstracUserService<UserRelation> {
         }
     }
 
-    public int insert(String introduce, String member, int releation) throws BusinessException {
-        return insert(generateUserRelation(introduce, member, releation));
+
+    /**
+     * 选择数据的总条数
+     * @return
+     * @throws BusinessException
+     */
+    public int selectPageListCount() throws BusinessException{
+        try {
+            return userRelationMapper.selectPageListCount();
+        } catch (Throwable e) {
+            logger.error("用户插入报错", e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "selectPageListCount");
+        }
     }
 
-    public UserRelation generateUserRelation(String introduce, String member, int releation) {
-        UserRelation userRelation = new UserRelation();
-        if(introduce !=null){
-            User user = userService.parse(introduce, "subscribe_time");
-            userRelation.setIntroducer(user.getOpenid());
-            userRelation.setIntroducername(user.getNickname());
+    /**
+     * 选择返回列表
+     * @param page
+     * @return
+     * @throws BusinessException
+     */
+    public List<UserRelation> selectPageList(Page page) throws BusinessException{
+        try {
+            return userRelationMapper.selectPageList(page);
+        } catch (Throwable e) {
+            logger.error("用户插入报错", e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "selectPageList");
         }
-        User newUser = userService.parse(member, "subscribe_time");
-        userRelation.setNewmember(newUser.getOpenid());
-        userRelation.setNewmembername(newUser.getNickname());
-        userRelation.setLmodify(new Date());
-        userRelation.setReleation(releation);
-        return userRelation;
     }
+
+
 }

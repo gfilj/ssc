@@ -20,6 +20,35 @@ public class User {
     private String headimgurl;// varchar(1000) DEFAULT NULL COMMENT '头像',
     private Date subscribe_time;// datetime DEFAULT NULL COMMENT '注册',
     private String remark;// varchar(45) DEFAULT NULL COMMENT '备注',
+    private int id;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "subscribe=" + subscribe +
+                ", openid='" + openid + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", sex=" + sex +
+                ", language='" + language + '\'' +
+                ", city='" + city + '\'' +
+                ", province='" + province + '\'' +
+                ", country='" + country + '\'' +
+                ", headimgurl='" + headimgurl + '\'' +
+                ", subscribe_time=" + subscribe_time +
+                ", remark='" + remark + '\'' +
+                ", id=" + id +
+                ", sex_str='" + sex_str + '\'' +
+                ", subscribe_time_str='" + subscribe_time_str + '\'' +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     private String sex_str;
     private String subscribe_time_str;//日期格式
@@ -132,22 +161,4 @@ public class User {
         this.subscribe = subscribe;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "subscribe=" + subscribe +
-                ", openid='" + openid + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", sex=" + sex +
-                ", language='" + language + '\'' +
-                ", city='" + city + '\'' +
-                ", province='" + province + '\'' +
-                ", country='" + country + '\'' +
-                ", headimgurl='" + headimgurl + '\'' +
-                ", subscribe_time=" + subscribe_time +
-                ", remark='" + remark + '\'' +
-                ", sex_str='" + sex_str + '\'' +
-                ", subscribe_time_str='" + subscribe_time_str + '\'' +
-                '}';
-    }
 }

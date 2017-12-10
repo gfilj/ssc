@@ -1,4 +1,4 @@
-package com.project.service.user;
+package com.project.service.weixin.user;
 
 import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
@@ -25,6 +25,12 @@ public class WechatUserService {
         int count = userService.selectPageListCount();
         page.setRowcountAndCompute(count);
         logger.info(page.toString());
-        return userService.selectPageList(page);
+        List<User> users = userService.selectPageList(page);
+        int i=1;
+        for(User user:users){
+            user.setId(page.getStart()+i);
+            i++;
+        }
+        return users;
     }
 }

@@ -1,6 +1,5 @@
 package com.project.provider;
 
-import com.project.common.sql.SqlUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.sql.UserRelation;
 import com.project.model.vo.Page;
@@ -10,7 +9,7 @@ import org.slf4j.Logger;
 /**
  * Created by goforit on 2017/12/3.
  */
-public class UserRelationSqlProvider {
+public class UserRelationLogSqlProvider {
 
     private Logger logger = LogUtil.getLogger(UserSqlProvider.class);
 
@@ -20,9 +19,8 @@ public class UserRelationSqlProvider {
      * @return
      */
     public String insert(final UserRelation userRelation){
-        String sql = new SQL() {{
-
-            INSERT_INTO("User_Relation");
+        return new SQL() {{
+            INSERT_INTO("User_Relation_Log");
             if (userRelation.getIntroducer() != null) {
                 VALUES("introducer", "#{introducer}");
                 VALUES("introducername", "#{introducername}");
@@ -34,31 +32,32 @@ public class UserRelationSqlProvider {
             VALUES("releation", "#{releation}");
             VALUES("lmodify", "#{lmodify}");
         }}.toString();
-        return SqlUtil.relaceInto(sql);
+
     }
 
 
     /**
-     *分页语句
+     *根据添加选择
      * @param page
      * @return
      */
-    public String selectPageList(Page page){
+    public String selectList(Page page,UserRelation userRelation){
         return new SQL(){{
-            SELECT("newmember, newmembername, introducer, introducername, lmodify");
+            SELECT("newmember, newmembername, releation, introducer, introducername, lmodify");
             FROM("User_Relation");
-            ORDER_BY("lmodify desc limit #{start},#{end}");
-        }}.toString();
-    }
-
-    /**
-     * count语句
-     * @return
-     */
-    public String selectPageListCount(){
-        return new SQL(){{
-            SELECT("count(1)");
-            FROM("User_Relation");
+            if(userRelation.getNewmember() !=null){
+                WHERE("newmember = #{newmember}");
+            }
+            if(userRelation.getNewmembername() !=null){
+                WHERE("newmembername = #{newmembername}");
+            }
+            if(userRelation.getIntroducer() !=null){
+                WHERE("introducer = #{introducer}");
+            }
+            if(userRelation.getIntroducername() !=null){
+                WHERE("introducername = #{introducername}");
+            }
+            ORDER_BY("lmodify desc");
         }}.toString();
     }
 

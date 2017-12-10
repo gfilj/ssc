@@ -6,6 +6,7 @@ import com.project.common.util.LogUtil;
 import com.project.mapper.UserMapper;
 import com.project.model.sql.User;
 import com.project.model.vo.Page;
+import com.project.service.user.AbstracUserService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

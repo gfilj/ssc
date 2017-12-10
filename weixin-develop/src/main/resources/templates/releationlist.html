@@ -19,25 +19,21 @@
         <thead class="thead-inverse">
         <tr>
             <th>#</th>
-            <th>昵称</th>
-            <th>openID</th>
-            <th>性别</th>
-            <th>城市</th>
-            <th>省份</th>
-            <th>国家</th>
+            <th>粉丝</th>
+            <th>粉丝openID</th>
+            <th>推荐人</th>
+            <th>推荐openID</th>
             <th>关注时间</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="user:${list}">
             <th> <span th:text="${user.id}"/> </th>
-            <td th:text="${user.nickname}"></td>
-            <td th:text="${user.openid}"></td>
-            <td th:text="${user.sex_str}">性别</td>
-            <td th:text="${user.city}">城市</td>
-            <td th:text="${user.province}">省份</td>
-            <td th:text="${user.country}">国家</td>
-            <td th:text="${user.subscribe_time_str}">注册时间</td>
+            <td th:text="${user.newmembername}"></td>
+            <td th:text="${user.newmember}"></td>
+            <td th:text="${user.introducername}"></td>
+            <td th:text="${user.introducer}"></td>
+            <td th:text="${user.lmodify}"></td>
         </tr>
         </tbody>
     </table>

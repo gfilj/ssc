@@ -12,6 +12,15 @@ public class UserRelation {
     private Date lmodify;// datetime DEFAULT NULL COMMENT '修改时间',
     private String introducername;// varchar(45) DEFAULT NULL COMMENT '介绍人名字',
     private String newmembername;// varchar(45) DEFAULT NULL COMMENT '新粉丝名字',
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     private String lomodifyStr;//展示用
 

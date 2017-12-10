@@ -4,7 +4,6 @@ import com.project.BaseTest;
 import com.project.common.exception.BusinessException;
 import com.project.service.user.impl.UserRelationService;
 import com.project.service.user.impl.UserService;
-import com.project.type.Relation;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,6 +22,6 @@ public class UserRelationServiceTest extends BaseTest {
     private UserService userService;
     @Test
     public void testInsert() throws BusinessException {
-        userRelationService.insert(null,newStr, Relation.Unsubscrib.getValue());
+//        userRelationService.insert(null,newStr, Relation.Unsubscrib.getValue());
     }
 }

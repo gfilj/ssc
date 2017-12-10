@@ -1,5 +1,6 @@
 package com.project.provider;
 
+import com.project.common.sql.SqlUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.sql.User;
 import com.project.model.vo.Page;
@@ -36,7 +37,7 @@ public class UserSqlProvider {
             VALUES("subscribe_time", "#{subscribe_time}");
             VALUES("remark", "#{remark}");
         }}.toString();
-        sql = sql.replace("INSERT","REPLACE");
+        sql = SqlUtil.relaceInto(sql);
         logger.info(sql);
         return sql;
     }
@@ -53,7 +54,7 @@ public class UserSqlProvider {
     }
 
     /**
-     *
+     *分页语句
      * @param page
      * @return
      */

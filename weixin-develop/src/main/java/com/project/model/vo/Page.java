@@ -41,6 +41,30 @@ public class Page implements Serializable {
         this.row = row;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public boolean isFirst() {
+        return first;
+    }
+
+    public void setFirst(boolean first) {
+        this.first = first;
+    }
+
+    public boolean isLast() {
+        return last;
+    }
+
+    public void setLast(boolean last) {
+        this.last = last;
+    }
+
     public Page(int pageon, int row, int rowcount) {
         pageNumber = 11;
         this.pageon = pageon;
@@ -76,16 +100,18 @@ public class Page implements Serializable {
         if (rowcount <= 0)
             return;
         if (row <= 0)
-            row = 10;
+            row = 5;
         pagecount = rowcount % row != 0 ? rowcount / row + 1 : rowcount / row;
-        if (pageon > pagecount)
-            pageon = pagecount;
-        if (pageon < 1)
-            pageon = 1;
-        start = (pageon - 1) * row;
-        end = pageon * row ;
+        if (pageon > pagecount-1)
+            pageon = pagecount-1;
+        if (pageon < 0)
+            pageon = 0;
+        start = (pageon) * row;
+        end = (pageon+1) * row ;
         if (end > rowcount)
             end = rowcount;
+        first = pageon==0;
+        last= pageon==(pagecount-1);
     }
 
     public int getStart() {
@@ -116,7 +142,14 @@ public class Page implements Serializable {
     protected int start;
     protected int end;
     protected int pageNumber;
+    protected String url;
+    protected boolean first;
+    protected boolean last;
 
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     @Override
     public String toString() {
@@ -128,6 +161,9 @@ public class Page implements Serializable {
                 ", start=" + start +
                 ", end=" + end +
                 ", pageNumber=" + pageNumber +
+                ", url='" + url + '\'' +
+                ", first=" + first +
+                ", last=" + last +
                 '}';
     }
 }

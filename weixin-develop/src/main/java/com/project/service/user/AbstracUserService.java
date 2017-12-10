@@ -1,4 +1,4 @@
-package com.project.service.user.impl;
+package com.project.service.user;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

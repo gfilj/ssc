@@ -24,6 +24,9 @@ Button:
         name: "往期精彩"
         type: "view"
     客户中心:
+      - key: "KEY_INVITE"
+        name: "生成邀请码"
+        type: "click"
       - url: "http://mp.weixin.qq.com/s/UAG06wtMcqk9VpFhKF0cqg"
         name: "分销规则"
         type: "view"
@@ -40,9 +43,6 @@ Button:
       - url: "https://sojump.com/jq/15850998.aspx"
         name: "客户调研表"
         type: "view"
-      - key: "KEY_INVITE"
-        name: "生成邀请码"
-        type: "click"
 
 WechatCustomerProperty:
   add: https://api.weixin.qq.com/customservice/kfaccount/add?access_token=%s
@@ -57,4 +57,4 @@ ShareServiceProperty:
   shareLink: /wechat/material/share?url=%s&imgUrl=%s
   listLink: http://www.kurkuma.cn/wechat/material/list?qrUrl=%s
   cutImg: https://mmbiz.qpic.cn/mmbiz_png/OoxQeTGnyxEcLLD37qEYmdphyUrzCtqyJtnEKuU8utvMu1VC2sic2UMTd8JibeyBD8x6OxHuV0cZIuC7ibYGFOz0A/0?wx_fmt=png
-  proxyUrl: http://www.kurkuma.cn/wechat/material/imgUrl?url=
+  proxyUrl: /wechat/material/imgUrl?url=
