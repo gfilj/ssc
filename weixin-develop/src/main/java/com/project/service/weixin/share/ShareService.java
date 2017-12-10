@@ -77,8 +77,15 @@ public class ShareService {
         Matcher m_script = p_imgsrc.matcher(html);
         while (m_script.find()){
             String url = m_script.group(1);
-            String urlMd5Key = MD5Util.stringMD5(url);
-            map.put(urlMd5Key,url);
+            String makeUpUrl="";
+            if(!(url.startsWith("http:")||url.startsWith("https:"))){
+                makeUpUrl = "http:" + url;
+            }else{
+                makeUpUrl = url;
+            }
+            logger.info(makeUpUrl);
+            String urlMd5Key = MD5Util.stringMD5(makeUpUrl);
+            map.put(urlMd5Key,makeUpUrl);
             String proxyUrl = shareServiceProperty.getProxyUrl()+urlMd5Key;
             html= html.replace(url,proxyUrl);
         }
