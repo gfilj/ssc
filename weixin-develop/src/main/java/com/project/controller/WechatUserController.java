@@ -58,5 +58,18 @@ public class WechatUserController {
         return "releationlist";
     }
 
+//    @RequestMapping("/log")
+//    public String releation(Page page, Model model) {
+//        try {
+//            //设置Url
+//            page.setUrl("/wechat/user/releation");
+//            List<UserRelation> list = wechatUserReleationService.list(page);
+//            model.addAttribute("page", page);
+//            model.addAttribute("list", list);
+//        } catch (BusinessException e) {
+//            e.printStackTrace();
+//        }
+//        return "loglist";
+//    }
 
 }
