@@ -26,5 +26,17 @@ public class WechatUserReleationLogService extends WechatUserReleationService {
         return userRelationLogService.insert(generateUserRelation(introduce, member, releation));
     }
 
+    /**
+     * 外部暴露接口
+     * @param introduce
+     * @param member
+     * @param releation
+     * @return
+     * @throws BusinessException
+     */
+    public int insertCancle(String introduce, String member, int releation) throws BusinessException {
+        return userRelationLogService.insert(generateUserRelationCancle(introduce, member, releation));
+    }
+
 
 }

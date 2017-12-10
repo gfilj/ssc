@@ -2,8 +2,10 @@ package com.project.service.user;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.Date;
 
 /**
  * Created by goforit on 2017/12/3.
@@ -19,8 +21,12 @@ public abstract class AbstracUserService<T> {
      */
     public T parse(String userJson, String parameter) {
         JSONObject jsonObject = JSON.parseObject(userJson);
-        Long subscribe_time = jsonObject.getLong(parameter) * 1000;
-        jsonObject.put(parameter, subscribe_time);
+        if(StringUtils.isBlank(parameter)){
+            Long subscribe_time = jsonObject.getLong(parameter) * 1000;
+            jsonObject.put(parameter, subscribe_time);
+        }else{
+            jsonObject.put("subscribe_time", new Date());
+        }
         return JSONObject.parseObject(jsonObject.toJSONString(), getTClass());
 
     }

@@ -29,7 +29,7 @@ public class UnsubscribeProcessor extends AbstractEventProcessor implements Even
         //获取用户信息
         String cancleUserInfo = wechatAccessService.getUserInfo(cancelUser);
         logger.info("取消关注的粉丝信息：" + cancleUserInfo);
-        wechatUserReleationLogService.insert(null, cancleUserInfo, Relation.Unsubscrib.getValue());
+        wechatUserReleationLogService.insertCancle(null, cancleUserInfo, Relation.Unsubscrib.getValue());
         return "success";
     }
 }

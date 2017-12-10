@@ -58,18 +58,41 @@ public class WechatUserReleationService {
      * @param releation
      * @return
      */
-    protected UserRelation generateUserRelation(String introduce, String member, int releation) {
+    protected UserRelation generateUserRelation(String introduce, String member, int releation,String parameter) {
         UserRelation userRelation = new UserRelation();
         if(introduce !=null){
-            User user = userService.parse(introduce, "subscribe_time");
+            User user = userService.parse(introduce, parameter);
             userRelation.setIntroducer(user.getOpenid());
             userRelation.setIntroducername(user.getNickname());
         }
-        User newUser = userService.parse(member, "subscribe_time");
+        User newUser = userService.parse(member, parameter);
         userRelation.setNewmember(newUser.getOpenid());
         userRelation.setNewmembername(newUser.getNickname());
         userRelation.setLmodify(new Date());
         userRelation.setReleation(releation);
         return userRelation;
+    }
+
+
+    /**
+     * 生成reletion
+     * @param introduce
+     * @param member
+     * @param releation
+     * @return
+     */
+    protected UserRelation generateUserRelation(String introduce, String member, int releation) {
+        return generateUserRelation(introduce,member,releation,"subscribe_time");
+    }
+
+    /**
+     * 生成reletion
+     * @param introduce
+     * @param member
+     * @param releation
+     * @return
+     */
+    protected UserRelation generateUserRelationCancle(String introduce, String member, int releation) {
+        return generateUserRelation(introduce,member,releation,"");
     }
 }
