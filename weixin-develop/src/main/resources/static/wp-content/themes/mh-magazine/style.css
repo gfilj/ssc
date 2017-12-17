@@ -24,7 +24,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /***** Structure *****/
 
 html { font-size: 100%; -ms-text-size-adjust: none; -webkit-text-size-adjust: none; }
-body { font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-size: 0.875rem; line-height: 1.6; background: #f7f7f7; word-wrap: break-word; }
+body { font-family: PingFangSC-Regular, sans-serif,'Open Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-size: 0.875rem; line-height: 1.6; background: #f7f7f7; word-wrap: break-word; }
 .mh-container, .mh-container-inner { width: 100%; max-width: 1080px; margin: 0 auto; position: relative; }
 .mh-container-outer { margin: 25px auto; -webkit-box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.17); -moz-box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.17); box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.17); }
 .mh-wide-layout .mh-container-outer { margin: 0 auto; box-shadow: none; }
