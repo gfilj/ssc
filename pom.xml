@@ -13,7 +13,7 @@
         <module>ssc-schedule</module>
         <!--<module>ssc-web</module>-->
         <!--<module>ssc-web-root</module>-->
-        <module>goforit-webdriver</module>
+        <!--<module>goforit-webdriver</module>-->
         <!--<module>file-upload</module>-->
         <!--<module>pdf</module>-->
         <module>common-api</module>

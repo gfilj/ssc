@@ -1,24 +1,16 @@
 package com.project.webdriver.service;
 
-import com.project.common.webdriver.WebdriverUtil;
 import com.project.webdriver.login.WebLogin;
 import com.project.webdriver.model.BiBoHuiMitiBean;
 import com.project.webdriver.util.Constant;
 import org.apache.commons.collections.map.HashedMap;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
-import java.io.File;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -80,7 +72,7 @@ public class BiBoHuiGrab implements Runnable {
 
     //phantomjsPath
     private String phantomjsPath;
-    
+
     @Override
     public void run() {
         execute(biBoHuiMitiBean);
@@ -94,7 +86,7 @@ public class BiBoHuiGrab implements Runnable {
         PhantomJSDriver webDriver = null;
         log.info(Constant.INFOStr(getClass().getSimpleName() + " init") + biBoHuiMitiBean.toString());
         try {
-            webDriver = WebdriverUtil.getPhantomjsDriver(phantomjsPath);
+//            webDriver = WebdriverUtil.getPhantomjsDriver(phantomjsPath);
             WebLogin webLogin = initConfig.getWebLogin(getClass().getSimpleName());
 //            webLogin.execute(webDriver,biBoHuiMitiBean.getUserName(),biBoHuiMitiBean.getPassword());
 //            log.info(Constant.INFOStr(getClass().getSimpleName() + " login: " + webLogin.isAuthSuccess(webDriver)));

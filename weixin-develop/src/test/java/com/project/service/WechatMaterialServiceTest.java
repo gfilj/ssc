@@ -29,8 +29,8 @@ public class WechatMaterialServiceTest extends BaseTest {
 
     @Test
     public void testShowContent(){
-        System.out.println(wechatMaterialService.showContent("https://mp.weixin.qq" +
-                ".com/s/szpzQ6ID-3W-IVow6FUq9w"));
+//        System.out.println(wechatMaterialService.showContent("https://mp.weixin.qq" +
+//                ".com/s/szpzQ6ID-3W-IVow6FUq9w"));
     }
     private Request getMaterialRequest() {
        return new Request(Request.TypeEnum.NEWS,0,20);
