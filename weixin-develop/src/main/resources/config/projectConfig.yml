@@ -58,3 +58,24 @@ ShareServiceProperty:
   listLink: http://www.kurkuma.cn/wechat/material/list?qrUrl=%s
   cutImg: https://mmbiz.qpic.cn/mmbiz_png/OoxQeTGnyxEcLLD37qEYmdphyUrzCtqyJtnEKuU8utvMu1VC2sic2UMTd8JibeyBD8x6OxHuV0cZIuC7ibYGFOz0A/0?wx_fmt=png
   proxyUrl: /wechat/material/imgUrl?url=
+
+WebdriverProperty:
+  startUrl: https://shop.jd.com/index.action
+  iframeSrc: //*[@id="loginFrame"]
+  authXpath: //*[@id="account-login"]
+  userXpath: //*[@id="loginname"]
+  passXpath: //*[@id="nloginpwd"]
+  loginXpath: //*[@id="paipaiLoginSubmit"]
+  verificationCode: //*[@id="authcode"]
+  verificationImg: //*[@id="JD_Verification1"]
+  smsVerification: //*[@id="tab_phoneV"]
+  successUrl: //*[@id="_og_showContent"]
+  userName: sk303694
+  password: c168136355
+  phantomjsPath: /Users/apple/Work/phantomjs-2.1.1-macosx/bin/phantomjs
+
+OrderProperty:
+  orderList: https://order.shop.jd.com/order/sSopUp_allList.action?page=%s
+  totalPage: /html/body/div[2]/div/div[3]/div[1]/div/div/div[2]/div[3]/div/input[1]
+  limitPage: /html/body/div[2]/div/div[3]/div[1]/div/div/div[2]/div[3]/div/input[2]
+  detailTel: //*[@id="viewOrderMobile"]

@@ -13,6 +13,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.project</groupId>
+            <artifactId>common-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
             <version>3.5.2</version>
@@ -48,10 +53,6 @@
                 <exclusion>
                     <artifactId>selenium-java</artifactId>
                     <groupId>org.seleniumhq.selenium</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>guava</artifactId>
-                    <groupId>com.google.guava</groupId>
                 </exclusion>
                 <exclusion>
                     <artifactId>guava</artifactId>

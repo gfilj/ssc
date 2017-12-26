@@ -20,7 +20,9 @@ public enum ExceptionEnum {
     ARGUMENT_ILLEGAL_CAUSE(3002, "传入参数非法"),
     ARGUMENT_DEFINE_CAUSE(3003, "传入参数无此定义"),
 
-    WECHAT_REQUEST_ERROR(4001, "请求出错");
+    WECHAT_REQUEST_ERROR(4001, "请求出错"),
+
+    ORDER_IMPORT_LOGIN(200,"导入订单登录成功！");
 
 
     private int type;

@@ -72,7 +72,16 @@ public class ShareService {
     }
 
     public String addProxyUrl(String html){
+        //过滤Image 标签
         final String regEx_imgsrc = "<img [^>]*src=['\"]([^'\"]+)[^>]*>";
+        html = replaceMathch(html, regEx_imgsrc);
+
+        final String regEx_SectionUrl = "<section[^>]+url\\(&quot;([^)]+)&quot;\\)[^>]+>";
+        html = replaceMathch(html, regEx_SectionUrl);
+        return html;
+    }
+
+    public String replaceMathch(String html, String regEx_imgsrc) {
         Pattern p_imgsrc = Pattern.compile(regEx_imgsrc, Pattern.CASE_INSENSITIVE);
         Matcher m_script = p_imgsrc.matcher(html);
         while (m_script.find()){
@@ -83,7 +92,7 @@ public class ShareService {
             }else{
                 makeUpUrl = url;
             }
-            logger.info(makeUpUrl);
+            logger.info(regEx_imgsrc + ",匹配到:" + makeUpUrl);
             String urlMd5Key = MD5Util.stringMD5(makeUpUrl);
             map.put(urlMd5Key,makeUpUrl);
             String proxyUrl = shareServiceProperty.getProxyUrl()+urlMd5Key;

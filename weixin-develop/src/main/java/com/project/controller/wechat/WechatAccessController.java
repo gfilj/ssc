@@ -1,4 +1,4 @@
-package com.project.controller;
+package com.project.controller.wechat;
 
 import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * Created by goforit on 2017/10/22.
  */
 @Controller
-@RequestMapping("/wechat")
+@RequestMapping("/wechat/access")
 public class WechatAccessController {
 
     private Logger logger = LogUtil.getLogger(getClass());
@@ -29,7 +29,7 @@ public class WechatAccessController {
     @Resource
     private MessageService messageService;
 
-    @RequestMapping(method = RequestMethod.GET, value = " ")
+    @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
     String doGet(WechatAccessEntity wechatAccessEntity) {
         logger.info(String.valueOf(wechatAccessEntity));
@@ -45,7 +45,7 @@ public class WechatAccessController {
         return wechatAccessEntity.getEchostr();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "access")
+    @RequestMapping(method = RequestMethod.POST)
     public  @ResponseBody String doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
             String returnMessage = messageService.handleMessage(request);

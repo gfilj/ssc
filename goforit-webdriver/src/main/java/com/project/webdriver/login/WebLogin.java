@@ -1,7 +1,7 @@
 package com.project.webdriver.login;
 
+import com.project.common.webdriver.WebdriverUtil;
 import com.project.webdriver.util.Constant;
-import com.project.webdriver.util.WebdriverUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,7 +47,7 @@ public class WebLogin {
         try {
 //
             webDriver.get(startUrl);
-            if(isAuthSuccess(webDriver)){
+            if (isAuthSuccess(webDriver)) {
                 return;
             }
             //判断页面是否加载出

@@ -1,4 +1,4 @@
-package com.project.webdriver.util;
+package com.project.webdriver;
 
 import org.openqa.selenium.Cookie;
 import org.slf4j.Logger;

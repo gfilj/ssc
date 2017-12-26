@@ -1,9 +1,9 @@
 package com.project.webdriver.service;
 
+import com.project.common.extension.SpringUtil;
 import com.project.webdriver.login.WebLogin;
 import com.project.webdriver.util.Constant;
 import com.project.webdriver.util.Row;
-import com.project.webdriver.util.WebdriverUtil;
 import org.apache.commons.collections.map.HashedMap;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
@@ -34,18 +34,18 @@ public class InitConfig implements InitializingBean {
             Row row = Row.getInstance(v);
             String k = row.getString("name");
             webLoginManager.put(k, new WebLogin(
-                    row.getString("startUrl"),
-                    row.getString("authXpath"),
-                    row.getString("userName"),
-                    row.getString("password"),
-                    row.getString("userXpath"),
-                    row.getString("passXpath"),
-                    row.getString("loginXpath"),
-                    row.getString("authSuccessXpath"),
-                    row.getString("successUrl")
+                            row.getString("startUrl"),
+                            row.getString("authXpath"),
+                            row.getString("userName"),
+                            row.getString("password"),
+                            row.getString("userXpath"),
+                            row.getString("passXpath"),
+                            row.getString("loginXpath"),
+                            row.getString("authSuccessXpath"),
+                            row.getString("successUrl")
                     )
             );
-            log.info(String.format("k:%s,v:%s",k,webLoginManager.get(k)));
+            log.info(String.format("k:%s,v:%s", k, webLoginManager.get(k)));
         });
     }
 
@@ -53,7 +53,7 @@ public class InitConfig implements InitializingBean {
         return originalList;
     }
 
-    public WebLogin getWebLogin(String name){
+    public WebLogin getWebLogin(String name) {
         return webLoginManager.get(name);
     }
 }

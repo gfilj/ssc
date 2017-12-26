@@ -1,4 +1,4 @@
-package com.project.controller;
+package com.project.controller.wechat;
 
 import com.project.common.exception.BusinessException;
 import com.project.model.sql.User;

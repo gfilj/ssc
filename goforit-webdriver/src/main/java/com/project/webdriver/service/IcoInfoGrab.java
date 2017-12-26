@@ -1,8 +1,8 @@
 package com.project.webdriver.service;
 
+import com.project.common.webdriver.WebdriverUtil;
 import com.project.webdriver.login.WebLogin;
 import com.project.webdriver.util.Constant;
-import com.project.webdriver.util.WebdriverUtil;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.springframework.beans.factory.annotation.Autowired;
