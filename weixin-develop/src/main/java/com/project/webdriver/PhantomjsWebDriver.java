@@ -326,6 +326,6 @@ public class PhantomjsWebDriver implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        init(webdriverProperty.getPhantomjsPath());
+//        init(webdriverProperty.getPhantomjsPath());
     }
 }
