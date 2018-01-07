@@ -47,7 +47,7 @@ public class UserRelationSqlProvider {
         return new SQL(){{
             SELECT("newmember, newmembername, introducer, introducername, lmodify");
             FROM("User_Relation");
-            ORDER_BY("lmodify desc limit #{start},#{end}");
+            ORDER_BY("lmodify desc limit #{start},#{row}");
         }}.toString();
     }
 

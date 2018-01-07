@@ -294,21 +294,21 @@ public class PhantomjsWebDriver implements InitializingBean {
     }
 
     /**
-     * 当前页面打印
+     * 当前页面url打印
      */
     public void pageUrlPrint() {
         log.info(phantomJSDriver.getCurrentUrl());
     }
 
     /**
-     * 当前页面打印
+     * 当前页面整理资源打印
      */
     public void pageSourcePrint() {
         log.info(phantomJSDriver.getPageSource());
     }
 
     /**
-     * 当前页面打印
+     * 当前页面处理窗口打印
      */
     public void windowHanderPrint() {
         String currentWindow = phantomJSDriver.getWindowHandle();

@@ -62,7 +62,7 @@ public class UserSqlProvider {
         return new SQL(){{
             SELECT("openid, nickname, sex, city, province, country, subscribe_time");
             FROM("User");
-            ORDER_BY("subscribe_time desc limit #{start},#{end}");
+            ORDER_BY("subscribe_time desc limit #{start},#{row}");
         }}.toString();
     }
 
