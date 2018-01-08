@@ -25,10 +25,18 @@ public class ResultBuilder {
         this.result = result;
     }
 
-    public Result build(ExceptionEnum exceptionEnum, Object data){
-        result.setData(data);
-        result.setMsg(exceptionEnum.getDescription());
+//    public Result build(ExceptionEnum exceptionEnum, Object data){
+//        result.setData(data);
+//        result.setMsg(exceptionEnum.getDescription());
+//        result.setResultcode(exceptionEnum.getType());
+//        return result;
+//    }
+
+    public static Result build(ExceptionEnum exceptionEnum, Object info){
+        Result result = new Result();
         result.setResultcode(exceptionEnum.getType());
+        result.setMsg(exceptionEnum.getDescription());
+        result.setData(info);
         return result;
     }
 }
