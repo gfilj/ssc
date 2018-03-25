@@ -6,6 +6,7 @@ import com.project.model.message.response.Article;
 import com.project.model.message.response.NewsMessage;
 import com.project.service.message.util.MessageUtil;
 import com.project.service.weixin.access.WechatAccessService;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ import java.util.Map;
 @Service
 public class MsgDispatcher {
 
-    private Logger logger = LogUtil.getLogger(MsgDispatcher.class);
+    private Log logger = LogUtil.getLogger(MsgDispatcher.class);
 
     public static final String qrCodeMessage = "二维码";
 

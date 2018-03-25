@@ -11,6 +11,7 @@ import com.project.webmagic.model.Order;
 import com.project.webmagic.model.OrderDetail;
 import com.project.webmagic.pipeline.OrderDetailPipeline;
 import com.project.webmagic.pipeline.OrderPipeline;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-    Logger logger = LogUtil.getLogger(getClass());
+    Log logger = LogUtil.getLogger(getClass());
 
     @Autowired
     private PhantomjsDriverDownloader phantomjsDriverDownloader;

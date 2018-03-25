@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.springframework.dao.DataAccessException;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,5 +25,8 @@ public interface UserMapper {
 
     @SelectProvider(type = UserSqlProvider.class, method = "selectPageListCount")
     int selectPageListCount() throws DataAccessException;
+
+    @SelectProvider(type = UserSqlProvider.class, method = "selectList")
+    List<User> selectList() throws DataAccessException;
 
 }

@@ -6,8 +6,7 @@ import com.project.common.result.Result;
 import com.project.common.result.ResultBuilder;
 import com.project.common.util.LogUtil;
 import com.project.service.order.OrderService;
-import com.project.webdriver.login.LoginService;
-import org.slf4j.Logger;
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/distribution/orderImport")
 public class OrderImportController {
-    private Logger logger = LogUtil.getLogger(getClass());
+    private Log logger = LogUtil.getLogger(getClass());
 
     @Autowired
     private OrderService orderService;

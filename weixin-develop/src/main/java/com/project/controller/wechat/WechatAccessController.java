@@ -5,6 +5,7 @@ import com.project.common.util.LogUtil;
 import com.project.model.WechatAccessEntity;
 import com.project.service.message.MessageService;
 import com.project.service.weixin.access.WechatAccessService;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/wechat/access")
 public class WechatAccessController {
 
-    private Logger logger = LogUtil.getLogger(getClass());
+    private Log logger = LogUtil.getLogger(getClass());
 
     @Resource
     private WechatAccessService wechatAccessService;

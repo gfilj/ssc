@@ -1,6 +1,7 @@
 package com.project.common.network;
 
 import com.project.common.util.LogUtil;
+import org.apache.commons.logging.Log;
 import org.apache.http.*;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -27,7 +28,6 @@ import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
-import org.slf4j.Logger;
 import org.springframework.util.StringUtils;
 
 import javax.net.ssl.SSLContext;
@@ -55,7 +55,7 @@ public class NetUtil {
 
     public static final String USER_AGENT = "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)";
 
-    public static Logger logger = LogUtil.getLogger(NetUtil.class);
+    public static Log logger = LogUtil.getLogger(NetUtil.class);
 
     /**
      * 获取单例的httpclient对象.

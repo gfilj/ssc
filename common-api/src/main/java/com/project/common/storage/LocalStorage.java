@@ -2,6 +2,7 @@ package com.project.common.storage;
 
 import com.project.common.util.LogUtil;
 import org.apache.commons.collections.map.HashedMap;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 
 import java.io.*;
@@ -13,7 +14,7 @@ import java.util.Map;
  */
 public class LocalStorage<T> {
 
-    private Logger logger = LogUtil.getLogger(getClass());
+    private Log logger = LogUtil.getLogger(getClass());
 
     private String path;
 

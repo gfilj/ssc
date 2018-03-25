@@ -1,18 +1,15 @@
 package com.project.webdriver.login.impl;
 
-import com.netflix.discovery.converters.Auto;
 import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
-import com.project.webdriver.CookieUtil;
 import com.project.webdriver.PhantomjsWebDriver;
 import com.project.webdriver.cookie.CookieService;
 import com.project.webdriver.login.LoginService;
 import com.project.webdriver.login.WebdriverProperty;
-import com.project.webdriver.PhantomjsWebDriver;
+import org.apache.commons.logging.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +23,7 @@ import java.util.Set;
 public class LoginServiceImpl implements LoginService {
 
 
-    private Logger logger = LogUtil.getLogger(getClass());
+    private Log logger = LogUtil.getLogger(getClass());
 
     @Autowired
     private WebdriverProperty webdriverProperty;

@@ -4,7 +4,7 @@ import com.project.common.exception.BusinessException;
 import com.project.common.extension.SpringUtil;
 import com.project.common.util.LogUtil;
 import com.project.processor.event.EventProcessor;
-import org.slf4j.Logger;
+import org.apache.commons.logging.Log;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -15,7 +15,7 @@ import java.util.Map;
 @Service
 public class EventDispatcher {
     
-    private Logger logger = LogUtil.getLogger(EventDispatcher.class);
+    private Log logger = LogUtil.getLogger(EventDispatcher.class);
 
     public String processEvent(Map<String, String> map) throws BusinessException {
         String eventProcessorStr = map.get("Event") + "Processor";

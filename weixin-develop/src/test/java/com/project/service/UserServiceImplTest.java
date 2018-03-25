@@ -32,10 +32,10 @@ public class UserServiceImplTest extends BaseTest {
 
     @Test
     public void testSelectPageList() throws BusinessException {
-        Page page = new Page(1);
-        page.setRowcountAndCompute(1000);
-        System.out.println(page);
-        System.out.println(userService.selectPageList(page));
+//        Page page = new Page(1);
+//        page.setRowcountAndCompute(1000);
+//        System.out.println(page);
+//        System.out.println(userService.selectPageList(page));
     }
 
     @Test

@@ -4,15 +4,15 @@ import com.project.common.sql.SqlUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.sql.User;
 import com.project.model.vo.Page;
+import org.apache.commons.logging.Log;
 import org.apache.ibatis.jdbc.SQL;
-import org.slf4j.Logger;
 
 /**
  * Created by goforit on 2017/12/2.
  */
 public class UserSqlProvider {
 
-    private Logger logger = LogUtil.getLogger(UserSqlProvider.class);
+    private Log logger = LogUtil.getLogger(UserSqlProvider.class);
 
     /**
      * 插入语句
@@ -63,6 +63,19 @@ public class UserSqlProvider {
             SELECT("openid, nickname, sex, city, province, country, subscribe_time");
             FROM("User");
             ORDER_BY("subscribe_time desc limit #{start},#{row}");
+        }}.toString();
+    }
+
+
+    /**
+     *分页语句 PageHelper
+     * @return
+     */
+    public String selectList(){
+        return new SQL(){{
+            SELECT("openid, nickname, sex, city, province, country, subscribe_time");
+            FROM("User");
+            ORDER_BY("subscribe_time desc");
         }}.toString();
     }
 

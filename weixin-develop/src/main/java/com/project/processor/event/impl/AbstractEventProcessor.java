@@ -4,7 +4,7 @@ import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
 import com.project.processor.event.EventProcessor;
 import com.project.service.weixin.access.WechatAccessService;
-import org.slf4j.Logger;
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public abstract class AbstractEventProcessor implements EventProcessor {
 
-    protected Logger logger = LogUtil.getLogger(getClass());
+    protected Log logger = LogUtil.getLogger(getClass());
 
     @Autowired
     protected WechatAccessService wechatAccessService;

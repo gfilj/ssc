@@ -7,6 +7,7 @@ import com.project.mapper.UserRelationMapper;
 import com.project.model.sql.UserRelation;
 import com.project.model.vo.Page;
 import com.project.service.user.AbstracUserService;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,7 @@ public class UserRelationService extends AbstracUserService<UserRelation> {
     private UserRelationMapper userRelationMapper;
 
 
-    private Logger logger = LogUtil.getLogger(UserRelationService.class);
+    private Log logger = LogUtil.getLogger(UserRelationService.class);
 
     /**
      *

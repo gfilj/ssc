@@ -3,6 +3,7 @@ package com.project.webmagic.pipeline;
 import com.project.common.util.LogUtil;
 import com.project.webmagic.model.Order;
 import com.project.webmagic.model.OrderDetail;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 import us.codecraft.webmagic.Task;
@@ -17,7 +18,7 @@ import java.util.Map;
 @Service
 public class OrderDetailPipeline implements PageModelPipeline<OrderDetail> {
 
-    Logger logger = LogUtil.getLogger(getClass());
+    Log logger = LogUtil.getLogger(getClass());
 
     Map<String,OrderDetail> orderDetailMap = new HashMap<>();
 

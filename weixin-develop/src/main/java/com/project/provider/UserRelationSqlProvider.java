@@ -4,15 +4,15 @@ import com.project.common.sql.SqlUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.sql.UserRelation;
 import com.project.model.vo.Page;
+import org.apache.commons.logging.Log;
 import org.apache.ibatis.jdbc.SQL;
-import org.slf4j.Logger;
 
 /**
  * Created by goforit on 2017/12/3.
  */
 public class UserRelationSqlProvider {
 
-    private Logger logger = LogUtil.getLogger(UserSqlProvider.class);
+    private Log logger = LogUtil.getLogger(UserSqlProvider.class);
 
     /**
      * 插入语句

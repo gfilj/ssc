@@ -2,6 +2,7 @@ package com.project.webmagic;
 
 import com.project.common.util.LogUtil;
 import com.project.webdriver.login.LoginService;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class PhantomjsDriverDownloader extends AbstractDownloader {
 
     private int threadNum;
 
-    Logger logger = LogUtil.getLogger(getClass());
+    Log logger = LogUtil.getLogger(getClass());
     @Override
     public Page download(Request request, Task task) {
         logger.info("启动下载任务,下载链接：" + request.getUrl());

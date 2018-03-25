@@ -8,6 +8,7 @@ import com.project.common.network.NetUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.menu.Button;
 import com.project.service.weixin.access.WechatAccessService;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class WechatMenuService extends WechatAccessService implements InitializingBean {
 
-    private Logger logger = LogUtil.getLogger(getClass());
+    private Log logger = LogUtil.getLogger(getClass());
 
 
     @Autowired

@@ -7,10 +7,10 @@ import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.xml.PrettyPrintWriter;
 import com.thoughtworks.xstream.io.xml.XppDriver;
+import org.apache.commons.logging.Log;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.slf4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;
@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
  */
 public class MessageUtil {
 
-    private static Logger logger = LogUtil.getLogger(MessageUtil.class);
+    private static Log logger = LogUtil.getLogger(MessageUtil.class);
 
     /**
      * 返回消息类型：文本

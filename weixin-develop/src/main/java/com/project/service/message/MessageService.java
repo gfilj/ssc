@@ -6,6 +6,7 @@ import com.project.common.util.LogUtil;
 import com.project.dispatcher.EventDispatcher;
 import com.project.dispatcher.MsgDispatcher;
 import com.project.service.message.util.MessageUtil;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ import java.util.Map;
 @Service
 public class MessageService {
 
-    private Logger logger = LogUtil.getLogger(getClass());
+    private Log logger = LogUtil.getLogger(getClass());
     @Autowired
     private EventDispatcher eventDispatcher;
     @Autowired

@@ -8,7 +8,7 @@ import com.project.common.model.Row;
 import com.project.common.network.NetUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.AccessTokenEntity;
-import org.slf4j.Logger;
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ import java.util.Map;
 @Service
 public class WechatAccessService {
 
-    protected Logger logger = LogUtil.getLogger(getClass());
+    protected Log logger = LogUtil.getLogger(getClass());
 
     @Autowired
     protected WechatAccessProperty wechatAccessProperty;

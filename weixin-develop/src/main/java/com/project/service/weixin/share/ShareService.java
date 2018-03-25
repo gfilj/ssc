@@ -2,6 +2,7 @@ package com.project.service.weixin.share;
 
 import com.project.common.util.LogUtil;
 import com.project.common.util.MD5Util;
+import org.apache.commons.logging.Log;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
@@ -24,7 +25,7 @@ public class ShareService {
 
     @Autowired
     private ShareServiceProperty shareServiceProperty;
-    private Logger logger = LogUtil.getLogger(ShareService.class);
+    private Log logger = LogUtil.getLogger(ShareService.class);
 
     private Map<String,String> map = new HashMap<String,String>();
 

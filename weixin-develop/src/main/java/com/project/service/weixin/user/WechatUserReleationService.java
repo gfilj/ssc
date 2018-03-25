@@ -1,12 +1,15 @@
 package com.project.service.weixin.user;
 
+import com.github.pagehelper.PageHelper;
 import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
+import com.project.config.PageHelperConfiguration;
 import com.project.model.sql.User;
 import com.project.model.sql.UserRelation;
 import com.project.model.vo.Page;
 import com.project.service.user.impl.UserRelationService;
 import com.project.service.user.impl.UserService;
+import org.apache.commons.logging.Log;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,18 +27,20 @@ public class WechatUserReleationService {
     private UserRelationService userRelationService;
     @Autowired
     private UserService userService;
-    private Logger logger = LogUtil.getLogger(getClass());
+    private Log logger = LogUtil.getLogger(getClass());
 
     public List<UserRelation> list(Page page) throws BusinessException {
+        PageHelper.offsetPage(page.getOffset(),page.getSize());
         int count = userRelationService.selectPageListCount();
-        page.setRowcountAndCompute(count);
+//        page.setRowcountAndCompute(count);
         logger.info(page.toString());
         List<UserRelation> userRelations = userRelationService.selectPageList(page);
         int i=1;
         for(UserRelation userRelation:userRelations){
-            userRelation.setId(page.getStart()+i);
+            userRelation.setId(page.getOffset()+i);
             i++;
         }
+
         return userRelations;
     }
 
