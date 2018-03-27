@@ -62,4 +62,15 @@ public class UserRelationSqlProvider {
         }}.toString();
     }
 
+    /**
+     *分页语句 PageHelper
+     * @return
+     */
+    public String selectList(){
+        return new SQL(){{
+            SELECT("introducer, newmember, releation, lmodify, introducername, newmembername");
+            FROM("User_Relation");
+            ORDER_BY("lmodify desc");
+        }}.toString();
+    }
 }

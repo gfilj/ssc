@@ -63,4 +63,16 @@ public class UserRelationLogSqlProvider {
         }}.toString();
     }
 
+    /**
+     *展示列表
+     * @return
+     */
+    public String selectListNew(){
+        return new SQL(){{
+            SELECT("introducer, newmember, releation, lmodify, introducername, newmembername");
+            FROM("User_Relation_Log");
+            ORDER_BY("lmodify asc");
+        }}.toString();
+    }
+
 }

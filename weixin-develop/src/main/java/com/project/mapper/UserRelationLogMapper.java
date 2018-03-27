@@ -23,4 +23,6 @@ public interface UserRelationLogMapper {
     @SelectProvider(type = UserRelationLogSqlProvider.class, method = "selectList")
     List<User> selectList(Page page, UserRelation userRelation) throws DataAccessException;
 
+    @SelectProvider(type = UserRelationLogSqlProvider.class, method = "selectListNew")
+    List<UserRelation> selectListNew() throws DataAccessException;
 }

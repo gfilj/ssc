@@ -24,4 +24,7 @@ public interface UserRelationMapper {
 
     @SelectProvider(type = UserRelationSqlProvider.class, method = "selectPageListCount")
     int selectPageListCount() throws DataAccessException;
+
+    @SelectProvider(type = UserRelationSqlProvider.class, method = "selectList")
+    List<UserRelation> selectList() throws DataAccessException;
 }

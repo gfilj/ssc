@@ -11,6 +11,8 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by goforit on 2017/12/3.
  */
@@ -39,7 +41,20 @@ public class UserRelationLogService extends AbstracUserService<UserRelation> {
         }
     }
 
-
+    /**
+     * 选择列表数据
+     * @return
+     * @throws BusinessException
+     */
+    public List<UserRelation> selectList() throws BusinessException{
+        String funcname = "选择列表数据";
+        try {
+            return userRelationLogMapper.selectListNew();
+        } catch (Throwable e) {
+            logger.error(LogUtil.logstr(funcname,"报错",""), e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "selectList");
+        }
+    }
 
 
 }

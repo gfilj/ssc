@@ -72,5 +72,19 @@ public class UserRelationService extends AbstracUserService<UserRelation> {
         }
     }
 
+    /**
+     * 选择列表数据
+     * @return
+     * @throws BusinessException
+     */
+    public List<UserRelation> selectList() throws BusinessException{
+        String funcname = "选择列表数据";
+        try {
+            return userRelationMapper.selectList();
+        } catch (Throwable e) {
+            logger.error(LogUtil.logstr(funcname,"报错",""), e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "selectList");
+        }
+    }
 
 }
