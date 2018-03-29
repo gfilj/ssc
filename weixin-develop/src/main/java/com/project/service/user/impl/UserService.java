@@ -94,4 +94,19 @@ public class UserService extends AbstracUserService<User> {
         }
     }
 
+    /**
+     * 搜索用户
+     * @return
+     * @throws BusinessException
+     */
+    public User selectOne(String openid) throws BusinessException{
+        String funcname = "搜索用户";
+        try {
+            return userMapper.selectOne(openid);
+        } catch (Throwable e) {
+            logger.error(LogUtil.logstr(funcname,"报错",""), e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "selectOne");
+        }
+    }
+
 }

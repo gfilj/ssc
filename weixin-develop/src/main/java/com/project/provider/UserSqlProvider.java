@@ -79,5 +79,16 @@ public class UserSqlProvider {
         }}.toString();
     }
 
+    /**
+     * 搜索用户
+     * @return
+     */
+    public String selectOne(String openid){
+        return new SQL(){{
+            SELECT("openid, nickname, sex, city, province, country, subscribe_time");
+            FROM("User");
+            WHERE("openid=#{openid}");
+        }}.toString();
+    }
 
 }

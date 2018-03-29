@@ -29,4 +29,7 @@ public interface UserMapper {
     @SelectProvider(type = UserSqlProvider.class, method = "selectList")
     List<User> selectList() throws DataAccessException;
 
+    @SelectProvider(type = UserSqlProvider.class, method = "selectOne")
+    User selectOne(String openid) throws DataAccessException;
+
 }

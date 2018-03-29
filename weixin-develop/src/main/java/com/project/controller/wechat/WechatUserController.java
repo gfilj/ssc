@@ -1,5 +1,6 @@
 package com.project.controller.wechat;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageInfo;
 import com.project.common.exception.BusinessException;
 import com.project.common.exception.ExceptionEnum;
@@ -49,6 +50,20 @@ public class WechatUserController {
             e.printStackTrace();
         }
         return "userlist";
+    }
+
+    @RequestMapping("/search")
+    @ResponseBody
+    public Result search(String openid) {
+        try {
+            //设置Url
+//            page.setUrl("/wechat/user/listjson");
+            User user = wechatUserService.search(openid);
+            return ResultBuilder.build(ExceptionEnum.WECHAT_USER, user);
+        } catch (BusinessException e) {
+            logger.error(e.getMessage(), e);
+            return e.getResult();
+        }
     }
 
     @RequestMapping("/releation")

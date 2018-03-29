@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.jws.soap.SOAPBinding;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.project.common.util.LogUtil.getLogger;
@@ -38,6 +39,14 @@ public class WechatUserService {
             i++;
         }
         return new PageInfo<User>(users);
+    }
+
+    public User search(String openid) throws BusinessException {
+        String funcname = "搜索用户";
+        logger.info(logstr(funcname,"openId",openid));
+        User user = userService.selectOne(openid);
+        user.setId(1);
+        return user;
     }
 }
 
