@@ -7,6 +7,6 @@ import com.project.model.sql.UserPrivilege;
  * Create by Fenix_Bao on 2018/4/1.
  */
 public interface UserPrivilegeService {
-    boolean set(String userPrivilege) throws Exception;
-    boolean get(String openid) throws Exception;
+    boolean set(UserPrivilege userPrivilege) throws Exception;
+    UserPrivilege get(String openid) throws Exception;
 }

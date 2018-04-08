@@ -11,7 +11,7 @@ public interface LoginService {
      * 用户登录服务，如果用户不存在则插入到数据库
      * @param UserPrivilege
      */
-    public UserPrivilege login(UserPrivilege userPrivilege) throws Exception;
+    public UserPrivilege login(String openid) throws Exception;
 
     /**
      * 用户登出服务（记录日志）

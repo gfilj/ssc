@@ -21,34 +21,12 @@ public class LoginServiceImpl implements LoginService {
     UserPrivilegeService userPrivilegeService;
 
     @Override
-    public UserPrivilege login(UserPrivilege userPrivilege) throws Exception {
-
-        String openid = userPrivilege.getOpenid();
-
-        UserPrivilege userPrivilege = userPrivilegeService.get(openid);
-        if (userInfo == null) {
-            if(userInfoVO.getRealname() == null){
-                userInfoVO.setRealname(userid);
-            }
-            userInfoService.addUserInfo(userInfoVO);
-        }else{
-            if (userInfo.getDel() != null && userInfo.getDel() == 1) {
-                throw new BusinessException(StatusCode.USER_DEL,"用户已经被删除，请联系相关管理人员！");
-            }
-            userInfoVO.setRealname(userInfo.getRealname());
-            userInfoVO.setBuloid(userInfo.getBuloid());
-            userInfoVO.setBuloname(userInfo.getBuloname());
-        }
-        try{
-            userInfoService.updateLoginInfo(userInfoVO);
-        }catch(Exception e){
-            logger.error("用户{}更新登录信息失败",userInfoVO.getUserid());
-        }
-        return userInfoVO;
+    public UserPrivilege login(String openid) throws Exception {
+        return userPrivilegeService.get(openid);
     }
 
     @Override
-    public boolean loginOut(UserInfoVO userInfoVO) {
+    public boolean loginOut(UserPrivilege userPrivilege) {
         return false;
     }
 }

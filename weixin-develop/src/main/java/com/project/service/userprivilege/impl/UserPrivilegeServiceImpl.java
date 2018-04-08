@@ -14,8 +14,9 @@ public class UserPrivilegeServiceImpl implements UserPrivilegeService {
         return false;
     }
 
+
     @Override
-    public boolean get(String openid) throws Exception {
-        return false;
+    public UserPrivilege get(String openid) throws Exception {
+        return null;
     }
 }
