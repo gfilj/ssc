@@ -9,18 +9,18 @@
 		<location>/404.html</location>
 	</error-page>
 	<!-- log4j2配置文件 -->
-	  <filter>
-	         <filter-name>log4jServletFilter</filter-name>
-	         <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
-     </filter>
-     <filter-mapping>
-     		<filter-name>log4jServletFilter</filter-name>
+	  <share.filter>
+	         <share.filter-name>log4jServletFilter</share.filter-name>
+	         <share.filter-class>org.apache.logging.log4j.web.Log4jServletFilter</share.filter-class>
+     </share.filter>
+     <share.filter-mapping>
+     		<share.filter-name>log4jServletFilter</share.filter-name>
 	         <url-pattern>/*</url-pattern>
 	         <dispatcher>REQUEST</dispatcher>
 	         <dispatcher>FORWARD</dispatcher>
 	         <dispatcher>INCLUDE</dispatcher>
 	         <dispatcher>ERROR</dispatcher>
-	  </filter-mapping>
+	  </share.filter-mapping>
 	  
 	  <listener>
 	  		<listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
@@ -47,19 +47,19 @@
 	</servlet-mapping>
 
 	<!-- spring, 设置页面传来的字符串的编码处理 -->
-	<filter>
-		<filter-name>Set Character Encoding</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	<share.filter>
+		<share.filter-name>Set Character Encoding</share.filter-name>
+		<share.filter-class>org.springframework.web.share.filter.CharacterEncodingFilter</share.filter-class>
 		<init-param>
 			<!-- encoding用来设置编码格式 -->
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
 		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>Set Character Encoding</filter-name>
+	</share.filter>
+	<share.filter-mapping>
+		<share.filter-name>Set Character Encoding</share.filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</share.filter-mapping>
 
 	<!-- 配置SPRING MVC -->
 	<servlet>

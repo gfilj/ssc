@@ -281,7 +281,7 @@ public class Row extends HashMap<Object, Object> {
 	/*
          * (non-Javadoc) 覆盖了父类的put方法
          *
-         * @see java.util.Map#put(java.lang.Object, java.lang.Object)
+         * @see java.share.util.Map#put(java.lang.Object, java.lang.Object)
          */
 	public Object put(Object name, Object value) {
 		if (!containsKey(name)) {

@@ -10,7 +10,7 @@ bin/
 aver_1_8_9.xml
 .target/
 *.iml
-src/main/java/com/project/pdf/util/
+src/main/java/com/project/pdf/share.util/
 src/main/resources/
 src/test/
 log/
@@ -27,7 +27,7 @@ file-upload/src/test/
 formBuilder/src/test/
 goforit-webdriver/src/test/
 out/
-pdf/src/main/java/com/project/pdf/util/
+pdf/src/main/java/com/project/pdf/share.util/
 pdf/src/main/resources/
 pdf/src/test/
 ssc-web-root/src/main/resources/static/autobet

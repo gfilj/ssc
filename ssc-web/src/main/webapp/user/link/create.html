@@ -93,12 +93,12 @@
         "jquery.longclick.min": ["jquery"],
         "3a.api": ["jBox"],
         "3a.line": ["3a.api"],
-        "3a.util": ["jBox"],
+        "3a.share.util": ["jBox"],
         'global':["jquery"],
-        "def":["3a.util", "3a.api", "dsgame_Ernie"],
-        "page":["jquery","pagination","3a.api", "3a.util", "dsgame_DatePicker"],
+        "def":["3a.share.util", "3a.api", "dsgame_Ernie"],
+        "page":["jquery","pagination","3a.api", "3a.share.util", "dsgame_DatePicker"],
         "home":["3a.api"],
-        "3a.counter":["3a.util"],
+        "3a.counter":["3a.share.util"],
         "cycletwo": ["jquery"],
         "cookie": ["jquery"],
         "marquee": ["jquery"],
@@ -108,7 +108,7 @@
         "dsgame_Select": ["jquery","dsgame_base", "mousewheel"],
         "dsgame_Ernie": ["jquery","dsgame_base"],
         "easing": ["jquery"],
-        "promo": ["jquery", "3a.util"],
+        "promo": ["jquery", "3a.share.util"],
         "clipboard": ["jquery"],
         "jquery.validate": ["jquery"],
         "dsgame_Tip": ["dsgame_base"],
@@ -123,7 +123,7 @@
       //'css!/assets/css/ucenter.css',
       'css!/static/theme/' + keyWords + '/styles/home.css',
       'css!/static/theme/' + keyWords + '/styles/colors.css',
-      'jquery','pagination','jBox','3a.api','3a.util',"jquery.validate" ,'easing','addtional','jquery.cookie',
+      'jquery','pagination','jBox','3a.api','3a.share.util',"jquery.validate" ,'easing','addtional','jquery.cookie',
       'cookie','cycletwo','marquee','global','def','home','page','3a.control'
     ], function() {
 
@@ -383,7 +383,7 @@
 					<div class="item-title">
 						<i class="item-icon-13"></i>选择账户类型
 					</div>
-					<div class="item-info filter-tabs-cont" id="J-user-type-switch-panel">
+					<div class="item-info share.filter-tabs-cont" id="J-user-type-switch-panel">
 						<a data-userTypeId="0" href="javascript:void(0);" class="user-type-icons"> <i class="user-type-icon-player"></i> <span>会员账号</span>
 						</a> <a data-userTypeId="1" href="javascript:void(0);" class="user-type-icons"> <i class="user-type-icon-agent"></i> <span>代理账号</span>
 						</a>
@@ -617,7 +617,7 @@ $('.user-type-icon-agent').parent().click();
 <script src="/static/scripts/3a.config.js"></script>-->
 <!-- build:js /static/scripts/3a.main.min.js -->
 <!--<script src="/static/scripts/3a.api.js"></script>
-<script src="/static/scripts/3a.util.js"></script>
+<script src="/static/scripts/3a.share.util.js"></script>
 <script src="/static/scripts/3a.default.js"></script>
 <script src="/static/scripts/3a.control.js"></script>
 <script src="/static/scripts/3a.speed.js"></script>

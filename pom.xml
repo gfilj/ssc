@@ -18,6 +18,8 @@
         <!--<module>pdf</module>-->
         <module>common-api</module>
         <module>formBuilder</module>
+        <module>ssc-session</module>
+        <module>ssc-redis</module>
         <module>weixin-develop</module>
     </modules>
 
@@ -134,6 +136,12 @@
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>2.9.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
         </dependency>
 
         <!-- test -->

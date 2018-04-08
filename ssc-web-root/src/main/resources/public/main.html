@@ -109,9 +109,9 @@
           "jquery.mCustomScrollbar.concat.min": ["jquery"],
           "3a.api": ["jBox"],
           "3a.line": ["3a.api"],
-          "3a.util": ["jBox","sio"],
+          "3a.share.util": ["jBox","sio"],
           'global':["jquery"],
-          "def":["3a.util", "3a.api"],
+          "def":["3a.share.util", "3a.api"],
           "home":["3a.api"],
           "jscrollpane":["jquery"],
           "cycletwo": ["jquery"],
@@ -142,7 +142,7 @@
       var allreqjs = [
         'css!/static/theme/' + keyWords + '/styles/lottery.css',
         'css!/static/theme/'+keyWords+'/styles/colors',
-        'jquery','jBox','3a.api','3a.util','easing','cookie','jscrollpane','mousewheel','marquee','global','def','home','sound',
+        'jquery','jBox','3a.api','3a.share.util','easing','cookie','jscrollpane','mousewheel','marquee','global','def','home','sound',
         'dsgame_base','dsgame_Mask','dsgame_Tab','dsgame_Ernie','dsgame_Hover',
         'dsgame_Select','dsgame_Timer','dsgame_Message','dsgame_MiniWindow','dsgame_SliderBar','dsgame_Tip'
       ];
@@ -539,7 +539,7 @@
       		 <option value="0.0005">厘</option>
       	
       </select>
-										<div class="filter-tabs-cont" id="J-balls-statistics-moneyUnit-trigger">
+										<div class="share.filter-tabs-cont" id="J-balls-statistics-moneyUnit-trigger">
 											
 												<a href="javacript:;" data-value="0.5000">元</a>
 											
@@ -711,9 +711,9 @@
 			<div class="chase-tab">
 				<div class="chase-tab-content">
 					<div class="trace-title-param">
-						<div class="filter-tabs">
-							<span class="filter-tabs-title">连续追:</span>
-							<div class="filter-tabs-cont J-trace-tongbei-times-filter">
+						<div class="share.filter-tabs">
+							<span class="share.filter-tabs-title">连续追:</span>
+							<div class="share.filter-tabs-cont J-trace-tongbei-times-share.filter">
 								<a href="javascript:void(0);" data-value="5">5期</a>
 								<a href="javascript:void(0);" data-value="10">10期</a>
 								<a href="javascript:void(0);" data-value="15">15期</a>
@@ -995,7 +995,7 @@ var loadgamejs = 'dsgame.game-ssc.min.js';
 <script src="/static/scripts/3a.config.js"></script>-->
 <!-- build:js /static/scripts/3a.main.min.js -->
 <!--<script src="/static/scripts/3a.api.js"></script>
-<script src="/static/scripts/3a.util.js"></script>
+<script src="/static/scripts/3a.share.util.js"></script>
 <script src="/static/scripts/3a.default.js"></script>
 <script src="/static/scripts/3a.control.js"></script>
 <script src="/static/scripts/3a.speed.js"></script>

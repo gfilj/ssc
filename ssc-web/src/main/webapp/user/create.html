@@ -98,12 +98,12 @@
         "jquery.longclick.min": ["jquery"],
         "3a.api": ["jBox"],
         "3a.line": ["3a.api"],
-        "3a.util": ["jBox"],
+        "3a.share.util": ["jBox"],
         'global':["jquery"],
-        "def":["3a.util", "3a.api", "dsgame_Ernie"],
-        "page":["jquery","pagination","3a.api", "3a.util", "dsgame_DatePicker"],
+        "def":["3a.share.util", "3a.api", "dsgame_Ernie"],
+        "page":["jquery","pagination","3a.api", "3a.share.util", "dsgame_DatePicker"],
         "home":["3a.api"],
-        "3a.counter":["3a.util"],
+        "3a.counter":["3a.share.util"],
         "cycletwo": ["jquery"],
         "cookie": ["jquery"],
         "marquee": ["jquery"],
@@ -113,7 +113,7 @@
         "dsgame_Select": ["jquery","dsgame_base", "mousewheel"],
         "dsgame_Ernie": ["jquery","dsgame_base"],
         "easing": ["jquery"],
-        "promo": ["jquery", "3a.util"],
+        "promo": ["jquery", "3a.share.util"],
         "clipboard": ["jquery"],
         "jquery.validate": ["jquery"],
         "dsgame_Tip": ["dsgame_base"],
@@ -128,7 +128,7 @@
       //'css!/assets/css/ucenter.css',
       'css!/static/theme/' + keyWords + '/styles/home.css',
       'css!/static/theme/' + keyWords + '/styles/colors.css',
-      'jquery','pagination','jBox','3a.api','3a.util',"jquery.validate" ,'easing','addtional','jquery.cookie',
+      'jquery','pagination','jBox','3a.api','3a.share.util',"jquery.validate" ,'easing','addtional','jquery.cookie',
       'cookie','cycletwo','marquee','global','def','home','page','3a.control'
     ], function() {
 
@@ -410,7 +410,7 @@
 								<div class="item-title">
 									<i class="item-icon-13"></i>选择账户类型
 								</div>
-								<div class="item-info filter-tabs-cont"
+								<div class="item-info share.filter-tabs-cont"
 									id="J-user-type-switch-panel">
 									<a id="J-input-userType" data-userTypeId="0"
 										href="javascript:void(0);" class="user-type-icons"> <i

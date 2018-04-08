@@ -61,7 +61,7 @@ var _displaymax ={'db2':4};//测速网址最大显示数量
 var _mobileMmc = 1;//不定义此变量时为不显示移动端秒秒彩
 var _skipfirst = 0;//是否忽略第一次测试，1为忽略，0为不忽略
 var _switchCall = function() {
-  window.location.reload();//切换手机端PC端后的回调事件3a.util.js
+  window.location.reload();//切换手机端PC端后的回调事件3a.share.util.js
 }
 //var _isCompressingPost = 1;//为undefined时不压缩提交参数，存在时压缩参数
 var hotlink = "https://kf1.learnsaas.com/chat/chatClient/chatbox.jsp?companyID=819082&configID=64920&jid=6634132239&s=1"; //客服链接
