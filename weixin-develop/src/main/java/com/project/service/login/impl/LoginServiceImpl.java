@@ -1,9 +1,9 @@
 package com.project.service.login.impl;
 
 import com.project.common.util.LogUtil;
-import com.project.model.sql.UserPrivilege;
+import com.project.model.sql.SystemUser;
 import com.project.service.login.LoginService;
-import com.project.service.userprivilege.UserPrivilegeService;
+import com.project.service.systemuser.SystemUserService;
 import org.apache.commons.logging.Log;
 import org.springframework.stereotype.Service;
 
@@ -18,15 +18,15 @@ public class LoginServiceImpl implements LoginService {
     private Log logger = LogUtil.getLogger(getClass());
 
     @Resource
-    UserPrivilegeService userPrivilegeService;
+    SystemUserService systemUserService;
 
     @Override
-    public UserPrivilege login(String openid) throws Exception {
-        return userPrivilegeService.get(openid);
+    public SystemUser login(String username) throws Exception {
+        return systemUserService.select(username);
     }
 
     @Override
-    public boolean loginOut(UserPrivilege userPrivilege) {
+    public boolean loginOut(SystemUser systemUser) {
         return false;
     }
 }

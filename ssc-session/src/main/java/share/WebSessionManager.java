@@ -5,10 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import share.storage.RedisSessionHandler;
 import share.storage.StorageHandler;
 
-
+@Component
 public class WebSessionManager {
 	private static final Logger logger = LoggerFactory.getLogger(WebSessionManager.class);
 

@@ -1,11 +1,12 @@
-package com.project.controller.wechat.login;
+package com.project.controller.login;
 
 import com.project.common.util.LogUtil;
+import com.project.constant.WebConstant;
+import com.project.model.sql.SystemUser;
 import com.project.service.login.LoginService;
 import org.apache.commons.logging.Log;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import share.WebContext;
 import share.WebSession;
@@ -14,12 +15,12 @@ import javax.annotation.Resource;
 import javax.jws.WebResult;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
 
 /**
  * Create by Fenix_Bao on 2018/3/31.
  */
 @Controller
+@RequestMapping("/system")
 public class LoginController {
     //用户信息数据有效时间
     public static final int USER_CACHE_TIME_OUT_SECONDS = 12 * 60 * 60;
@@ -30,52 +31,21 @@ public class LoginController {
     private LoginService loginService;
 
     @RequestMapping(value="/login")
-    public String login(HttpServletRequest request, HttpServletResponse response,
-                        @RequestParam(defaultValue="/index.html") String redirectUrl) {
-
-//        String sessionToken = request.getParameter(ProjectConfig.AuthzConfig.PRIVILEGE_AUTHC_TOKEN);
-//
-//        String content = authzUserAgain(sessionToken);
-//        if (content == null) {
-//            //网络连接出现异常
-//            logger.error("网络连接异常");
-//        }
-//
-//        AuthzParam ap = parseAuthzData(content);
-//        if (ap == null) {
-//            //认证失败
-//            logger.error("网络连接异常");
-//        }
-//        ap.setSessionToken(sessionToken);
-        WebSession session = WebContext.getSession().initWebSession();
-        //AuthzParamUtil.setAuthzParam(ap);
-
-//        UserInfoVO userInfoVO = new UserInfoVO();
-//        userInfoVO.setUserid(ap.getAccount().trim());
-//        userInfoVO.setBuloname(ap.getEmail());
-//        userInfoVO.setRealname(ap.getName());
-//        userInfoVO.setBuloid(ap.getCard());
-//        UserInfoVO user = null;
-//        try {
-//            user = loginService.login(userInfoVO);
-//        } catch (BusinessException e) {
-//            quitAuthzUser(sessionToken);
-//            logger.error("登录系统时出现异常," + e.getMessage());
-//            return "redirect:error.html?errorCode=" + e.getErrorCode();//失败时需要指定跳转地址
-//        }catch (Exception e) {
-//            quitAuthzUser(sessionToken);
-//            logger.error("登录系统时出现异常," + e.getMessage());
-//            return "redirect:error.html?errorCode=" + CommonStatusCode.StatusCode.USER_LOGIN_FAILED;//失败时需要指定跳转地址
-//        }
-
-//        logger.info(userInfoVO.getUserid() +  " login");
-//
-//        session.setAttribute(WebConstant.CURRENT_USER, user);
-//        session.setAttribute(WebConstant.CURRENT_USER_AUTH_ID,ap.getId());
-//
-//        session.setMaxInactiveInterval(USER_CACHE_TIME_OUT_SECONDS);
-
-        return "redirect:" + redirectUrl;
+    public String login(String username, String password) {
+        SystemUser systemUser = null;
+        try {
+            systemUser = loginService.login(username);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "login fail";
+        }
+        if(systemUser!=null&&systemUser.getPassword().equals(password)){
+            WebSession session = WebContext.getSession().initWebSession();
+            session.setAttribute(WebConstant.CURRENT_USER, systemUser);
+            session.setMaxInactiveInterval(USER_CACHE_TIME_OUT_SECONDS);
+            return "login success";
+        }
+        return "login fail";
     }
 
     @RequestMapping(value="/quit")

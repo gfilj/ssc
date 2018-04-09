@@ -19,6 +19,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import redis.RedisDao;
+import redis.factory.RedisDaoFactory;
 
 import java.util.List;
 
@@ -35,6 +37,8 @@ public class WechatUserController {
     private WechatUserReleationService wechatUserReleationService;
     @Autowired
     private WechatUserReleationLogService wechatUserReleationLogService;
+
+    private RedisDao sessionRedisDao = RedisDaoFactory.getSimpleRedisDao("session");
 
     Log logger = LogUtil.getLogger(getClass());
 
@@ -57,7 +61,6 @@ public class WechatUserController {
     public Result search(String openid) {
         try {
             //设置Url
-//            page.setUrl("/wechat/user/listjson");
             User user = wechatUserService.search(openid);
             return ResultBuilder.build(ExceptionEnum.WECHAT_USER, user);
         } catch (BusinessException e) {

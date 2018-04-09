@@ -1,7 +1,7 @@
 package com.project.session;
 
 import com.project.constant.WebConstant;
-import com.project.model.sql.UserPrivilege;
+import com.project.model.sql.SystemUser;
 import share.WebContext;
 import share.WebSession;
 
@@ -13,64 +13,64 @@ import java.util.Map;
 public class SessionUtil {
     /**
      * 获取当前用户的角色信息Map，保存的是频道号到list<roleid>的一个映射map
-     * @param openid 属性key
+     * @param username 属性key
      * @return 会话属性值
      */
-    public static Map getCurrentUserPrivilegeinfo(String openid) {
+    public static Map getCurrentUserPrivilegeinfo(String username) {
         WebSession session = WebContext.getSession();
-        Map obj = session.getAttribute(openid, Map.class);
+        Map obj = session.getAttribute(username, Map.class);
         return obj;
     }
 
     /**
      * 获取当前用户
-     * @param openid 属性key
+     * @param username 属性key
      * @return 会话属性值
      */
-    public static UserPrivilege getCurrentUser(String openid) {
+    public static SystemUser getCurrentUser(String username) {
         WebSession session = WebContext.getSession();
-        UserPrivilege obj = session.getAttribute(openid, UserPrivilege.class);
+        SystemUser obj = session.getAttribute(username, SystemUser.class);
         return obj;
     }
 
     /**
      * 设置当前用户
-     * @param openid
+     * @param username
      * @param value
      */
-    public static void setCurrentUser(String openid, Object value) {
+    public static void setCurrentUser(String username, Object value) {
         WebSession session = WebContext.getSession();
-        session.setAttribute(openid, value);
+        session.setAttribute(username, value);
     }
 
     /**
      * 获取用户会话属性
-     * @param openid 属性key
+     * @param username 属性key
      * @return 会话属性值
      */
-    public static Object getAttribute(String openid, Class<?> cls) {
+    public static Object getAttribute(String username, Class<?> cls) {
         WebSession session = WebContext.getSession();
-        return session.getAttribute(openid, cls);
+        return session.getAttribute(username, cls);
     }
 
     /**
      * 获取用户会话属性
-     * @param openid 属性key
+     * @param username 属性key
      * @return 会话属性值
      */
-    public static String getStringAttribute(String openid) {
+    public static String getStringAttribute(String username) {
         WebSession session = WebContext.getSession();
-        return session.getAttribute(openid);
+        return session.getAttribute(username);
     }
 
     /**
      * 获取用户会话属性
-     * @param openid 属性key
+     * @param username 属性key
      * @return 会话属性值
      */
-    public static String[] getStringArrayAttribute(String openid, Class<?> cls) {
+    public static String[] getStringArrayAttribute(String username, Class<?> cls) {
         WebSession session = WebContext.getSession();
-        Object obj = session.getAttribute(openid, cls);
+        Object obj = session.getAttribute(username, cls);
         if(obj == null){
             return null;
         }
@@ -79,12 +79,12 @@ public class SessionUtil {
 
     /**
      * 设置用户会话属性值
-     * @param openid
+     * @param username
      * @param value
      */
-    public static void setAttribute(String openid, Object value) {
+    public static void setAttribute(String username, Object value) {
         WebSession session = WebContext.getSession();
-        session.setAttribute(openid, value);
+        session.setAttribute(username, value);
     }
 
     /**
@@ -101,15 +101,15 @@ public class SessionUtil {
     /**
      * 获取当前user's openid
      */
-    public static String getOpenId(){
+    public static String getUsername(){
         WebSession session = WebContext.getSession();
         if(session == null){
             return "无sessionid";
         }
-        UserPrivilege user = session.getAttribute(WebConstant.CURRENT_USER, UserPrivilege.class);
+        SystemUser user = session.getAttribute(WebConstant.CURRENT_USER, SystemUser.class);
         if(user==null){
             return "未登录";
         }
-        return user.getOpenid();
+        return user.getUsername();
     }
 }

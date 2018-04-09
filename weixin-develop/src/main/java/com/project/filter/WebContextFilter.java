@@ -1,5 +1,10 @@
 package com.project.filter;
 
+import com.project.common.util.LogUtil;
+import org.apache.commons.logging.Log;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import share.WebContext;
@@ -7,6 +12,7 @@ import share.WebSession;
 import share.WebSessionManager;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -15,10 +21,15 @@ import java.io.IOException;
  * $myDescription
  * Create by Fenix_Bao on 2018/4/1.
  */
+@Component
+@Order(1)
+@WebFilter(urlPatterns = "/*",filterName = "WebContextFilter")
 public class WebContextFilter implements Filter {
 
     private ServletContext ctx;
     private WebApplicationContext wac;
+
+    private Log logger = LogUtil.getLogger(getClass());
 
     @Override
     public void init(FilterConfig config) throws ServletException {
@@ -37,7 +48,6 @@ public class WebContextFilter implements Filter {
 //            chain.doFilter(req, res);
 //            return;
 //        }
-
         try {
             WebSessionManager sessionManager = (WebSessionManager) this.wac.getBean(WebSessionManager.class);
             WebSession session = sessionManager.getSession(httpRequest,httpResponse);
