@@ -25,17 +25,6 @@
             <version>1.6.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>4.3.10.RELEASE</version>
-        </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
@@ -43,10 +32,7 @@
             <version>1.10.19</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
         <!--模板-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
