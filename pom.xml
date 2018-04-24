@@ -9,19 +9,19 @@
     <name>ssc</name>
     <description>ssc</description>
     <modules>
-        <module>ssc-spider</module>
-        <module>ssc-schedule</module>
+        <!--<module>ssc-spider</module>-->
+        <!--<module>ssc-schedule</module>-->
         <!--<module>ssc-web</module>-->
         <!--<module>ssc-web-root</module>-->
         <!--<module>goforit-webdriver</module>-->
         <!--<module>pdf</module>-->
         <module>common-api</module>
-        <module>formBuilder</module>
+        <!--<module>formBuilder</module>-->
         <module>ssc-session</module>
         <module>ssc-redis</module>
-        <module>weixin-develop</module>
-        <module>template</module>
+        <!-- <module>template</module>-->
         <module>upload-server</module>
+        <module>weixin-develop</module>
     </modules>
 
     <parent>

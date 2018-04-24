@@ -11,5 +11,8 @@
 
     <artifactId>redis</artifactId>
 
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
 
 </project>

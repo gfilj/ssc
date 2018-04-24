@@ -43,7 +43,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <finalName>${project.artifactId}-${project.version}</finalName>
     </build>
-
     <artifactId>upload-server</artifactId>
 </project>
