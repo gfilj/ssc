@@ -29,7 +29,6 @@ public class LogUtil {
             for (int i = 1; i < strArr.length; i += 2) {
                 log += String.format(reg, strArr[i], strArr[i + 1]);
             }
-//            log += String.format(reg, "userId", SessionUtil.getUserId());
             return log;
         }
         return "日志不符合要求";
