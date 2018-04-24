@@ -1,5 +1,6 @@
 package com.project.mapper;
 
+import com.project.model.sql.SystemUser;
 import com.project.model.sql.User;
 import com.project.model.vo.Page;
 import com.project.provider.SystemUserSqlProvider;
@@ -18,17 +19,17 @@ import java.util.List;
 @Mapper
 public interface SystemUserMapper {
     @InsertProvider(type = SystemUserSqlProvider.class, method = "insert")
-    int insert(User user) throws DataAccessException;
+    int insert(SystemUser systemUser) throws DataAccessException;
 
     @SelectProvider(type = SystemUserSqlProvider.class, method = "selectPageList")
-    List<User> selectPageList(Page page) throws DataAccessException;
+    List<SystemUser> selectPageList(Page page) throws DataAccessException;
 
     @SelectProvider(type = SystemUserSqlProvider.class, method = "selectPageListCount")
     int selectPageListCount() throws DataAccessException;
 
     @SelectProvider(type = SystemUserSqlProvider.class, method = "selectList")
-    List<User> selectList() throws DataAccessException;
+    List<SystemUser> selectList() throws DataAccessException;
 
     @SelectProvider(type = SystemUserSqlProvider.class, method = "selectOne")
-    User selectOne(String openid) throws DataAccessException;
+    SystemUser selectOne(String username) throws DataAccessException;
 }

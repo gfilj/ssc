@@ -16,13 +16,13 @@ public class SystemUserServiceImpl implements SystemUserService {
     private SystemUserMapper systemUserMapper;
 
     @Override
-    public boolean insert(SystemUser systemUser) throws Exception {
-        return false;
+    public int insert(SystemUser systemUser) throws Exception {
+        return systemUserMapper.insert(systemUser);
     }
 
 
     @Override
     public SystemUser select(String username) throws Exception {
-        return null;
+        return systemUserMapper.selectOne(username);
     }
 }

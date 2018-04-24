@@ -6,12 +6,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
+@Component
 public class WebCookieHandler implements CookieHandler {
 	private static final Logger logger = LoggerFactory.getLogger(WebCookieHandler.class);
 	private String cookieName = "_#pe_nid";
 	private String domain;
-	private String path;
+	private String path ;
 	private int cookieMaxAge = -1;
 	private boolean secure = false;
 	private boolean httpOnly = true;
@@ -24,16 +26,19 @@ public class WebCookieHandler implements CookieHandler {
 		}
 		if ((this.path != null) && (!this.path.isEmpty())) {
 			cookie.setPath(this.path);
-			logger.debug("path  is " + this.path);
+			logger.info("1 path  is " + this.path);
 		} else {
 			String contextPath = request.getContextPath();
 			if (contextPath == null) {
 				cookie.setPath("/");
-				logger.debug("path  is  / ");
+				logger.info("2 path  is  / ");
 			} else {
-				cookie.setPath(contextPath);
+				//cookie.setPath(contextPath);
+				cookie.setPath("/");
+				logger.info("3 path  is  =="+contextPath+"11111");
 			}
 		}
+		logger.info("cookie's path:"+cookie.getPath());
 		if (this.cookieMaxAge > 0) {
 			cookie.setMaxAge(this.cookieMaxAge);
 		} else {

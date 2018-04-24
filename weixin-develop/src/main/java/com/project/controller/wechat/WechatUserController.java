@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import redis.RedisDao;
 import redis.factory.RedisDaoFactory;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -58,7 +60,8 @@ public class WechatUserController {
 
     @RequestMapping("/search")
     @ResponseBody
-    public Result search(String openid) {
+    public Result search(String openid, HttpServletRequest request, HttpServletResponse response) {
+        logger.info("in controller:"+request.getContextPath()+"11111");
         try {
             //设置Url
             User user = wechatUserService.search(openid);

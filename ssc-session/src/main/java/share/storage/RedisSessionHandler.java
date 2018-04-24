@@ -1,6 +1,7 @@
 package share.storage;
 
 
+import org.springframework.stereotype.Component;
 import redis.RedisDao;
 import redis.factory.RedisDaoFactory;
 import share.util.SessionIdGenerator;
@@ -8,6 +9,7 @@ import share.util.SessionIdGenerator;
 /**
  * 自定义session 基类
  */
+@Component
 public class RedisSessionHandler implements StorageHandler{
     
 	private static final long serialVersionUID = -3437702686249069252L;

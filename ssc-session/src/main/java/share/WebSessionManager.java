@@ -5,23 +5,31 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import share.storage.RedisSessionHandler;
 import share.storage.StorageHandler;
 
-@Component
+@Service("WebSessionManager")
 public class WebSessionManager {
 	private static final Logger logger = LoggerFactory.getLogger(WebSessionManager.class);
 
+	@Value("${cookie.readOnly}")
 	private boolean readOnly;
+	@Autowired
 	private CookieHandler cookieHandler;
+	@Autowired
 	private StorageHandler sessionHandler;
 
 	public WebSession getSession(HttpServletRequest request,HttpServletResponse response) {
 		try {
 		    WebSession session = null;
 			String sessionId = this.cookieHandler.getSessionId(request,response);
+			logger.info("getSession sessionId:"+sessionId);
+			logger.info("readOnly:"+readOnly);
 			if (sessionId == null) {
 				session = new WebSession(request, response, sessionHandler,cookieHandler);
 				if (!readOnly) {
@@ -30,7 +38,7 @@ public class WebSessionManager {
 			} else {
 				session = new WebSession(sessionId, request, response, sessionHandler,cookieHandler);
 			}
-			
+			logger.info("after getSession sessionId:"+session.getSessionId());
 			response.addHeader("Cache-Control", "private");
 			return session;
 		} catch (Exception e) {

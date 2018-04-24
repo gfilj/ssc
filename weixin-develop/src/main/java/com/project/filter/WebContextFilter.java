@@ -28,7 +28,6 @@ public class WebContextFilter implements Filter {
 
     private ServletContext ctx;
     private WebApplicationContext wac;
-
     private Log logger = LogUtil.getLogger(getClass());
 
     @Override
@@ -48,6 +47,8 @@ public class WebContextFilter implements Filter {
 //            chain.doFilter(req, res);
 //            return;
 //        }
+        logger.info("in WebContextFilter:"+httpRequest.getContextPath()+"1111");
+
         try {
             WebSessionManager sessionManager = (WebSessionManager) this.wac.getBean(WebSessionManager.class);
             WebSession session = sessionManager.getSession(httpRequest,httpResponse);

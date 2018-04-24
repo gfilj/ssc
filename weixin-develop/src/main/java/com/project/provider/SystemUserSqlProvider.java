@@ -51,7 +51,7 @@ public class SystemUserSqlProvider {
      */
     public String selectPageList(Page page){
         return new SQL(){{
-            SELECT("id, system_user, password, privilege");
+            SELECT("id, username, password, privilege");
             FROM("system_user");
             ORDER_BY("id desc limit #{start},#{row}");
         }}.toString();
@@ -64,7 +64,7 @@ public class SystemUserSqlProvider {
      */
     public String selectList(){
         return new SQL(){{
-            SELECT("id, system_user, password, privilege");
+            SELECT("id, username, password, privilege");
             FROM("system_user");
             ORDER_BY("id desc");
         }}.toString();
@@ -76,7 +76,7 @@ public class SystemUserSqlProvider {
      */
     public String selectOne(String username){
         return new SQL(){{
-            SELECT("id, system_user, password, privilege");
+            SELECT("id, username, password, privilege");
             FROM("system_user");
             WHERE("username=#{username}");
         }}.toString();

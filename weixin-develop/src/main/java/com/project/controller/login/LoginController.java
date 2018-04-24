@@ -1,5 +1,8 @@
 package com.project.controller.login;
 
+import com.project.common.exception.ExceptionEnum;
+import com.project.common.result.Result;
+import com.project.common.result.ResultBuilder;
 import com.project.common.util.LogUtil;
 import com.project.constant.WebConstant;
 import com.project.model.sql.SystemUser;
@@ -31,21 +34,23 @@ public class LoginController {
     private LoginService loginService;
 
     @RequestMapping(value="/login")
-    public String login(String username, String password) {
+    @ResponseBody
+    public Result login(String username, String password) {
         SystemUser systemUser = null;
+        logger.info("try to login:"+username+","+password);
         try {
             systemUser = loginService.login(username);
         } catch (Exception e) {
             e.printStackTrace();
-            return "login fail";
+            return ResultBuilder.build(ExceptionEnum.SYS_USER_LOGIN_FAIL,username);
         }
         if(systemUser!=null&&systemUser.getPassword().equals(password)){
             WebSession session = WebContext.getSession().initWebSession();
             session.setAttribute(WebConstant.CURRENT_USER, systemUser);
             session.setMaxInactiveInterval(USER_CACHE_TIME_OUT_SECONDS);
-            return "login success";
+            return ResultBuilder.build(ExceptionEnum.SYS_USER_LOGIN_SUCCESS,username);
         }
-        return "login fail";
+        return ResultBuilder.build(ExceptionEnum.SYS_USER_LOGIN_FAIL,username);
     }
 
     @RequestMapping(value="/quit")

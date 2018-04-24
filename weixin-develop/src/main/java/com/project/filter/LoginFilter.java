@@ -44,18 +44,22 @@ public class LoginFilter implements Filter {
 //        判断当前用户是否登录
         SystemUser cu = SessionUtil.getCurrentUser(WebConstant.CURRENT_USER);
         if (cu == null) {
-            httpResponse.setCharacterEncoding("UTF-8");
-            httpResponse.setContentType("application/json; charset=utf-8");
-            String jsonStr = "{\"loginUrl\":\"" + "http://localhost:8080/system/login?username=***&password=***" + "\",\"result\":" + "need login" + "}";
-            PrintWriter out = null;
-            try {
-                out = httpResponse.getWriter();
-                out.write(jsonStr);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (out != null) {
-                    out.close();
+            if(lgUrl.equals("/system/login")){
+                chain.doFilter(httpRequest, httpResponse);
+            }else {
+                httpResponse.setCharacterEncoding("UTF-8");
+                httpResponse.setContentType("application/json; charset=utf-8");
+                String jsonStr = "{\"loginUrl\":\"" + "http://localhost:8080/system/login?username=***&password=***" + "\",\"result\":" + "\"need login\"" + "}";
+                PrintWriter out = null;
+                try {
+                    out = httpResponse.getWriter();
+                    out.write(jsonStr);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    if (out != null) {
+                        out.close();
+                    }
                 }
             }
         } else {
