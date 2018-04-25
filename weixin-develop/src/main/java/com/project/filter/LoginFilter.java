@@ -20,9 +20,9 @@ import java.io.PrintWriter;
  * Create by Fenix_Bao on 2018/4/1.
  */
 
-@Component
-@Order(2)
-@WebFilter(urlPatterns = "/*",filterName = "loginFilter")
+//@Component
+//@Order(2)
+//@WebFilter(urlPatterns = "/*",filterName = "loginFilter")
 public class LoginFilter implements Filter {
 
     private Log logger = LogUtil.getLogger(getClass());

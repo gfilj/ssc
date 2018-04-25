@@ -28,8 +28,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test-autoconfigure</artifactId>
         </dependency>
-
-
     </dependencies>
 
     <properties>

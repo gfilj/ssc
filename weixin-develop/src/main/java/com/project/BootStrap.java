@@ -13,10 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {"com.project","share"})
 public class BootStrap {
     public static void main(String[] args) {
-
-
-
-
         SpringApplication.run(BootStrap.class);
     }
 }

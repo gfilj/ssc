@@ -3,6 +3,7 @@ package com.project;
 import java.io.IOException;
 import java.util.stream.Collectors;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -19,6 +20,7 @@ import com.project.storage.StorageFileNotFoundException;
 import com.project.storage.StorageService;
 
 @Controller
+@RequestMapping("/files")
 public class FileUploadController {
 
     private final StorageService storageService;
@@ -35,11 +37,10 @@ public class FileUploadController {
                 path -> MvcUriComponentsBuilder.fromMethodName(FileUploadController.class,
                         "serveInlineFile", path.getFileName().toString()).build().toString())
                 .collect(Collectors.toList()));
-
         return "uploadForm";
     }
 
-    @GetMapping("/files/{filename:.+}")
+    @GetMapping("/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
 
@@ -47,7 +48,7 @@ public class FileUploadController {
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
                 "attachment; filename=\"" + file.getFilename() + "\"").body(file);
     }
-    @GetMapping("/files/inline/{filename:.+}")
+    @GetMapping("/inline/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> serveInlineFile(@PathVariable String filename) {
 
@@ -65,6 +66,19 @@ public class FileUploadController {
                 "You successfully uploaded " + file.getOriginalFilename() + "!");
 
         return "redirect:/";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, produces = "application/json;charset=utf-8", value = "/upload")
+    public @ResponseBody
+    JSONObject handleFileUpload(@RequestParam("file")MultipartFile file) {
+        storageService.store(file);
+        JSONObject jo = new JSONObject();
+        jo.put("errno", 0);
+        jo.put("url", MvcUriComponentsBuilder.fromMethodName(FileUploadController.class,
+                "serveInlineFile", storageService.load(file.getOriginalFilename()).getFileName().toString()).build().toString());
+        jo.put("server", "");
+        jo.put("errMsg", "上传成功");
+        return jo;
     }
 
     @ExceptionHandler(StorageFileNotFoundException.class)

@@ -1,6 +1,5 @@
 package com.project.controller.wechat;
 
-import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageInfo;
 import com.project.common.exception.BusinessException;
 import com.project.common.exception.ExceptionEnum;
@@ -24,7 +23,6 @@ import redis.factory.RedisDaoFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * Created by goforit on 2017/11/27.
@@ -47,8 +45,6 @@ public class WechatUserController {
     @RequestMapping("/list")
     public String list(Page page, Model model) {
         try {
-            //设置Url
-//            page.setUrl("/wechat/user/list");
             PageInfo<User> list = wechatUserService.list(page);
             model.addAttribute("page", page);
             model.addAttribute("list", list);
@@ -61,7 +57,7 @@ public class WechatUserController {
     @RequestMapping("/search")
     @ResponseBody
     public Result search(String openid, HttpServletRequest request, HttpServletResponse response) {
-        logger.info("in controller:"+request.getContextPath()+"11111");
+        logger.info("in controller:" + request.getContextPath() + "11111");
         try {
             //设置Url
             User user = wechatUserService.search(openid);
@@ -75,9 +71,7 @@ public class WechatUserController {
     @RequestMapping("/releation")
     public String releation(Page page, Model model) {
         try {
-            //设置Url
-//            page.setUrl("/wechat/user/releation");
-            //List<UserRelation> list = wechatUserReleationService.list(page);
+
             PageInfo<UserRelation> list = wechatUserReleationService.list(page);
             model.addAttribute("page", page);
             model.addAttribute("list", list);
@@ -91,8 +85,7 @@ public class WechatUserController {
     @ResponseBody
     public Result listjson(Page page) {
         try {
-            //设置Url
-//            page.setUrl("/wechat/user/listjson");
+
             PageInfo<User> pageInfo = wechatUserService.list(page);
             return ResultBuilder.build(ExceptionEnum.WECHAT_USER_LIST, pageInfo);
         } catch (BusinessException e) {
@@ -106,8 +99,6 @@ public class WechatUserController {
     @ResponseBody
     public Result releationjson(Page page) {
         try {
-            //设置Url
-//            page.setUrl("/wechat/user/releationjson");
             PageInfo<UserRelation> pageInfo = wechatUserReleationService.list(page);
             return ResultBuilder.build(ExceptionEnum.WECHAT_USERRELEATION_LIST, pageInfo);
         } catch (BusinessException e) {
@@ -121,10 +112,8 @@ public class WechatUserController {
     @ResponseBody
     public Result releationlogjson(Page page) {
         try {
-            //设置Url
-//            page.setUrl("/wechat/user/releationjson");
             PageInfo<UserRelation> pageInfo = wechatUserReleationLogService.list(page);
-            return ResultBuilder.build(ExceptionEnum.WECHAT_USERRELEATION_LIST, pageInfo);
+            return ResultBuilder.build(ExceptionEnum.WECHAT_USERLOG_LIST, pageInfo);
         } catch (BusinessException e) {
             logger.error(e.getMessage(), e);
             return e.getResult();

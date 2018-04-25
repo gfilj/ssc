@@ -71,7 +71,7 @@ public class UserRelationLogSqlProvider {
         return new SQL(){{
             SELECT("introducer, newmember, releation, lmodify, introducername, newmembername");
             FROM("User_Relation_Log");
-            ORDER_BY("lmodify asc");
+            ORDER_BY("lmodify desc");
         }}.toString();
     }
 
