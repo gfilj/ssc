@@ -20,6 +20,7 @@ public class User {
     private String headimgurl;// varchar(1000) DEFAULT NULL COMMENT '头像',
     private Date subscribe_time;// datetime DEFAULT NULL COMMENT '注册',
     private String remark;// varchar(45) DEFAULT NULL COMMENT '备注',
+    private String qrCode;//二维码地址
     private int id;
 
     @Override
@@ -36,10 +37,19 @@ public class User {
                 ", headimgurl='" + headimgurl + '\'' +
                 ", subscribe_time=" + subscribe_time +
                 ", remark='" + remark + '\'' +
+                ", qrCode='" + qrCode + '\'' +
                 ", id=" + id +
                 ", sex_str='" + sex_str + '\'' +
                 ", subscribe_time_str='" + subscribe_time_str + '\'' +
                 '}';
+    }
+
+    public String getQrCode() {
+        return qrCode;
+    }
+
+    public void setQrCode(String qrCode) {
+        this.qrCode = qrCode;
     }
 
     public int getId() {

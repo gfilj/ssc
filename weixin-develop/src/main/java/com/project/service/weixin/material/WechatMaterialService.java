@@ -66,7 +66,6 @@ public class WechatMaterialService extends WechatAccessService {
         response.getItem().forEach((item) -> {
             item.getContent().getNews_item().forEach((news) -> {
                 map.put(news.getTitle(), shareService.createShareLink(news.getUrl(), qrUrl));
-
             });
         });
         return map;

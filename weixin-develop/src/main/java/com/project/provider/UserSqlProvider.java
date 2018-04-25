@@ -7,6 +7,8 @@ import com.project.model.vo.Page;
 import org.apache.commons.logging.Log;
 import org.apache.ibatis.jdbc.SQL;
 
+import java.util.Map;
+
 /**
  * Created by goforit on 2017/12/2.
  */
@@ -16,10 +18,11 @@ public class UserSqlProvider {
 
     /**
      * 插入语句
+     *
      * @param user
      * @return
      */
-    public String insert(final User user){
+    public String insert(final User user) {
         String sql = new SQL() {{
 
             INSERT_INTO("User");
@@ -36,6 +39,7 @@ public class UserSqlProvider {
             VALUES("headimgurl", "#{headimgurl}");
             VALUES("subscribe_time", "#{subscribe_time}");
             VALUES("remark", "#{remark}");
+            VALUES("qrCode", "#{qrCode}");
         }}.toString();
         sql = SqlUtil.relaceInto(sql);
         logger.info(sql);
@@ -44,22 +48,24 @@ public class UserSqlProvider {
 
     /**
      * count语句
+     *
      * @return
      */
-    public String selectPageListCount(){
-        return new SQL(){{
+    public String selectPageListCount() {
+        return new SQL() {{
             SELECT("count(1)");
             FROM("User");
         }}.toString();
     }
 
     /**
-     *分页语句
+     * 分页语句
+     *
      * @param page
      * @return
      */
-    public String selectPageList(Page page){
-        return new SQL(){{
+    public String selectPageList(Page page) {
+        return new SQL() {{
             SELECT("openid, nickname, sex, city, province, country, subscribe_time");
             FROM("User");
             ORDER_BY("subscribe_time desc limit #{start},#{row}");
@@ -68,11 +74,12 @@ public class UserSqlProvider {
 
 
     /**
-     *分页语句 PageHelper
+     * 分页语句 PageHelper
+     *
      * @return
      */
-    public String selectList(){
-        return new SQL(){{
+    public String selectList() {
+        return new SQL() {{
             SELECT("openid, nickname, sex, city, province, country, subscribe_time");
             FROM("User");
             ORDER_BY("subscribe_time desc");
@@ -81,14 +88,30 @@ public class UserSqlProvider {
 
     /**
      * 搜索用户
+     *
      * @return
      */
-    public String selectOne(String openid){
-        return new SQL(){{
+    public String selectOne(String openid) {
+        return new SQL() {{
             SELECT("openid, nickname, sex, city, province, country, subscribe_time");
             FROM("User");
             WHERE("openid=#{openid}");
         }}.toString();
+    }
+
+    /**
+     * 更新
+     */
+    public String update(User user) {
+        return new SQL() {
+            {
+                UPDATE("User");
+                if (user.getQrCode() != null) {
+                    SET("qrCode=" + user.getQrCode());
+                }
+                WHERE("openid=" + user.getOpenid());
+            }
+        }.toString();
     }
 
 }

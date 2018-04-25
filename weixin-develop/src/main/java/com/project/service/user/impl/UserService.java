@@ -109,4 +109,20 @@ public class UserService extends AbstracUserService<User> {
         }
     }
 
+    /**
+     * 更新
+     * @return
+     * @throws BusinessException
+     */
+    public int update(User user) throws BusinessException{
+        String funcname = "更新用户";
+        try {
+            return userMapper.update(user);
+        } catch (Throwable e) {
+            logger.error(LogUtil.logstr(funcname,"报错",""), e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "update");
+        }
+    }
+
+
 }

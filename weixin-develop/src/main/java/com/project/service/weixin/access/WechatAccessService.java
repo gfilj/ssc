@@ -106,7 +106,12 @@ public class WechatAccessService {
      */
     public String getUserInfo(String openId) throws BusinessException {
         String access_token = getToken();
-        Map<String, String> stringStringMap = Row.getInstance().put("access_token", access_token).put("openid", openId).put("lang", "zh_CN").toStringMap();
+        Map<String, String> stringStringMap = Row.getInstance()
+                .put("access_token", access_token)
+                .put("openid", openId)
+                .put("lang", "zh_CN")
+                .put("qrCode", generateShowRRUrl(openId))
+                .toStringMap();
         try {
             return NetUtil.getHttpContent(
                     wechatAccessProperty.getUserInfoUrl(),

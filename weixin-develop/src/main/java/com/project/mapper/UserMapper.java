@@ -6,10 +6,12 @@ import com.project.provider.UserSqlProvider;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.UpdateProvider;
 import org.springframework.dao.DataAccessException;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by goforit on 2017/12/2.
@@ -32,4 +34,6 @@ public interface UserMapper {
     @SelectProvider(type = UserSqlProvider.class, method = "selectOne")
     User selectOne(String openid) throws DataAccessException;
 
+    @UpdateProvider(type = UserSqlProvider.class, method = "update")
+    int update(User user) throws DataAccessException;
 }

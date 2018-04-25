@@ -30,12 +30,12 @@ public class WechatUserService {
 
     public PageInfo<User> list(Page page) throws BusinessException {
         String funcname = "微信用户列表";
-        PageHelper.offsetPage(page.getOffset(),page.getSize());
-        logger.info(logstr(funcname,"偏移量",page.getOffset(),"页面大小",page.getSize()));
+        PageHelper.offsetPage(page.getOffset(), page.getSize());
+        logger.info(logstr(funcname, "偏移量", page.getOffset(), "页面大小", page.getSize()));
         List<User> users = userService.selectList();
-        int i=1;
-        for(User user:users){
-            user.setId(page.getOffset()+i);
+        int i = 1;
+        for (User user : users) {
+            user.setId(page.getOffset() + i);
             i++;
         }
         return new PageInfo<User>(users);
@@ -43,10 +43,19 @@ public class WechatUserService {
 
     public User search(String openid) throws BusinessException {
         String funcname = "搜索用户";
-        logger.info(logstr(funcname,"openId",openid));
+        logger.info(logstr(funcname, "openId", openid));
         User user = userService.selectOne(openid);
         user.setId(1);
         return user;
     }
+
+    public int update(User user) throws BusinessException {
+        String funcname = "更新用户";
+        logger.info(logstr(funcname, "user", user.getNickname()));
+        return userService.update(user);
+
+    }
+
+
 }
 

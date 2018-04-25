@@ -9,6 +9,7 @@ import com.project.common.util.LogUtil;
 import com.project.model.sql.User;
 import com.project.model.sql.UserRelation;
 import com.project.model.vo.Page;
+import com.project.service.weixin.access.WechatAccessService;
 import com.project.service.weixin.user.WechatUserReleationLogService;
 import com.project.service.weixin.user.WechatUserReleationService;
 import com.project.service.weixin.user.WechatUserService;
@@ -38,6 +39,9 @@ public class WechatUserController {
     @Autowired
     private WechatUserReleationLogService wechatUserReleationLogService;
 
+    @Autowired
+    protected WechatAccessService wechatAccessService;
+
     private RedisDao sessionRedisDao = RedisDaoFactory.getSimpleRedisDao("session");
 
     Log logger = LogUtil.getLogger(getClass());
@@ -57,10 +61,14 @@ public class WechatUserController {
     @RequestMapping("/search")
     @ResponseBody
     public Result search(String openid, HttpServletRequest request, HttpServletResponse response) {
-        logger.info("in controller:" + request.getContextPath() + "11111");
         try {
             //设置Url
             User user = wechatUserService.search(openid);
+            if(user.getQrCode()==null){
+                user.setQrCode(wechatAccessService.generateShowRRUrl(user.getOpenid()));
+                wechatUserService.update(user);
+            }
+
             return ResultBuilder.build(ExceptionEnum.WECHAT_USER, user);
         } catch (BusinessException e) {
             logger.error(e.getMessage(), e);
