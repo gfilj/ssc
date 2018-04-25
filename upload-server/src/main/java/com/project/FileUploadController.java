@@ -20,7 +20,6 @@ import com.project.storage.StorageFileNotFoundException;
 import com.project.storage.StorageService;
 
 @Controller
-@RequestMapping("/files")
 public class FileUploadController {
 
     private final StorageService storageService;
@@ -30,7 +29,7 @@ public class FileUploadController {
         this.storageService = storageService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/files")
     public String listUploadedFiles(Model model) throws IOException {
 
         model.addAttribute("files", storageService.loadAll().map(
@@ -40,7 +39,7 @@ public class FileUploadController {
         return "uploadForm";
     }
 
-    @GetMapping("/{filename:.+}")
+    @GetMapping("/files/download/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
 
@@ -48,7 +47,7 @@ public class FileUploadController {
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
                 "attachment; filename=\"" + file.getFilename() + "\"").body(file);
     }
-    @GetMapping("/inline/{filename:.+}")
+    @GetMapping("/files/inline/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> serveInlineFile(@PathVariable String filename) {
 
@@ -57,7 +56,7 @@ public class FileUploadController {
                 "inline; filename=\"" + file.getFilename() + "\"").body(file);
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json;charset=utf-8", value = "/file")
+    @RequestMapping(method = RequestMethod.POST, produces = "application/json;charset=utf-8", value = "/files/upload")
     public String handleFileUpload(@RequestParam("file")MultipartFile file,
             RedirectAttributes redirectAttributes) {
 
@@ -68,7 +67,7 @@ public class FileUploadController {
         return "redirect:/";
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json;charset=utf-8", value = "/upload")
+    @RequestMapping(method = RequestMethod.POST, produces = "application/json;charset=utf-8", value = "/files/dynamic/upload")
     public @ResponseBody
     JSONObject handleFileUpload(@RequestParam("file")MultipartFile file) {
         storageService.store(file);
