@@ -1,5 +1,6 @@
 package com.project.storage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
@@ -50,6 +51,10 @@ public class FileSystemStorageService implements StorageService {
     @Override
     public Stream<Path> loadAll() {
         try {
+            File parentFile = new File(this.rootLocation.toUri());
+            if(!parentFile.exists()){
+                parentFile.mkdir();
+            }
             return Files.walk(this.rootLocation, 1)
                     .filter(path -> !path.equals(this.rootLocation))
                     .map(path -> this.rootLocation.relativize(path));
