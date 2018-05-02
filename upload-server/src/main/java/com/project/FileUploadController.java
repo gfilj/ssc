@@ -64,7 +64,8 @@ public class FileUploadController {
         redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded " + file.getOriginalFilename() + "!");
 
-        return "redirect:/";
+        return "redirect:/files";
+
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = "application/json;charset=utf-8", value = "/files/dynamic/upload")

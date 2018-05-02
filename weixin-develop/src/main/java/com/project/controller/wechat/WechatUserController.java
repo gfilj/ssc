@@ -62,7 +62,6 @@ public class WechatUserController {
     @ResponseBody
     public Result search(String openid, HttpServletRequest request, HttpServletResponse response) {
         try {
-            //设置Url
             User user = wechatUserService.search(openid);
             if(user.getQrCode()==null){
                 user.setQrCode(wechatAccessService.generateShowRRUrl(user.getOpenid()));
