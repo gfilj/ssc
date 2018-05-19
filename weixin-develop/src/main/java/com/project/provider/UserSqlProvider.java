@@ -80,8 +80,10 @@ public class UserSqlProvider {
      */
     public String selectList() {
         return new SQL() {{
-            SELECT("openid, nickname, sex, city, province, country, subscribe_time");
-            FROM("User");
+            SELECT("openid, nickname, sex, city, province, country, subscribe_time, remark, " +
+                    "qrCode, qrCode1, tel, name, identity, identitytime, highcode, supercode, " +
+                    "firstbuycode, firstbuycodeuse, wechat");
+            FROM("wechat.User");
             ORDER_BY("subscribe_time desc");
         }}.toString();
     }

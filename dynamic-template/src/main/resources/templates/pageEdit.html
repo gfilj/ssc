@@ -1,0 +1,116 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="p_container" th:fragment="pageEdit">
+    <div class="phone_cpt">
+        <h3>组件(带<em style="color:rgb(176, 2, 9);">*</em>为必选项)</h3>
+        <div id="core_cpt" class="col-xs-12">
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="welcome">
+                    <em class="nav1"></em> <span>欢迎文字</span>
+                </div>
+            </div>
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="pic">
+                    <em class="nav2"></em> <span>单张图</span>
+                </div>
+            </div>
+
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="carousel">
+                    <em class="nav4"></em><font class="selected_cpt_em">*</font> <span>轮播图</span>
+                </div>
+            </div>
+
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="linkNav">
+                    <em class="nav5"></em> <span>链接导航</span>
+                </div>
+            </div>
+
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="tNames">
+                    <em class="nav6"></em> <span>店铺名称</span>
+                </div>
+            </div>
+            <div class='cpt_item'>
+                <div class="cpt_item_node" id="tPhone" name="tPhone">
+                    <em class="nav8"></em> <span>店铺电话</span>
+                </div>
+            </div>
+
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="tAddress">
+                    <em class="nav10"></em> <span>店铺地址</span>
+                </div>
+            </div>
+
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="tMap">
+                    <em class="nav11"></em> <span>店铺地图</span>
+                </div>
+            </div>
+
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="tIntroduce">
+                    <em class="nav9"></em> <span>店铺简介</span>
+                </div>
+            </div>
+
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="tURL">
+                    <em class="nav14"></em> <span>跳转URL</span>
+                </div>
+            </div>
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="flink">
+                    <em class="nav13"></em> <span>友情链接</span>
+                </div>
+            </div>
+            <div class='cpt_item'>
+                <div class="cpt_item_node" name="countdown">
+                    <em class="nav15"></em><font class="selected_cpt_em">*</font> <span>倒计时</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="phone_preview">
+        <div class="phone_preview_icon">
+            <em class="glyphicon glyphicon-eye-open">预览</em>
+        </div>
+        <div class="phone_body">
+            <div class="phone_container" style="display: block;">
+                <div class="phone_show">
+                    <div id="init_div_phone" style="display: none;" class="countdown carousel"></div>
+                    <div class="row123">
+                        <div class="view" style="min-height:25px">
+                            <div class="cpt_show" name="countdown" id="countdown">倒计时长</div>
+                        </div>
+                    </div>
+                    <div class="row123">
+                        <div class="view">
+                            <div class="cpt_show" name="carousel">
+                                <div class="flexslider" style="margin:0">
+                                    <ul class="slides"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone_preview_show" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="download_body" style="display: none;"></div>
+    <!-- Start   右侧可编辑区 -->
+
+    <div class="phone_config">
+        <h3 class="config_title" id="config_title">组件管理</h3>
+        <div class="config_item" id="config_item" style="display: block;">
+            <div class="tips edit_cpt_suit edit_active">请在手机预览区域选择组件</div>
+
+        </div>
+    </div>
+</div>
+</html>

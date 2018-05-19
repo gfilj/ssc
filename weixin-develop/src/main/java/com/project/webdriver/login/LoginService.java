@@ -1,6 +1,7 @@
 package com.project.webdriver.login;
 
 import com.project.common.exception.BusinessException;
+import com.project.webdriver.login.model.LoginModel;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 /**
@@ -12,7 +13,7 @@ public interface LoginService {
      * 登录
      * @throws BusinessException
      */
-    void login() throws BusinessException;
+    LoginModel login() throws BusinessException;
 
     /**
      * 是否成功

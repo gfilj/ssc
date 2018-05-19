@@ -1,27 +1,32 @@
 package com.project.service.order.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.project.common.exception.BusinessException;
 import com.project.common.util.LogUtil;
+import com.project.model.vo.Page;
+import com.project.service.order.OrderDBService;
 import com.project.service.order.OrderProperty;
 import com.project.service.order.OrderService;
 import com.project.webdriver.PhantomjsWebDriver;
 import com.project.webdriver.login.WebdriverProperty;
 import com.project.webmagic.PhantomjsDriverDownloader;
-import com.project.webmagic.model.Order;
-import com.project.webmagic.model.OrderDetail;
+import com.project.model.order.Order;
+import com.project.model.order.OrderDetail;
+import com.project.webmagic.model.OrderDetailDB;
 import com.project.webmagic.pipeline.OrderDetailPipeline;
 import com.project.webmagic.pipeline.OrderPipeline;
 import org.apache.commons.logging.Log;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.model.OOSpider;
 
-import javax.swing.plaf.nimbus.NimbusStyle;
 import java.util.LinkedList;
 import java.util.List;
+
+import static com.project.common.util.LogUtil.logstr;
 
 /**
  * Created by goforit on 2017/12/24.
@@ -49,6 +54,9 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private PhantomjsWebDriver phantomjsWebDriver;
 
+    @Autowired
+    private OrderDBService orderDBService;
+
     private Site site = Site.me().setTimeOut(3000);
 
     @Override
@@ -57,10 +65,12 @@ public class OrderServiceImpl implements OrderService {
             logger.info("导入分页数据,请求链接为：" + request);
             phantomjsWebDriver.navigateto(request);
             OOSpider.create(site, orderPipeline, Order.class)
+                    .setIsExtractLinks(false)
                     .setDownloader(phantomjsDriverDownloader)
                     .addUrl(webdriverProperty.getStartUrl())
                     .run();
         }
+        readDetail();
     }
 
     @Override
@@ -71,11 +81,11 @@ public class OrderServiceImpl implements OrderService {
             }
             logger.info("导入详细数据,请求链接为：" + order.getDetailLink());
             phantomjsWebDriver.navigateto(order.getDetailLink());
-            phantomjsWebDriver.takeScreenshot("orderDetail.png");
             phantomjsWebDriver.click(orderProperty.getDetailTel());
             OOSpider.create(site, orderDetailPipeline, OrderDetail.class)
+                    .setIsExtractLinks(false)
                     .setDownloader(phantomjsDriverDownloader)
-                    .addUrl(webdriverProperty.getStartUrl())
+                    .addUrl(order.getDetailLink())
                     .run();
         }
     }
@@ -89,10 +99,26 @@ public class OrderServiceImpl implements OrderService {
         if(!StringUtils.isEmpty(value)){
             totalPage = Integer.parseInt(value);
         }
+        //TODO测试
+        totalPage=1;
         logger.info("获取分页总数：" + totalPage);
         for(int i=1; i<= totalPage; i++){
             pageRequestList.add(String.format(orderProperty.getOrderList(),i));
         }
         return pageRequestList;
+    }
+
+    @Override
+    public PageInfo<OrderDetailDB> list(Page page) throws BusinessException {
+        String funcname = "订单列表";
+        PageHelper.offsetPage(page.getOffset(),page.getSize());
+        logger.info(logstr(funcname,"偏移量",page.getOffset(),"页面大小",page.getSize()));
+        List<OrderDetailDB> orderDetails = orderDBService.selectList();
+        int i=1;
+        for(OrderDetailDB orderDetailDB:orderDetails){
+            orderDetailDB.setKey(""+page.getOffset()+i);
+            i++;
+        }
+        return new PageInfo<OrderDetailDB>(orderDetails);
     }
 }

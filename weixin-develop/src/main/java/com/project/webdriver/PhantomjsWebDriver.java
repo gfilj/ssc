@@ -1,10 +1,8 @@
 package com.project.webdriver;
 
-import com.project.webdriver.cookie.CookieService;
 import com.project.webdriver.login.WebdriverProperty;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
@@ -137,12 +135,14 @@ public class PhantomjsWebDriver implements InitializingBean {
      *
      * @throws IOException
      */
-    public void takeScreenshot(String filename) {
+    public String takeScreenshot(String filename) {
         File screenshotAs = phantomJSDriver.getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(screenshotAs, new File(SCRREN_SHOT + filename));
+            return SCRREN_SHOT + filename;
         } catch (IOException e) {
             log.error("存储截图报错：" + filename, e);
+            return null;
         }
     }
 
@@ -289,7 +289,7 @@ public class PhantomjsWebDriver implements InitializingBean {
         capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, path);
         PhantomJSDriver phantomJSDriver = new PhantomJSDriver(capabilities);
         //设置大小不然页面元素会找不到
-        phantomJSDriver.manage().window().setSize(new Dimension(1920, 1080));
+        phantomJSDriver.manage().window().setSize(new Dimension(1024, 576));
         return phantomJSDriver;
     }
 
@@ -326,6 +326,6 @@ public class PhantomjsWebDriver implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-//        init(webdriverProperty.getPhantomjsPath());
+        init(webdriverProperty.getPhantomjsPath());
     }
 }

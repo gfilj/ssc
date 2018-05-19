@@ -123,6 +123,4 @@ public class UserService extends AbstracUserService<User> {
             throw new BusinessException(ExceptionEnum.DATA_CAUSE, "update");
         }
     }
-
-
 }

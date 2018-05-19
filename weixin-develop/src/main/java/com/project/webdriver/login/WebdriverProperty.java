@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ConfigurationProperties(prefix = "WebdriverProperty")
-public class WebdriverProperty implements InitializingBean{
-    private Logger logger = LoggerFactory.getLogger(getClass());
+public class WebdriverProperty {
     private String phantomjsPath;//pathtonjs路径
     private String startUrl;//网站的开始地址
+    private String qrCodeXpath;//二维码元素路径
     private String authXpath;//出现用户名和密码的元素路径
     private String iframeSrc;//登录框iframe地址
     private String userName;//用户名
@@ -140,28 +140,34 @@ public class WebdriverProperty implements InitializingBean{
         this.iframeSrc = iframeSrc;
     }
 
-    @Override
-    public String toString() {
-        return "WebdriverProperty{" +
-                "\n phantomjsPath='" + phantomjsPath + '\'' +
-                ",\n startUrl='" + startUrl + '\'' +
-                ",\n authXpath='" + authXpath + '\'' +
-                ",\n iframeSrc='" + iframeSrc + '\'' +
-                ",\n userName='" + userName + '\'' +
-                ",\n password='" + password + '\'' +
-                ",\n userXpath='" + userXpath + '\'' +
-                ",\n passXpath='" + passXpath + '\'' +
-                ",\n loginXpath='" + loginXpath + '\'' +
-                ",\n authSuccessXpath='" + authSuccessXpath + '\'' +
-                ",\n successUrl='" + successUrl + '\'' +
-                ",\n smsVerification='" + smsVerification + '\'' +
-                ",\n verificationImg='" + verificationImg + '\'' +
-                ",\n verificationCode='" + verificationCode + '\'' +
-                '}';
+    public String getQrCodeXpath() {
+        return qrCodeXpath;
+    }
+
+    public void setQrCodeXpath(String qrCodeXpath) {
+        this.qrCodeXpath = qrCodeXpath;
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
-        logger.info(this.toString());
+    public String toString() {
+        return "WebdriverProperty{" +
+                "phantomjsPath='" + phantomjsPath + '\'' +
+                ", startUrl='" + startUrl + '\'' +
+                ", qrCodeXpath='" + qrCodeXpath + '\'' +
+                ", authXpath='" + authXpath + '\'' +
+                ", iframeSrc='" + iframeSrc + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", userXpath='" + userXpath + '\'' +
+                ", passXpath='" + passXpath + '\'' +
+                ", loginXpath='" + loginXpath + '\'' +
+                ", smsVerification='" + smsVerification + '\'' +
+                ", authSuccessXpath='" + authSuccessXpath + '\'' +
+                ", successUrl='" + successUrl + '\'' +
+                ", verificationImg='" + verificationImg + '\'' +
+                ", verificationCode='" + verificationCode + '\'' +
+                '}';
     }
+
+
 }

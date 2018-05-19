@@ -1,0 +1,80 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta th:include="meta :: meta"></meta>
+    <link href="/css/n_productList.css?v=2.0.2" rel="stylesheet"
+          type="text/css"></link>
+    <link rel="stylesheet" type="text/css" href="/js/flexslider/flexslider.css"></link>
+    <link rel="stylesheet" href="/css/n_template_edit.css?v=1.0.1" type="text/css"></link>
+    <link rel="stylesheet" href="/js/template/style01/css/style.css" type="text/css"></link>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=1.5&amp;ak=1668042ddba956367cec5bff3ba206bc"></script>
+    <script type="text/javascript" src='/js/jquery-ui-1.9.2.custom.min.js'></script>
+</head>
+<body>
+
+<div class="outer">
+    <div class="baseWrap">
+        <div class="row">
+            <div class="c_right" style="width:840px;float:none;margin:0 auto;">
+                <ul id="tabMain" class="nav nav-tabs">
+                    <li class="tabClick"><a onclick='pageChange("rootpage")'>
+                        着陆页</a></li>
+                    <li><a onclick='pageChange("loginpage")'>主页</a></li>
+                    <li><a onclick='pageChange("successpage")'>成功页</a></li>
+                </ul>
+                <div class="cpt_edit_save_btn">
+                    <input type="button" onclick="downloadLayoutSrc()" class="btn btn-primary" autocomplete="off" value="保存模板"/>
+                </div>
+                <input type="hidden" id="rootCountDown" name="rootCountDown" value="${jo.iRootCountDown}"/>
+                <input type="hidden" id="successCountDown" name="successCountDown" value="${jo.iCountDown}"/>
+                <input type="hidden" id="welcomeText" name="welcomeText" value="${jo.sWelComeText}"/>
+                <input type="hidden" id="rootCarouselImage" name="rootCarouselImage" value="${jo.sRootCarouselImage}"/>
+                <input type="hidden" id="successCarouselImage" name="successCarouselImage" value="${jo.sSuccessCarouselImage}"/>
+                <input type="hidden" id="loginSingleImage" name="loginSingleImage" value="${jo.sLoginSingleImage}"/>
+                <input type="hidden" id="successSingleImage" name="successSingleImage" value="${jo.sSuccessSingleImage}"/>
+                <input type="hidden" id="blogRoll" name="blogRoll" value="${jo.sBlogroll}"/>
+                <div class="hidden" id="blogRoll">
+                </div>
+                <input type="hidden" id="spanoramaurl1" name="spanoramaurl1" value="${jo.sPanoramaUrl1}"/>
+                <input type="hidden" id="spanoramaurl2" name="spanoramaurl2" value="${jo.sPanoramaUrl2}"/>
+                <input type="hidden" id="spanoramaurl3" name="spanoramaurl3" value="${jo.sPanoramaUrl3}"/>
+                <input type="hidden" id="titleNew" name="titleNew" value="${jo.sTitle}"/>
+                <input type="hidden" id="telNew" name="telNew" value="${jo.sTel}"/>
+                <textarea style="display:none" id="IntroduceNew" name="IntroduceNew">${jo.sLogan}</textarea>
+                <input type="hidden" id="logoNew" name="logoNew" value="${jo.sPanoramaUrl}"/>
+                <input type="hidden" id="addressNew" name="addressNew" value="${jo.sAddress}"/>
+                <input type="hidden" id="flongitudeNew" name="flongitudeNew" value="${jo.fLongiTude}"/>
+                <input type="hidden" id="flatitudeNew" name="flatitudeNew" value="${jo.fLatiTude}"/>
+                <input type="hidden" id="urlNew" name="urlNew" value="${jo.sUrl}"/>
+                <input type="hidden" id="iTemplateStyle" name="iTemplateStyle" value="1"/>
+                <div id="editTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="showPage">
+                        <!-- 							通过js动态加载出默认着落页 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="outer fixed-footer">
+    <!--<jsp:include page="../super/footer.jsp"></jsp:include>-->
+</div>
+<script type="text/javascript" src="/js/jquery.form.min.js?v=2.0.0"></script>
+<script src="/js/highstock/js/highstock.js?v=1.0" type="text/javascript"></script>
+<script type="text/javascript" src="/js/product/productList.js?v=2.0.1"></script>
+<script type="text/javascript" src="/js/template/template_common.js"></script>
+<script type="text/javascript" src="/js/template/template_style01.js?v=1.0.4"></script>
+<script type="text/javascript" src="/js/flexslider/jquery.flexslider.js"></script>
+<script type="text/javascript" src="/js/template/template_map.js"></script>
+<script type="text/javascript" src="/js/template/template_edit.js?v=1.1.4"></script>
+<script src="/js/kindeditor/kindeditor-min.js"></script>
+<script src="/js/kindeditor/lang/zh_CN.js"></script>
+<script>
+    // 		初始化加载着落页界面
+    $(function () {
+// 			pageChange("loginpage");
+        pageChange("rootpage");
+//  			initMap();
+    })
+</script>
+</body>
+</html>

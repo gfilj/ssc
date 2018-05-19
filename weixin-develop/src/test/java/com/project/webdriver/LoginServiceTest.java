@@ -14,6 +14,6 @@ public class LoginServiceTest extends BaseTest{
     private LoginService loginService;
     @Test
     public void testLogin() throws BusinessException {
-//        loginService.login();
+        System.out.println(loginService.login());
     }
 }

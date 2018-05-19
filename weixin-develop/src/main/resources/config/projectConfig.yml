@@ -61,6 +61,7 @@ ShareServiceProperty:
 
 WebdriverProperty:
   startUrl: https://shop.jd.com/index.action
+  qrCodeXpath : //*[@id="content"]/div/div[1]/div/div[4]/div/div[2]/div[1]/div/img
   iframeSrc: //*[@id="loginFrame"]
   authXpath: //*[@id="account-login"]
   userXpath: //*[@id="loginname"]

@@ -27,6 +27,7 @@ public enum ExceptionEnum {
     WECHAT_USERRELEATION_LIST(200,"获取用户关系列表成功！"),
     WECHAT_USERLOG_LIST(200,"获取用户日志列表成功！"),
     ORDER_IMPORT_LOGIN(200,"导入订单登录成功！"),
+    ORDER_LIST(200,"获取订单成功！"),
 
     SYS_USER_LOGIN_SUCCESS(200,"系统用户登录成功！"),
     SYS_USER_LOGIN_FAIL(5001,"系统用户登录失败！");

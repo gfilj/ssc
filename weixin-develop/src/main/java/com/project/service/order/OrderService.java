@@ -1,6 +1,9 @@
 package com.project.service.order;
 
+import com.github.pagehelper.PageInfo;
 import com.project.common.exception.BusinessException;
+import com.project.model.vo.Page;
+import com.project.webmagic.model.OrderDetailDB;
 
 import java.util.List;
 
@@ -14,4 +17,7 @@ public interface OrderService {
     void readDetail() throws BusinessException;
 
     List<String> getPageRequestList();
+
+    PageInfo<OrderDetailDB> list(Page page)  throws BusinessException;
+
 }
