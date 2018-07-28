@@ -17,7 +17,7 @@ public class SystemUserSqlProvider {
 
     /**
      * 插入语句
-     * @param user
+     * @param systemUser
      * @return
      */
     public String insert(final SystemUser systemUser){
@@ -80,5 +80,29 @@ public class SystemUserSqlProvider {
             FROM("system_user");
             WHERE("username=#{username}");
         }}.toString();
+    }
+
+    /**
+     * 更新
+     * @param systemUser
+     * @return
+     */
+    public String update(final SystemUser systemUser){
+        String sql = new SQL() {{
+            UPDATE("system_user");
+            if (systemUser.getUsername() != null) {
+                SET("username=#{username}");
+            }
+            if (systemUser.getPassword() != null) {
+                SET("password=#{password}");
+            }
+            if (systemUser.getPrivilege() != 0) {
+                SET("privilege=#{privilege}");
+            }
+
+            WHERE("id=#{id}");
+        }}.toString();
+        logger.info(sql);
+        return sql;
     }
 }

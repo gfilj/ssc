@@ -3,6 +3,7 @@ package com.project.provider;
 import com.project.common.sql.SqlUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.order.OrderDetail;
+import com.project.webmagic.model.OrderDetailDB;
 import org.apache.commons.logging.Log;
 import org.apache.ibatis.jdbc.SQL;
 
@@ -82,5 +83,49 @@ public class OrderSqlProvider {
         }.toString();
         logger.info(LogUtil.logstr("模糊查询语句：" ,"sql",searchUser));
         return searchUser;
+    }
+
+
+    /**
+     * update
+     * @param orderDetailDB
+     * @return
+     */
+    public String update(final OrderDetailDB orderDetailDB){
+        String sql = new SQL() {{
+            UPDATE("wechat.Order");
+            if(orderDetailDB.getSubmitOrderTime() != null) {
+                SET("submitOrderTime=#{submitOrderTime}");
+            }
+            if(orderDetailDB.getPaySuccessTime() != null) {
+                SET("paySuccessTime=#{paySuccessTime}");
+            }
+            if(orderDetailDB.getRealname() != null) {
+                SET("realname=#{realname}");
+            }
+            if(orderDetailDB.getTel() != null){
+                SET("tel=#{tel}");
+            }
+            if(orderDetailDB.getMark() != null){
+                SET("mark=#{mark}");
+            }
+            if(orderDetailDB.getAddress() != null){
+                SET("address=#{address}");
+            }
+            if(orderDetailDB.getProductnumber() != null){
+                SET("productnumber=#{productnumber}");
+            }
+            if(orderDetailDB.getProductname() != null){
+                SET("productname=#{productname}");
+            }
+            if(orderDetailDB.getQuantity() != null){
+                SET("quantity=#{quantity}");
+            }
+            if(orderDetailDB.getJingdname() != null){
+                SET("jingdname=#{jingdname}");
+            }
+            WHERE ("no=#{no}");
+        }}.toString();
+        return sql;
     }
 }

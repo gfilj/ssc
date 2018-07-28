@@ -143,4 +143,9 @@ public class OrderServiceImpl implements OrderService {
         }
         return new PageInfo<OrderDetailDB>(orders);
     }
+
+    @Override
+    public int update(OrderDetailDB orderDetailDB) throws BusinessException {
+        return orderDBService.update(orderDetailDB);
+    }
 }

@@ -38,4 +38,13 @@ public class PresentRecordDBService {
             throw new BusinessException(ExceptionEnum.DATA_CAUSE,e);
         }
     }
+
+    public int update(PresentRecord presentRecord) throws BusinessException {
+        try{
+            return presentRecordMapper.update(presentRecord);
+        }catch (Throwable e){
+            logger.error(LogUtil.logstr(className+"/更新报错","message",e.getMessage()),e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE,e);
+        }
+    }
 }

@@ -55,4 +55,14 @@ public class OrderDBService {
         }
     }
 
+    public int update(OrderDetailDB orderDetailDB) throws BusinessException {
+        String funcname = "更新订单数据";
+        try {
+            return orderMapper.update(orderDetailDB);
+        } catch (Throwable e) {
+            logger.error(LogUtil.logstr(funcname,"报错",orderDetailDB), e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, orderDetailDB);
+        }
+    }
+
 }

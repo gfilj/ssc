@@ -4,6 +4,7 @@ import com.project.model.order.Order;
 import com.project.model.sql.User;
 import com.project.model.vo.Page;
 import com.project.provider.UserSqlProvider;
+import com.project.webmagic.model.OrderDetailDB;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.SelectProvider;
@@ -40,4 +41,7 @@ public interface UserMapper {
 
     @SelectProvider(type = UserSqlProvider.class, method = "search")
     List<User> search(Map<String,Object> map) throws DataAccessException;
+
+    @SelectProvider(type = UserSqlProvider.class, method = "getOrderByOpenid")
+    List<OrderDetailDB> getOrderByOpenid(String openid) throws DataAccessException;
 }

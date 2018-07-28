@@ -6,6 +6,7 @@ import com.project.provider.UserRelationSqlProvider;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.UpdateProvider;
 import org.springframework.dao.DataAccessException;
 
 import java.util.List;
@@ -27,4 +28,7 @@ public interface UserRelationMapper {
 
     @SelectProvider(type = UserRelationSqlProvider.class, method = "selectList")
     List<UserRelation> selectList() throws DataAccessException;
+
+    @UpdateProvider(type = UserRelationSqlProvider.class, method = "update")
+    int update(UserRelation userRelation) throws DataAccessException;
 }

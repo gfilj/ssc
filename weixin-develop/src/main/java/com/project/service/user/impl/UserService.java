@@ -7,6 +7,7 @@ import com.project.mapper.UserMapper;
 import com.project.model.sql.User;
 import com.project.model.vo.Page;
 import com.project.service.user.AbstracUserService;
+import com.project.webmagic.model.OrderDetailDB;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -135,7 +136,20 @@ public class UserService extends AbstracUserService<User> {
             return userMapper.search(map);
         } catch (Throwable e) {
             logger.error(LogUtil.logstr(funcname,"报错",""), e);
-            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "update");
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "search");
+        }
+    }
+
+    /**
+     *
+     */
+    public List<OrderDetailDB> getOrderByOpenid(String openid) throws BusinessException{
+        String funcname = "根据openid查询订单";
+        try {
+            return userMapper.getOrderByOpenid(openid);
+        } catch (Throwable e) {
+            logger.error(LogUtil.logstr(funcname,"报错",""), e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "getOrderByOpenid");
         }
     }
 }

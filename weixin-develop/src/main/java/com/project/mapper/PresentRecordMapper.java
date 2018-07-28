@@ -5,6 +5,7 @@ import com.project.provider.PresentRecordSqlProvider;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.UpdateProvider;
 import org.springframework.dao.DataAccessException;
 
 import java.util.List;
@@ -19,4 +20,7 @@ public interface PresentRecordMapper {
 
     @SelectProvider(type = PresentRecordSqlProvider.class, method = "selectList")
     List<PresentRecord> selectList() throws DataAccessException;
+
+    @UpdateProvider(type = PresentRecordSqlProvider.class, method = "update")
+    int update(PresentRecord presentRecord) throws DataAccessException;
 }

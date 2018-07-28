@@ -5,9 +5,7 @@ import com.project.model.sql.User;
 import com.project.model.vo.Page;
 import com.project.provider.SystemUserSqlProvider;
 import com.project.provider.UserSqlProvider;
-import org.apache.ibatis.annotations.InsertProvider;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.*;
 import org.springframework.dao.DataAccessException;
 
 import java.util.List;
@@ -32,4 +30,7 @@ public interface SystemUserMapper {
 
     @SelectProvider(type = SystemUserSqlProvider.class, method = "selectOne")
     SystemUser selectOne(String username) throws DataAccessException;
+
+    @UpdateProvider(type = SystemUserSqlProvider.class, method = "update")
+    int update(SystemUser systemUser) throws DataAccessException;
 }

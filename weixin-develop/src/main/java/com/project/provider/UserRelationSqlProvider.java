@@ -73,4 +73,38 @@ public class UserRelationSqlProvider {
             ORDER_BY("lmodify desc");
         }}.toString();
     }
+
+    /**
+     * update
+     * @param userRelation
+     * @return
+     */
+    public String update(final UserRelation userRelation){
+        String sql = new SQL() {{
+
+            UPDATE("User_Relation");
+            if (userRelation.getIntroducer() != null) {
+                SET("introducer=#{introducer}");
+            }
+            if(userRelation.getIntroducername() != null) {
+                SET("introducername=#{introducername}");
+            }
+            if (userRelation.getNewmember() != null){
+                SET("newmember=#{newmember}");
+            }
+            if (userRelation.getNewmembername() != null) {
+                SET("newmembername=#{newmembername}");
+            }
+            if (userRelation.getLmodify() != null) {
+                SET("lmodify=#{lmodify}");
+            }
+            if (userRelation.getReleation() != 0) {
+                SET("releation=#{releation}");
+            }
+
+            WHERE("id=#{id}");
+
+        }}.toString();
+        return SqlUtil.relaceInto(sql);
+    }
 }

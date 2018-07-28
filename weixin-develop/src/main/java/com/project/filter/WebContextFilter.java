@@ -20,10 +20,10 @@ import java.io.IOException;
 /**
  * $myDescription
  * Create by Fenix_Bao on 2018/4/1.
- */
-@Component
-@Order(1)
-@WebFilter(urlPatterns = "/*",filterName = "WebContextFilter")
+// */
+//@Component
+//@Order(1)
+//@WebFilter(urlPatterns = "/*",filterName = "WebContextFilter")
 public class WebContextFilter implements Filter {
 
     private ServletContext ctx;

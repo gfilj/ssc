@@ -25,4 +25,9 @@ public class SystemUserServiceImpl implements SystemUserService {
     public SystemUser select(String username) throws Exception {
         return systemUserMapper.selectOne(username);
     }
+
+    @Override
+    public int update(SystemUser systemUser) throws Exception {
+        return systemUserMapper.update(systemUser);
+    }
 }

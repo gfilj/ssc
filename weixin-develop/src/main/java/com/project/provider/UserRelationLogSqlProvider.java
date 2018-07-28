@@ -75,4 +75,37 @@ public class UserRelationLogSqlProvider {
         }}.toString();
     }
 
+    /**
+     * 更新
+     * @param userRelation
+     * @return
+     */
+    public String update(final UserRelation userRelation) {
+        return new SQL() {{
+            UPDATE("User_Relation_Log");
+            if (userRelation.getIntroducer() != null) {
+                SET("introducer=#{introducer}");
+            }
+            if (userRelation.getIntroducername() != null) {
+                SET("introducername=#{introducername}");
+            }
+            if (userRelation.getNewmember() != null) {
+                SET("newmember=#{newmember}");
+            }
+            if (userRelation.getNewmembername() != null) {
+                SET("newmembername=#{newmembername}");
+            }
+            if (userRelation.getLmodify() != null) {
+                SET("lmodify=#{lmodify}");
+            }
+            if (userRelation.getReleation() != 0) {
+                SET("releation=#{releation}");
+            }
+
+            WHERE("id=#{id}");
+
+        }}.toString();
+
+    }
+
 }

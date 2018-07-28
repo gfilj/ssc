@@ -76,7 +76,7 @@ WebdriverProperty:
   successUrl: //*[@id="_og_showContent"]
   userName: sk303694
   password: c168136355
-  phantomjsPath: /Users/apple/Work/phantomjs-2.1.1-macosx/bin/phantomjs
+  phantomjsPath: /usr/local/Cellar/phantomjs/2.1.1/bin/phantomjs
 
 OrderProperty:
   orderList: https://order.shop.jd.com/order/sSopUp_allList.action?page=%s

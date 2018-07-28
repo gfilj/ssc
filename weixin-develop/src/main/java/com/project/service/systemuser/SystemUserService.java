@@ -9,4 +9,5 @@ import com.project.model.sql.SystemUser;
 public interface SystemUserService {
     int insert(SystemUser systemUser) throws Exception;
     SystemUser select(String username) throws Exception;
+    int update(SystemUser systemUser) throws Exception;
 }

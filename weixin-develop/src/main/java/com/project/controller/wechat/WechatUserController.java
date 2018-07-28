@@ -14,6 +14,7 @@ import com.project.service.weixin.access.WechatAccessService;
 import com.project.service.weixin.user.WechatUserReleationLogService;
 import com.project.service.weixin.user.WechatUserReleationService;
 import com.project.service.weixin.user.WechatUserService;
+import com.project.webmagic.model.OrderDetailDB;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -170,5 +171,39 @@ public class WechatUserController {
 //        }
 //        return "loglist";
 //    }
+
+    /**
+     * 更新微信用户信息，包括将京东手机号绑定到微信上
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = "/update")
+    @ResponseBody
+    public Result update(User user) {
+        try {
+            wechatUserService.update(user);
+            return ResultBuilder.build(ExceptionEnum.WECHAT_USERLOG_LIST, "success");
+        } catch (BusinessException e) {
+            logger.error(e.getMessage(), e);
+            return e.getResult();
+        }
+    }
+
+    /**
+     * 更新微信用户信息，包括将京东手机号绑定到微信上
+     * @param openid
+     * @return
+     */
+    @RequestMapping(value = "/getOrderByOpenid")
+    @ResponseBody
+    public Result getOrderByOpenid(String openid) {
+        try {
+            PageInfo<OrderDetailDB>orders = wechatUserService.getOrderByOpenid(openid);
+            return ResultBuilder.build(ExceptionEnum.WECHAT_USERLOG_LIST, orders);
+        } catch (BusinessException e) {
+            logger.error(e.getMessage(), e);
+            return e.getResult();
+        }
+    }
 
 }

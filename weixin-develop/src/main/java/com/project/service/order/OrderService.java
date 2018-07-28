@@ -23,4 +23,5 @@ public interface OrderService {
 
     PageInfo<OrderDetailDB> search(OrderSearchVO searchVO)  throws BusinessException;
 
+    int update(OrderDetailDB orderDetailDB) throws BusinessException;
 }

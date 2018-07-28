@@ -20,9 +20,9 @@ import java.io.PrintWriter;
  * Create by Fenix_Bao on 2018/4/1.
  */
 
-@Component
-@Order(2)
-@WebFilter(urlPatterns = "/*",filterName = "loginFilter")
+//@Component
+//@Order(2)
+//@WebFilter(urlPatterns = "/*",filterName = "loginFilter")
 public class LoginFilter implements Filter {
 
     private Log logger = LogUtil.getLogger(getClass());
@@ -44,33 +44,34 @@ public class LoginFilter implements Filter {
             return;
         }
 
-        logger.info("request recieved:"+lgUrl);
-//        判断当前用户是否登录
-        SystemUser cu = SessionUtil.getCurrentUser(WebConstant.CURRENT_USER);
-        if (cu == null) {
-            if(lgUrl.equals("/system/login")){
-                chain.doFilter(httpRequest, httpResponse);
-            }else {
-                httpResponse.setCharacterEncoding("UTF-8");
-                httpResponse.setContentType("application/json; charset=utf-8");
 
-                String jsonStr = "{\"loginUrl\":\"" + "http://localhost:3006/#/login\"" + "}";
-                PrintWriter out = null;
-                try {
-                    out = httpResponse.getWriter();
-                    out.write(jsonStr);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } finally {
-                    if (out != null) {
-                        out.close();
-                    }
-                }
-            }
-        } else {
-            logger.info("logined user,session id:"+SessionUtil.getSessionId());
-            chain.doFilter(httpRequest, httpResponse);
-        }
+//        logger.info("request recieved:"+lgUrl);
+////        判断当前用户是否登录
+//        SystemUser cu = SessionUtil.getCurrentUser(WebConstant.CURRENT_USER);
+//        if (cu == null) {
+//            if(lgUrl.equals("/system/login")){
+//                chain.doFilter(httpRequest, httpResponse);
+//            }else {
+//                httpResponse.setCharacterEncoding("UTF-8");
+//                httpResponse.setContentType("application/json; charset=utf-8");
+//
+//                String jsonStr = "{\"loginUrl\":\"" + "http://localhost:3006/#/login\"" + "}";
+//                PrintWriter out = null;
+//                try {
+//                    out = httpResponse.getWriter();
+//                    out.write(jsonStr);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                } finally {
+//                    if (out != null) {
+//                        out.close();
+//                    }
+//                }
+//            }
+//        } else {
+//            logger.info("logined user,session id:"+SessionUtil.getSessionId());
+//            chain.doFilter(httpRequest, httpResponse);
+//        }
 
     }
 

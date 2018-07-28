@@ -106,9 +106,73 @@ public class UserSqlProvider {
         return new SQL() {
             {
                 UPDATE("User");
+                if (user.getSubscribe() != 0) {
+                    SET("subscribe=#{subscribe}");
+                }
                 if (user.getQrCode() != null) {
                     SET("qrCode=#{qrCode}");
                 }
+                if (user.getNickname() != null) {
+                    SET("nickname=#{nickname}");
+                }
+                if (user.getSex() != 0) {
+                    SET("sex=#{sex}");
+                }
+                if (user.getLanguage() != null) {
+                    SET("language=#{language}");
+                }
+                if (user.getCity() != null) {
+                    SET("city=#{city}");
+                }
+                if (user.getProvince() != null) {
+                    SET("province=#{province}");
+                }
+                if (user.getCountry() != null) {
+                    SET("country=#{country}");
+                }
+                if (user.getHeadimgurl() != null) {
+                    SET("headimgurl=#{headimgurl}");
+                }
+                if (user.getSubscribe_time() != null) {
+                    SET("subscribe_time=#{subscribe_time}");
+                }
+                if (user.getRemark() != null) {
+                    SET("remark=#{remark}");
+                }
+                if (user.getQrCode() != null) {
+                    SET("qrCode=#{qrCode}");
+                }
+                if (user.getQrCode1() != null) {
+                    SET("qrCode1=#{qrCode1}");
+                }
+                if (user.getTel() != null) {
+                    SET("tel=#{tel}");
+                }
+                if (user.getName() != null) {
+                    SET("name=#{name}");
+                }
+                if (user.getIdentity() != null) {
+                    SET("identity=#{identity}");
+                }
+                if (user.getIdentitytime() != null) {
+                    SET("identitytime=#{identitytime}");
+                }
+                if (user.getHighcode() != null) {
+                    SET("highcode=#{highcode}");
+                }
+                if (user.getSupercode() != null) {
+                    SET("supercode=#{supercode}");
+                }
+                if (user.getFirstbuycode() != null) {
+                    SET("firstbuycode=#{firstbuycode}");
+                }
+                if (user.getFirstbuycodeuse() != null) {
+                    SET("firstbuycodeuse=#{firstbuycodeuse}");
+                }
+                if (user.getWechat() != null) {
+                    SET("wechat=#{wechat}");
+                }
+
                 WHERE("openid=#{openid}");
             }
         }.toString();
@@ -131,6 +195,22 @@ public class UserSqlProvider {
         }.toString();
         logger.info(LogUtil.logstr("模糊查询语句：" ,"sql",searchUser));
         return searchUser;
+    }
+
+    /**
+     * 根据openid获取订单
+     * @param openid
+     * @return
+     */
+    public String getOrderByOpenid(String openid) {
+        return new SQL() {{
+            SELECT("a.no, a.submitOrderTime, a.paySuccessTime, " +
+                    "a.realname, a.tel, a.mark, a.address, a.productnumber, " +
+                    "a.productname, a.quantity, a.jingdname");
+            FROM("wechat.Order a, User b");
+            WHERE("b.openid=#{openid} and b.tel=a.tel");
+            ORDER_BY("a.paySuccessTime desc");
+        }}.toString();
     }
 
 }

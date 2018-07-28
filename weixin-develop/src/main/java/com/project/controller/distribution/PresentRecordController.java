@@ -54,5 +54,17 @@ public class PresentRecordController {
         }
     }
 
+    @RequestMapping(value = "update")
+    @ResponseBody
+    public Result update(PresentRecord presentRecord) {
+        try {
+            SystemUser systemUser = new SystemUser();
+            systemUser.setUsername("");
+            presentRecordService.update(presentRecord,systemUser);
+            return ResultBuilder.getInstance().build(ExceptionEnum.PRESENT_RECORD_ADD, presentRecord);
+        } catch (BusinessException e) {
+            return e.getResult();
+        }
+    }
 
 }

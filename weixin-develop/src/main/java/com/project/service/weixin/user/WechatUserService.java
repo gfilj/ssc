@@ -8,6 +8,7 @@ import com.project.model.sql.User;
 import com.project.model.vo.Page;
 import com.project.model.vo.UserSearchVO;
 import com.project.service.user.impl.UserService;
+import com.project.webmagic.model.OrderDetailDB;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -84,6 +85,13 @@ public class WechatUserService {
             nameList.add(item.getNickname());
         });
         return nameList + "已经被合并!";
+    }
+
+    public PageInfo<OrderDetailDB> getOrderByOpenid(String openid) throws BusinessException {
+        String funcname = "更新用户";
+        logger.info(logstr(funcname, "openid", openid));
+        List<OrderDetailDB>orders = userService.getOrderByOpenid(openid);
+        return new PageInfo<OrderDetailDB>(orders);
     }
 
 }

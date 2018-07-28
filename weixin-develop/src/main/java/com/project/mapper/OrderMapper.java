@@ -6,6 +6,7 @@ import com.project.webmagic.model.OrderDetailDB;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.UpdateProvider;
 import org.springframework.dao.DataAccessException;
 
 import java.util.List;
@@ -25,4 +26,7 @@ public interface OrderMapper {
 
     @SelectProvider(type = OrderSqlProvider.class, method = "search")
     List<OrderDetailDB> search(Map<String,Object> map) throws DataAccessException;
+
+    @UpdateProvider(type = OrderSqlProvider.class, method = "update")
+    int update(OrderDetailDB orderDetailDB) throws DataAccessException;
 }

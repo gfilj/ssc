@@ -46,4 +46,10 @@ public class PresentRecordService {
         }
         return new PageInfo<PresentRecord>(presentRecords);
     }
+
+    public void update(PresentRecord presentRecord, SystemUser systemUser) throws BusinessException {
+        presentRecord.setInsertTime(new Date());
+        presentRecord.setOperator(systemUser.getUsername());
+        presentRecordDBService.update(presentRecord);
+    }
 }

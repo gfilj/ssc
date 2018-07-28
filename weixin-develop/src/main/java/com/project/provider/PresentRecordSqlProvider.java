@@ -18,7 +18,7 @@ public class PresentRecordSqlProvider {
     /**
      * 插入语句
      *
-     * @param user
+     * @param presentRecord
      * @return
      */
     public String insert(final PresentRecord presentRecord) {
@@ -52,14 +52,24 @@ public class PresentRecordSqlProvider {
     /**
      * 更新
      */
-    public String update(User user) {
+    public String update(final PresentRecord presentRecord) {
         return new SQL() {
             {
-                UPDATE("User");
-                if (user.getQrCode() != null) {
-                    SET("qrCode=#{qrCode}");
+                UPDATE("presentrecord");
+                if (presentRecord.getMoneyTime() != null) {
+                    SET("moneyTime=#{moneyTime}");
                 }
-                WHERE("openid=#{openid}");
+                if (presentRecord.getInsertTime() != null) {
+                    SET("insertTime=#{insertTime}");
+                }
+                if (presentRecord.getOperator() != null) {
+                    SET("operator=#{operator}");
+                }
+                if (presentRecord.getMoney() != 0) {
+                    SET("money=#{money}");
+                }
+
+                WHERE("id=#{id}");
             }
         }.toString();
     }

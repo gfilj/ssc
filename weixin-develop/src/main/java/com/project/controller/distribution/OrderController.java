@@ -10,6 +10,7 @@ import com.project.model.vo.Page;
 import com.project.service.order.OrderService;
 import com.project.webdriver.login.LoginService;
 import com.project.webdriver.login.model.LoginModel;
+import com.project.webmagic.model.OrderDetailDB;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -90,6 +91,15 @@ public class OrderController {
     public @ResponseBody Result search(OrderSearchVO searchVO) {
         try {
             return ResultBuilder.getInstance().build(ExceptionEnum.ORDER_LIST, orderService.search(searchVO));
+        } catch (BusinessException e) {
+            return e.getResult();
+        }
+    }
+    @RequestMapping(value = "update")
+    public @ResponseBody Result update(OrderDetailDB orderDetailDB) {
+        try {
+            orderService.update(orderDetailDB);
+            return ResultBuilder.getInstance().build(ExceptionEnum.ORDER_LIST, "success");
         } catch (BusinessException e) {
             return e.getResult();
         }

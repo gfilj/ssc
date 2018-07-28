@@ -56,5 +56,19 @@ public class UserRelationLogService extends AbstracUserService<UserRelation> {
         }
     }
 
+    /**
+     * 更新
+     * @param userRelation
+     * @return
+     * @throws BusinessException
+     */
+    public int update(UserRelation userRelation) throws BusinessException {
+        try {
+            return userRelationLogMapper.update(userRelation);
+        } catch (Throwable e) {
+            logger.error("更新报错", e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, userRelation);
+        }
+    }
 
 }
