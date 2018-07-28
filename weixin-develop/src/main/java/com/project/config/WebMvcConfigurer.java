@@ -6,9 +6,11 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.project.formatter.DateFormatter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +33,11 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
                 SerializerFeature.PrettyFormat,
                 SerializerFeature.WriteNullStringAsEmpty
         );
+
+        List<MediaType> fastMediaTypes = new ArrayList<>();
+        fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
+        converter.setSupportedMediaTypes(fastMediaTypes);
+
         converter.setFastJsonConfig(config);
         converters.add(converter);
     }
