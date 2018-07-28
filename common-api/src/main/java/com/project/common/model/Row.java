@@ -402,7 +402,7 @@ public class Row extends HashMap<Object, Object> {
 
     public Map<String, String> toStringMap() {
         Map<String, String> map = new HashedMap();
-        for (Entry<Object, Object> entry : this.entrySet()) {
+        for (Map.Entry<Object, Object> entry : this.entrySet()) {
             map.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()));
         }
         return map;

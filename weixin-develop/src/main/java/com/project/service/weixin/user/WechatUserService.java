@@ -3,16 +3,18 @@ package com.project.service.weixin.user;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.project.common.exception.BusinessException;
+import com.project.common.util.SwitchUtil;
 import com.project.model.sql.User;
 import com.project.model.vo.Page;
+import com.project.model.vo.UserSearchVO;
 import com.project.service.user.impl.UserService;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static com.project.common.util.LogUtil.getLogger;
 import static com.project.common.util.LogUtil.logstr;
@@ -41,7 +43,7 @@ public class WechatUserService {
         return new PageInfo<User>(users);
     }
 
-    public User search(String openid) throws BusinessException {
+    public User get(String openid) throws BusinessException {
         String funcname = "搜索用户";
         logger.info(logstr(funcname, "openId", openid));
         User user = userService.selectOne(openid);
@@ -56,6 +58,33 @@ public class WechatUserService {
 
     }
 
+    public PageInfo<User> search(UserSearchVO searchVO) throws BusinessException {
+        String funcname = "微信用户模糊查询";
+        Map<String, Object> map = SwitchUtil.objectToMap(searchVO);
+        map.forEach((k, v) -> {
+            map.put(k, "%" + v + "%");
+        });
+
+        logger.info(logstr(funcname, "map", map));
+        List<User> users = userService.search(map);
+        int i = 1;
+        for (User user : users) {
+            user.setId(i);
+            i++;
+        }
+        return new PageInfo<User>(users);
+    }
+
+
+    public String markDelete(List<User> userList) throws BusinessException {
+        String funcname = "标记删除";
+        final List<String> nameList = new ArrayList<>();
+
+        userList.forEach(item -> {
+            nameList.add(item.getNickname());
+        });
+        return nameList + "已经被合并!";
+    }
 
 }
 

@@ -5,6 +5,7 @@ import com.project.common.exception.ExceptionEnum;
 import com.project.common.result.Result;
 import com.project.common.result.ResultBuilder;
 import com.project.common.util.LogUtil;
+import com.project.model.vo.OrderSearchVO;
 import com.project.model.vo.Page;
 import com.project.service.order.OrderService;
 import com.project.webdriver.login.LoginService;
@@ -81,6 +82,14 @@ public class OrderController {
     public @ResponseBody Result list(Page page) {
         try {
             return ResultBuilder.getInstance().build(ExceptionEnum.ORDER_LIST, orderService.list(page));
+        } catch (BusinessException e) {
+            return e.getResult();
+        }
+    }
+    @RequestMapping(method = RequestMethod.GET,value = "search")
+    public @ResponseBody Result search(OrderSearchVO searchVO) {
+        try {
+            return ResultBuilder.getInstance().build(ExceptionEnum.ORDER_LIST, orderService.search(searchVO));
         } catch (BusinessException e) {
             return e.getResult();
         }

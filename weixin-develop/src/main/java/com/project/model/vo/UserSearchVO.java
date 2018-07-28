@@ -1,28 +1,22 @@
-package com.project.model.sql;
+package com.project.model.vo;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.project.common.util.DateUtils;
+import com.project.model.sql.User;
 
-import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
- * Created by goforit on 2017/12/2.
+ * Created by goforit on 2018/6/3.
  */
-public class User implements Serializable{
-
-    private static final long serialVersionUID = -5685651696490364330L;
-    private int subscribe;// int(11) DEFAULT NULL COMMENT '注册消息',
-    private String openid;// varchar(45) DEFAULT NULL,
-    private String nickname;// varchar(45) DEFAULT NULL COMMENT '昵称',
-    private int sex;// int(11) DEFAULT NULL COMMENT '性别',
-    private String language;// varchar(45) DEFAULT NULL COMMENT '语言',
-    private String city;// varchar(45) DEFAULT NULL COMMENT '城市',
+public class UserSearchVO {
+    private String nickname;
+    private String openid;
+    private String sex;
+    private String language;
+    private String city;
     private String province;// varchar(45) DEFAULT NULL COMMENT '省份',
     private String country;// varchar(45) DEFAULT NULL COMMENT '国家',
-    private String headimgurl;// varchar(1000) DEFAULT NULL COMMENT '头像',
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
-    private Date subscribe_time;// datetime DEFAULT NULL COMMENT '注册',
     private String remark;// varchar(45) DEFAULT NULL COMMENT '备注',
     private String qrCode;//二维码地址
     private String qrCode1;//二维码地址1
@@ -36,15 +30,6 @@ public class User implements Serializable{
     private String firstbuycodeuse;//首购优惠码使用
     private String wechat;//官方微信
 
-    private int id;
-
-    public int getSubscribe() {
-        return subscribe;
-    }
-
-    public void setSubscribe(int subscribe) {
-        this.subscribe = subscribe;
-    }
 
     public String getOpenid() {
         return openid;
@@ -54,19 +39,11 @@ public class User implements Serializable{
         this.openid = openid;
     }
 
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public int getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
@@ -100,22 +77,6 @@ public class User implements Serializable{
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public String getHeadimgurl() {
-        return headimgurl;
-    }
-
-    public void setHeadimgurl(String headimgurl) {
-        this.headimgurl = headimgurl;
-    }
-
-    public Date getSubscribe_time() {
-        return subscribe_time;
-    }
-
-    public void setSubscribe_time(Date subscribe_time) {
-        this.subscribe_time = subscribe_time;
     }
 
     public String getRemark() {
@@ -214,40 +175,29 @@ public class User implements Serializable{
         this.wechat = wechat;
     }
 
-    public int getId() {
-        return id;
+    private List<User> userList;
+
+    public List<User> getUserList() {
+        return userList;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "subscribe=" + subscribe +
-                ", openid='" + openid + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", sex=" + sex +
-                ", language='" + language + '\'' +
-                ", city='" + city + '\'' +
-                ", province='" + province + '\'' +
-                ", country='" + country + '\'' +
-                ", headimgurl='" + headimgurl + '\'' +
-                ", subscribe_time=" + subscribe_time +
-                ", remark='" + remark + '\'' +
-                ", qrCode='" + qrCode + '\'' +
-                ", qrCode1='" + qrCode1 + '\'' +
-                ", tel='" + tel + '\'' +
-                ", name='" + name + '\'' +
-                ", identity='" + identity + '\'' +
-                ", identitytime='" + identitytime + '\'' +
-                ", highcode='" + highcode + '\'' +
-                ", supercode='" + supercode + '\'' +
-                ", firstbuycode='" + firstbuycode + '\'' +
-                ", firstbuycodeuse='" + firstbuycodeuse + '\'' +
-                ", wechat='" + wechat + '\'' +
-                ", id=" + id +
+        return "SearchVO{" +
+                "nickname='" + nickname + '\'' +
+                ", userList=" + userList +
                 '}';
     }
 }

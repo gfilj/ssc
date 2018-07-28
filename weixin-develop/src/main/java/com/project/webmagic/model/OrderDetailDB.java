@@ -28,6 +28,7 @@ public class OrderDetailDB {
     //页面序号
     private String key;
 
+
     public String getKey() {
         return key;
     }

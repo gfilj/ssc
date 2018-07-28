@@ -8,11 +8,11 @@ import com.project.model.sql.User;
 import com.project.model.vo.Page;
 import com.project.service.user.AbstracUserService;
 import org.apache.commons.logging.Log;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by goforit on 2017/12/2.
@@ -118,6 +118,21 @@ public class UserService extends AbstracUserService<User> {
         String funcname = "更新用户";
         try {
             return userMapper.update(user);
+        } catch (Throwable e) {
+            logger.error(LogUtil.logstr(funcname,"报错",""), e);
+            throw new BusinessException(ExceptionEnum.DATA_CAUSE, "update");
+        }
+    }
+
+    /**
+     * 查询
+     * @return
+     * @throws BusinessException
+     */
+    public List<User> search(Map<String,Object> map) throws BusinessException{
+        String funcname = "查询";
+        try {
+            return userMapper.search(map);
         } catch (Throwable e) {
             logger.error(LogUtil.logstr(funcname,"报错",""), e);
             throw new BusinessException(ExceptionEnum.DATA_CAUSE, "update");

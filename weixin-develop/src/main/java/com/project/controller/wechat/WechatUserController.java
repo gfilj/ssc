@@ -9,6 +9,7 @@ import com.project.common.util.LogUtil;
 import com.project.model.sql.User;
 import com.project.model.sql.UserRelation;
 import com.project.model.vo.Page;
+import com.project.model.vo.UserSearchVO;
 import com.project.service.weixin.access.WechatAccessService;
 import com.project.service.weixin.user.WechatUserReleationLogService;
 import com.project.service.weixin.user.WechatUserReleationService;
@@ -17,6 +18,7 @@ import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import redis.RedisDao;
@@ -46,7 +48,7 @@ public class WechatUserController {
 
     Log logger = LogUtil.getLogger(getClass());
 
-    @RequestMapping("/list")
+    @RequestMapping("/listpage")
     public String list(Page page, Model model) {
         try {
             PageInfo<User> list = wechatUserService.list(page);
@@ -58,11 +60,11 @@ public class WechatUserController {
         return "userlist";
     }
 
-    @RequestMapping("/search")
+    @RequestMapping("/get")
     @ResponseBody
     public Result search(String openid, HttpServletRequest request, HttpServletResponse response) {
         try {
-            User user = wechatUserService.search(openid);
+            User user = wechatUserService.get(openid);
             if(user.getQrCode()==null){
                 user.setQrCode(wechatAccessService.generateShowRRUrl(user.getOpenid()));
                 wechatUserService.update(user);
@@ -88,7 +90,7 @@ public class WechatUserController {
         return "releationlist";
     }
 
-    @RequestMapping(value = "/listjson")
+    @RequestMapping(value = "/list")
     @ResponseBody
     public Result listjson(Page page) {
         try {
@@ -126,6 +128,32 @@ public class WechatUserController {
             return e.getResult();
         }
 
+    }
+
+    @RequestMapping(value = "/search")
+    @ResponseBody
+    public Result serach(UserSearchVO searchVO) {
+        try {
+            PageInfo<User> pageInfo = wechatUserService.search(searchVO);
+            return ResultBuilder.build(ExceptionEnum.WECHAT_USERLOG_LIST, pageInfo);
+        } catch (BusinessException e) {
+            logger.error(e.getMessage(), e);
+            return e.getResult();
+        }
+    }
+
+    @RequestMapping(value = "/merge", produces = "application/json",
+            consumes = "application/json")
+    @ResponseBody
+    public Result merge(@RequestBody UserSearchVO searchVO) {
+        try {
+            logger.info(searchVO);
+            String pageInfo = wechatUserService.markDelete(searchVO.getUserList());
+            return ResultBuilder.build(ExceptionEnum.WECHAT_USERLOG_LIST, pageInfo);
+        } catch (BusinessException e) {
+            logger.error(e.getMessage(), e);
+            return e.getResult();
+        }
     }
 
 

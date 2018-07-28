@@ -1,6 +1,6 @@
 WechatAccessProperty:
-  appid: wx7daae1e2aa5a6e0a
-  secret: c619f61e10653ac9e11f78bde5eafc9f
+  appid: wxd15360f7ddacbaec
+  secret: 78a5ecfb17044008c068ad41b82f975c
   tokenUrl: https://api.weixin.qq.com/cgi-bin/token
   qrCodeUrl: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=%s
   expire_seconds: 86400
@@ -44,6 +44,9 @@ Button:
         name: "客户调研表"
         type: "view"
 
+
+
+
 WechatCustomerProperty:
   add: https://api.weixin.qq.com/customservice/kfaccount/add?access_token=%s
   update: https://api.weixin.qq.com/customservice/kfaccount/update?access_token=%s
@@ -59,24 +62,4 @@ ShareServiceProperty:
   cutImg: https://mmbiz.qpic.cn/mmbiz_png/OoxQeTGnyxEcLLD37qEYmdphyUrzCtqyJtnEKuU8utvMu1VC2sic2UMTd8JibeyBD8x6OxHuV0cZIuC7ibYGFOz0A/0?wx_fmt=png
   proxyUrl: /wechat/material/imgUrl?url=
 
-WebdriverProperty:
-  startUrl: https://shop.jd.com/index.action
-  qrCodeXpath : //*[@id="content"]/div/div[1]/div/div[4]/div/div[2]/div[1]/div/img
-  iframeSrc: //*[@id="loginFrame"]
-  authXpath: //*[@id="account-login"]
-  userXpath: //*[@id="loginname"]
-  passXpath: //*[@id="nloginpwd"]
-  loginXpath: //*[@id="paipaiLoginSubmit"]
-  verificationCode: //*[@id="authcode"]
-  verificationImg: //*[@id="JD_Verification1"]
-  smsVerification: //*[@id="tab_phoneV"]
-  successUrl: //*[@id="_og_showContent"]
-  userName: sk303694
-  password: c168136355
-  phantomjsPath: /Users/apple/Work/phantomjs-2.1.1-macosx/bin/phantomjs
 
-OrderProperty:
-  orderList: https://order.shop.jd.com/order/sSopUp_allList.action?page=%s
-  totalPage: /html/body/div[2]/div/div[3]/div[1]/div/div/div[2]/div[3]/div/input[1]
-  limitPage: /html/body/div[2]/div/div[3]/div[1]/div/div/div[2]/div[3]/div/input[2]
-  detailTel: //*[@id="viewOrderMobile"]

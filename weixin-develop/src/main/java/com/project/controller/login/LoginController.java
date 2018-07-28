@@ -3,12 +3,15 @@ package com.project.controller.login;
 import com.project.common.exception.ExceptionEnum;
 import com.project.common.result.Result;
 import com.project.common.result.ResultBuilder;
+import com.project.common.util.CookieUtil;
 import com.project.common.util.LogUtil;
 import com.project.constant.WebConstant;
 import com.project.model.sql.SystemUser;
+import com.project.model.vo.SystemUserVo;
 import com.project.service.login.LoginService;
 import org.apache.commons.logging.Log;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import share.WebContext;
@@ -18,6 +21,8 @@ import javax.annotation.Resource;
 import javax.jws.WebResult;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Create by Fenix_Bao on 2018/3/31.
@@ -34,47 +39,47 @@ public class LoginController {
     private LoginService loginService;
 
     @RequestMapping(value="/login")
-    @ResponseBody
-    public Result login(String username, String password) {
+    public @ResponseBody Result login(SystemUserVo systemUserVo) {
         SystemUser systemUser = null;
-        logger.info("try to login:"+username+","+password);
+        logger.info("try to login:"+systemUserVo);
         try {
-            systemUser = loginService.login(username);
+            systemUser = loginService.login(systemUserVo.getUsername());
         } catch (Exception e) {
-            e.printStackTrace();
-            return ResultBuilder.build(ExceptionEnum.SYS_USER_LOGIN_FAIL,username);
+            logger.error("认证出错！" + e);
+            return ResultBuilder.build(ExceptionEnum.SYS_USER_LOGIN_FAIL,systemUserVo.getUsername());
         }
-        if(systemUser!=null&&systemUser.getPassword().equals(password)){
+        if(systemUser!=null&&systemUser.getPassword().equals(systemUserVo.getPassword())){
             WebSession session = WebContext.getSession().initWebSession();
             session.setAttribute(WebConstant.CURRENT_USER, systemUser);
             session.setMaxInactiveInterval(USER_CACHE_TIME_OUT_SECONDS);
-            return ResultBuilder.build(ExceptionEnum.SYS_USER_LOGIN_SUCCESS,username);
+            return ResultBuilder.build(ExceptionEnum.SYS_USER_LOGIN_SUCCESS,systemUserVo.getUsername());
         }
-        return ResultBuilder.build(ExceptionEnum.SYS_USER_LOGIN_FAIL,username);
+        return ResultBuilder.build(ExceptionEnum.SYS_USER_LOGIN_FAIL,systemUserVo.getUsername());
     }
+
+
+    @RequestMapping(value="/currentuser")
+    public @ResponseBody Result currentuser() {
+        WebSession session = WebContext.getSession().initWebSession();
+        SystemUser systemUser = session.getAttribute(WebConstant.CURRENT_USER, SystemUser.class);
+        return ResultBuilder.build(ExceptionEnum.SYS_USER_CURRENT_SUCCESS,systemUser.getUsername());
+    }
+
 
     @RequestMapping(value="/quit")
     @ResponseBody
     public WebResult quit(HttpServletRequest request, HttpServletResponse response) {
         WebResult webResult = null;
-//        Map<String,Object> map = new HashMap<String,Object>();
-//        String sessionToken = CookieUtil.getValue(request,
-//                ProjectConfig.AuthzConfig.COOkIE_SESSION_SID,ProjectConfig.cookieDomain);
-//        if(quitAuthzUser(sessionToken)){
-//            UserInfoVO userInfoVO = UserUtil.getCurrentUserInfo();
-//            this.loginService.loginOut(userInfoVO);
-//            SessionUtil.setAttribute(WebConstant.CURRENT_USER,null);
-//            SessionUtil.setAttribute(WebConstant.CURRENT_USER_PRIVILEGE_INFO,null);
+        Map<String,Object> map = new HashMap<String,Object>();
+
+//
 //            CookieUtil.deleteCookie(request, response, ProjectConfig.cookieDomain);
-//            CookieUtil.deleteCookieByName(request,response,ProjectConfig.AuthzConfig.COOkIE_SESSION_SID,
-//                    ProjectConfig.AuthzConfig.COOkIE_DOMAIN);
-//            WebSession session = WebContext.getSession();
-//            session.removeSessionInCookie();
-//            map.put("status", true);
-//            map.put("loginUrl", ProjectConfig.AuthzConfig.loginUrl);
-//        }else{
-//            map.put("status", false);
-//        }
+//
+            WebSession session = WebContext.getSession();
+            session.removeSessionInCookie();
+            map.put("status", true);
+            map.put("loginUrl", "http://localhost:3006/#/login");
+//
 //        webResult = WebResult.ResultFactory.makeOKResult(map);
         return webResult;
     }

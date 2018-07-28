@@ -6,6 +6,8 @@ import com.project.model.order.OrderDetail;
 import org.apache.commons.logging.Log;
 import org.apache.ibatis.jdbc.SQL;
 
+import java.util.Map;
+
 /**
  *
  */
@@ -63,15 +65,22 @@ public class OrderSqlProvider {
         }}.toString();
     }
 
+
     /**
-     * 搜索用户
-     * @return
+     * 查询
      */
-    public String selectOne(String username){
-        return new SQL(){{
-            SELECT("id, username, password, privilege");
-            FROM("system_user");
-            WHERE("username=#{username}");
-        }}.toString();
+    public String search(Map<String,Object> map) {
+        String searchUser = new SQL() {
+            {
+                SELECT("*");
+                FROM("wechat.Order");
+                for (String key :
+                        map.keySet()) {
+                    WHERE(key + " like #{" + key + "}");
+                }
+            }
+        }.toString();
+        logger.info(LogUtil.logstr("模糊查询语句：" ,"sql",searchUser));
+        return searchUser;
     }
 }

@@ -80,9 +80,7 @@ public class UserSqlProvider {
      */
     public String selectList() {
         return new SQL() {{
-            SELECT("openid, nickname, sex, city, province, country, subscribe_time, remark, " +
-                    "qrCode, qrCode1, tel, name, identity, identitytime, highcode, supercode, " +
-                    "firstbuycode, firstbuycodeuse, wechat");
+            SELECT("*");
             FROM("wechat.User");
             ORDER_BY("subscribe_time desc");
         }}.toString();
@@ -95,7 +93,7 @@ public class UserSqlProvider {
      */
     public String selectOne(String openid) {
         return new SQL() {{
-            SELECT("openid, nickname, sex, city, province, country, subscribe_time");
+            SELECT("*");
             FROM("User");
             WHERE("openid=#{openid}");
         }}.toString();
@@ -109,11 +107,30 @@ public class UserSqlProvider {
             {
                 UPDATE("User");
                 if (user.getQrCode() != null) {
-                    SET("qrCode=" + user.getQrCode());
+                    SET("qrCode=#{qrCode}");
                 }
-                WHERE("openid=" + user.getOpenid());
+                WHERE("openid=#{openid}");
             }
         }.toString();
+    }
+
+
+    /**
+     * 查询
+     */
+    public String search(Map<String,Object> map) {
+        String searchUser = new SQL() {
+            {
+                SELECT("*");
+                FROM("User");
+                for (String key :
+                        map.keySet()) {
+                    WHERE(key + " like #{" + key + "}");
+                }
+            }
+        }.toString();
+        logger.info(LogUtil.logstr("模糊查询语句：" ,"sql",searchUser));
+        return searchUser;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.project.mapper;
 
+import com.project.model.order.Order;
 import com.project.model.sql.User;
 import com.project.model.vo.Page;
 import com.project.provider.UserSqlProvider;
@@ -36,4 +37,7 @@ public interface UserMapper {
 
     @UpdateProvider(type = UserSqlProvider.class, method = "update")
     int update(User user) throws DataAccessException;
+
+    @SelectProvider(type = UserSqlProvider.class, method = "search")
+    List<User> search(Map<String,Object> map) throws DataAccessException;
 }

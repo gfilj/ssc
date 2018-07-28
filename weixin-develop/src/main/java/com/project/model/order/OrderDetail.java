@@ -21,7 +21,7 @@ public class OrderDetail {
     @Formatter("yyyy-MM-dd HH:mm:ss")
     @ExtractBy("/html/body/div[1]/div[1]/ul/li[2]/p[2]/text()")
     private Date paySuccessTime;//付款时间
-    @ExtractBy("/html/body/div[1]/div[2]/p[1]/span[2]/text()")
+    @ExtractBy("/html/body/div[1]/div[2]/p[1]/span[2]/text() | /html/body/div[1]/div[1]/p[1]/span[2]/text()")
     private String no;//订单号
     @ExtractBy("//*[@id=\"receiveData\"]/tbody/tr[2]/td[2]/text()")
     private String realname;//姓名

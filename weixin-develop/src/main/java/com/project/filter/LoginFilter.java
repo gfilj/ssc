@@ -20,9 +20,9 @@ import java.io.PrintWriter;
  * Create by Fenix_Bao on 2018/4/1.
  */
 
-//@Component
-//@Order(2)
-//@WebFilter(urlPatterns = "/*",filterName = "loginFilter")
+@Component
+@Order(2)
+@WebFilter(urlPatterns = "/*",filterName = "loginFilter")
 public class LoginFilter implements Filter {
 
     private Log logger = LogUtil.getLogger(getClass());
@@ -35,7 +35,11 @@ public class LoginFilter implements Filter {
         String lgUrl = httpRequest.getServletPath();
 
         //here add urls that do not need login
-        if(lgUrl.contains("/openapi/")){
+        if(lgUrl.contains("/wechat/access")){
+            chain.doFilter(httpRequest, httpResponse);
+            return;
+        }
+        if(lgUrl.contains("/wechat/material")){
             chain.doFilter(httpRequest, httpResponse);
             return;
         }
@@ -49,7 +53,8 @@ public class LoginFilter implements Filter {
             }else {
                 httpResponse.setCharacterEncoding("UTF-8");
                 httpResponse.setContentType("application/json; charset=utf-8");
-                String jsonStr = "{\"loginUrl\":\"" + "http://localhost:8080/system/login?username=***&password=***" + "\",\"result\":" + "\"need login\"" + "}";
+
+                String jsonStr = "{\"loginUrl\":\"" + "http://localhost:3006/#/login\"" + "}";
                 PrintWriter out = null;
                 try {
                     out = httpResponse.getWriter();

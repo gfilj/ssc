@@ -2,6 +2,7 @@ package com.project.service.order;
 
 import com.github.pagehelper.PageInfo;
 import com.project.common.exception.BusinessException;
+import com.project.model.vo.OrderSearchVO;
 import com.project.model.vo.Page;
 import com.project.webmagic.model.OrderDetailDB;
 
@@ -19,5 +20,7 @@ public interface OrderService {
     List<String> getPageRequestList();
 
     PageInfo<OrderDetailDB> list(Page page)  throws BusinessException;
+
+    PageInfo<OrderDetailDB> search(OrderSearchVO searchVO)  throws BusinessException;
 
 }

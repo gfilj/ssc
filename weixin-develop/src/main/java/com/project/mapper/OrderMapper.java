@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.SelectProvider;
 import org.springframework.dao.DataAccessException;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by goforit on 2018/5/9.
@@ -20,4 +21,8 @@ public interface OrderMapper {
 
     @SelectProvider(type = OrderSqlProvider.class, method = "selectList")
     List<OrderDetailDB> selectList() throws DataAccessException;
+
+
+    @SelectProvider(type = OrderSqlProvider.class, method = "search")
+    List<OrderDetailDB> search(Map<String,Object> map) throws DataAccessException;
 }
