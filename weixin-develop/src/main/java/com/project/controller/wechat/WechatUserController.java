@@ -1,10 +1,12 @@
 package com.project.controller.wechat;
 
 import com.github.pagehelper.PageInfo;
+import com.project.common.exception.ArgumentException;
 import com.project.common.exception.BusinessException;
 import com.project.common.exception.ExceptionEnum;
 import com.project.common.result.Result;
 import com.project.common.result.ResultBuilder;
+import com.project.common.util.ArgumentsUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.sql.User;
 import com.project.model.sql.UserRelation;
@@ -198,9 +200,11 @@ public class WechatUserController {
     @ResponseBody
     public Result getOrderByOpenid(String openid) {
         try {
+            ArgumentsUtil.checkArgument(openid == null||openid.isEmpty(),
+                    ExceptionEnum.ARGUMENT_ILLEGAL_CAUSE, null);
             PageInfo<OrderDetailDB>orders = wechatUserService.getOrderByOpenid(openid);
             return ResultBuilder.build(ExceptionEnum.WECHAT_USERLOG_LIST, orders);
-        } catch (BusinessException e) {
+        } catch (BusinessException|ArgumentException e) {
             logger.error(e.getMessage(), e);
             return e.getResult();
         }

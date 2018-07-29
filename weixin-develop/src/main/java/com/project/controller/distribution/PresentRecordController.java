@@ -1,10 +1,12 @@
 package com.project.controller.distribution;
 
 import com.github.pagehelper.PageInfo;
+import com.project.common.exception.ArgumentException;
 import com.project.common.exception.BusinessException;
 import com.project.common.exception.ExceptionEnum;
 import com.project.common.result.Result;
 import com.project.common.result.ResultBuilder;
+import com.project.common.util.ArgumentsUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.sql.PresentRecord;
 import com.project.model.sql.SystemUser;
@@ -58,11 +60,13 @@ public class PresentRecordController {
     @ResponseBody
     public Result update(PresentRecord presentRecord) {
         try {
+            ArgumentsUtil.checkArgument(presentRecord.getId() == 0, ExceptionEnum.ARGUMENT_ILLEGAL_CAUSE,
+                    null);
             SystemUser systemUser = new SystemUser();
             systemUser.setUsername("");
             presentRecordService.update(presentRecord,systemUser);
             return ResultBuilder.getInstance().build(ExceptionEnum.PRESENT_RECORD_ADD, presentRecord);
-        } catch (BusinessException e) {
+        } catch (BusinessException|ArgumentException e) {
             return e.getResult();
         }
     }

@@ -1,9 +1,11 @@
 package com.project.controller.distribution;
 
+import com.project.common.exception.ArgumentException;
 import com.project.common.exception.BusinessException;
 import com.project.common.exception.ExceptionEnum;
 import com.project.common.result.Result;
 import com.project.common.result.ResultBuilder;
+import com.project.common.util.ArgumentsUtil;
 import com.project.common.util.LogUtil;
 import com.project.model.vo.OrderSearchVO;
 import com.project.model.vo.Page;
@@ -98,9 +100,11 @@ public class OrderController {
     @RequestMapping(value = "update")
     public @ResponseBody Result update(OrderDetailDB orderDetailDB) {
         try {
+            ArgumentsUtil.checkArgument(orderDetailDB.getNo() == null||orderDetailDB.getNo().isEmpty(),
+                    ExceptionEnum.ARGUMENT_ILLEGAL_CAUSE, null);
             orderService.update(orderDetailDB);
             return ResultBuilder.getInstance().build(ExceptionEnum.ORDER_LIST, "success");
-        } catch (BusinessException e) {
+        } catch (BusinessException|ArgumentException e) {
             return e.getResult();
         }
     }
